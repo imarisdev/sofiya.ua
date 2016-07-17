@@ -1,20 +1,12 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Route::group(['middleware' => 'web'], function () {
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::auth();
+
+    Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
+
+
+    Route::get('/{complex}/', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
+
 });
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');

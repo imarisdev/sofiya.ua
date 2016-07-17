@@ -11,4 +11,17 @@ class ComplexRepository extends BaseRepository {
 
     }
 
+    /**
+     * Возвращает строительный комплекс по URL
+     * @param $slug
+     * @return mixed
+     */
+    public function getBySlug($slug) {
+
+        $complex = $this->model->whereSlug($slug)->firstOrFail();
+
+        return $complex;
+
+    }
+
 }
