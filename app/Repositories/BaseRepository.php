@@ -19,9 +19,13 @@ abstract class BaseRepository {
      * @param null $params
      * @return mixed
      */
-    public function cache($method, $key, $params = null) {
+    public function cache($method, $key, $params = null, $time = null) {
 
-        $data = Cache::remember($key, Config::get('cache.time.short'), function () use ($method, $params) {
+        if(empty($time)) {
+            $time = Config::get('cache.time.short');
+        }
+
+        $data = Cache::remember($key, $time, function () use ($method, $params) {
             return $this->{$method}($params);
         });
 
