@@ -8,6 +8,13 @@ elixir(function (mix) {
 });
 
 elixir(function (mix) {
+    mix.styles([
+        'owl/owl-carousel.css',
+        'owl/owl-theme.css'
+    ], 'public/css/owl-carousel.css');
+});
+
+elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
         'wow.js',
@@ -15,10 +22,18 @@ elixir(function (mix) {
     ], 'public/js/common.js');
 });
 
+elixir(function (mix) {
+    mix.scripts([
+        'owl/owl-carousel.js',
+    ], 'public/js/owl-carousel.js');
+});
+
 //Version
 elixir(function (mix) {
     mix.version([
         'css/all.css',
         'js/common.js',
+        'css/owl-carousel.css',
+        'js/owl-carousel.js',
     ]);
 });

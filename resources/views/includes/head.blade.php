@@ -14,3 +14,4 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
+<link href="{{ elixir('css/owl-carousel.css') }}" rel="stylesheet">

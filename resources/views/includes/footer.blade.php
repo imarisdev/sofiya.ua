@@ -3,7 +3,7 @@
         <div class="cell m_b-20">
             <div class="cell3 logo-footer fl_l">
                 <a href="#">
-                    <img src="img/logo-w.png" alt="">
+                    <img src="/img/logo-w.png" alt="">
                 </a>
             </div>
 
@@ -51,7 +51,7 @@
 
 
         <div class="cell m_b-25 cell-sm-6 cell-xss">
-            <p class="info-s fl_l cell-md-none">Создание сайта <img src="img/imaris.png" alt=""></p>
+            <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
 
             <ul class="footer-nav fl_r cell-md">
                 <li class="cell-sm"><a href="#">ЖК МАРТЫНОВ</a></li>
