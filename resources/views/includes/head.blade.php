@@ -9,15 +9,11 @@
     <link rel="canonical" href="{{ $seo['canonical'] }}" />
 @endif
 
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans">
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-
 <link rel="icon" href="/favicon.png">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-<link rel="stylesheet" type="text/css" href="owl/owl-carousel.css">
-<link rel="stylesheet" type="text/css" href="owl/owl-theme.css">
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="/owl/owl-carousel.css">
+<link rel="stylesheet" type="text/css" href="/owl/owl-theme.css">
+<link rel="stylesheet" type="text/css" href="/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
