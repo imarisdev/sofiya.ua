@@ -20,10 +20,8 @@
                 @include('includes.footer')
             </footer>
 
-            <script type="text/javascript" src="js/jquery.min.js"></script>
-            <script type="text/javascript" src="owl/owl-carousel.js"></script>
-            <script type="text/javascript" src="js/wow.js"></script>
-            <script type="text/javascript" src="js/common.js"></script>
+            <script src="{{ elixir('js/common.js') }}"></script>
+            <script src="{{ elixir('js/owl-carousel.js') }}"></script>
         </body>
     </div>
 </html>
