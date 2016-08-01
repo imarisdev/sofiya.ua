@@ -6,3 +6,11 @@ elixir(function (mix) {
         'site/style.css'
     ], 'public/css/all.css');
 });
+
+
+//Version
+elixir(function (mix) {
+    mix.version([
+        'css/all.css',
+    ]);
+});
