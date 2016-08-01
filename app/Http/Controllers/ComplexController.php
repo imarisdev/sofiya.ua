@@ -18,7 +18,7 @@ class ComplexController extends Controller {
      */
     public function index($url) {
 
-        $complex = $this->complex->getBySlug($url);
+        $complex = $this->complex->cache('getBySlug', 'complex_' . $url, $url);
 
         return view('complex.index', compact('complex'));
     }

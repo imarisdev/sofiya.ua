@@ -13,6 +13,23 @@ abstract class BaseRepository {
     protected $model;
 
     /**
+     * Кэшируемый метод
+     * @param $method
+     * @param $key
+     * @param null $params
+     * @return mixed
+     */
+    public function cache($method, $key, $params = null) {
+
+        $data = Cache::remember($key, Config::get('cache.time.short'), function () use ($method, $params) {
+            return $this->{$method}($params);
+        });
+
+        return $data;
+
+    }
+
+    /**
      * Удалить объект модели по ID
      * @param $id
      */
