@@ -31,19 +31,19 @@
         <div class="nav-bottom cell">
 
             <div class="logo fl_l">
-                <a href="#">
+                <a href=/">
                     <div class="top-logo-part">
                         <img src="/img/logo-11.png" alt="">
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="/">
                     <div class="main-logo-part">
                         <img src="/img/logo.png" alt="">
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="/">
                     <div class="bottom-logo-part">
                         <img src="/img/logo-1.png" alt="">
                     </div>

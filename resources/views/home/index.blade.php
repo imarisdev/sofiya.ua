@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header')
+    @include('includes.header-index')
+@endsection
+
 @section('content')
 
     @include('home.video')
@@ -11,18 +15,5 @@
     @include('home.news')
 
     @include('home.seo')
-
-
-{!! Form::open(['route' => 'home.page', 'method' => 'post', 'role' => 'form']) !!}
-
-<div class="row">
-
-    {!! Form::text('query', '', ['class' => 'search']) !!}
-
-    {!! Form::submit('Поиск', ['class' => 'btn']) !!}
-
-</div>
-
-{!! Form::close() !!}
 
 @endsection
