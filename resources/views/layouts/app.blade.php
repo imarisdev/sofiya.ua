@@ -4,17 +4,17 @@
         @include('includes.head')
     </head>
 
-    @include('includes.adaptive-menu')
+    @include('includes.header.adaptive-menu')
 
     <div class="main-content">
 
         <body class="body">
 
             @section('header')
-                @include('includes.header')
+                @include('includes.header.header')
             @show
 
-            <div class="wrapper">
+            <div class="wrapper clearfix">
                 @yield('content')
             </div>
 

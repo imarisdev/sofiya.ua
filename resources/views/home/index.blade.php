@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    @include('includes.header-index')
+    @include('includes.header.header-index')
 @endsection
 
 @section('content')

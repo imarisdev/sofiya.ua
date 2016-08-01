@@ -4,8 +4,24 @@
 
     <h1>{{ $complex->title }}</h1>
 
-    @foreach($types as $tkey => $type)
-        <p><a href="/{{ $complex->slug }}/{{ $type['slug'] }}/">{{ $type['title'] }}</a></p>
-    @endforeach
 
+    <p class="cell seo-text">
+        С каждым днем все большее число коренных жителей и гостей столицы Украины предпочитают покупать современные квартиры в Киеве. При этом наибольшим спросом пользуются новостройки в пригороде столицы. К таким постройкам относят жилые комплексы в Борщаговке. Не меньшим спросом пользуются новостройки от Мартынова. Если вы хотите купить квартиру в Киеве, то по мнению большинства экспертов, одним из самых оптимальных вариантов покупки нового жилья от застройщика являются апартаменты в ЖК «София» от Мартынова.
+    </p>
+
+    <div class="cell9 p_r-10">
+        <div class="cell type-flats">
+            @foreach($types as $tkey => $type)
+                <div class="cell4">
+                    <div class="item">
+                        <p class="text-center"><a href="/{{ $complex->slug }}/{{ $type['slug'] }}/">{{ $type['title'] }}</a></p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="cell3 p_l-5">
+
+    </div>
 @endsection
