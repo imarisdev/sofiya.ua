@@ -13,10 +13,4 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-
-<link rel="stylesheet" type="text/css" href="/owl/owl-carousel.css">
-<link rel="stylesheet" type="text/css" href="/owl/owl-theme.css">
-<link rel="stylesheet" type="text/css" href="/css/animate.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-
-
+<link href="{{ elixir('css/all.css') }}" rel="stylesheet">
