@@ -1,21 +1,21 @@
 /* latin */
 @font-face {
     font-family: "KelsonSans";
-    src: url("../fonts/Kelson Sans Regular RU.otf");
+    src: url("/fonts/Kelson Sans Regular RU.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "KelsonSansLight";
-    src: url("../fonts/Kelson Sans Light RU.otf");
+    src: url("/fonts/Kelson Sans Light RU.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "KelsonSansBold";
-    src: url("../fonts/Kelson Sans Bold RU.otf");
+    src: url("/fonts/Kelson Sans Bold RU.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -342,7 +342,7 @@ a {
 
 /*---------------------------------------------*/
 .header {
-    background: url("../img/main_photo.png");
+    background: url("/img/main_photo.png");
     min-height: 971px;
     background-size: cover;
 }
@@ -404,7 +404,7 @@ a {
 
 .nav-bottom ul.menu li.parent-menu > a {
     padding-right: 20px;
-    background: url('../img/arrow-b.png') no-repeat 100% 50%;
+    background: url('/img/arrow-b.png') no-repeat 100% 50%;
 }
 
 .nav-bottom ul.menu li.parent-menu {
@@ -628,7 +628,7 @@ a {
     border-radius: 50%;
     background-color: #fed20c;
     box-shadow: 1.8px 3.6px 2px rgba(27, 27, 27, 0.35);
-    background: url('../img/map.png') no-repeat 50% 50% #fed20c;
+    background: url('/img/map.png') no-repeat 50% 50% #fed20c;
     transition: all 1s ease-out 0.1s;
 }
 
@@ -641,15 +641,15 @@ a {
 }
 
 .left-nav li:nth-child(2):after {
-    background: url('../img/technology.png') no-repeat 50% 50% #fed20c;
+    background: url('/img/technology.png') no-repeat 50% 50% #fed20c;
 }
 
 .left-nav li:nth-child(3):after {
-    background: url('../img/technology-1.png') no-repeat 50% 50% #fed20c;
+    background: url('/img/technology-1.png') no-repeat 50% 50% #fed20c;
 }
 
 .left-nav li:nth-child(4):after {
-    background: url('../img/technology-2.png') no-repeat 50% 50% #fed20c;
+    background: url('/img/technology-2.png') no-repeat 50% 50% #fed20c;
 }
 
 .header-bottom-icons {
@@ -673,7 +673,7 @@ a {
     width: 130px;
     height: 80px;
     margin: 10px auto;
-    background: url('../img/bottom-header.png') no-repeat 0 0;
+    background: url('/img/bottom-header.png') no-repeat 0 0;
 }
 
 .header-bottom-icons li span {
@@ -750,7 +750,7 @@ a {
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-prev {
-    background: url('../img/prev.png') no-repeat 50% 40%;
+    background: url('/img/prev.png') no-repeat 50% 40%;
     height: 30px;
     left: -30px;
     position: absolute;
@@ -758,7 +758,7 @@ a {
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-next {
-    background: url('../img/next.png') no-repeat 50% 40%;
+    background: url('/img/next.png') no-repeat 50% 40%;
     height: 30px;
     right: -30px;
     position: absolute;
@@ -787,7 +787,7 @@ a {
     margin-bottom: 20%;
     vertical-align: middle;
     box-shadow: 0 5px 2px rgba(27, 27, 27, 0.35);
-    background: url('../img/str-r.png') no-repeat #fefefe 95% 50%;
+    background: url('/img/str-r.png') no-repeat #fefefe 95% 50%;
 }
 
 .white-block-action .item {
@@ -806,7 +806,7 @@ a {
     width: 230px;
     height: 100px;
     box-shadow: 0 5px 2px rgba(27, 27, 27, 0.35);
-    background: url('../img/apartment.png') no-repeat 6% 50% rgba(1, 65, 95, 0.9);
+    background: url('/img/apartment.png') no-repeat 6% 50% rgba(1, 65, 95, 0.9);
 }
 
 .blue-block-action .item {
@@ -814,7 +814,7 @@ a {
     padding: 7px 40px 0 70px;
     vertical-align: middle;
     font-size: 20px;
-    background: url('../img/str-r-w.png') no-repeat 95% 50%;
+    background: url('/img/str-r-w.png') no-repeat 95% 50%;
 }
 
 .blue-block-action .item a {
@@ -861,7 +861,7 @@ a {
 .zero-procent {
     margin: 30px 0;
     padding: 50px 0;
-    background: url('../img/bg-zero.png');
+    background: url('/img/bg-zero.png');
     background-size: contain;
 }
 
@@ -879,7 +879,7 @@ a {
 
 .zero-procent .item:first-child {
     width: 50%;
-    background: url("../img/semi.png") no-repeat 50% 0;
+    background: url("/img/semi.png") no-repeat 50% 0;
     background-size: cover;
 }
 
@@ -981,7 +981,7 @@ a {
 }
 
 .icon-watch {
-    background: url(../img/eye.png) no-repeat;
+    background: url(/img/eye.png) no-repeat;
     display: inline-block;
     width: 25px;
     height: 12px;
@@ -1067,7 +1067,7 @@ a {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url('../img/sprites.png') no-repeat 0 0;
+    background: url('/img/sprites.png') no-repeat 0 0;
     background-position-y: -133px;
 }
 
@@ -1132,7 +1132,7 @@ a {
     position: relative;
     margin-right: 30px;
     padding: 0 25px;
-    background: url('../img/arrow-b.png') no-repeat 100% 50%;
+    background: url('/img/arrow-b.png') no-repeat 100% 50%;
     color: #010101;
     font-family: KelsonSans;
     font-size: 14px;
@@ -1146,7 +1146,7 @@ a {
     display: inline-block;
     width: 17px;
     height: 25px;
-    background: url('../img/phone-dark.png') no-repeat 0 0;
+    background: url('/img/phone-dark.png') no-repeat 0 0;
 }
 
 .phone-block {
@@ -1194,13 +1194,13 @@ a {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-    background: url('../img/arrow-fot.png') no-repeat 100% 50%;
+    background: url('/img/arrow-fot.png') no-repeat 100% 50%;
 }
 
 .footer .phone-click .icon-phone {
     width: 23px;
     height: 28px;
-    background: url('../img/sprites.png') no-repeat 0 -169px;
+    background: url('/img/sprites.png') no-repeat 0 -169px;
 }
 
 .footer .phone-block {
@@ -1328,7 +1328,7 @@ a {
         height: 60px;
         padding: 20px;
         font-size: 0;
-        background: url("../img/phone-header.png") no-repeat 50% 50% #fed20c;
+        background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
         text-indent: -10000px;
         border-radius: 50%;
     }
@@ -1342,7 +1342,7 @@ a {
         height: 60px;
         padding: 20px;
         font-size: 0;
-        background: url("../img/phone-header.png") no-repeat 50% 50% #fed20c;
+        background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
         text-indent: -10000px;
         border-radius: 50%;
     }
@@ -1376,7 +1376,7 @@ a {
         height: 60px;
         padding: 20px;
         font-size: 0;
-        background: url("../img/phone-header.png") no-repeat 50% 50% #fed20c;
+        background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
         text-indent: -10000px;
         border-radius: 50%;
     }
