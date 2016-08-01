@@ -2,7 +2,16 @@
 
 @section('content')
 
-home page
+    @include('home.video')
+
+    @include('home.video-carousel')
+
+    @include('home.family')
+
+    @include('home.news')
+
+    @include('home.seo')
+
 
 {!! Form::open(['route' => 'home.page', 'method' => 'post', 'role' => 'form']) !!}
 
