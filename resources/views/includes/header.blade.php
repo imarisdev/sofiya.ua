@@ -31,7 +31,7 @@
         <div class="nav-bottom cell">
 
             <div class="logo fl_l">
-                <a href="#">
+                <a href="/">
                     <div class="top-logo-part">
                         <img src="/img/logo-11.png" alt="">
                     </div>
@@ -132,15 +132,5 @@
 
     </div>
 
-
-    <div class="header-bottom-icons cell">
-        <ul>
-            <li><i class="ter"></i><span>Охраняемая территория</span></li>
-            <li><i class="school"></i><span>Свои школа и садик</span></li>
-            <li><i class="eco"></i><span>Экологически чистый район</span></li>
-            <li><i class="fitness"></i><span>Свой фитнес клуб</span></li>
-            <li><i class="metro"></i><span>15 мин. до метро</span></li>
-        </ul>
-    </div>
 </header>
 <!-- end header -->
