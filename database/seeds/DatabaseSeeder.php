@@ -19,7 +19,8 @@ class ComplexTableSeeder extends Seeder {
 
     public function run() {
 
-        \App\Models\Complex::create(['title' => 'ЖК София', 'slug' => 'jk-sofiya']);
+        \App\Models\Complex::create(['title' => 'ЖК Мартынов', 'slug' => 'jk-martinov']);
+        \App\Models\Complex::create(['title' => 'ЖК Клубный', 'slug' => 'jk-klubniy']);
     }
 
 }
