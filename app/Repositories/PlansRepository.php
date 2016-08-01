@@ -1,14 +1,26 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\Plan;
+use App\Models\Plans;
 
 class PlansRepository extends BaseRepository {
 
-    public function __construct(Plan $plan) {
+    public function __construct(Plans $plans) {
 
-        $this->model = $plan;
+        $this->model = $plans;
 
+    }
+
+    /**
+     * Возвращает планировки по типу
+     * @param $type_id
+     * @return mixed
+     */
+    public function getPlansByType($type_id, $limit = 20) {
+
+        $plans = $this->model->where('plans_type', '=', $type_id)->get();
+
+        return $plans;
     }
 
     /**

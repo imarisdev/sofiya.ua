@@ -15,6 +15,7 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->smallInteger('status')->default(0);
+            $table->smallInteger('plans_type')->default(1)->index();
             $table->integer('house_id')->unsigned();
             $table->foreign('house_id')->references('id')->on('houses');
             $table->smallInteger('flats_count')->default(0);

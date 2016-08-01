@@ -10,7 +10,9 @@
 
         <body class="body">
 
-            @include('includes.header')
+            @section('header')
+                @include('includes.header')
+            @show
 
             <div class="wrapper">
                 @yield('content')

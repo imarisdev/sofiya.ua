@@ -2,13 +2,16 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
+use App\Repositories\PlansTypeRepository;
 
 class ComplexController extends Controller {
 
     protected $complex;
+    protected $types;
 
-    public function __construct(ComplexRepository $complex) {
+    public function __construct(ComplexRepository $complex, PlansTypeRepository $types) {
         $this->complex = $complex;
+        $this->types = $types;
     }
 
     /**
@@ -20,7 +23,9 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $url, $url);
 
-        return view('complex.index', compact('complex'));
+        $types = $this->types->getPlansTypes();
+
+        return view('complex.index', compact('complex', 'types'));
     }
 
 }
