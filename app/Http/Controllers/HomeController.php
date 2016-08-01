@@ -13,8 +13,8 @@ class HomeController extends Controller {
     }
 
 
-    public function index(ComplexRepository $complex) {
+    public function index() {
 
-        return view('home.index', ['complex' => $complex->getById(1)]);
+        return view('home.index');
     }
 }

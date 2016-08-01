@@ -24,4 +24,19 @@ class ComplexRepository extends BaseRepository {
 
     }
 
+    /**
+     * Возвращает все комплексы
+     * @return mixed
+     */
+    public function getAllComplexes() {
+
+        $complex = $this->model
+            ->select('id', 'title', 'slug', 'image')
+            ->where('status', '=', 0)
+            ->get();
+
+        return $complex;
+
+    }
+
 }

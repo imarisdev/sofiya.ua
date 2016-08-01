@@ -1,6 +1,8 @@
 <?php
 namespace App\Repositories;
 
+use Cache;
+use Config;
 
 abstract class BaseRepository {
 
