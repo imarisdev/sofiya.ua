@@ -37,4 +37,14 @@ class House extends BaseModel {
     public function buildingType() {
         return $this->belongsTo('App\Models\BuildingType', 'building_type');
     }
+
+    /**
+     * Ссылка на дом
+     * @return string
+     */
+    public function link() {
+
+        return "{$this->id}-{$this->slug}";
+
+    }
 }
