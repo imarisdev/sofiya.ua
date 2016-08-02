@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use App\Http\Requests;
-use App\Repositories\ComplexRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
@@ -12,9 +12,21 @@ class HomeController extends Controller {
 
     }
 
-
+    /**
+     * Главная траница
+     * @return mixed
+     */
     public function index() {
 
         return view('home.index');
+    }
+
+    /**
+     * Очистка кэша
+     */
+    //TODO: временно
+    public function clear() {
+        Cache::flush();
+        header('Location: /');
     }
 }

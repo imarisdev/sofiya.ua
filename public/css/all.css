@@ -2774,7 +2774,14 @@ ul {
 div {
     zoom: 1;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5 {
+    float: left;
+    width: 100%;
+}
 .red {
     color: #f00000;
 }
@@ -3010,7 +3017,11 @@ div {
     margin: 0 auto;
     background-color: transparent;
 }
-
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table;
+}
 .clearfix {
     clear: both;
 }
@@ -3084,7 +3095,7 @@ a {
     content: '';
     display: block;
     position: absolute;
-    top: 8px;
+    top: 4px;
     width: 5px;
     height: 5px;
     background-color: #53d1ee;
@@ -3101,6 +3112,7 @@ a {
 }
 
 .nav-bottom ul.menu > li {
+    z-index: 33;
     float: left;
     height: 105px;
     padding: 45px 20px 40px 10px;
@@ -3108,7 +3120,7 @@ a {
 
 .nav-bottom ul.menu li.parent-menu > a {
     padding-right: 20px;
-    background: url('/img/arrow-b.png') no-repeat 100% 50%;
+    background: url('/img/arrow-b.png') no-repeat 100% 25%;
 }
 
 .nav-bottom ul.menu li.parent-menu {
@@ -3198,7 +3210,7 @@ a {
     border-radius: 20px;
     box-shadow: 3.2px 6.2px 2px rgba(27, 27, 27, 0.35);
     display: inline-block;
-    padding: 10px 20px;
+    padding: 11px 20px 7px;
     color: black;
     font-size: 21px;
 }
@@ -3217,6 +3229,19 @@ a {
     height: 100%;
     text-align: center;
     display: block;
+}
+
+/**/
+.header-all {
+    min-height: 530px;
+    margin-bottom: 30px;
+    background-position: 0 50%;
+}
+.header-all .actions-block {
+    padding-top: 40px;
+}
+.header-all .white-block-action {
+    margin-bottom: 40px;
 }
 
 .main-logo-part {
@@ -3413,6 +3438,52 @@ a {
     vertical-align: bottom;
 }
 
+
+/**/
+
+.form-watch {
+    position: absolute;
+    width: 100%;
+    float: left;
+    top: 270px;
+}
+
+.form-watch form {
+    display: table;
+    margin: auto;
+    padding: 8px 0;
+    max-width: 768px;
+    background-color: rgba(1, 65, 95, 0.8);
+    border-radius: 30px;
+}
+
+.form-watch .input-wrap {
+    display: table-cell;
+    width: 33%;
+    padding: 0 13px;
+}
+
+.form-watch .input-wrap input {
+    width: 100%;
+    height: 48px;
+    background-color: #fefefe;
+    border-radius: 24px;
+    box-shadow: inset 0.4px 0.9px 3.5px 0.5px rgba(26, 25, 25, 0.5);
+    padding-left: 20px;
+}
+
+.form-watch .input-wrap input.btn {
+    height: 48px;
+    background-color: #53d1ee;
+    border-radius: 24px;
+    box-shadow: 1.3px 2.7px 2px rgba(26, 25, 25, 0.35);
+    border: none;
+    font-family: KelsonSans;
+    font-size: 18px;
+    padding: 10px 10px 8px;
+    text-align: center;
+    cursor: pointer;
+}
 .title-page {
     float: left;
     width: 100%;
@@ -3529,7 +3600,7 @@ a {
 .yellow-btn {
     background-color: #fed20c;
     border-radius: 24px;
-    padding: 8px 20px 7px;
+    padding: 11px 20px 7px;
     color: black;
     font-size: 24px;
     font-weight: 400;
@@ -3918,7 +3989,31 @@ a {
 .footer .phone-block:before {
     border-bottom: 12px solid #01415f;
 }
+/**/
 
+.type-flats .cell4 {
+    padding: 7px;
+}
+
+.type-flats .item {
+    background-color: white;
+    box-shadow: 0 0 3.9px 0.1px rgba(26, 25, 25, 0.35);
+}
+
+.type-flats .item p a {
+    color: #01415f;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.seo-text {
+    color: #444;
+    font-family: Tahoma;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 20px;
+}
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;
@@ -4089,6 +4184,10 @@ a {
     .footer .info-s {
         display: none;
     }
+
+    .form-watch form {
+        margin: 0 5px;
+    }
 }
 
 @media all and (max-width: 990px) {
@@ -4245,6 +4344,20 @@ a {
     .footer .btn-wrap {
         display: none;
     }
+
+    .form-watch {
+        top: 230px;
+    }
+
+    .form-watch form {
+        max-width: 50%;
+    }
+
+    .form-watch .input-wrap {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 13px;
+    }
 }
 
 @media all and (max-width: 770px) {
@@ -4321,6 +4434,16 @@ a {
     .blue-block-action {
         width: 80%;
         margin: 10px auto;
+    }
+
+    .form-watch {
+        position: relative;
+        top: 0;
+    }
+
+    .form-watch form {
+        max-width: 90%;
+        margin: 0 5% 5%;
     }
 }
 

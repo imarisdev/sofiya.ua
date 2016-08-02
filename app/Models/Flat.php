@@ -11,7 +11,7 @@ class Flat extends BaseModel {
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function plan() {
-        return $this->belongsTo('App\Models\Plan', 'plan_id');
+        return $this->belongsTo('App\Models\Plans', 'plan_id');
     }
 
 }

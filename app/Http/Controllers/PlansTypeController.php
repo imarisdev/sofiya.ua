@@ -21,7 +21,9 @@ class PlansTypeController extends Controller {
      */
     public function index($complex, $type) {
 
-        $plans = $this->plans->getPlansByType($this->types->getPlansTypesKey($type));
+        $type = $this->types->getPlansTypeBySlug($type);
+
+        $plans = $this->plans->getPlansByType($type['key']);
 
         return view('planstype.index', compact('plans', 'type', 'complex'));
 

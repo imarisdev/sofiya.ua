@@ -1,13 +1,22 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Repositories\ComplexRepository;
+use App\Repositories\HouseRepository;
 use App\Repositories\PlansRepository;
+use App\Repositories\PlansTypeRepository;
 
 class PlansController extends Controller {
 
+    protected $complex;
+    protected $house;
+    protected $types;
     protected $plans;
 
-    public function __construct(PlansRepository $plans) {
+    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans) {
+        $this->complex = $complex;
+        $this->house = $house;
+        $this->types = $types;
         $this->plans = $plans;
     }
 
@@ -16,11 +25,17 @@ class PlansController extends Controller {
      * @param $url
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index($url) {
+    public function index($complex, $type, $id, $house, $pid, $plan) {
 
-        $plans = $this->complex->cache('getBySlug', 'complex_' . $url, $url);
+        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
-        return view('plans.index', compact('plans'));
+        $house = $this->house->getById($id);
+
+        $type = $this->types->getPlansTypeBySlug($type);
+
+        $plan = $this->plans->getById($pid);
+
+        return view('plans.index', compact('complex', 'house', 'plan', 'type'));
     }
 
 }

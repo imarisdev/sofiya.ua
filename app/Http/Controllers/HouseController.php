@@ -3,15 +3,21 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
 use App\Repositories\HouseRepository;
+use App\Repositories\PlansRepository;
+use App\Repositories\PlansTypeRepository;
 
 class HouseController extends Controller {
 
     protected $complex;
     protected $house;
+    protected $types;
+    protected $plans;
 
-    public function __construct(ComplexRepository $complex, HouseRepository $house) {
+    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans) {
         $this->complex = $complex;
         $this->house = $house;
+        $this->types = $types;
+        $this->plans = $plans;
     }
 
     /**
@@ -28,7 +34,11 @@ class HouseController extends Controller {
 
         $house = $this->house->getById($id);
 
-        return view('house.index', compact('complex', 'house'));
+        $type = $this->types->getPlansTypeBySlug($type);
+
+        $plans = $this->plans->getPlansByType($type['key']);
+
+        return view('house.index', compact('complex', 'house', 'plans', 'type'));
 
     }
 
