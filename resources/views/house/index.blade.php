@@ -6,6 +6,9 @@
 
     <div class="cell9 p_r-10">
         <div class="cell">
+            <p>Транспорт: {{ $house->transport }}</p>
+            <p>До остановки: {{ $house->to_stop }}</p>
+            <p>Сдача: {{ $house->completion_at }}</p>
             @foreach($house->plans()->where('plans_type', $type['key'])->get() as $plan)
                 <div class="cell6">
                     <div class="item">
