@@ -23,4 +23,13 @@ class Plans extends BaseModel {
         return $this->belongsTo('App\Models\House', 'house_id')->remember(Config::get('cache.time.short'));
     }
 
+    /**
+     * Ссылка на планировку
+     * @return string
+     */
+    public function link() {
+
+        return "{$this->id}-{$this->slug}";
+
+    }
 }

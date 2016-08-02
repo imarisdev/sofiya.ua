@@ -31,11 +31,11 @@ class PlansTypeRepository extends BaseRepository {
      * @param $slug
      * @return mixed
      */
-    public function getPlansTypesKey($slug) {
+    public function getPlansTypeBySlug($slug) {
 
         foreach($this->types as $tkey => $type) {
             if($slug == $type['slug']) {
-                return $tkey;
+                return array_merge(['key' => $tkey], $type);
             }
         }
 

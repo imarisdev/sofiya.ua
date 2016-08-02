@@ -79,7 +79,7 @@ return [
     'prefix' => 'sofiya',
 
     'time' => [
-        'long'  => env('CACHE_LONG', 10), // 1440
-        'short' => env('CACHE_SHORT', 10) // 600
+        'long'  => env('CACHE_LONG', 1), // 1440
+        'short' => env('CACHE_SHORT', 1) // 600
     ],
 ];

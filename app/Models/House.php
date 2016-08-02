@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use Config;
 
 class House extends BaseModel {
 
@@ -23,11 +24,19 @@ class House extends BaseModel {
     }
 
     /**
+     * Адрес здания - кэшируемый
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function streetCache() {
+        return $this->belongsTo('App\Models\Street', 'street_id')->remember(Config::get('cache.time.short'));
+    }
+
+    /**
      * Список планировок
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function plans() {
-        return $this->hasMany('App\Models\Plan');
+        return $this->hasMany('App\Models\Plans');
     }
 
     /**
