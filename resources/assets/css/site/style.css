@@ -86,7 +86,9 @@ h5 {
     font-weight: 600;
     font-family: KelsonSansBold;
 }
-
+.content {
+    padding: 0 10px;
+}
 /*Main styles*/
 /*Grid*/
 .cell1,
@@ -1292,16 +1294,54 @@ a {
 }
 
 .type-flats .item {
+    float: left;
+    width: 100%;
     background-color: white;
     box-shadow: 0 0 3.9px 0.1px rgba(26, 25, 25, 0.35);
 }
+.type-flats .item p {
+    display: table;
+    width: 100%;
+    min-height: 70px;
+}
+.type-flats .item i {
+    display: block;
+    height: 235px;
+    max-width: 100%;
+    background: url('/img/martinov/odnokomnatnye-kvartiry.png')no-repeat 0 0;
+    background-size: cover;
+}
+
+.type-flats .item i.dvuhkomnatnye-kvartiry {
+    background-image: url('/img/martinov/dvuhkomnatnye-kvartiry.png');
+}
+
+.type-flats .item i.trehkomnatnye-kvartiry {
+    background-image: url('/img/martinov/trehkomnatnye-kvartiry.png');
+}
+
+.type-flats .item i.dvuhurovnevye-kvartiry {
+    background-image: url('/img/martinov/dvuhurovnevye-kvartiry.png');
+}
+
+.type-flats .item i.nezhilye-pomeshcheniya {
+    background-image: url('/img/martinov/nezhilye-pomeshcheniya.png');
+}
+
+.type-flats .item i.pod-klyuch {
+    background-image: url('/img/martinov/pod-klyuch.png');
+}
 
 .type-flats .item p a {
+    display: table-cell;
+    padding: 10px 15% 0;
+    vertical-align: middle;
     color: #01415f;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .seo-text {
     color: #444;
     font-family: Tahoma;
