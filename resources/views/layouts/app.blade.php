@@ -15,7 +15,9 @@
             @show
 
             <div class="wrapper clearfix">
-                @yield('content')
+                <div class="content">
+                    @yield('content')
+                </div>
             </div>
 
             <footer>

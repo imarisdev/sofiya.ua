@@ -6,9 +6,10 @@
     <div class="cell9 p_r-10">
         <div class="cell type-flats">
             @foreach($types as $tkey => $type)
-                <div class="cell4">
+                <div class="cell4 cell-md-6 cell-xs">
                     <div class="item">
-                        <p class="text-center"><a href="/{{ $complex->slug }}/{{ $type['slug'] }}/">{{ $type['title'] }}</a></p>
+                        <i class="{{ $type['slug'] }} cell"></i>
+                        <p class="text-center cell"><a href="/{{ $complex->slug }}/{{ $type['slug'] }}/">{{ $type['title'] }}</a></p>
                     </div>
                 </div>
             @endforeach
