@@ -2,19 +2,12 @@
 <header class="cell header header-all">
     <div class="header-top">
         <div class="nav-top cell">
-
             <div class="white-block"></div>
             <div class="wrapper">
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Покупателям</a></li>
-                    <li><a href="#">Рассрочка</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Акции</a></li>
-                    <li><a href="#">ЖКХ</a></li>
-                    <li><a href="#">Форум</a></li>
-                    <li><a href="#">О застройщике</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    @foreach(Helpers::getMenu('top') as $item)
+                        <li><a href="{{ $item->slug }}">{{ $item->title }}</a></li>
+                    @endforeach
                 </ul>
             </div>
 
