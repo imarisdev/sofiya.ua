@@ -16,10 +16,12 @@ class CreateMenuTable extends Migration
             $table->increments('id');
             $table->smallInteger('status')->default(0);
             $table->smallInteger('order')->default(0);
+            $table->integer('parent')->default(0);
             $table->string('position', 15)->default('top')->index();
             $table->string('title', 50);
-            $table->string('link', 250)->index();
-            $table->string('icon', 250)->index();
+            $table->string('slug', 250)->index();
+            $table->string('path', 250)->nullable()->index();
+            $table->string('icon', 250)->nullable();
         });
     }
 
