@@ -16,9 +16,11 @@ class PlansRepository extends BaseRepository {
      * @param $type_id
      * @return mixed
      */
-    public function getPlansByType($type_id, $limit = 20) {
+    public function getPlansByType($type_id, $complex, $limit = 20) {
 
-        $plans = $this->model->where('plans_type', '=', $type_id)->get();
+        $plans = $this->model
+            ->where('plans_type', '=', $type_id)
+            ->get();
 
         return $plans;
     }

@@ -10,6 +10,9 @@ Route::group(['middleware' => 'web'], function () {
     // News
     Route::get('/novosti/', array('as' => 'news.index', 'uses' => 'NewsController@index'));
 
+    // Планировки
+    Route::get('/planirovki/', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
+
     // Страница комплекса
     Route::get('/{complex}/', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
 

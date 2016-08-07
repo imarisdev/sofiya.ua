@@ -11,6 +11,20 @@ class HouseRepository extends BaseRepository {
 
     }
 
+    /**
+     * Дома комплекса
+     * @param $complex_id
+     * @return mixed
+     */
+    public function getByComplexId($complex_id) {
+
+        $houses = $this->model
+            ->where('complex_id', '=', $complex_id)
+            ->get();
+
+        return $houses;
+    }
+
     private function saveHouse($house, $inputs) {
 
         $house->title = $inputs['title'];
