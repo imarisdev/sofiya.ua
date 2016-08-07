@@ -14,11 +14,11 @@
                 @include('includes.header.header')
             @show
 
-            <div class="wrapper clearfix">
-                <div class="content">
-                    @yield('content')
-                </div>
+
+            <div class="content">
+                @yield('content')
             </div>
+
 
             <footer>
                 @include('includes.footer')
