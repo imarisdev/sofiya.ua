@@ -50,15 +50,50 @@ class Helpers {
      * @param $position
      * @return mixed
      */
-    public static function getMenu($position) {
+    public static function getMenu($position, $order = 'order') {
 
        $menu = DB::table('menu')
-            ->where('position', '=', $position)
+           ->where('position', '=', $position)
+           ->where('status', '=', 1)
+           ->orderBy($order, 'asc')
+           ->get();
+
+        //dd( self::buildMenu((array) $menu));
+        return self::buildMenu((array) $menu);
+
+    }
+
+    /**
+     * Рекурсивно строит меню
+     * @param $items
+     * @return array
+     */
+    public static function buildMenu($items) {
+
+        $menu = [];
+
+        foreach ($items as $key => $item) {
+            if($item->parent == 0) {
+                $menu[$item->id]['item'] = (array) $item;
+            } else {
+                $menu[$item->parent]['child'][$item->id]['item'] = (array) $item;
+            }
+        }
+
+        return $menu;
+    }
+
+    /**
+     * Возвдращает список комплексов
+     * @return mixed
+     */
+    public static function getComplex() {
+
+        $complex = DB::table('complex')
             ->where('status', '=', 1)
-            ->orderBy('order', 'asc')
             ->get();
 
-       return $menu;
+        return $complex;
 
     }
 
