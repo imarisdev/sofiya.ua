@@ -7,6 +7,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
     Route::get('/clear/', array('as' => 'home.clear', 'uses' => 'HomeController@clear'));
 
+    // News
+    Route::get('/novosti/', array('as' => 'news.index', 'uses' => 'NewsController@index'));
+
     // Страница комплекса
     Route::get('/{complex}/', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
 

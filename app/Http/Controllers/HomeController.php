@@ -13,7 +13,7 @@ class HomeController extends Controller {
     }
 
     /**
-     * Главная траница
+     * Главная страница
      * @return mixed
      */
     public function index() {
