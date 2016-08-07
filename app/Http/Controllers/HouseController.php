@@ -36,7 +36,7 @@ class HouseController extends Controller {
 
         $type = $this->types->getPlansTypeBySlug($type);
 
-        $plans = $this->plans->getPlansByType($type['key']);
+        $plans = $this->plans->getPlansByType($type['key'], $complex);
 
         return view('house.index', compact('complex', 'house', 'plans', 'type'));
 

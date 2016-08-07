@@ -38,4 +38,13 @@ class PlansController extends Controller {
         return view('plans.index', compact('complex', 'house', 'plan', 'type'));
     }
 
+    /**
+     * Страница всех планировок
+     */
+    public function allPlans() {
+
+        return view('plans.allplans');
+
+    }
+
 }

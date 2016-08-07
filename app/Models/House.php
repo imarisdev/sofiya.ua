@@ -40,6 +40,14 @@ class House extends BaseModel {
     }
 
     /**
+     * Список планировок - кэшируемый
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function plansCache() {
+        return $this->hasMany('App\Models\Plans')->remember(Config::get('cache.time.short'));
+    }
+
+    /**
      * Тип здания
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
