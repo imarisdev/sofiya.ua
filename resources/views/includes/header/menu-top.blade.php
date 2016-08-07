@@ -1,6 +1,17 @@
 <ul class="menu">
-
-    <li class="parent-menu js-parent">
+    @foreach(Helpers::getMenu('head') as $item)
+        <li @if(!empty($item['child'])) class="parent-menu js-parent" @endif>
+            <a href="{{ $item['item']['slug'] }}">{{ $item['item']['title'] }}</a>
+            @if(!empty($item['child']))
+                <ul class="js-child child-menu">
+                    @foreach($item['child'] as $child)
+                        <li><a href="{{ $child['item']['slug'] }}">{{ $child['item']['title'] }}</a></li>
+                    @endforeach
+                </ul>
+            @endif
+        </li>
+    @endforeach
+    {{--<li class="parent-menu js-parent">
         <a href="#" >ЖК МАРТЫНОВ</a>
         <ul class="js-child child-menu">
             <li><a href="#">ddd</a></li>
@@ -31,5 +42,5 @@
     <li><a href="#">ГЕНПЛАН</a></li>
     <li><a href="#">ЖКХ</a></li>
     <li><a href="#">ФОТО</a></li>
-    <li><a href="#">ВИДЕО</a></li>
+    <li><a href="#">ВИДЕО</a></li>--}}
 </ul>
