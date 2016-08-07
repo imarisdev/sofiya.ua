@@ -15,26 +15,26 @@
 
     <div class="item cell">
         <a href="" class="text cell m_b-15">Открыты новые спортивные объекты в ЖК София!</a>
-        <div class="fl_l">24.04.2016</div>
-        <div class="fl_r m_r-10"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
+        <div class="fl_l m_r-20">24.04.2016</div>
+        <div class="fl_l"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
     </div>
 
     <div class="item cell">
         <a href="" class="text cell m_b-15">Новый сервис для жильцов ЖК «София»</a>
-        <div class="fl_l">24.04.2016</div>
-        <div class="fl_r m_r-10"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
+        <div class="fl_l m_r-20">24.04.2016</div>
+        <div class="fl_l"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
     </div>
 
     <div class="item cell">
         <a href="" class="text cell m_b-15">Ждем Вас в фитнес-клубе « София Sport»</a>
-        <div class="fl_l">24.04.2016</div>
-        <div class="fl_r m_r-10"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
+        <div class="fl_l m_r-20">24.04.2016</div>
+        <div class="fl_l"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
     </div>
 
     <div class="item cell">
         <a href="" class="text cell m_b-15">Поступление в продажу квартир в новом доме!</a>
-        <div class="fl_l">24.04.2016</div>
-        <div class="fl_r m_r-10"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
+        <div class="fl_l m_r-20">24.04.2016</div>
+        <div class="fl_l"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">23</span></div>
     </div>
 </div>
 
