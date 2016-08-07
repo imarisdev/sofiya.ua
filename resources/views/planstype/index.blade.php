@@ -4,10 +4,11 @@
     <div class="clearfix wrapper">
         <h1 class="text-center">{{ $type['title'] }}</h1>
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
-        <div class="cell9 p_r-10">
+
+        <div class="cell9 p_r-10 cell-md">
             <div class="cell type-plans">
                 @foreach($plans as $plan)
-                    <div class="cell6">
+                    <div class="cell6 cell-xs">
                         <div class="item box-border cell">
                             <div class="cell6">
                                 <img src="/img/martinov/zagl.png" alt="{{ $plan->houseCahce->streetCache->title }}">
@@ -32,7 +33,7 @@
             @include('planstype.seo-text-block')
         </div>
 
-        <div class="cell3 p_l-5">
+        <div class="cell3 p_l-5 cell-md">
             @include('includes.sidebar')
         </div>
     </div>
