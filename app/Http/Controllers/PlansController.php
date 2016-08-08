@@ -43,7 +43,22 @@ class PlansController extends Controller {
      */
     public function allPlans() {
 
-        return view('plans.allplans');
+        $types = $this->types->getPlansTypes();
+
+        return view('plans.allplans', compact('types'));
+
+    }
+
+    /**
+     * Страница типа планировок
+     * @param $type
+     * @return mixed
+     */
+    public function typePlans($type) {
+
+        $type = $this->types->getPlansTypeBySlug($type);
+
+        return view('plans.typeplans', compact('type'));
 
     }
 

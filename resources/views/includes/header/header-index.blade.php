@@ -7,7 +7,7 @@
             <div class="wrapper">
                 <ul>
                     @foreach(Helpers::getMenu('top') as $item)
-                        <li><a href="{{ $item['item']['slug'] }}">{{ $item['item']['title'] }}</a></li>
+                        <li><a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
                     @endforeach
                 </ul>
             </div>

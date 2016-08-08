@@ -6,7 +6,7 @@
             <div class="wrapper">
                 <ul>
                     @foreach(Helpers::getMenu('top') as $item)
-                        <li><a href="{{ $item['item']['slug'] }}">{{ $item['item']['title'] }}</a></li>
+                        <li><a @if($item['item']['external'] == 1) target="_blank" @endif href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -23,19 +23,19 @@
 
         <div class="nav-bottom cell">
             <div class="logo fl_l">
-                <a href="/">
+                <a href="{{ Helpers::createComplexLink('jk-klubniy', Request::segment(2)) }}">
                     <div class="top-logo-part">
                         <img src="/img/logo-11.png" alt="">
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="{{ Helpers::createComplexLink('jk-martinov', Request::segment(2)) }}">
                     <div class="main-logo-part">
                         <img src="/img/logo.png" alt="">
                     </div>
                 </a>
 
-                <a href="#">
+                <a href="{{ Helpers::createComplexLink('jk-elitniy', Request::segment(2)) }}">
                     <div class="bottom-logo-part">
                         <img src="/img/logo-1.png" alt="">
                     </div>

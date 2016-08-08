@@ -74,9 +74,16 @@ class Helpers {
 
         foreach ($items as $key => $item) {
             if($item->parent == 0) {
-                $menu[$item->id]['item'] = (array) $item;
+                if($item->external == 0) {
+                    $menu[$item->id]['item'] = (array) $item;
+                    $menu[$item->id]['item']['link']  = "/{$item->path}/";
+                } else {
+                    $menu[$item->id]['item'] = (array) $item;
+                    $menu[$item->id]['item']['link']  = $item->path;
+                }
             } else {
                 $menu[$item->parent]['child'][$item->id]['item'] = (array) $item;
+                $menu[$item->parent]['child'][$item->id]['item']['link']  = "/{$item->path}/";
             }
         }
 
@@ -97,5 +104,19 @@ class Helpers {
 
     }
 
+    /**
+     * Создает ссылку для лого комплексов
+     * @param $complex
+     * @param null $path
+     */
+    public static function createComplexLink($complex, $path = null) {
+
+        if(!empty($path)) {
+            return "/{$complex}/{$path}/";
+        } else {
+            return "/{$complex}/";
+        }
+
+    }
 
 }

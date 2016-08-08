@@ -28,4 +28,42 @@ class ComplexController extends Controller {
         return view('complex.index', compact('complex', 'types'));
     }
 
+    /**
+     * Фото-галерея комплекса
+     * @param $complex
+     * @return mixed
+     */
+    public function gallery($complex) {
+
+        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+
+        return view('complex.gallery', compact('complex'));
+
+    }
+
+    /**
+     * Видеофайлы комплекса
+     * @param $complex
+     * @return mixed
+     */
+    public function video($complex) {
+
+        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+
+        return view('complex.video', compact('complex'));
+
+    }
+
+    /**
+     * Школа и садик
+     * @param $complex
+     * @return mixed
+     */
+    public function kids($complex) {
+
+        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+
+        return view('complex.kids', compact('complex'));
+
+    }
 }

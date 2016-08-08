@@ -22,6 +22,7 @@ class CreateMenuTable extends Migration
             $table->string('slug', 250)->index();
             $table->string('path', 250)->nullable()->index();
             $table->string('icon', 250)->nullable();
+            $table->smallInteger('external')->default(0);
         });
     }
 
