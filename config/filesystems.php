@@ -64,4 +64,10 @@ return [
 
     ],
 
+    'folder' => [
+        'uploads' => '/uploads/'
+    ],
+
+    'fileowner' => 'www-data'
+
 ];
