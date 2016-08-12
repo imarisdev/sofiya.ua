@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories;
 
+use Response;
 use App\Models\Complex;
 
 class ComplexRepository extends BaseRepository {
@@ -36,6 +37,65 @@ class ComplexRepository extends BaseRepository {
             ->get();
 
         return $complex;
+
+    }
+
+    /**
+     * Метод сохранения
+     * @param $user
+     * @param $inputs
+     * @return mixed
+     */
+    private function save($complex, $inputs) {
+
+        $complex->title = $inputs['title'];
+        $complex->slug = $inputs['slug'];
+
+        try {
+
+            $complex->save();
+
+            return Response::json(['item' => $complex], 201);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
+
+    }
+
+    /**
+     * Обновление данных
+     * @param $inputs
+     */
+    public function update($complex, $inputs) {
+
+        return $this->save($complex, $inputs);
+
+    }
+
+    /**
+     * Создание
+     * @param $inputs
+     */
+    public function store($inputs) {
+
+        return $this->save(new $this->model, $inputs);
+
+    }
+
+    /**
+     * Удаление
+     * @param $house
+     */
+    public function destroy($complex) {
+
+        try {
+
+            $complex->delete();
+
+            return Response::json(['item' => true], 200);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
 
     }
 

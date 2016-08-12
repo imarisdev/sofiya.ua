@@ -12,7 +12,7 @@
             @foreach($house->plans()->where('plans_type', $type['key'])->get() as $plan)
                 <div class="cell6">
                     <div class="item">
-                        <a class="text-center" href="/{{ $complex->slug }}/{{ $type['slug'] }}/{{ $house->link() }}/{{ $plan->link() }}/">{{ $plan->title }}</a>
+                        <a class="text-center" href="/{{ $complex->slug }}/{{ $type['slug'] }}/{{ $house->link() }}/{{ $plan->link() }}">{{ $plan->title }}</a>
                     </div>
                 </div>
             @endforeach
