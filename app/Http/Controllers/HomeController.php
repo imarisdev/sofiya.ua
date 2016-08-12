@@ -20,13 +20,4 @@ class HomeController extends Controller {
 
         return view('home.index');
     }
-
-    /**
-     * Очистка кэша
-     */
-    //TODO: временно
-    public function clear() {
-        Cache::flush();
-        header('Location: /');
-    }
 }

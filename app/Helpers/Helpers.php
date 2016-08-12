@@ -76,14 +76,14 @@ class Helpers {
             if($item->parent == 0) {
                 if($item->external == 0) {
                     $menu[$item->id]['item'] = (array) $item;
-                    $menu[$item->id]['item']['link']  = "/{$item->path}/";
+                    $menu[$item->id]['item']['link']  = "/{$item->path}";
                 } else {
                     $menu[$item->id]['item'] = (array) $item;
                     $menu[$item->id]['item']['link']  = $item->path;
                 }
             } else {
                 $menu[$item->parent]['child'][$item->id]['item'] = (array) $item;
-                $menu[$item->parent]['child'][$item->id]['item']['link']  = "/{$item->path}/";
+                $menu[$item->parent]['child'][$item->id]['item']['link']  = "/{$item->path}";
             }
         }
 

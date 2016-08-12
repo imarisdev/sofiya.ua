@@ -4,32 +4,56 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::auth();
 
+    Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
+        Route::get('/home', array('as' => 'admin.home', 'uses' => 'HomeController@index'));
+
+        // Сервисы
+        Route::get('/cache', array('as' => 'admin.cache', 'uses' => 'ServicesController@cache'));
+
+        // Пользователи
+        Route::get('/users', array('as' => 'admin.users', 'uses' => 'UsersController@index'));
+        Route::get('/users/edit/{id}', array('as' => 'admin.users.edit', 'uses' => 'UsersController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/users/create', array('as' => 'admin.users.create', 'uses' => 'UsersController@create'));
+        Route::post('/users/save', array('as' => 'admin.users.save', 'uses' => 'UsersController@store'));
+        Route::post('/users/update', array('as' => 'admin.users.save', 'uses' => 'UsersController@update'));
+        Route::post('/users/delete', array('as' => 'admin.users.delete', 'uses' => 'UsersController@delete'));
+
+        // Комплексы
+        Route::get('/complex', array('as' => 'admin.complex', 'uses' => 'ComplexController@index'));
+        Route::get('/complex/edit/{id}', array('as' => 'admin.complex.edit', 'uses' => 'ComplexController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/complex/create', array('as' => 'admin.complex.create', 'uses' => 'ComplexController@create'));
+        Route::post('/complex/save', array('as' => 'admin.complex.save', 'uses' => 'ComplexController@store'));
+        Route::post('/complex/update', array('as' => 'admin.complex.save', 'uses' => 'ComplexController@update'));
+        Route::post('/complex/delete', array('as' => 'admin.complex.delete', 'uses' => 'ComplexController@delete'));
+
+    });
+
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
-    Route::get('/clear/', array('as' => 'home.clear', 'uses' => 'HomeController@clear'));
 
     // Images resize
     Route::get('/uploads/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
 
     // News
-    Route::get('/novosti/', array('as' => 'news.index', 'uses' => 'NewsController@index'));
+    Route::get('/novosti', array('as' => 'news.index', 'uses' => 'NewsController@index'));
 
     // Планировки
-    Route::get('/planirovki/', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
-    Route::get('/planirovki/{type}/', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
+    Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
+    Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
 
     // Страница комплекса
-    Route::get('/{complex}/', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/photo-gallery/', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/video/', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/kids-study/', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/{complex}/photo-gallery', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/{complex}/kids-study', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
 
     // Страница типа планировки
-    Route::get('/{complex}/{type}/', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
+    Route::get('/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
     // Страница дома
     Route::get('/{complex}/{type}/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
     // Страница планировки
-    Route::get('/{complex}/{type}/{id}-{house}/{pid}-{plan}/', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+', 'pid' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
+    Route::get('/{complex}/{type}/{id}-{house}/{pid}-{plan}', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+', 'pid' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
 });
