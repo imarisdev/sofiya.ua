@@ -4,7 +4,7 @@
     <h1>{{ $house->title }}</h1>
     <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
-    <div class="cell9 p_r-10">
+    <div class="cell9 p_r-10 cell-md">
         <div class="cell">
             <p>Транспорт: {{ $house->transport }}</p>
             <p>До остановки: {{ $house->to_stop }}</p>
@@ -18,7 +18,8 @@
             @endforeach
         </div>
     </div>
-    <div class="cell3 p_l-5">
+
+    <div class="cell3 p_l-5 cell-md">
 
     </div>
 @endsection
