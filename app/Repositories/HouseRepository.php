@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories;
 
+use Response;
 use App\Models\House;
 
 class HouseRepository extends BaseRepository {
@@ -45,15 +46,34 @@ class HouseRepository extends BaseRepository {
      * @return mixed
      */
     private function save($house, $inputs) {
-
-        $house->title = $inputs['title'];
+        
+        $house->title           = $inputs['title'];
+        $house->status          = $inputs['status'];
+        $house->street_id       = $inputs['street_id'];
+        $house->complex_id      = $inputs['complex_id'];
+        $house->is_rent         = $inputs['is_rent'];
+        $house->number          = $inputs['number'];
+        $house->is_installments = $inputs['is_installments'];
+        $house->parking         = $inputs['parking'];
+        $house->building_type   = $inputs['building_type'];
+        $house->floors          = $inputs['floors'];
+        $house->transport       = $inputs['transport'];
+        $house->to_stop         = $inputs['to_stop'];
+        $house->completion_at   = $inputs['completion_at'];
+        $house->content         = $inputs['content'];
 
         if(empty($inputs['slug'])) {
             $house->slug = $this->createSlug($inputs['title']);;
         }
 
-        return $house;
+        try {
 
+            $house->save();
+
+            return Response::json(['item' => $house], 201);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
     }
 
     /**
