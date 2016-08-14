@@ -7,7 +7,7 @@
 
         <div class="cell9 p_r-10 cell-md">
             @if(!empty($plans) && count($plans) > 0)
-                <div class="cell type-plans">
+                <div class="cell type-plans m_b-20">
                     @foreach($plans as $plan)
                         <div class="cell6 cell-xs">
                             <div class="item box-border cell">
