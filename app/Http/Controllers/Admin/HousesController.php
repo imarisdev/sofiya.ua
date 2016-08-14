@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\BuildingTypesRepository;
+use App\Repositories\ComplexRepository;
+use App\Repositories\StreetRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
 use App\Repositories\HouseRepository;
@@ -8,11 +11,16 @@ use App\Repositories\HouseRepository;
 class HousesController extends AdminController implements AdminItemContract {
 
     protected $house;
+    protected $street;
+    protected $complex;
+    protected $building_types;
 
-    public function __construct(HouseRepository $house) {
+    public function __construct(HouseRepository $house, StreetRepository $street, ComplexRepository $complex, BuildingTypesRepository $building_types) {
 
         $this->house = $house;
-
+        $this->street = $street;
+        $this->complex = $complex;
+        $this->building_types = $building_types;
     }
 
     /**
@@ -35,7 +43,13 @@ class HousesController extends AdminController implements AdminItemContract {
      */
     public function create() {
 
-        return view('admin.houses.create');
+        $streets = $this->street->getStreetsForSelect();
+
+        $complex = $this->complex->getComplexesForSelect();
+
+        $building_types = $this->building_types->getTypesForSelect();
+
+        return view('admin.houses.create', compact('streets', 'complex', 'building_types'));
     }
 
     /**
@@ -57,7 +71,13 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $house = $this->house->getById($id);
 
-        return view('admin.houses.edit', compact('house'));
+        $streets = $this->street->getStreetsForSelect();
+
+        $complex = $this->complex->getComplexesForSelect();
+
+        $building_types = $this->building_types->getTypesForSelect();
+
+        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types'));
     }
 
     /**
