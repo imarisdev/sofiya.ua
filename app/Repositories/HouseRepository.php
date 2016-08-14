@@ -25,41 +25,71 @@ class HouseRepository extends BaseRepository {
         return $houses;
     }
 
-    private function saveHouse($house, $inputs) {
+    /**
+     * Список домов
+     * @param null $request
+     * @param int $limit
+     * @return mixed
+     */
+    public function getHouses($request = null, $limit = 20) {
+
+        $house = $this->model;
+
+        return $house->paginate($limit);
+    }
+
+    /**
+     * Сохранение
+     * @param $house
+     * @param $inputs
+     * @return mixed
+     */
+    private function save($house, $inputs) {
 
         $house->title = $inputs['title'];
+
+        if(empty($inputs['slug'])) {
+            $house->slug = $this->createSlug($inputs['title']);;
+        }
 
         return $house;
 
     }
 
     /**
-     * Обновление данных дома
+     * Обновление данных
      * @param $inputs
      */
-    public function update($post, $inputs) {
+    public function update($house, $inputs) {
 
-        $house = $this->saveHouse($post, $inputs);
+        return $this->save($house, $inputs);
 
     }
 
     /**
-     * Создание нового дома
+     * Создание
      * @param $inputs
      */
     public function store($inputs) {
 
-        $house = $this->saveHouse(new $this->model, $inputs);
+        return $this->save(new $this->model, $inputs);
 
     }
 
     /**
-     * Удаляет дом
+     * Удаление
      * @param $house
      */
     public function destroy($house) {
 
-        $house->delete();
+        try {
+
+            $house->delete();
+
+            return Response::json(['item' => true], 200);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
 
     }
 }

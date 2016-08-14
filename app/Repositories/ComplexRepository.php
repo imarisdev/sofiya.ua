@@ -49,7 +49,10 @@ class ComplexRepository extends BaseRepository {
     private function save($complex, $inputs) {
 
         $complex->title = $inputs['title'];
-        $complex->slug = $inputs['slug'];
+
+        if(empty($inputs['slug'])) {
+            $complex->slug = $this->createSlug($inputs['title']);;
+        }
 
         try {
 
