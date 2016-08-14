@@ -14,6 +14,20 @@ $(document).ready(function () {
         pagination: false
     });
 
+    $("#owl-carousel-video-page").owlCarousel({
+        navigation: true,
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        items: 5,
+        itemsCustom: false,
+        itemsDesktop: [1199, 4],
+        itemsDesktopSmall: [990, 3],
+        itemsTablet: [815, 2],
+        itemsTabletSmall: [640, 1],
+        navigationText: ["", ""],
+        pagination: false
+    });
+
     //list
     $('.js-parent').hover(function () {
        // $(this).find('.js-child').toggle('slow');

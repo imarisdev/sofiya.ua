@@ -804,6 +804,7 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    font-family: KelsonSans;
 }
 
 .video-wrapper {
@@ -821,6 +822,14 @@ a {
     margin: 0 auto 20px;
 }
 
+.page-video .video-wrapper,
+.page-video .video-wrapper iframe {
+    max-width: 890px;
+    max-height: 540px;
+}
+.page-video .video-wrapper {
+    padding-bottom: 57%;
+}
 .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -1082,7 +1091,8 @@ a {
     font-weight: 400;
     line-height: 24px;
 }
-.seo-text .title {
+.seo-text .title,
+.seo-text .title-page {
     color: black;
     font-family: KelsonSans;
     font-size: 18px;
@@ -1593,14 +1603,53 @@ a {
 }
 
 .br-item {
-
+    position: relative;
+    float: left;
+    min-height: 32px;
+    min-width: 32px;
+    margin-right: 10px;
+    padding: 4px 13px 0;
+    line-height: 28px;
+    background-color: white;
+    box-shadow: 0 0 3.9px 0.1px rgba(26, 25, 25, 0.35);
+    color: #01415f;
+    font-family: KelsonSans;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
 }
+
+.br-item:hover {
+    background-color: #edfafd;
+}
+
 span.br-item {
-
+    pointer-events: none;
 }
+
 a.br-item {
-
+    cursor: pointer;
 }
+
+.br-item.next:after,
+.br-item.prev:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+.br-item.next:after {
+    background: url(/img/sprites.png)no-repeat 0 -384px;
+}
+
+.br-item.prev:after {
+    background: url(/img/sprites.png)no-repeat 0 -362px;
+}
+
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;
