@@ -48,6 +48,11 @@ var Admin = {
         this.formSelectInit();
 
         /**
+         * Инициализация редактора
+         */
+        this.initCKEditor();
+
+        /**
          * Сохранение данных формы
          */
         this.saveBtn.on('click', function(e) {
@@ -92,6 +97,17 @@ var Admin = {
     },
     setTtemEditLink: function() {
         this.itemEditLink = this.editForm.data('edit');
+    },
+    initCKEditor: function() {
+        if($('[name=content]').length > 0) {
+            CKEDITOR.replace('content', {
+                height: '300',
+                extraAllowedContent: 'div(*); span(*); blockquote(*); p(*); ul(*); ol(*)',
+                allowedContent: true,
+                enterMode: CKEDITOR.ENTER_P,
+                forceEnterMode: true
+            });
+        }
     },
     updateCKEditor: function() {
 

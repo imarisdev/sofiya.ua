@@ -24,7 +24,7 @@
         <![endif]-->
 
         <!-- Scripts -->
-        <script src="//cdn.ckeditor.com/4.5.5/full/ckeditor.js"></script>
+        <script src="//cdn.ckeditor.com/4.5.10/standard/ckeditor.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
         <script src="{{ elixir('js/admin-common.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2-rc.1/js/select2.min.js"></script>

@@ -27,9 +27,28 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/complex/update', array('as' => 'admin.complex.save', 'uses' => 'ComplexController@update'));
         Route::post('/complex/delete', array('as' => 'admin.complex.delete', 'uses' => 'ComplexController@delete'));
 
+        // Улицы
+        Route::get('/streets', array('as' => 'admin.streets', 'uses' => 'StreetsController@index'));
+        Route::get('/streets/edit/{id}', array('as' => 'admin.streets.edit', 'uses' => 'StreetsController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/streets/create', array('as' => 'admin.streets.create', 'uses' => 'StreetsController@create'));
+        Route::post('/streets/save', array('as' => 'admin.streets.save', 'uses' => 'StreetsController@store'));
+        Route::post('/streets/update', array('as' => 'admin.streets.save', 'uses' => 'StreetsController@update'));
+        Route::post('/streets/delete', array('as' => 'admin.streets.delete', 'uses' => 'StreetsController@delete'));
+
+        // Дома
+        Route::get('/houses', array('as' => 'admin.houses', 'uses' => 'HousesController@index'));
+        Route::get('/houses/edit/{id}', array('as' => 'admin.houses.edit', 'uses' => 'HousesController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/houses/create', array('as' => 'admin.houses.create', 'uses' => 'HousesController@create'));
+        Route::post('/houses/save', array('as' => 'admin.houses.save', 'uses' => 'HousesController@store'));
+        Route::post('/houses/update', array('as' => 'admin.houses.save', 'uses' => 'HousesController@update'));
+        Route::post('/houses/delete', array('as' => 'admin.houses.delete', 'uses' => 'HousesController@delete'));
+
     });
 
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
+
+    // Контакты
+    Route::get('/kontakty', array('as' => 'admin.kontakty', 'uses' => 'ContactsController@index'));
 
     // Images resize
     Route::get('/uploads/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
