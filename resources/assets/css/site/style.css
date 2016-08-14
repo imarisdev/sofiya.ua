@@ -1662,6 +1662,84 @@ a.br-item {
     padding: 6px;
     text-align: center;
 }
+
+.contacts-info p {
+    color: black;
+    font-family: KelsonSans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.contacts-info h4 {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+.contacts-info .item {
+    padding-left: 55px;
+}
+.contacts-info .item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+}
+.contacts-info .item:first-child:after {
+    background: url(/img/sprites.png)no-repeat 0 -415px;
+}
+.contacts-info .item:nth-child(2):after {
+    background: url(/img/sprites.png)no-repeat 0 -468px;
+}
+.contacts-info .item:nth-child(3):after {
+    top: 10px;
+    background: url(/img/sprites.png)no-repeat 0 -522px;
+}
+
+.contacts-info .social li a {
+    width: 37px;
+    height: 32px;
+    background-position-x: -52px;
+}
+
+.contacts-info .social .fb {
+    background-position-y: -25px;
+}
+
+
+.item-manager {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.item-manager .name {
+    font-size: 18px;
+    margin: 20px 0 15px;
+}
+
+.item-manager p {
+    line-height: 26px;
+}
+
+.relative {
+    position: relative;
+}
+
+.item-manager .icon-phone {
+    position: absolute;
+    top: 8px;
+    left: 30px;
+}
+.item-manager p.mail {
+    padding-left: 28px;
+    text-align: left;
+}
+
+.item-manager p.mail i {
+    margin-right: 8px;
+}
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;

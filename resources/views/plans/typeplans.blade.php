@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="clearfix wrapper">
-        <h1 class="text-center">{{ $type['title'] }}</h1>
+        <h1 class="text-center cell title">{{ $type['title'] }}</h1>
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
