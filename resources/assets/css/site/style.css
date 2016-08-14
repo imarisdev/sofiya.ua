@@ -1091,6 +1091,14 @@ a {
     font-weight: 400;
     line-height: 24px;
 }
+
+h1.title {
+    margin: 10px 0 20px;
+    font-family: KelsonSans;
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .seo-text .title,
 .seo-text .title-page {
     color: black;
@@ -1381,7 +1389,7 @@ a {
     margin: 0 0 20px;
     line-height: 24px;
     color: #444;
-    font-family: Tahoma;
+    font-family: Arial, sans-serif;
     font-size: 15px;
     font-weight: 400;
 }
@@ -1389,7 +1397,7 @@ a {
 .blue-block-info {
     display: table;
     min-height: 80px;
-    padding: 20px;
+    padding: 20px 20px 15px;
     color: black;
     font-family: KelsonSans;
     font-size: 14px;
@@ -1650,6 +1658,10 @@ a.br-item {
     background: url(/img/sprites.png)no-repeat 0 -362px;
 }
 
+.gallery-item {
+    padding: 6px;
+    text-align: center;
+}
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;

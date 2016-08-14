@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="wrapper clearfix">
-        <h1>{{ $complex->title }}</h1>
+        <h1 class="cell text-center title">{{ $complex->title }}</h1>
 
         <div class="cell seo-text">{!! $complex->content !!}</div>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>{{ $plan->title }}</h1>
+    <h1 class="cell text-center title">{{ $plan->title }}</h1>
     <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
     <div class="cell9 p_r-10 cell-md">
