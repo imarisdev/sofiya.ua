@@ -40,6 +40,22 @@ class HouseRepository extends BaseRepository {
     }
 
     /**
+     * Список домов для формы
+     * @return array
+     */
+    public function getHousesForSelect() {
+        $houses = $this->model->all();
+
+        $houses_list = array();
+
+        foreach($houses as $house) {
+            $houses_list[$house->id] = $house->title;
+        }
+
+        return $houses_list;
+    }
+
+    /**
      * Сохранение
      * @param $house
      * @param $inputs

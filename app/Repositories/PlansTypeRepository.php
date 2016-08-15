@@ -27,6 +27,21 @@ class PlansTypeRepository extends BaseRepository {
     }
 
     /**
+     * Типы планировок для формы
+     * @return array
+     */
+    public function getPlansTypesForSelect() {
+
+        $plans_type_list = array();
+
+        foreach($this->types as $key => $type) {
+            $plans_type_list[$key] = $type['title'];
+        }
+
+        return $plans_type_list;
+    }
+
+    /**
      * Возвращает ключ типа по линку
      * @param $slug
      * @return mixed

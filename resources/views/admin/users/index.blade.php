@@ -61,7 +61,7 @@
                                 <td>{{ date('d.m.Y H:i', strtotime($user->created_at)) }}</td>
                                 <td>
                                     <div class="admin-tools">
-                                        <a target="_blank" href="#" data-id="{{ $user->id }}" data-action="/admin/users" data-type="user" class="btn btn-danger btn-xs js-delete-item">Удалить</a>
+                                        <a target="_blank" href="#" data-id="{{ $user->id }}" data-action="/admin/users" data-type="user" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>
                                     </div>
                                 </td>
                             </tr>

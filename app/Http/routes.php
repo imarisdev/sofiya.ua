@@ -43,6 +43,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/houses/update', array('as' => 'admin.houses.save', 'uses' => 'HousesController@update'));
         Route::post('/houses/delete', array('as' => 'admin.houses.delete', 'uses' => 'HousesController@delete'));
 
+        // Планировки
+        Route::get('/plans', array('as' => 'admin.plans', 'uses' => 'PlansController@index'));
+        Route::get('/plans/edit/{id}', array('as' => 'admin.plans.edit', 'uses' => 'PlansController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/plans/create', array('as' => 'admin.plans.create', 'uses' => 'PlansController@create'));
+        Route::post('/plans/save', array('as' => 'admin.plans.save', 'uses' => 'PlansController@store'));
+        Route::post('/plans/update', array('as' => 'admin.plans.save', 'uses' => 'PlansController@update'));
+        Route::post('/plans/delete', array('as' => 'admin.plans.delete', 'uses' => 'PlansController@delete'));
+
     });
 
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
