@@ -24,14 +24,9 @@
                         (067) 971-4000</p>
                 </div>
 
-                <div class="item cell4">
+                <div class="item cell4 dark-social">
                     <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
-                    <ul class="social">
-                        <li><a class="vk" href="#"></a></li>
-                        <li><a class="fb" href="#"></a></li>
-                        <li><a class="gp" href="#"></a></li>
-                        <li><a class="yt" href="#"></a></li>
-                    </ul>
+                    @include('includes.social')
                 </div>
             </div>
 
