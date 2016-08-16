@@ -27,6 +27,23 @@ class StreetRepository extends BaseRepository {
     }
 
     /**
+     * Список улиц для формы
+     * @return array
+     */
+    public function getStreetsForSelect() {
+        $streets = $this->model->all();
+
+        $streets_list = array();
+
+        foreach($streets as $street) {
+            $streets_list[$street->id] = $street->title;
+        }
+
+        return $streets_list;
+    }
+
+
+    /**
      * Метод сохранения
      * @param $user
      * @param $inputs

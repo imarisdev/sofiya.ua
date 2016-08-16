@@ -41,6 +41,22 @@ class ComplexRepository extends BaseRepository {
     }
 
     /**
+     * Список комплексов для формы
+     * @return array
+     */
+    public function getComplexesForSelect() {
+        $complexes = $this->model->all();
+
+        $complexes_list = array();
+
+        foreach($complexes as $complex) {
+            $complexes_list[$complex->id] = $complex->title;
+        }
+
+        return $complexes_list;
+    }
+
+    /**
      * Метод сохранения
      * @param $user
      * @param $inputs

@@ -84,6 +84,9 @@ var Admin = {
         this.formOverlay = $(overlay);
     },
     setFormData: function() {
+
+        this.updateCKEditor();
+
         this.formData = new FormData();
 
         $('input[type="file"]').each(function ($i) {
@@ -110,7 +113,9 @@ var Admin = {
         }
     },
     updateCKEditor: function() {
-
+        for (i in CKEDITOR.instances) {
+            CKEDITOR.instances[i].updateElement();
+        }
     },
     formSelectInit: function() {
         $(this.formSelectClass).each(function(indx, element) {
@@ -131,7 +136,6 @@ var Admin = {
             type: 'POST',
             beforeSend: function(e) {
                 _this.formOverlay.show();
-                _this.updateCKEditor();
             },
             success: function (data) {
                 _this.formOverlay.hide();

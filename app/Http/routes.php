@@ -48,7 +48,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
 
     // Контакты
-    Route::get('/kontakty', array('as' => 'admin.kontakty', 'uses' => 'ContactsController@index'));
+    Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));
 
     // Images resize
     Route::get('/uploads/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
