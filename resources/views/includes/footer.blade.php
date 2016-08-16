@@ -8,12 +8,9 @@
             </div>
 
 
-            <ul class="cell2 social">
-                <li><a class="vk" href="#"></a></li>
-                <li><a class="fb" href="#"></a></li>
-                <li><a class="gp" href="#"></a></li>
-                <li><a class="yt" href="#"></a></li>
-            </ul>
+            <div class="cell2">
+                @include('includes.social')
+            </div>
 
             <div class="info-wrap cell-sm">
                 <div class="d_in mail m_t-15 m_r-20">
