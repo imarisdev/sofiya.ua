@@ -31,6 +31,7 @@ class CreateHousesTable extends Migration
             $table->smallInteger('parking')->default(0)->index();
             $table->integer('floors')->default(1)->index();
             $table->smallInteger('building_type')->nullable();
+            $table->smallInteger('decoration')->default(0)->nullable();
             $table->string('transport', 250)->nullable();
             $table->string('to_stop', 250)->nullable();
             $table->dateTime('completion_at')->index();

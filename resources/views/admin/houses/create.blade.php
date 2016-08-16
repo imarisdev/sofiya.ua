@@ -139,6 +139,27 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="decoration">Отделка</label>
+                                            @if(!empty($house->decoration))
+                                                {!! Form::select('decoration', ['Без отделки', 'C отделкой'], $house->decoration, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('decoration', ['Без отделки', 'C отделкой'], null, ['class' => 'form-control']) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                    </div>
+                                    <div class="col-md-3">
+
+                                    </div>
+                                    <div class="col-md-3">
+
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $house->content or '' }}</textarea>

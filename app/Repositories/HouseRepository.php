@@ -76,6 +76,7 @@ class HouseRepository extends BaseRepository {
         $house->transport       = $inputs['transport'];
         $house->to_stop         = $inputs['to_stop'];
         $house->completion_at   = $inputs['completion_at'];
+        $house->decoration      = $inputs['decoration'];
         $house->content         = $inputs['content'];
 
         if(empty($inputs['slug'])) {
