@@ -29,6 +29,10 @@
                     <div class="cell6 p_l-5">
                         @include('house.table-parameters')
                     </div>
+
+                    <div class="cell">
+                        @include('house.tabs')
+                    </div>
                 </div>
 
                 @foreach($house->plans()->where('plans_type', $type['key'])->get() as $plan)

@@ -86,3 +86,8 @@ $('body').on('touchend click', '.main-content', function () {
         return false;
     }
 });
+
+//tabs
+$(document).ready(function(){
+    $(".js-tabs").lightTabs();
+});
