@@ -10,7 +10,7 @@ class PlansTypeRepository extends BaseRepository {
         3 => ['slug' => 'trehkomnatnye-kvartiry', 'title' => 'Трехкомнатные квартиры'],
         4 => ['slug' => 'dvuhurovnevye-kvartiry', 'title' => 'Двухуровневые квартиры'],
         5 => ['slug' => 'nezhilye-pomeshcheniya', 'title' => 'Нежилые помещения'],
-        6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ']
+        //6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ']
     ];
 
 

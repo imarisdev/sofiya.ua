@@ -36,6 +36,14 @@ class HouseRepository extends BaseRepository {
 
         $house = $this->model;
 
+        if(!empty($request['decoration'])) {
+            $house = $house->where('decoration', '=', $request['decoration']);
+        }
+
+        if(!empty($request['complex_id'])) {
+            $house = $house->where('complex_id', '=', $request['complex_id']);
+        }
+
         return $house->paginate($limit);
     }
 
@@ -77,6 +85,8 @@ class HouseRepository extends BaseRepository {
         $house->to_stop         = $inputs['to_stop'];
         $house->completion_at   = $inputs['completion_at'];
         $house->decoration      = $inputs['decoration'];
+        $house->flats           = $inputs['flats'];
+        $house->class           = $inputs['class'];
         $house->content         = $inputs['content'];
 
         if(empty($inputs['slug'])) {

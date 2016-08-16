@@ -4257,13 +4257,14 @@ h1.title {
     font-size: 14px;
 }
 
-.type-plans .item .bus {
+.type-plans .item .bus,
+.bus-icons-block {
     padding-left: 25px;
     background: url('/img/sprites.png') no-repeat 0 -302px;
-
 }
 
-.type-plans .item .go-time {
+.type-plans .item .go-time,
+.go-icons-block {
     padding-left: 25px;
     background: url('/img/sprites.png') no-repeat 0 -327px;
 }
@@ -4402,7 +4403,7 @@ a.br-item {
     background: url(/img/sprites.png)no-repeat 0 -522px;
 }
 
-.contacts-info .social li a {
+.dark-social .social li a {
     width: 37px;
     height: 32px;
     background-position-x: -52px;
@@ -4443,6 +4444,53 @@ a.br-item {
 
 .item-manager p.mail i {
     margin-right: 8px;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    font-size: 16px;
+}
+
+.table .table-cell {
+    display: table-cell;
+    padding: 15px 15px 10px;
+}
+
+.table .table-row {
+    display: table-row;
+    background-color: rgba(83,209,238,0.1);
+}
+
+.table .table-row:nth-child(2n+1) {
+    background-color: #fff;
+}
+
+.table .table-cell .blue-title {
+    font-size: 14px;
+}
+.table-caption {
+    padding: 15px 15px 10px;
+    font-size: 18px;
+    background-color: rgba(83,209,238,0.1);
+}
+
+.one-line-block .blue-block-info .item {
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+.one-line-block .blue-block-info {
+    background-color: rgba(254,210,12,0.1);
+}
+.one-line-block .item:first-child {
+    font-size: 16px;
+}
+
+.one-line-block .item:last-child {
+    margin: 30px 0;
 }
 @media all and (max-width: 990px) {
     .cell-md {

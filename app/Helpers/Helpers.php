@@ -112,9 +112,9 @@ class Helpers {
     public static function createComplexLink($complex, $path = null) {
 
         if(!empty($path)) {
-            return "/{$complex}/{$path}/";
+            return "/{$complex}/{$path}";
         } else {
-            return "/{$complex}/";
+            return "/{$complex}";
         }
 
     }

@@ -75,6 +75,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/{complex}/kids-study', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
 
     // Страница типа планировки
+    Route::get('/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
     // Страница дома

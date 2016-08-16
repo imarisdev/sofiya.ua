@@ -91,11 +91,8 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="parking">Парковка</label>
-                                            @if(!empty($house->parking))
-                                                {!! Form::select('parking', ['Нет', 'Да'], $house->parking, ['class' => 'form-control']) !!}
-                                            @else
-                                                {!! Form::select('parking', ['Нет', 'Да'], null, ['class' => 'form-control']) !!}
-                                            @endif
+                                            <input type="text" class="form-control" id="parking" name="parking" placeholder="Парковка"
+                                                   value="{{ $house->parking or '' }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -151,7 +148,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-
+                                        <div class="form-group">
+                                            <label for="flats">Всего квартир</label>
+                                            <input type="text" class="form-control" id="flats" name="flats" placeholder="Всего квартир"
+                                                   value="{{ $house->flats or '' }}">
+                                        </div>
                                     </div>
                                     <div class="col-md-3">
 

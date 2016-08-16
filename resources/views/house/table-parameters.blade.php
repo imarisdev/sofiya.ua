@@ -1,4 +1,4 @@
-<div class="cell table-caption blue-title">жк мартынов</div>
+<div class="cell table-caption blue-title">{{ $complex->title }}</div>
 <div class="table">
     <div class="table-row">
         <div class="table-cell">
@@ -31,9 +31,7 @@
         <div class="table-cell">
             <span class="blue-title">АДРЕС:</span>
         </div>
-        <div class="table-cell">
-            ул. Леси Украинки, 20
-        </div>
+        <div class="table-cell">{{ $house->street->title }}, {{ $house->number }}</div>
     </div>
 
     <div class="table-row">
@@ -67,18 +65,14 @@
         <div class="table-cell">
             <span class="blue-title">ЭТАЖНОСТЬ:</span>
         </div>
-        <div class="table-cell">
-            2-12
-        </div>
+        <div class="table-cell">{{ $house->floors }}</div>
     </div>
 
     <div class="table-row">
         <div class="table-cell">
             <span class="blue-title">КВАРТИР:</span>
         </div>
-        <div class="table-cell">
-            360
-        </div>
+        <div class="table-cell">{{ $house->flats }}</div>
     </div>
 
     <div class="table-row">
@@ -94,9 +88,7 @@
         <div class="table-cell">
             <span class="blue-title">ПАРКИНГ:</span>
         </div>
-        <div class="table-cell">
-            Наземный на 1100 машин
-        </div>
+        <div class="table-cell">{{ $house->parking }}</div>
     </div>
 
     <div class="table-row">
