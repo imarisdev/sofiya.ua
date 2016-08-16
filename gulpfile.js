@@ -21,6 +21,7 @@ elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
         'wow.js',
+        'tabs.js',
         'site/common.js',
     ], 'public/js/common.js');
 });
