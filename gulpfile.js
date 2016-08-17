@@ -40,6 +40,7 @@ elixir(function (mix) {
     mix.styles([
         'admin/select2.min.css',
         'admin/bootstrap.min.css',
+        'admin/datepicker3.css',
         'admin/font-awesome.min.css',
         'admin/AdminLTE.min.css',
         'admin/skins/skin-blue.css',
@@ -51,6 +52,7 @@ elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
         'admin/bootstrap.min.js',
+        'admin/bootstrap-datepicker.js',
         'admin/select2.full.min.js',
         'admin/app.min.js',
         'admin/common.js'

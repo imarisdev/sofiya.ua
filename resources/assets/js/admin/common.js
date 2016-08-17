@@ -13,6 +13,7 @@ var Admin = {
     formDeleteBtnClass: '.js-delete-item',
     formOverlayClass: '.js-overlay',
     formSelectClass: '.js-form-select',
+    formDatePickerClass: '.js-date-picker',
     formData: null,
     formOverlay: null,
     editForm: null,
@@ -51,6 +52,11 @@ var Admin = {
          * Инициализация редактора
          */
         this.initCKEditor();
+
+        /**
+         * Инициализация поля даты
+         */
+        this.initDatePicker();
 
         /**
          * Сохранение данных формы
@@ -116,6 +122,14 @@ var Admin = {
         for (i in CKEDITOR.instances) {
             CKEDITOR.instances[i].updateElement();
         }
+    },
+    initDatePicker: function() {
+        $(this.formDatePickerClass).each(function(indx, element) {
+            $(element).datepicker({
+                autoclose: true,
+                format: 'yyyy-mm-dd'
+            });
+        });
     },
     formSelectInit: function() {
         $(this.formSelectClass).each(function(indx, element) {

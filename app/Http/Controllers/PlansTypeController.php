@@ -45,4 +45,19 @@ class PlansTypeController extends Controller {
 
     }
 
+    /**
+     * Квартиры под ключ
+     * @param $complex
+     * @param $type
+     * @return mixed
+     */
+    public function key($complex) {
+
+        $complex = $this->complex->getBySlug($complex);
+
+        $houses = $this->house->getHouses(['decoration' => 1, 'complex_id' => $complex->id]);
+
+        return view('planstype.key', compact('houses', 'complex'));
+    }
+
 }

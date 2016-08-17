@@ -112,11 +112,25 @@ class Helpers {
     public static function createComplexLink($complex, $path = null) {
 
         if(!empty($path)) {
-            return "/{$complex}/{$path}/";
+            return "/{$complex}/{$path}";
         } else {
-            return "/{$complex}/";
+            return "/{$complex}";
         }
 
+    }
+
+    /**
+     * Выводит строку сдачи дома
+     * @param $date
+     * @return string
+     */
+    public static function completion($date) {
+
+        $quarter = round((date('m', strtotime($date)) / 3));
+
+        $year = date('Y', strtotime($date));
+
+        return "{$quarter} квартал {$year} года";
     }
 
 }
