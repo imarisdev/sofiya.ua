@@ -119,4 +119,18 @@ class Helpers {
 
     }
 
+    /**
+     * Выводит строку сдачи дома
+     * @param $date
+     * @return string
+     */
+    public static function completion($date) {
+
+        $quarter = round((date('m', strtotime($date)) / 3));
+
+        $year = date('Y', strtotime($date));
+
+        return "{$quarter} квартал {$year} года";
+    }
+
 }

@@ -6,6 +6,22 @@ use App\Models\House;
 
 class HouseRepository extends BaseRepository {
 
+    private $house_class = [
+        1 => 'Комфорт-класс',
+        2 => 'Бизнес'
+    ];
+
+    private $house_decoration = [
+        1 => 'Без отделки',
+        2 => 'C отделкой'
+    ];
+
+    private $installments = [
+        1 => 'Рассрочка',
+        2 => 'Кредит',
+        3 => 'Вся сумма'
+    ];
+
     public function __construct(House $house) {
 
         $this->model = $house;
@@ -61,6 +77,30 @@ class HouseRepository extends BaseRepository {
         }
 
         return $houses_list;
+    }
+
+    /**
+     * Класы домов
+     * @return array
+     */
+    public function getHouseClass() {
+        return $this->house_class;
+    }
+
+    /**
+     * Отделка квартир
+     * @return array
+     */
+    public function getHouseDecoration() {
+        return $this->house_decoration;
+    }
+
+    /**
+     * Виды оплаты по дому
+     * @return array
+     */
+    public function getHouseInstallments() {
+        return $this->installments;
     }
 
     /**
