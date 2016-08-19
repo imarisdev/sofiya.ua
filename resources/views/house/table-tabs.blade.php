@@ -31,7 +31,9 @@
             <div class="table-cell">{{ $balcony_types[$item->balcony] }}</div>
             <div class="table-cell">{{ Helpers::completion($house->completion_at) }}</div>
             <div class="table-cell">
-                <img alt="" src="{{ Helpers::getImage($item->image, '0x70') }}" />
+                <a href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">
+                    <img alt="" src="{{ Helpers::getImage($item->image, '0x70') }}" />
+                </a>
             </div>
         </div>
     @endforeach
