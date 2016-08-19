@@ -1,3 +1,119 @@
+/*********************************
+* Slideshow Styling
+*********************************/
+#slideshow {
+    width: 435px;
+    height: 400px;
+    margin: 0;
+
+    position:relative;
+
+    overflow: hidden;
+}
+#slideshow.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+.img-wrapper {
+    min-width: 100%;
+    /*min-height: 100%;*/
+    height: 320px;
+    position: absolute;
+    top: 0;
+    /*bottom: 0;*/
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    overflow: hidden;
+
+    z-index:8;
+
+    background-size: cover;
+    background-position: center center;
+}
+#slideshow .img-wrapper.active {
+    z-index:10;
+}
+
+#slideshow .img-wrapper.last-active {
+    z-index:9;
+}
+
+/*********************************
+* Thumbnail Styling
+*********************************/
+.thumbs-container {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    left: 0;
+
+    z-index: 11;
+
+    background: #222222;
+    opacity: .9;
+}
+.thumbs-container.top {
+    top: 0;
+}
+.thumbs-container.bottom {
+    bottom: 0;
+}
+.prev, .next {
+    width: 3%;
+    min-width: 40px;
+    height: 48px;
+    padding: 46px 1%;
+
+    color: #999999;
+    cursor: pointer;
+}
+.prev { float: left; }
+.next { float: right; }
+.prev:hover, .next:hover {
+    color: #555555;
+}
+ul.thumbs {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    height: 70px;
+    padding: 0;
+    margin: 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+.thumb {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+
+    cursor: pointer;
+}
+.thumb:first-of-type {
+    margin-left: 0px;
+}
+.thumb.active {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #FFF;
+}
 @charset "UTF-8";
 /*!
 Animate.css - http://daneden.me/animate
@@ -4257,13 +4373,14 @@ h1.title {
     font-size: 14px;
 }
 
-.type-plans .item .bus {
+.type-plans .item .bus,
+.bus-icons-block {
     padding-left: 25px;
     background: url('/img/sprites.png') no-repeat 0 -302px;
-
 }
 
-.type-plans .item .go-time {
+.type-plans .item .go-time,
+.go-icons-block {
     padding-left: 25px;
     background: url('/img/sprites.png') no-repeat 0 -327px;
 }
@@ -4365,6 +4482,213 @@ a.br-item {
 .gallery-item {
     padding: 6px;
     text-align: center;
+}
+
+.contacts-info p {
+    color: black;
+    font-family: KelsonSans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.contacts-info h4 {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+.contacts-info .item {
+    padding-left: 55px;
+}
+.contacts-info .item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+}
+.contacts-info .item:first-child:after {
+    background: url(/img/sprites.png)no-repeat 0 -415px;
+}
+.contacts-info .item:nth-child(2):after {
+    background: url(/img/sprites.png)no-repeat 0 -468px;
+}
+.contacts-info .item:nth-child(3):after {
+    top: 10px;
+    background: url(/img/sprites.png)no-repeat 0 -522px;
+}
+
+.dark-social .social li a {
+    width: 37px;
+    height: 32px;
+    background-position-x: -52px;
+}
+
+.contacts-info .social .fb {
+    background-position-y: -25px;
+}
+
+
+.item-manager {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.item-manager .name {
+    font-size: 18px;
+    margin: 20px 0 15px;
+}
+
+.item-manager p {
+    line-height: 26px;
+}
+
+.relative {
+    position: relative;
+}
+
+.item-manager .icon-phone {
+    position: absolute;
+    top: 8px;
+    left: 30px;
+}
+.item-manager p.mail {
+    padding-left: 28px;
+    text-align: left;
+}
+
+.item-manager p.mail i {
+    margin-right: 8px;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    font-size: 16px;
+}
+
+.table .table-cell {
+    display: table-cell;
+    padding: 15px 15px 10px;
+}
+
+.table .table-row {
+    display: table-row;
+    background-color: rgba(83,209,238,0.1);
+}
+
+.table .table-row:nth-child(2n+1) {
+    background-color: #fff;
+}
+
+.table .table-cell .blue-title {
+    font-size: 14px;
+}
+.table-caption {
+    padding: 15px 15px 10px;
+    font-size: 18px;
+    background-color: rgba(83,209,238,0.1);
+}
+
+.one-line-block .blue-block-info .item {
+    display: block;
+    vertical-align: middle;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+.one-line-block .blue-block-info {
+    background-color: rgba(254,210,12,0.1);
+}
+.one-line-block .item:first-child {
+    font-size: 16px;
+}
+
+.one-line-block .item:last-child {
+    margin: 30px 0;
+}
+
+
+/*tabs*/
+
+.tabs{
+    display:inline-block;
+}
+.tabs > div{
+    padding-top: 10px;
+    margin-top: 20px;
+    background: white;
+    position: relative;
+    top: -1px;
+}
+.tabs ul{
+    margin:0px;
+    padding:0px;
+}
+.tabs ul:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 1px;
+    background: #d0d0d0;
+    position: relative;
+    top: -1px;
+}
+.tabs ul li{
+    float: left;
+    color: black;
+    font-family: KelsonSans;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 40px 10px;
+    white-space: nowrap;
+    width: 189px;
+    height: 48px;
+    background-color: #f3f3f3;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+.tabs ul li.active, .tabs ul li.active:hover{
+    background-color: white;
+    z-index: 2;
+    position: relative;
+    border-bottom: none;
+}
+.tabs ul li:hover{
+    background: #d6d6d7;
+    cursor: pointer;
+}
+
+
+.table-border {
+    border: 1px solid #53d1ee;
+    background: #fff;
+}
+.table-border .table-cell {
+    border-bottom: 1px solid #53d1ee;
+    border-right: 1px solid #53d1ee;
+}
+.table-border .table-row:last-child .table-cell {
+    border-bottom: none;
+}
+.table-border .table-row .table-cell:last-child{
+    border-right: none;
+}
+.table-border .table-cell {
+    padding: 25px 10px 20px;
+    border-bottom: 1px solid #53d1ee;
+    background: #fff;
+    text-align: center;
+}
+.table-caption .table-cell {
+    padding: 15px 10px 10px;
+    background-color: rgba(83,209,238,0.1);
+    color: #01415f;
+    font-family: KelsonSans;
+    font-size: 14px;
+    font-weight: 700;
 }
 @media all and (max-width: 990px) {
     .cell-md {

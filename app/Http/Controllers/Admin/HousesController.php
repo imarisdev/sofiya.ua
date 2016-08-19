@@ -49,7 +49,13 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $building_types = $this->building_types->getTypesForSelect();
 
-        return view('admin.houses.create', compact('streets', 'complex', 'building_types'));
+        $house_class = $this->house->getHouseClass();
+
+        $house_decoration = $this->house->getHouseDecoration();
+
+        $installments = $this->house->getHouseInstallments();
+
+        return view('admin.houses.create', compact('streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments'));
     }
 
     /**
@@ -77,7 +83,13 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $building_types = $this->building_types->getTypesForSelect();
 
-        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types'));
+        $house_class = $this->house->getHouseClass();
+
+        $house_decoration = $this->house->getHouseDecoration();
+
+        $installments = $this->house->getHouseInstallments();
+
+        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments'));
     }
 
     /**

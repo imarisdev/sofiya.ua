@@ -46,7 +46,7 @@
                                 <td width="30%"><a href="/admin/complex/edit/{{ $complex->id }}">{{ $complex->title }}</a></td>
                                 <td>
                                     <div class="admin-tools">
-                                        <a target="_blank" href="#" data-id="{{ $complex->id }}" data-action="/admin/complex" data-type="complex" class="btn btn-danger btn-xs js-delete-item">Удалить</a>
+                                        <a target="_blank" href="#" data-id="{{ $complex->id }}" data-action="/admin/complex" data-type="complex" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>
                                     </div>
                                 </td>
                             </tr>

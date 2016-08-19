@@ -46,7 +46,7 @@
                                 <td width="30%"><a href="/admin/streets/edit/{{ $street->id }}">{{ $street->title }}</a></td>
                                 <td>
                                     <div class="admin-tools">
-                                        <a target="_blank" href="#" data-id="{{ $street->id }}" data-action="/admin/streets" data-type="strets" class="btn btn-danger btn-xs js-delete-item">Удалить</a>
+                                        <a target="_blank" href="#" data-id="{{ $street->id }}" data-action="/admin/streets" data-type="stret" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>
                                     </div>
                                 </td>
                             </tr>

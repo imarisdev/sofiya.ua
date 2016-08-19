@@ -12,6 +12,7 @@
             <p>Площадь: {{ $plan->area }}</p>
             <p>Жилая: {{ $plan->live }}</p>
             <p>Кухня: {{ $plan->kitchen }}</p>
+            <p>Санузел: {{ $plan->bathroom_area }}</p>
         </div>
     </div>
     <div class="cell3 p_l-5 cell-md">

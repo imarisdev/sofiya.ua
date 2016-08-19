@@ -13,6 +13,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
+                            <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -82,20 +83,17 @@
                                         <div class="form-group">
                                             <label for="is_installments">Рассрочка</label>
                                             @if(!empty($house->is_installments))
-                                                {!! Form::select('is_installments', ['Нет', 'Да'], $house->is_installments, ['class' => 'form-control']) !!}
+                                                {!! Form::select('is_installments', $installments, $house->is_installments, ['class' => 'form-control']) !!}
                                             @else
-                                                {!! Form::select('is_installments', ['Нет', 'Да'], null, ['class' => 'form-control']) !!}
+                                                {!! Form::select('is_installments', $installments, null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="parking">Парковка</label>
-                                            @if(!empty($house->parking))
-                                                {!! Form::select('parking', ['Нет', 'Да'], $house->parking, ['class' => 'form-control']) !!}
-                                            @else
-                                                {!! Form::select('parking', ['Нет', 'Да'], null, ['class' => 'form-control']) !!}
-                                            @endif
+                                            <input type="text" class="form-control" id="parking" name="parking" placeholder="Парковка"
+                                                   value="{{ $house->parking or '' }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -134,14 +132,56 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="completion_at">Дата сдачи</label>
-                                            <input type="text" class="form-control" id="completion_at" name="completion_at" placeholder="Дата сдачи"
+                                            <input type="text" class="form-control js-date-picker" id="completion_at" name="completion_at" placeholder="Дата сдачи"
                                                    value="{{ $house->completion_at or '' }}">
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="decoration">Отделка</label>
+                                            @if(!empty($house->decoration))
+                                                {!! Form::select('decoration', $house_decoration, $house->decoration, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('decoration', $house_decoration, null, ['class' => 'form-control']) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="flats">Всего квартир</label>
+                                            <input type="text" class="form-control" id="flats" name="flats" placeholder="Всего квартир"
+                                                   value="{{ $house->flats or '' }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="class">Клас дома</label>
+                                            @if(!empty($house->class))
+                                                {!! Form::select('class', $house_class, $house->class, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('class', $house_class, null, ['class' => 'form-control']) !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $house->content or '' }}</textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="form-group">
+                                    <label for="image">Главная картинка</label>
+                                    <input type="file" class="form-control" id="image" name="image" placeholder="Image" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="slider">Слайдер</label>
+                                    <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
                                 </div>
                             </div>
                         </div>

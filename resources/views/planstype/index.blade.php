@@ -11,7 +11,7 @@
                     <div class="cell6 cell-xs">
                         <div class="item box-border cell">
                             <div class="cell6">
-                                <img src="/img/martinov/zagl.png" alt="{{ $plan->houseCahce->streetCache->title }}">
+                                <img src="{{ Helpers::getImage($plan->houseCahce->image, '210x155', null, 'fit') }}" alt="{{ $plan->houseCahce->streetCache->title }}">
                             </div>
 
                             <div class="cell6 p_l-20 p_t-20 p_r-10">
@@ -20,7 +20,7 @@
                                 </a>
                                 <p class="bus cell m_b-10">{{ $plan->houseCahce->transport }}</p>
                                 <p class="go-time cell m_b-10">До остановки: {{ $plan->houseCahce->to_stop }}</p>
-                                <p class="rent cell m_b-10"><span class="blue-title">Сдача:</span> {{ $plan->houseCahce->completion_at }}</p>
+                                <p class="rent cell m_b-10"><span class="blue-title">Сдача:</span> {{ Helpers::completion($plan->houseCahce->completion_at) }}</p>
                             </div>
                         </div>
                     </div>

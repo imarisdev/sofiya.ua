@@ -37,12 +37,27 @@ class PlansTypeController extends Controller {
 
         foreach($houses as $key => $house) {
             foreach($house->plansCache()->where('plans_type', $type['key'])->get() as $plan) {
-                $plans[] = $plan;
+                $plans[$key] = $plan;
             }
         }
 
         return view('planstype.index', compact('houses', 'type', 'complex', 'plans'));
 
+    }
+
+    /**
+     * Квартиры под ключ
+     * @param $complex
+     * @param $type
+     * @return mixed
+     */
+    public function key($complex) {
+
+        $complex = $this->complex->getBySlug($complex);
+
+        $houses = $this->house->getHouses(['decoration' => 1, 'complex_id' => $complex->id]);
+
+        return view('planstype.key', compact('houses', 'complex'));
     }
 
 }

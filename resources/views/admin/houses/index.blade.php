@@ -36,17 +36,23 @@
                         <tr>
                             <td>ID</td>
                             <td>Название</td>
+                            <td>Улица</td>
                             <td>&nbsp;</td>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($houses as $street)
-                            <tr class="admin-tools-wrap street-{{ $street->id }}">
-                                <td>{{ $street->id }}</td>
-                                <td width="30%"><a href="/admin/houses/edit/{{ $street->id }}">{{ $street->title }}</a></td>
+                        @foreach ($houses as $house)
+                            <tr class="admin-tools-wrap house-{{ $house->id }}">
+                                <td>{{ $house->id }}</td>
+                                <td width="30%">
+                                    <a href="/admin/houses/edit/{{ $house->id }}">{{ $house->title }}</a>
+                                    <br>
+                                    <small>Комплекс: <a href="/admin/complex/edit/{{ $house->complex->id }}">{{ $house->complex->title }}</a></small>
+                                </td>
+                                <td width="30%"><a href="/admin/streets/edit/{{ $house->street->id }}">{{ $house->street->title }}, {{ $house->number }}</a></td>
                                 <td>
                                     <div class="admin-tools">
-                                        <a target="_blank" href="#" data-id="{{ $street->id }}" data-action="/admin/houses" data-type="houses" class="btn btn-danger btn-xs js-delete-item">Удалить</a>
+                                        <a target="_blank" href="#" data-id="{{ $house->id }}" data-action="/admin/houses" data-type="house" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>
                                     </div>
                                 </td>
                             </tr>

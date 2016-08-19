@@ -5,12 +5,12 @@ namespace App\Repositories;
 class PlansTypeRepository extends BaseRepository {
 
     private $types = [
-        1 => ['slug' => 'odnokomnatnye-kvartiry', 'title' => 'Однокомнатные квартиры'],
-        2 => ['slug' => 'dvuhkomnatnye-kvartiry', 'title' => 'Двухкомнатные квартиры'],
-        3 => ['slug' => 'trehkomnatnye-kvartiry', 'title' => 'Трехкомнатные квартиры'],
-        4 => ['slug' => 'dvuhurovnevye-kvartiry', 'title' => 'Двухуровневые квартиры'],
-        5 => ['slug' => 'nezhilye-pomeshcheniya', 'title' => 'Нежилые помещения'],
-        6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ']
+        1 => ['slug' => 'odnokomnatnye-kvartiry', 'title' => 'Однокомнатные квартиры', 'short' => 'Однокомнатные'],
+        2 => ['slug' => 'dvuhkomnatnye-kvartiry', 'title' => 'Двухкомнатные квартиры', 'short' => 'Двухкомнатные'],
+        3 => ['slug' => 'trehkomnatnye-kvartiry', 'title' => 'Трехкомнатные квартиры', 'short' => 'Трехкомнатные'],
+        4 => ['slug' => 'dvuhurovnevye-kvartiry', 'title' => 'Двухуровневые квартиры', 'short' => 'Двухуровневые'],
+        5 => ['slug' => 'nezhilye-pomeshcheniya', 'title' => 'Нежилые помещения', 'short' => 'Нежилые'],
+        //6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ']
     ];
 
 
@@ -24,6 +24,21 @@ class PlansTypeRepository extends BaseRepository {
      */
     public function getPlansTypes() {
         return $this->types;
+    }
+
+    /**
+     * Типы планировок для формы
+     * @return array
+     */
+    public function getPlansTypesForSelect() {
+
+        $plans_type_list = array();
+
+        foreach($this->types as $key => $type) {
+            $plans_type_list[$key] = $type['title'];
+        }
+
+        return $plans_type_list;
     }
 
     /**

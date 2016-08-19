@@ -56,6 +56,22 @@ class House extends BaseModel {
     }
 
     /**
+     * Картинки в медиа библиотеке
+     * @return mixed
+     */
+    public function medialib() {
+        return $this->hasMany('App\Models\Medialib', 'object_id', 'id');
+    }
+
+    /**
+     * Картинки в медиа библиотеке - кэшируемый
+     * @return mixed
+     */
+    public function medialibCache() {
+        return $this->hasMany('App\Models\Medialib', 'object_id', 'id')->remember(Config::get('cache.time.short'));
+    }
+
+    /**
      * Ссылка на дом
      * @return string
      */

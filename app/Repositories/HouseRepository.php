@@ -6,10 +6,30 @@ use App\Models\House;
 
 class HouseRepository extends BaseRepository {
 
-    public function __construct(House $house) {
+    protected $image;
+    protected $medialib;
+
+    private $house_class = [
+        1 => 'Комфорт-класс',
+        2 => 'Бизнес'
+    ];
+
+    private $house_decoration = [
+        1 => 'Без отделки',
+        2 => 'C отделкой'
+    ];
+
+    private $installments = [
+        1 => 'Рассрочка',
+        2 => 'Кредит',
+        3 => 'Вся сумма'
+    ];
+
+    public function __construct(House $house, ImageRepository $image, MedialibRepository $medialib) {
 
         $this->model = $house;
-
+        $this->image = $image;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -36,7 +56,55 @@ class HouseRepository extends BaseRepository {
 
         $house = $this->model;
 
+        if(!empty($request['decoration'])) {
+            $house = $house->where('decoration', '=', $request['decoration']);
+        }
+
+        if(!empty($request['complex_id'])) {
+            $house = $house->where('complex_id', '=', $request['complex_id']);
+        }
+
         return $house->paginate($limit);
+    }
+
+    /**
+     * Список домов для формы
+     * @return array
+     */
+    public function getHousesForSelect() {
+        $houses = $this->model->all();
+
+        $houses_list = array();
+
+        foreach($houses as $house) {
+            $houses_list[$house->id] = $house->title;
+        }
+
+        return $houses_list;
+    }
+
+    /**
+     * Класы домов
+     * @return array
+     */
+    public function getHouseClass() {
+        return $this->house_class;
+    }
+
+    /**
+     * Отделка квартир
+     * @return array
+     */
+    public function getHouseDecoration() {
+        return $this->house_decoration;
+    }
+
+    /**
+     * Виды оплаты по дому
+     * @return array
+     */
+    public function getHouseInstallments() {
+        return $this->installments;
     }
 
     /**
@@ -60,15 +128,26 @@ class HouseRepository extends BaseRepository {
         $house->transport       = $inputs['transport'];
         $house->to_stop         = $inputs['to_stop'];
         $house->completion_at   = $inputs['completion_at'];
+        $house->decoration      = $inputs['decoration'];
+        $house->flats           = $inputs['flats'];
+        $house->class           = $inputs['class'];
         $house->content         = $inputs['content'];
 
         if(empty($inputs['slug'])) {
             $house->slug = $this->createSlug($inputs['title']);;
         }
 
+        if(!empty($inputs['image'])) {
+            $house->image = $this->image->uploadImage($inputs['image'][0]);
+        }
+
         try {
 
             $house->save();
+
+            if(!empty($inputs['slider'])) {
+                $this->medialib->saveFiles($inputs['slider'], $house->id, 'house');
+            }
 
             return Response::json(['item' => $house], 201);
         } catch(\Exception $e) {
