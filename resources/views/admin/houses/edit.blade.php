@@ -13,6 +13,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
+                            <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -171,6 +172,39 @@
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $house->content or '' }}</textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="form-group">
+                                    <label for="image">Главная картинка</label>
+                                    <input type="file" class="form-control" id="image" name="image" placeholder="Image" />
+                                </div>
+                                <div class="form-group">
+                                    @if(!empty($house->image))
+                                        <img src="{{ Helpers::getImage($house->image, '300x260', null, 'fit') }}" alt="..." class="margin">
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label for="slider">Слайдер</label>
+                                    <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
+                                </div>
+                                <div class="row">
+                                    @if(!empty($house->medialib) && count($house->medialib) > 0)
+                                        @foreach($house->medialib as $medialib)
+                                            <div class="col-md-3 medialib-{{ $medialib->id }}">
+                                                <div class="box">
+                                                    <div class="box-body">
+                                                        <img src="{{ Helpers::getImage($medialib->file, '300x260', null, 'fit') }}" alt="..." class="img-thumbnail">
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                    <div class="box-footer">
+                                                        <a class="btn btn-danger btn-xs pull-right js-delete-item" data-id="{{ $medialib->id }}" data-reload="false" data-action="/admin/medialib" data-type="medialib">Удалить</a>
+                                                    </div>
+                                                    <!-- /.box-footer-->
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>

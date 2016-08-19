@@ -43,9 +43,19 @@ class HouseController extends Controller {
 
         $house = $this->house->getById($id);
 
+        $types = $this->types->getPlansTypes();
+
+        $plans_list = [];
+
+        foreach($house->plans as $plan) {
+            $plans_list[$types[$plan->plans_type]['short']]['plans'][] = $plan;
+            $plans_list[$types[$plan->plans_type]['short']]['info'] = $types[$plan->plans_type];
+            $plans_list[$types[$plan->plans_type]['short']]['info']['id'] = $plan->plans_type;
+        }
+
         $type = $this->types->getPlansTypeBySlug($type);
 
-        $plans = $this->plans->getPlansByType($type['key'], $complex);
+        //$plans = $this->plans->getPlansByType($type['key'], $complex);
 
         $house_class = $this->house->getHouseClass();
 
@@ -55,7 +65,13 @@ class HouseController extends Controller {
 
         $installments = $this->house->getHouseInstallments();
 
-        return view('house.index', compact('complex', 'house', 'plans', 'type', 'house_class', 'building_types', 'house_decoration', 'installments'));
+        $bathroom_types = $this->plans->getBathroomTypes();
+
+        $balcony_types = $this->plans->getBalconyTypes();
+
+        return view('house.index',
+            compact('complex', 'house', 'plans', 'type', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
+        );
 
     }
 

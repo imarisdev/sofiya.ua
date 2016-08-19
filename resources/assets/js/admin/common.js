@@ -96,7 +96,10 @@ var Admin = {
         this.formData = new FormData();
 
         $('input[type="file"]').each(function ($i) {
-            this.formData.append($(this).prop("id"), $(this)[0].files[0]);
+            files = $(this)[0].files;
+            for(var f = 0; f < files.length; f++) {
+                _this.formData.append($(this).prop("id") + '[' + f + ']', files[f]);
+            }
         });
 
         var formFields = this.editForm.serializeArray();
@@ -173,6 +176,7 @@ var Admin = {
         var item_id = $(item).data('id');
         var item_type = $(item).data('type');
         var item_action = $(item).data('action');
+        var item_reload = $(item).data('reload');
 
         if (confirm("Удалить объект с ID: " + item_id)) {
 
@@ -183,7 +187,9 @@ var Admin = {
                 success: function (data) {
                     if (data.item) {
                         $('.' + item_type + '-' + item_id).remove();
-                        location.href = item_action;
+                        if(item_reload !== false) {
+                            location.href = item_action;
+                        }
                     }
                 },
                 error: function (data) {

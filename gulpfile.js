@@ -5,6 +5,7 @@ var elixir = require('laravel-elixir');
  */
 elixir(function (mix) {
     mix.styles([
+        'site/slider.css',
         'site/animate.css',
         'site/style.css'
     ], 'public/css/all.css');
@@ -22,6 +23,7 @@ elixir(function (mix) {
         'jquery.min.js',
         'wow.js',
         'tabs.js',
+        'site/slider.js',
         'site/common.js',
     ], 'public/js/common.js');
 });

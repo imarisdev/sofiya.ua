@@ -13,6 +13,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
+                            <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -171,6 +172,16 @@
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $house->content or '' }}</textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="form-group">
+                                    <label for="image">Главная картинка</label>
+                                    <input type="file" class="form-control" id="image" name="image" placeholder="Image" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="slider">Слайдер</label>
+                                    <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
                                 </div>
                             </div>
                         </div>

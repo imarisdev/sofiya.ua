@@ -48,7 +48,10 @@ abstract class BaseRepository {
      * @return mixed
      */
     public function getById($id) {
-        return $this->model->findOrFail($id);
+
+        $item = $this->model->findOrFail($id);
+
+        return $item;
     }
 
     /**
@@ -152,4 +155,20 @@ abstract class BaseRepository {
         return $text;
     }
 
+    /**
+     * Уникальный ID
+     */
+    public function getUuid() {
+        return sprintf(
+            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff) | 0x4000,
+            mt_rand(0, 0x3fff) | 0x8000,
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff)
+        );
+    }
 }

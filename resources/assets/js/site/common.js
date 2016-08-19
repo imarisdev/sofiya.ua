@@ -1,3 +1,7 @@
+var Site = {
+
+};
+
 $(document).ready(function () {
     $("#owl-carousel").owlCarousel({
         navigation: true,
