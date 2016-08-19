@@ -76,6 +76,7 @@ Route::group(['middleware' => 'web'], function () {
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
+    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
     // Улицы
     Route::get('/ulitsy', array('as' => 'street.index', 'uses' => 'StreetController@index'));
@@ -84,9 +85,6 @@ Route::group(['middleware' => 'web'], function () {
 
     // Страница дома
     Route::get('/doma/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
-
-    // Страница планировки
-    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
     // Страница комплекса
     Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
