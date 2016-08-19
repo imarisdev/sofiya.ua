@@ -15,7 +15,7 @@
                             </div>
 
                             <div class="cell6 p_l-20 p_t-20 p_r-10">
-                                <a class="blue-title m_b-10 fl_l" href="/{{ $complex->slug }}/{{ $type['slug'] }}/{{ $plan->houseCahce->link() }}">
+                                <a class="blue-title m_b-10 fl_l" href="/doma/{{ $plan->houseCahce->link() }}">
                                     {{ $plan->houseCahce->streetCache->title }}, {{ $plan->houseCahce->number }}
                                 </a>
                                 <p class="bus cell m_b-10">{{ $plan->houseCahce->transport }}</p>

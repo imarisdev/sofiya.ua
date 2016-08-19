@@ -82,6 +82,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/ulitsy/{sid}-{street}', array('as' => 'street.street', 'uses' => 'StreetController@street'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+']);
     Route::get('/ulitsy/{sid}-{street}/{id}-{house}', array('as' => 'street.house', 'uses' => 'StreetController@house'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
+    // Страница дома
+    Route::get('/doma/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
+
+    // Страница планировки
+    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
+
     // Страница комплекса
     Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/{complex}/photo-gallery', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
@@ -91,11 +97,5 @@ Route::group(['middleware' => 'web'], function () {
     // Страница типа планировки
     Route::get('/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
-
-    // Страница дома
-    Route::get('/{complex}/{type}/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
-
-    // Страница планировки
-    Route::get('/{complex}/{type}/{id}-{house}/{pid}-{plan}', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+', 'pid' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
 });

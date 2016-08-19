@@ -16,7 +16,7 @@
 
             <ul>
                 @foreach($houses as $house)
-                    <li><a href="/ulitsy/{{ $house->street->link() }}/{{ $house->link() }}">{{ $house->title }}</a></li>
+                    <li><a href="/doma/{{ $house->link() }}">{{ $house->title }}</a></li>
                 @endforeach
             </ul>
         </div>
