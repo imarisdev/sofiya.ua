@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="cell6 p_l-5">
-                        @include('house.table-parameters')
+                        @include('house.-parameters')
                     </div>
 
                     <div class="cell">
