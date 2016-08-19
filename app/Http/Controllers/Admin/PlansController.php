@@ -47,7 +47,11 @@ class PlansController extends AdminController implements AdminItemContract {
 
         $houses = $this->house->getHousesForSelect();
 
-        return view('admin.plans.create', compact('plans_type', 'houses'));
+        $bathroom_types = $this->plans->getBathroomTypes();
+
+        $balcony_types = $this->plans->getBalconyTypes();
+
+        return view('admin.plans.create', compact('plans_type', 'houses', 'bathroom_types', 'balcony_types'));
     }
 
     /**
@@ -73,7 +77,11 @@ class PlansController extends AdminController implements AdminItemContract {
 
         $houses = $this->house->getHousesForSelect();
 
-        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses'));
+        $bathroom_types = $this->plans->getBathroomTypes();
+
+        $balcony_types = $this->plans->getBalconyTypes();
+
+        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types'));
     }
 
     /**

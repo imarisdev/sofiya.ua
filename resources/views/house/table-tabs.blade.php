@@ -1,4 +1,3 @@
-
 <div class="table table-border">
     <div class="table-row table-caption">
         <div class="table-cell">
@@ -23,29 +22,18 @@
             Фото
         </div>
     </div>
-
-    <div class="table-row">
-        <div class="table-cell">
-            38,1
+    @foreach($info as $item)
+        <div class="table-row">
+            <div class="table-cell">{{ $item->area }}</div>
+            <div class="table-cell">{{ $item->live }}</div>
+            <div class="table-cell">{{ $item->kitchen }}</div>
+            <div class="table-cell">{{ $bathroom_types[$item->bathroom] }}</div>
+            <div class="table-cell">{{ $balcony_types[$item->balcony] }}</div>
+            <div class="table-cell">{{ Helpers::completion($house->completion_at) }}</div>
+            <div class="table-cell">
+                <img alt="" src="{{ Helpers::getImage($item->image, '0x70') }}" />
+            </div>
         </div>
-        <div class="table-cell">
-            38,1
-        </div>
-        <div class="table-cell">
-            38,1
-        </div>
-        <div class="table-cell">
-            38,1
-        </div>
-        <div class="table-cell">
-            38,1
-        </div>
-        <div class="table-cell">
-            38,1
-        </div>
-        <div class="table-cell">
-            38,1
-        </div>
-    </div>
+    @endforeach
 
 </div>

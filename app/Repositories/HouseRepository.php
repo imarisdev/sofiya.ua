@@ -6,6 +6,9 @@ use App\Models\House;
 
 class HouseRepository extends BaseRepository {
 
+    protected $image;
+    protected $medialib;
+
     private $house_class = [
         1 => 'Комфорт-класс',
         2 => 'Бизнес'
@@ -22,10 +25,11 @@ class HouseRepository extends BaseRepository {
         3 => 'Вся сумма'
     ];
 
-    public function __construct(House $house) {
+    public function __construct(House $house, ImageRepository $image, MedialibRepository $medialib) {
 
         $this->model = $house;
-
+        $this->image = $image;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -133,9 +137,17 @@ class HouseRepository extends BaseRepository {
             $house->slug = $this->createSlug($inputs['title']);;
         }
 
+        if(!empty($inputs['image'])) {
+            $house->image = $this->image->uploadImage($inputs['image'][0]);
+        }
+
         try {
 
             $house->save();
+
+            if(!empty($inputs['slider'])) {
+                $this->medialib->saveFiles($inputs['slider'], $house->id, 'house');
+            }
 
             return Response::json(['item' => $house], 201);
         } catch(\Exception $e) {

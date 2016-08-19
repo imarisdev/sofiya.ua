@@ -6,10 +6,24 @@ use App\Models\Plans;
 
 class PlansRepository extends BaseRepository {
 
-    public function __construct(Plans $plans) {
+    protected $image;
+
+    private $bathroom_types = [
+        0 => 'Нету',
+        1 => 'Смежный',
+        2 => 'Раздельный'
+    ];
+
+    private $balcony_types = [
+        0 => 'Нету',
+        1 => 'Есть',
+        2 => '2 балкона'
+    ];
+
+    public function __construct(Plans $plans, ImageRepository $image) {
 
         $this->model = $plans;
-
+        $this->image = $image;
     }
 
     /**
@@ -60,6 +74,22 @@ class PlansRepository extends BaseRepository {
     }
 
     /**
+     * Типы сан. узла
+     * @return array
+     */
+    public function getBathroomTypes() {
+        return $this->bathroom_types;
+    }
+
+    /**
+     * Балконы
+     * @return array
+     */
+    public function getBalconyTypes() {
+        return $this->balcony_types;
+    }
+
+    /**
      * Сохранение
      * @param $house
      * @param $inputs
@@ -75,6 +105,7 @@ class PlansRepository extends BaseRepository {
         $plan->area            = $inputs['area'];
         $plan->live            = $inputs['live'];
         $plan->kitchen         = $inputs['kitchen'];
+        $plan->bathroom_area   = $inputs['bathroom_area'];
         $plan->bathroom        = $inputs['bathroom'];
         $plan->balcony         = $inputs['balcony'];
         $plan->content         = $inputs['content'];
@@ -82,6 +113,8 @@ class PlansRepository extends BaseRepository {
         if(empty($inputs['slug'])) {
             $plan->slug = $this->createSlug($inputs['title']);;
         }
+
+        $plan->image = $this->image->uploadFile($inputs);
 
         try {
 

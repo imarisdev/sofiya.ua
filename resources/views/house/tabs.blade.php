@@ -1,14 +1,14 @@
 <div class="js-tabs tabs cell">
     <ul>
-        <li>Первая вкладка</li>
-        <li>Вторая вкладка</li>
-        <li>Третья вкладка</li>
+        @foreach($plans_list as $title => $plan)
+            <li class="@if($type['slug'] == $plan['info']['slug']) active @endif">{{ $title }}</li>
+        @endforeach
     </ul>
     <div>
-        <div class="cell">
-            @include('house.table-tabs')
-        </div>
-        <div>Второе содержимое</div>
-        <div>Третье содержимое</div>
+        @foreach($plans_list as $title => $plan)
+            <div class="cell" style="@if($type['slug'] == $plan['info']['slug']) display: block; @else display: none; @endif">
+                @include('house.table-tabs', ['info' => $plan['plans']])
+            </div>
+        @endforeach
     </div>
 </div>

@@ -25,8 +25,9 @@ class CreatePlansTable extends Migration
             $table->decimal('area', 5, 2)->index();
             $table->decimal('live', 5, 2)->index();
             $table->decimal('kitchen', 5, 2)->index();
-            $table->decimal('bathroom', 5, 2)->index();
-            $table->smallInteger('balcony')->default(0);
+            $table->decimal('bathroom_area', 5, 2)->index();
+            $table->smallInteger('bathroom')->default(0)->index();
+            $table->smallInteger('balcony')->default(0)->index();
             $table->text('content')->nullable();
             $table->timestamps();
         });

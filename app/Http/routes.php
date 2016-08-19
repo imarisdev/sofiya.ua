@@ -51,6 +51,15 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/plans/update', array('as' => 'admin.plans.save', 'uses' => 'PlansController@update'));
         Route::post('/plans/delete', array('as' => 'admin.plans.delete', 'uses' => 'PlansController@delete'));
 
+
+
+    });
+
+    Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
+        // Medialib
+        Route::post('/medialib/delete', array('as' => 'admin.medialib.delete', 'uses' => 'MedialibController@delete'));
+
     });
 
     Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));

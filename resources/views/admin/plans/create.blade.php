@@ -13,6 +13,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
+                            <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -91,28 +92,32 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="bathroom">Сан. узел</label>
-                                            @if(!empty($plan->bathroom))
-                                                {!! Form::select('bathroom', ['Смежный', 'Раздельный'], $plan->bathroom, ['class' => 'form-control']) !!}
-                                            @else
-                                                {!! Form::select('bathroom', ['Смежный', 'Раздельный'], null, ['class' => 'form-control']) !!}
-                                            @endif
+                                            <label for="bathroom_area">Площадь сан. узла</label>
+                                            <input type="number" class="form-control" id="bathroom_area" name="bathroom_area" placeholder="Площадь сан. узла"
+                                                   value="{{ $plan->bathroom_area or '' }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="balcony">Балкон</label>
-                                            @if(!empty($plan->balcony))
-                                                {!! Form::select('balcony', ['Нет', 'Есть'], $plan->balcony, ['class' => 'form-control']) !!}
+                                            <label for="bathroom">Санузел</label>
+                                            @if(!empty($plan->bathroom))
+                                                {!! Form::select('bathroom', $bathroom_types, $plan->bathroom, ['class' => 'form-control']) !!}
                                             @else
-                                                {!! Form::select('balcony', ['Нет', 'Есть'], null, ['class' => 'form-control']) !!}
+                                                {!! Form::select('bathroom', $bathroom_types, null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-
+                                        <div class="form-group">
+                                            <label for="balcony">Балкон</label>
+                                            @if(!empty($plan->balcony))
+                                                {!! Form::select('balcony', $balcony_types, $plan->balcony, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('balcony', $balcony_types, null, ['class' => 'form-control']) !!}
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="col-md-3">
 
@@ -124,6 +129,13 @@
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $plan->content or '' }}</textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="form-group">
+                                    <label for="image">Планировка</label>
+                                    <input type="file" class="form-control" id="image" name="image" placeholder="Image"
+                                           value="{{ $plan->image or '' }}">
                                 </div>
                             </div>
                         </div>

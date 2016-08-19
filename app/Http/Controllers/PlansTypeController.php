@@ -37,7 +37,7 @@ class PlansTypeController extends Controller {
 
         foreach($houses as $key => $house) {
             foreach($house->plansCache()->where('plans_type', $type['key'])->get() as $plan) {
-                $plans[] = $plan;
+                $plans[$key] = $plan;
             }
         }
 

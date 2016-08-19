@@ -7,17 +7,30 @@ class Helpers {
 
 
     /**
-     * Возвращает ссылку на картинку с параметрами
+     * Возвращает ссылку на картинку
      * @param null $file
      * @param null $size
      * @param null $empty
      * @param string $resize_type
      * @return null|string
      */
-    public static function getImage($file = null, $size = null, $empty = null, $resize_type = 'resize') {
+    public static function getImage($file = null, $size = null, $empty = 'http://placehold.it/', $resize_type = 'resize') {
         if (empty($file)) {
-            return $empty;
+            $sizes = explode('x', $size);
+
+            if(!empty($sizes[0]) && !empty($sizes[1])) {
+                return $empty . $size;
+            } else {
+                $size = ($sizes[0] != '0') ? "{$sizes[0]}x{$sizes[0]}" : "{$sizes[1]}x{$sizes[1]}";
+                return $empty . $size;
+            }
+
         } else {
+
+            if(isset($file) && !empty($file)) {
+                $file = @unserialize($file);
+            }
+
             if (empty($size)) {
                 $image = $file['file'] . $file['ext'];
             } else {
