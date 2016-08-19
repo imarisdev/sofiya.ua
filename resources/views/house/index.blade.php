@@ -13,7 +13,7 @@
                 <div class="cell seo-text m_b-20">{!! $house->content !!}</div>
 
                 <div class="cell">
-                    <div class="cell6 p_r-10">
+                    <div class="cell6 p_r-10 cell-md">
                         <div class="cell m_b-20">
                             @include('house.slider')
                         </div>
@@ -26,8 +26,8 @@
                         </div>
                     </div>
 
-                    <div class="cell6 p_l-5">
-                        @include('house.-parameters')
+                    <div class="cell6 p_l-5 cell-md">
+                        @include('house.table-parameters')
                     </div>
 
                     <div class="cell">
