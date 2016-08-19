@@ -1,32 +1,62 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Repositories\BuildingTypesRepository;
-use App\Repositories\ComplexRepository;
+
 use App\Repositories\HouseRepository;
+use App\Repositories\StreetRepository;
+use App\Repositories\BuildingTypesRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
 
-class HouseController extends Controller {
+class StreetController extends Controller {
 
-    protected $complex;
+    protected $street;
     protected $house;
     protected $types;
     protected $plans;
     protected $building_types;
 
     public function __construct(
-        ComplexRepository $complex,
+        StreetRepository $street,
         HouseRepository $house,
         PlansTypeRepository $types,
         PlansRepository $plans,
         BuildingTypesRepository $building_types
     ) {
-        $this->complex = $complex;
+
+        $this->street = $street;
         $this->house = $house;
         $this->types = $types;
         $this->plans = $plans;
         $this->building_types = $building_types;
+    }
+
+    /**
+     * Страница улиц
+     * @return mixed
+     */
+    public function index() {
+
+        $streets = $this->street->getStreets();
+
+        $houses = $this->house->getHouses();
+
+        return view('street.index', compact('streets', 'houses'));
+    }
+
+    /**
+     * Страница улицы
+     * @param $id
+     * @param $street
+     * @return mixed
+     */
+    public function street($sid, $street) {
+
+        $street = $this->street->getById($sid);
+
+        $houses = $street->houses;
+
+        return view('street.street', compact('street', 'houses'));
     }
 
     /**
@@ -37,10 +67,9 @@ class HouseController extends Controller {
      * @param $house
      * @return mixed
      */
-    // TODO: переделать роут для страницы домов по ТЗ
-    public function index($complex, $type, $id, $house) {
+    public function house($sid, $street, $id, $house) {
 
-        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+//TODO: переместить все в нужный контроллер
 
         $house = $this->house->getById($id);
 
@@ -54,9 +83,7 @@ class HouseController extends Controller {
             $plans_list[$types[$plan->plans_type]['short']]['info']['id'] = $plan->plans_type;
         }
 
-        $type = $this->types->getPlansTypeBySlug($type);
-
-        //$plans = $this->plans->getPlansByType($type['key'], $complex);
+        $type = $this->types->getPlansTypeBySlug('odnokomnatnye-kvartiry');
 
         $house_class = $this->house->getHouseClass();
 
@@ -70,8 +97,8 @@ class HouseController extends Controller {
 
         $balcony_types = $this->plans->getBalconyTypes();
 
-        return view('house.index',
-            compact('complex', 'house', 'plans', 'type', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
+        return view('street.house',
+            compact('house', 'house_class', 'type', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
         );
 
     }

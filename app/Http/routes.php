@@ -77,6 +77,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
 
+    // Улицы
+    Route::get('/ulitsy', array('as' => 'street.index', 'uses' => 'StreetController@index'));
+    Route::get('/ulitsy/{sid}-{street}', array('as' => 'street.street', 'uses' => 'StreetController@street'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+']);
+    Route::get('/ulitsy/{sid}-{street}/{id}-{house}', array('as' => 'street.house', 'uses' => 'StreetController@house'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
+
     // Страница комплекса
     Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/{complex}/photo-gallery', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);

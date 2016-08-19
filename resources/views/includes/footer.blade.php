@@ -35,14 +35,9 @@
             <p class="info fl_l cell-md-none">© ЖК «Софія» от Мартынова, 2016</p>
 
             <ul class="site-pages fl_r cell-md">
-                <li class="cell-sm"><a href="#">Покупателям</a></li>
-                <li class="cell-sm"><a href="#">Рассрочка</a></li>
-                <li class="cell-sm"><a href="#">Акции</a></li>
-                <li class="cell-sm"><a href="#">Новости</a></li>
-                <li class="cell-sm"><a href="#">ЖКХ</a></li>
-                <li class="cell-sm"><a href="#">Форум</a></li>
-                <li class="cell-sm"><a href="#">О застройщике</a></li>
-                <li class="cell-sm"><a href="#">Контакты</a></li>
+                @foreach(Helpers::getMenu('top') as $item)
+                    <li class="cell-sm"><a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
+                @endforeach
             </ul>
         </div>
 
@@ -51,14 +46,11 @@
             <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
 
             <ul class="footer-nav fl_r cell-md">
-                <li class="cell-sm"><a href="#">ЖК МАРТЫНОВ</a></li>
-                <li class="cell-sm"><a href="#">ЖК КЛУБНЫЙ</a></li>
-                <li class="cell-sm"><a href="#">ЖК ЭЛИТНЫЙ</a></li>
-                <li class="cell-sm"><a href="#">ПЛАНИРОВКИ</a></li>
-                <li class="cell-sm"><a href="#">УЛИЦЫ</a></li>
-                <li class="cell-sm"><a href="#">ГЕНПЛАН</a></li>
-                <li class="cell-sm"><a href="#">ФОТО</a></li>
-                <li class="cell-sm"><a href="#">ВИДЕО</a></li>
+                @foreach(Helpers::getMenu('head') as $item)
+                    <li class="cell-sm">
+                        <a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a>
+                    </li>
+                @endforeach
             </ul>
         </div>
 
