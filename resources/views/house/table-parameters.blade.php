@@ -1,4 +1,4 @@
-<div class="cell table-caption blue-title">{{ $complex->title }}</div>
+<div class="cell table-caption blue-title">{{ $complex->title or '' }}</div>
 <div class="table">
     <div class="table-row">
         <div class="table-cell">
