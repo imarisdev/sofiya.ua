@@ -30,54 +30,57 @@
                 </div>
             </div>
 
-            <h3 class="cell blue-title text-center">НАШИ МЕНЕДЖЕРЫ</h3>
+            <h3 class="cell dark-blue h3 text-center m_b-10">НАШИ МЕНЕДЖЕРЫ</h3>
+            <div class="cell m_b-20">
+                <div class="cell4">
+                    <div class="item-manager box-border">
+                        <img src="/img/contact/1.png" alt="Светлана Маслова">
+                        <p class="text-center name">Светлана Маслова</p>
+                        <div class="relative">
+                            <i class="icon-phone"></i>
+                            <p>
+                                (044) 361-4000<br>
+                                (066) 361-4000
+                            </p>
+                        </div>
 
-            <div class="cell4">
-                <div class="item-manager box-border">
-                    <img src="/img/contact/1.png" alt="Светлана Маслова">
-                    <p class="text-center name">Светлана Маслова</p>
-                    <div class="relative">
-                        <i class="icon-phone"></i>
-                        <p>
-                            (044) 361-4000<br>
-                            (066) 361-4000
-                        </p>
+                        <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
                     </div>
+                </div>
 
-                    <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
+                <div class="cell4">
+                    <div class="item-manager box-border">
+                        <img src="/img/contact/2.png" alt="Андрей Иванов">
+                        <p class="text-center name">Андрей Иванов</p>
+                        <div class="relative">
+                            <i class="icon-phone"></i>
+                            <p>
+                                (044) 361-4000<br>
+                                (066) 361-4000
+                            </p>
+                        </div>
+                        <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
+                    </div>
+                </div>
+
+                <div class="cell4">
+                    <div class="item-manager box-border">
+                        <img src="/img/contact/3.png" alt="Оксана Лучникова">
+                        <p class="text-center name">Оксана Лучникова</p>
+                        <div class="relative">
+                            <i class="icon-phone"></i>
+                            <p>
+                                (044) 361-4000<br>
+                                (066) 361-4000
+                            </p>
+                        </div>
+
+                        <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="cell4">
-                <div class="item-manager box-border">
-                    <img src="/img/contact/2.png" alt="Андрей Иванов">
-                    <p class="text-center name">Андрей Иванов</p>
-                    <div class="relative">
-                        <i class="icon-phone"></i>
-                        <p>
-                            (044) 361-4000<br>
-                            (066) 361-4000
-                        </p>
-                    </div>
-                    <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
-                </div>
-            </div>
-
-            <div class="cell4">
-                <div class="item-manager box-border">
-                    <img src="/img/contact/3.png" alt="Оксана Лучникова">
-                    <p class="text-center name">Оксана Лучникова</p>
-                    <div class="relative">
-                        <i class="icon-phone"></i>
-                        <p>
-                            (044) 361-4000<br>
-                            (066) 361-4000
-                        </p>
-                    </div>
-
-                    <p class="mail"><i class="icon-mail"></i>maneger1@ukr.net</p>
-                </div>
-            </div>
+            @include('contacts.form')
         </div>
 
         <div class="cell3 p_l-5 cell-md">
