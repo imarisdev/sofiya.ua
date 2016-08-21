@@ -1632,7 +1632,7 @@ h1.title {
 .br-item {
     position: relative;
     float: left;
-    min-height: 32px;
+    height: 32px;
     min-width: 32px;
     margin-right: 10px;
     padding: 4px 13px 0;
