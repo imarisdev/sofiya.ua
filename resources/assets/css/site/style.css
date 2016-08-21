@@ -88,6 +88,17 @@ h5 {
     color: #f00000;
 }
 
+.black {
+    color: #000;
+}
+
+.under-link {
+    font-family: KelsonSans;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
 .bold {
     font-weight: 600;
     font-family: KelsonSansBold;
@@ -806,7 +817,12 @@ a {
     text-align: center;
     font-family: KelsonSans;
 }
-
+.h2 {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .video-wrapper {
     position: relative;
     padding-bottom: 37%;
@@ -943,6 +959,8 @@ a {
     font-weight: 400;
     text-transform: uppercase;
     transition: all 0.3s ease-out 0.05s;
+    border: none;
+    font-family: KelsonSans;
 }
 
 .blue-btn:hover {
@@ -1233,7 +1251,7 @@ h1.title {
     content: '';
     display: block;
     position: absolute;
-    top: 1px;
+    top: -3px;
     width: 1px;
     height: 20px;
     background-color: #53d1ee;
@@ -1815,7 +1833,7 @@ a.br-item {
     position: relative;
     top: -1px;
 }
-.tabs ul li{
+.tabs ul li {
     float: left;
     color: black;
     font-family: KelsonSans;
@@ -1823,7 +1841,6 @@ a.br-item {
     text-align: center;
     padding: 15px 40px 10px;
     white-space: nowrap;
-    width: 189px;
     height: 48px;
     background-color: #f3f3f3;
     border: 1px solid #d0d0d0;
@@ -1870,6 +1887,128 @@ a.br-item {
     font-size: 14px;
     font-weight: 700;
 }
+
+.rewiev-item {
+    margin-bottom: 40px;
+}
+
+.rewiev-title {
+    padding: 10px;
+    background-color: #f3f3f3;
+    padding-left: 100px;
+    position: relative;
+    border-radius: 50px 0 0 50px;
+}
+
+.rewiev-title img {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.rewiev-title .info {
+    color: #636161;
+    font-size: 12px;
+}
+
+.rewiev-title .name {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.icon-heart {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    margin-right: 5px;
+    background: url('/img/sprites.png') no-repeat 0 0;
+    background-position-y: -564px;
+}
+
+.rewiev-item .text {
+    margin: 15px 0;
+    padding-left: 100px;
+    color: #444;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.rewiev-item .like .icon-like {
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    background: url('/img/sprites.png') no-repeat 0 -581px;
+}
+
+.rewiev-item .like p {
+    color: #636161;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.rewiev-item .like {
+    padding-top: 5px;
+
+}
+.btn-gray {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #f3f3f3;
+    border: 1px solid #d0d0d0;
+    border-radius: 24px;
+    display: inline-block;
+    padding: 15px 20px 10px;
+}
+
+/*form*/
+
+.field {
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: italic;
+}
+
+::-webkit-input-placeholder {
+    color: #9c9c9c;
+
+}
+
+:-moz-placeholder {
+    color: #9c9c9c;
+}
+
+textarea.field {
+    height: 160px;
+}
+
+form.review .blue-btn {
+    font-size: 16px;
+    padding: 17px 30px 10px;
+    border-radius: 24px;
+}
+
+form.review {
+    padding-left: 100px;
+}
+
+
+
+
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;
@@ -2064,6 +2203,13 @@ a.br-item {
     .blue-block-info .blue-btn {
         float: left;
     }
+
+    .one-line-block .blue-block-info .blue-btn {
+        float: none;
+    }
+    .one-line-block .blue-block-info {
+        padding-bottom: 40px;
+    }
 }
 
 @media all and (max-width: 990px) {
@@ -2244,9 +2390,20 @@ a.br-item {
     .item-news .info-wrap {
         width: 70%;
     }
+
+    #slideshow {
+        width: 100%;
+    }
+    .tabs ul li {
+        padding: 15px 10px 10px;
+    }
 }
 
 @media all and (max-width: 770px) {
+    .table-wrap {
+        max-width: 670px;
+        overflow-y: auto;
+    }
 
     .header-bottom-icons {
         display: none;
@@ -2359,11 +2516,19 @@ a.br-item {
         margin: 0 5% 5%;
     }
 
+    form.review,
+
+    .rewiev-item .text {
+        padding: 0;
+    }
 }
 @media all and (max-width: 420px) {
     .item-news .dop-info .blue-btn {
         width: 100%;
         text-align: center;
         margin: 15px 0;
+    }
+    .tabs ul li {
+        width: 100%;
     }
 }

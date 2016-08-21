@@ -13,15 +13,14 @@
                 <div class="cell seo-text m_b-20">{!! $house->content !!}</div>
 
                 <div class="cell">
-                    <div class="cell6 p_r-10 cell-md">
-                        <div class="cell m_b-20">
+                    <div class="cell6 p_r-10 cell-md cell-md">
+                        <div class="cell one-line-block m_b-20 cell-md">
                             @include('house.slider')
-                        </div>
 
-                        <div class="cell one-line-block">
                             @include('planstype.blue-info-block')
                         </div>
-                        <div class="cell dark-social text-center">
+
+                        <div class="cell dark-social text-center m_b-30 cell-md">
                             @include('includes.social')
                         </div>
                     </div>
@@ -30,10 +29,16 @@
                         @include('house.table-parameters')
                     </div>
 
-                    <div class="cell">
-                        @include('house.tabs')
-                    </div>
+                    @include('house.tabs')
+
+                    @include('home.seo')
+
+
+                    @include('house.docs')
+
+                    @include('house.reviews')
                 </div>
+
             </div>
         </div>
 
