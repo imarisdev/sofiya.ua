@@ -55,6 +55,32 @@ abstract class BaseRepository {
     }
 
     /**
+     * Поиск по URL
+     * @param $slug
+     * @return mixed
+     */
+    public function getBySlug($slug) {
+
+        $item = $this->model->whereSlug($slug)->firstOrFail();
+
+        return $item;
+
+    }
+
+    /**
+     * Счетчик
+     * @param $id
+     */
+    public function increment($id) {
+
+        $item = $this->getById($id);
+
+        $item->views = $item->views + 1;
+
+        $item->save();
+    }
+
+    /**
      * Транслитерация
      * @param $title
      */
