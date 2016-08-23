@@ -2,17 +2,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Contracts\AdminItemContract;
+use App\Repositories\SeoRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use App\Repositories\ComplexRepository;
 
 class ComplexController extends AdminController implements AdminItemContract {
 
     protected $complex;
+    protected $user;
+    protected $seo;
 
-    public function __construct(ComplexRepository $complex) {
+    public function __construct(ComplexRepository $complex, UserRepository $user, SeoRepository $seo) {
 
         $this->complex = $complex;
-
+        $this->user = $user;
+        $this->seo = $seo;
     }
 
     /**
@@ -35,7 +40,9 @@ class ComplexController extends AdminController implements AdminItemContract {
      */
     public function create() {
 
-        return view('admin.complex.create');
+        $owners = $this->user->getUsersForSelect();
+
+        return view('admin.complex.create', compact('owners'));
     }
 
     /**
@@ -57,7 +64,11 @@ class ComplexController extends AdminController implements AdminItemContract {
 
         $complex = $this->complex->getById($id);
 
-        return view('admin.complex.edit', compact('complex'));
+        $owners = $this->user->getUsersForSelect();
+
+        $seo = $this->seo->getSeoItem($id, 'complex');
+
+        return view('admin.complex.edit', compact('complex', 'owners', 'seo'));
     }
 
     /**

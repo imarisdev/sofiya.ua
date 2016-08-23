@@ -20,9 +20,11 @@ class Helpers {
 
             if(!empty($sizes[0]) && !empty($sizes[1])) {
                 return $empty . $size;
-            } else {
+            } else if(!empty($size)) {
                 $size = ($sizes[0] != '0') ? "{$sizes[0]}x{$sizes[0]}" : "{$sizes[1]}x{$sizes[1]}";
                 return $empty . $size;
+            } else {
+                return $empty;
             }
 
         } else {
@@ -63,7 +65,7 @@ class Helpers {
      * @param $position
      * @return mixed
      */
-    public static function getMenu($position, $order = 'order') {
+    public static function getMenu($position, $order = 'sort') {
 
        $menu = DB::table('menu')
            ->where('position', '=', $position)

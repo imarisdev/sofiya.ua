@@ -2,17 +2,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Repositories\PagesRepository;
+use App\Repositories\SeoRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
 
 class PagesController extends AdminController implements AdminItemContract {
 
     protected $pages;
+    protected $seo;
 
-    public function __construct(PagesRepository $pages) {
+    public function __construct(PagesRepository $pages, SeoRepository $seo) {
 
         $this->pages = $pages;
-
+        $this->seo = $seo;
     }
 
     /**
@@ -57,7 +59,9 @@ class PagesController extends AdminController implements AdminItemContract {
 
         $page = $this->pages->getById($id);
 
-        return view('admin.pages.edit', compact('page'));
+        $seo = $this->seo->getSeoItem($id, 'page');
+
+        return view('admin.pages.edit', compact('page', 'seo'));
     }
 
     /**

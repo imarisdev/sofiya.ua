@@ -7,11 +7,13 @@ use App\Models\Pages;
 class PagesRepository extends BaseRepository {
 
     protected $image;
+    protected $seo;
 
-    public function __construct(Pages $pages, ImageRepository $image) {
+    public function __construct(Pages $pages, ImageRepository $image, SeoRepository $seo) {
 
         $this->model = $pages;
         $this->image = $image;
+        $this->seo = $seo;
     }
 
     /**
@@ -52,6 +54,8 @@ class PagesRepository extends BaseRepository {
         try {
 
             $page->save();
+
+            $this->seo->process($inputs['seo']);
 
             return Response::json(['item' => $page], 201);
         } catch(\Exception $e) {

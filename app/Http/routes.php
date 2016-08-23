@@ -100,10 +100,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/ulitsy/{sid}-{street}/{id}-{house}', array('as' => 'street.house', 'uses' => 'StreetController@house'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
     // Страница дома
-    Route::get('/doma/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
+    Route::get('/sofievskaya-borshagovka/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
     // Страницы
-    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[pokupatelyam|rassrochka|jkh|o\-zastroyshchike]+']);
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[kvartiry\-pod\-kievom|rassrochka|jkh|o\-zastroyshchike]+']);
 
     // Страница комплекса
     Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
