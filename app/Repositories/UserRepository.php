@@ -33,6 +33,22 @@ class UserRepository extends BaseRepository {
     }
 
     /**
+     * Список пользователей для формы
+     * @return array
+     */
+    public function getUsersForSelect() {
+        $users = $this->model->all();
+
+        $users_list = array();
+
+        foreach($users as $user) {
+            $users_list[$user->id] = $user->name;
+        }
+
+        return $users_list;
+    }
+
+    /**
      * Метод сохранения
      * @param $user
      * @param $inputs

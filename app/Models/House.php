@@ -77,7 +77,7 @@ class House extends BaseModel {
      */
     public function link() {
 
-        return "{$this->id}-{$this->slug}";
+        return "/sofievskaya-borshagovka/{$this->id}-{$this->slug}";
 
     }
 }

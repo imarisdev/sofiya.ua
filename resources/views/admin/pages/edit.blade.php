@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab_3">
-                                @include('admin.forms.seo')
+                                @include('admin.forms.seo', ['item_id' => $page->id, 'item_type' => 'page', 'item' => $seo])
                             </div>
                         </div>
                     </div>

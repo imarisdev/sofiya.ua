@@ -135,6 +135,8 @@ class HouseRepository extends BaseRepository {
 
         if(empty($inputs['slug'])) {
             $house->slug = $this->createSlug($inputs['title']);;
+        } else {
+            $house->slug = $inputs['slug'];
         }
 
         if(!empty($inputs['image'])) {
