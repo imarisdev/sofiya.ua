@@ -3,15 +3,19 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
 use App\Repositories\PlansTypeRepository;
+use App\Repositories\SeoRepository;
 
 class ComplexController extends Controller {
 
     protected $complex;
     protected $types;
+    protected $seo;
 
-    public function __construct(ComplexRepository $complex, PlansTypeRepository $types) {
+    public function __construct(ComplexRepository $complex, PlansTypeRepository $types, SeoRepository $seo) {
+
         $this->complex = $complex;
         $this->types = $types;
+        $this->seo = $seo;
     }
 
     /**
@@ -24,6 +28,8 @@ class ComplexController extends Controller {
         $complex = $this->complex->cache('getBySlug', 'complex_' . $url, $url);
 
         $types = $this->types->getPlansTypes();
+
+        $this->seo->getSeoData($complex->id, 'complex');
 
         return view('complex.index', compact('complex', 'types'));
     }

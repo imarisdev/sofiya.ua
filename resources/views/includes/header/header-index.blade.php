@@ -6,6 +6,7 @@
             <div class="white-block"></div>
             <div class="wrapper">
                 <ul>
+                    <li><a href="/">Главная</a></li>
                     @foreach(Helpers::getMenu('top') as $item)
                         <li><a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
                     @endforeach

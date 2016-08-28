@@ -18,7 +18,10 @@ class MenuRepository extends BaseRepository {
      */
     public function getMenu($position) {
 
-        $menu = $this->model->where('position', '=', $position)->get();
+        $menu = $this->model
+            ->where('position', '=', $position)
+            ->orderBy('sort')
+            ->get();
 
         return $menu;
 

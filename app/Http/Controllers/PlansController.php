@@ -21,24 +21,6 @@ class PlansController extends Controller {
     }
 
     /**
-     * Страница планировки
-     * @param $url
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function index($complex, $type, $id, $house, $pid, $plan) {
-
-        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
-
-        $house = $this->house->getById($id);
-
-        $type = $this->types->getPlansTypeBySlug($type);
-
-        $plan = $this->plans->getById($pid);
-
-        return view('plans.index', compact('complex', 'house', 'plan', 'type'));
-    }
-
-    /**
      * Страница всех планировок
      */
     public function allPlans() {
@@ -58,8 +40,28 @@ class PlansController extends Controller {
 
         $type = $this->types->getPlansTypeBySlug($type);
 
-        return view('plans.typeplans', compact('type'));
+        $plans = $this->plans->getPlansByType($type['key'], null);
 
+        return view('plans.typeplans', compact('type', 'plans'));
+
+    }
+
+    /**
+     * Страница планировки
+     * @param $url
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function plan($type, $id, $plan) {
+
+        //$complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+
+        //$house = $this->house->getById($id);
+
+        $type = $this->types->getPlansTypeBySlug($type);
+
+        $plan = $this->plans->getById($id);
+
+        return view('plans.index', compact('plan', 'type'));
     }
 
 }

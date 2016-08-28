@@ -6,10 +6,14 @@ use App\Models\Complex;
 
 class ComplexRepository extends BaseRepository {
 
-    public function __construct(Complex $complex) {
+    protected $image;
+    protected $seo;
+
+    public function __construct(Complex $complex, ImageRepository $image, SeoRepository $seo) {
 
         $this->model = $complex;
-
+        $this->image = $image;
+        $this->seo = $seo;
     }
 
     /**
@@ -32,7 +36,6 @@ class ComplexRepository extends BaseRepository {
     public function getAllComplexes() {
 
         $complex = $this->model
-            ->select('id', 'title', 'slug', 'image')
             ->where('status', '=', 0)
             ->get();
 
@@ -65,14 +68,29 @@ class ComplexRepository extends BaseRepository {
     private function save($complex, $inputs) {
 
         $complex->title = $inputs['title'];
+        $complex->owner = $inputs['owner'];
 
         if(empty($inputs['slug'])) {
             $complex->slug = $this->createSlug($inputs['title']);;
         }
 
+        if(!empty($inputs['image_big'])) {
+            $complex->image_big = $this->image->uploadImage($inputs['image_big'][0]);
+        }
+
+        if(!empty($inputs['image_small'])) {
+            $complex->image_small = $this->image->uploadImage($inputs['image_small'][0]);
+        }
+
+        if(!empty($inputs['background'])) {
+            $complex->background = $this->image->uploadImage($inputs['background'][0]);
+        }
+
         try {
 
             $complex->save();
+
+            $this->seo->process($inputs['seo']);
 
             return Response::json(['item' => $complex], 201);
         } catch(\Exception $e) {

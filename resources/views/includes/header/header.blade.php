@@ -1,10 +1,11 @@
 <!-- header -->
-<header class="cell header header-all">
+<header class="cell header header-all" @if(isset($complex->background)) style="background-image: url('{{ Helpers::getImage($complex->background, null, '/img/main_photo.png') }}')" @endif>
     <div class="header-top">
         <div class="nav-top cell">
             <div class="white-block"></div>
             <div class="wrapper">
                 <ul>
+                    <li><a href="/">Главная</a></li>
                     @foreach(Helpers::getMenu('top') as $item)
                         <li><a @if($item['item']['external'] == 1) target="_blank" @endif href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
                     @endforeach

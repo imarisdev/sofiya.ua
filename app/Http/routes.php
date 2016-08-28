@@ -51,7 +51,21 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/plans/update', array('as' => 'admin.plans.save', 'uses' => 'PlansController@update'));
         Route::post('/plans/delete', array('as' => 'admin.plans.delete', 'uses' => 'PlansController@delete'));
 
+        // Статьи
+        Route::get('/articles', array('as' => 'admin.articles', 'uses' => 'ArticlesController@index'));
+        Route::get('/articles/edit/{id}', array('as' => 'admin.articles.edit', 'uses' => 'ArticlesController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/articles/create', array('as' => 'admin.articles.create', 'uses' => 'ArticlesController@create'));
+        Route::post('/articles/save', array('as' => 'admin.articles.save', 'uses' => 'ArticlesController@store'));
+        Route::post('/articles/update', array('as' => 'admin.articles.save', 'uses' => 'ArticlesController@update'));
+        Route::post('/articles/delete', array('as' => 'admin.articles.delete', 'uses' => 'ArticlesController@delete'));
 
+        // Страницы
+        Route::get('/pages', array('as' => 'admin.pages', 'uses' => 'PagesController@index'));
+        Route::get('/pages/edit/{id}', array('as' => 'admin.pages.edit', 'uses' => 'PagesController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/pages/create', array('as' => 'admin.pages.create', 'uses' => 'PagesController@create'));
+        Route::post('/pages/save', array('as' => 'admin.pages.save', 'uses' => 'PagesController@store'));
+        Route::post('/pages/update', array('as' => 'admin.pages.save', 'uses' => 'PagesController@update'));
+        Route::post('/pages/delete', array('as' => 'admin.pages.delete', 'uses' => 'PagesController@delete'));
 
     });
 
@@ -71,11 +85,25 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/uploads/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
 
     // News
-    Route::get('/novosti', array('as' => 'news.index', 'uses' => 'NewsController@index'));
+    Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));
+    Route::get('/akciy', array('as' => 'articles.shares', 'uses' => 'ArticlesController@shares'));
+    Route::get('/novosti/{id}-{slug}', array('as' => 'articles.page', 'uses' => 'ArticlesController@page'))->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+']);
 
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
+    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
+
+    // Улицы
+    Route::get('/ulitsy', array('as' => 'street.index', 'uses' => 'StreetController@index'));
+    Route::get('/ulitsy/{sid}-{street}', array('as' => 'street.street', 'uses' => 'StreetController@street'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+']);
+    Route::get('/ulitsy/{sid}-{street}/{id}-{house}', array('as' => 'street.house', 'uses' => 'StreetController@house'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
+
+    // Страница дома
+    Route::get('/sofievskaya-borshagovka/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
+
+    // Страницы
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[kvartiry\-pod\-kievom|rassrochka|jkh|o\-zastroyshchike]+']);
 
     // Страница комплекса
     Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
@@ -86,11 +114,5 @@ Route::group(['middleware' => 'web'], function () {
     // Страница типа планировки
     Route::get('/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
-
-    // Страница дома
-    Route::get('/{complex}/{type}/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
-
-    // Страница планировки
-    Route::get('/{complex}/{type}/{id}-{house}/{pid}-{plan}', array('as' => 'plans.index', 'uses' => 'PlansController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+', 'pid' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
 });

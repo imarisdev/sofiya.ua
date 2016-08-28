@@ -37,9 +37,9 @@ class HouseController extends Controller {
      * @param $house
      * @return mixed
      */
-    public function index($complex, $type, $id, $house) {
+    public function index($id, $house) {
 
-        $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
+        //$complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
         $house = $this->house->getById($id);
 
@@ -53,7 +53,7 @@ class HouseController extends Controller {
             $plans_list[$types[$plan->plans_type]['short']]['info']['id'] = $plan->plans_type;
         }
 
-        $type = $this->types->getPlansTypeBySlug($type);
+        //$type = $this->types->getPlansTypeBySlug($type);
 
         //$plans = $this->plans->getPlansByType($type['key'], $complex);
 
@@ -70,7 +70,7 @@ class HouseController extends Controller {
         $balcony_types = $this->plans->getBalconyTypes();
 
         return view('house.index',
-            compact('complex', 'house', 'plans', 'type', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
+            compact('house', 'plans', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
         );
 
     }

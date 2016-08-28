@@ -7,6 +7,7 @@
 
     <div class="cell9 p_r-10 cell-md">
         <div class="cell">
+            <img alt="" src="{{ Helpers::getImage($plan->image, '430x0') }}">
             {!! $plan->content !!}
             <p>Тип: {{ $type['title'] }}</p>
             <p>Площадь: {{ $plan->area }}</p>
