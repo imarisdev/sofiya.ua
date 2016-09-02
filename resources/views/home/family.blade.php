@@ -2,7 +2,8 @@
 <section class="zero-procent cell">
     <div class="wrapper">
         <div class="item-wrapper">
-            <div class="item cell-md"></div>
+            {!! Helpers::getBanners(3) !!}
+            <!--div class="item cell-md"></div>
 
             <div class="item cell-md">
                 <p class="title">
@@ -15,7 +16,7 @@
                 <div class="text-center">
                     <a href="" class="yellow-btn cell-xss">купить квартиру в рассрочку</a>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
 </section>

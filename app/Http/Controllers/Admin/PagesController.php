@@ -59,7 +59,7 @@ class PagesController extends AdminController implements AdminItemContract {
 
         $page = $this->pages->getById($id);
 
-        $seo = $this->seo->getSeoItem($id, 'page');
+        $seo = $this->seo->getSeoItem($id, 'pages');
 
         return view('admin.pages.edit', compact('page', 'seo'));
     }

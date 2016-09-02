@@ -1,7 +1,9 @@
 <?php
 namespace App\Repositories;
 
+use DB;
 use View;
+use Response;
 use App\Models\Seo;
 
 class SeoRepository extends BaseRepository {
@@ -25,6 +27,17 @@ class SeoRepository extends BaseRepository {
             ->where('object_type', '=', $object_type)
             ->first();
 
+        if(!empty($params) && !empty($seo)) {
+
+            foreach($params as $key => $param) {
+                $seo->title = str_replace("%{$key}%", $param, $seo->title);
+                $seo->h1 = str_replace("%{$key}%", $param, $seo->h1);
+                $seo->description = str_replace("%{$key}%", $param, $seo->description);
+                $seo->keywords = str_replace("%{$key}%", $param, $seo->keywords);
+            }
+
+        }
+
         View::share(['seo' => $seo]);
     }
 
@@ -43,6 +56,41 @@ class SeoRepository extends BaseRepository {
 
         return $seo;
 
+    }
+
+    /**
+     * Все SEO параметры
+     * @param null $request
+     * @param int $limit
+     * @return mixed
+     */
+    public function getAllSeo($request = null, $limit = 20) {
+
+        $seo = $this->model;
+
+        if(!empty($request['object_type'])) {
+            $seo = $seo->where('object_type', '=', $request['object_type']);
+        }
+
+        if(!empty($request['object_id'])) {
+            $seo = $seo->where('object_id', '=', $request['object_id']);
+        }
+
+        return $seo->paginate($limit);
+    }
+
+    /**
+     * Типы объектов
+     * @return array
+     */
+    public function getTypes() {
+
+        $types = $this->model
+            ->select('object_type')
+            ->groupBy('object_type')
+            ->get();
+
+        return $types;
     }
 
     /**
@@ -65,7 +113,7 @@ class SeoRepository extends BaseRepository {
 
             $seo->save();
 
-            //return Response::json(['item' => $seo], 201);
+            return Response::json(['item' => $seo], 201);
         } catch(\Exception $e) {
             return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
         }
@@ -90,6 +138,99 @@ class SeoRepository extends BaseRepository {
 
         return $this->save(new $this->model, $inputs);
 
+    }
+
+    /**
+     * Создание через генератор
+     * @param $inputs
+     */
+    public function generateStore($inputs) {
+
+        if($inputs['action'] == 'all') {
+            $this->model
+                ->where('object_type', '=', $inputs['object_type'])
+                ->delete();
+
+
+            $items = DB::table($inputs['object_type'])
+                ->select('id')
+                ->get();
+
+            foreach ($items as $item) {
+
+                $data = $data = $this->processGenerate($item->id, $inputs);
+
+                $this->store($data);
+
+            }
+
+        } else {
+
+            $seo_items = DB::table('seo')
+                ->select('object_id')
+                ->where('object_type', '=', $inputs['object_type'])
+                ->get();
+
+            $seo_items_ids = [];
+
+            foreach($seo_items as $item) {
+                $seo_items_ids[] = $item->object_id;
+            }
+
+            $items = DB::table($inputs['object_type'])
+                ->select('id')
+                ->whereNotIn('id', $seo_items_ids)
+                ->get();
+
+            foreach ($items as $item) {
+
+                $data = $this->processGenerate($item->id, $inputs);
+
+                $this->store($data);
+
+            }
+
+        }
+
+    }
+
+    /**
+     * Обработка генерации метатегов
+     * @param $object_id
+     * @param $inputs
+     * @return array
+     */
+    public function processGenerate($object_id, $inputs) {
+
+        $reg = "/\{([а-яА-Я0-9\|\-\s]+)\}/iu";
+
+        $data = [];
+
+        $data['object_id'] = $object_id;
+        $data['object_type'] = $inputs['object_type'];
+        $data['content'] = null;
+
+        $data['title'] = preg_replace_callback($reg, function($matches) {
+            $values = explode('|', $matches[1]);
+            return $values[array_rand($values)];
+        }, $inputs['title']);
+
+        $data['h1'] = preg_replace_callback($reg, function($matches) {
+            $values = explode('|', $matches[1]);
+            return $values[array_rand($values)];
+        }, $inputs['h1']);
+
+        $data['description'] = preg_replace_callback($reg, function($matches) {
+            $values = explode('|', $matches[1]);
+            return $values[array_rand($values)];
+        }, $inputs['description']);
+
+        $data['keywords'] = preg_replace_callback($reg, function($matches) {
+            $values = explode('|', $matches[1]);
+            return $values[array_rand($values)];
+        }, $inputs['keywords']);
+
+        return $data;
     }
 
     /**

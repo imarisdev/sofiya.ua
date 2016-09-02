@@ -42,7 +42,7 @@ class ImageRepository extends BaseRepository {
             // Путь к файлу
             $file_path = substr($file_name, 0, 2) . '/' . substr($file_name, 2, 2) . '/' . substr($file_name, 4, 2) . '/';
 
-            $upload_path = public_path() . Config::get('filesystems.folder.uploads') . $file_path;
+            $upload_path = public_path() . Config::get('filesystems.folder.images') . $file_path;
 
             mkdir($upload_path, 0777, true);
             chown($upload_path, Config::get('filesystems.fileowner'));
@@ -54,7 +54,7 @@ class ImageRepository extends BaseRepository {
             $img->save($upload_path . $file_name);
             $img->save($upload_path . $file_name . $ext);
 
-            return array('file' => Config::get('filesystems.folder.uploads') . $file_path . $file_name, 'ext' => $ext);
+            return array('file' => Config::get('filesystems.folder.images') . $file_path . $file_name, 'ext' => $ext);
         } catch(\Exception $e) {
             dd($e->getMessage());
         }

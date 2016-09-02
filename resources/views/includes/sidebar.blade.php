@@ -1,7 +1,5 @@
 <div class="fitness-block cell m_b-10">
-    <a class="" href="#">
-        <img src="/img/martinov/fitness.png" alt="ЖК «София» фитнес клуб">
-    </a>
+    {!! Helpers::getBanners(2) !!}
 </div>
 
 <ul class="cell list-icons-martinov m_b-10">

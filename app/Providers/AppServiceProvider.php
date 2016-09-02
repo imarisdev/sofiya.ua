@@ -24,8 +24,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
-        //
+    public function register() {
+
+        //$this->app->useStoragePath(base_path('public/storage'));
+
     }
 }

@@ -28,7 +28,7 @@ class ImageController extends Controller {
             $watermark = true;
         }
 
-        $image_file =  public_path() . Config::get('filesystems.folder.uploads') . $path;
+        $image_file =  public_path() . Config::get('filesystems.folder.images') . $path;
 
         if(file_exists($image_file)) {
             if($w > 0 && $h > 0) {
