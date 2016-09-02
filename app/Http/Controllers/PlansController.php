@@ -5,6 +5,7 @@ use App\Repositories\ComplexRepository;
 use App\Repositories\HouseRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
+use App\Repositories\SeoRepository;
 
 class PlansController extends Controller {
 
@@ -12,12 +13,14 @@ class PlansController extends Controller {
     protected $house;
     protected $types;
     protected $plans;
+    protected $seo;
 
-    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans) {
+    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans, SeoRepository $seo) {
         $this->complex = $complex;
         $this->house = $house;
         $this->types = $types;
         $this->plans = $plans;
+        $this->seo = $seo;
     }
 
     /**
@@ -60,6 +63,13 @@ class PlansController extends Controller {
         $type = $this->types->getPlansTypeBySlug($type);
 
         $plan = $this->plans->getById($id);
+
+        $seo_params = [
+            'name' => $plan->title,
+            'address' => $plan->house->street->title . ", " . $plan->house->number
+        ];
+
+        $this->seo->getSeoData($plan->id, 'plans', $seo_params);
 
         return view('plans.index', compact('plan', 'type'));
     }

@@ -114,7 +114,9 @@ class PlansRepository extends BaseRepository {
             $plan->slug = $this->createSlug($inputs['title']);;
         }
 
-        $plan->image = $this->image->uploadFile($inputs);
+        if(!empty($inputs['image'])) {
+            $plan->image = $this->image->uploadImage($inputs['image'][0]);
+        }
 
         try {
 

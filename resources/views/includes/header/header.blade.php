@@ -7,7 +7,7 @@
                 <ul>
                     <li><a href="/">Главная</a></li>
                     @foreach(Helpers::getMenu('top') as $item)
-                        <li><a @if($item['item']['external'] == 1) target="_blank" @endif href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
+                        <li><a href="{{ $item->link }}">{{ $item->title }}</a></li>
                     @endforeach
                 </ul>
             </div>

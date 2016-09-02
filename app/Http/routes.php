@@ -67,6 +67,22 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/pages/update', array('as' => 'admin.pages.save', 'uses' => 'PagesController@update'));
         Route::post('/pages/delete', array('as' => 'admin.pages.delete', 'uses' => 'PagesController@delete'));
 
+        // SEO-mod
+        Route::get('/seo', array('as' => 'admin.seo', 'uses' => 'SeoController@index'));
+        Route::get('/seo/generate', array('as' => 'admin.seo.generate', 'uses' => 'SeoController@generate'));
+        Route::post('/seo/generate', array('as' => 'admin.seo.generate.post', 'uses' => 'SeoController@generateStore'));
+        Route::get('/seo/edit/{id}', array('as' => 'admin.seo.edit', 'uses' => 'SeoController@edit'))->where(['id' => '[0-9]+']);
+        Route::post('/seo/update', array('as' => 'admin.seo.save', 'uses' => 'SeoController@update'));
+        Route::post('/seo/delete', array('as' => 'admin.seo.delete', 'uses' => 'SeoController@delete'));
+
+        // Banners
+        Route::get('/banners', array('as' => 'admin.banners', 'uses' => 'BannersController@index'));
+        Route::get('/banners/edit/{id}', array('as' => 'admin.banners.edit', 'uses' => 'BannersController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/banners/create', array('as' => 'admin.banners.create', 'uses' => 'BannersController@create'));
+        Route::post('/banners/save', array('as' => 'admin.banners.save', 'uses' => 'BannersController@store'));
+        Route::post('/banners/update', array('as' => 'admin.banners.save', 'uses' => 'BannersController@update'));
+        Route::post('/banners/delete', array('as' => 'admin.banners.delete', 'uses' => 'BannersController@delete'));
+
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
@@ -82,7 +98,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));
 
     // Images resize
-    Route::get('/uploads/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
+    Route::get('/uploads/images/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
 
     // News
     Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));

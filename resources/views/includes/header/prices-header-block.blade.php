@@ -1,4 +1,5 @@
-<div class="white-block-action wow bounceInRight" data-wow-delay="0.5s" data-wow-duration="1.5s">
+{!! Helpers::getBanners(1, 'white-block-action wow bounceInRight') !!}
+<!--div class="white-block-action wow bounceInRight" data-wow-delay="0.5s" data-wow-duration="1.5s">
     <div class="item">
         <span class="bold red t-36">О%</span> РАССРОЧКА
     </div>
@@ -14,4 +15,4 @@
     <div class="item">
         АРЕНДА КВАРТИРЫ ОТ <span class="bold red">3 500</span> грн/мес.
     </div>
-</div>
+</div-->
