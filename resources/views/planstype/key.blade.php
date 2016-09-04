@@ -2,10 +2,11 @@
 
 @section('content')
     <div class="clearfix wrapper">
-        <h1 class="cell text-center title">{{ $seo['h1'] or 'Квартиры под ключ' }}</h1>
+
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
+            <h1 class="cell text-center title">{{ $seo['h1'] or 'Квартиры под ключ' }}</h1>
             <div class="cell type-plans">
                 @foreach($houses as $house)
                     <div class="cell6 cell-xs">

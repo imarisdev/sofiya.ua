@@ -50,6 +50,14 @@
 <form class='review' method="">
     <textarea class="field m_b-20" placeholder="Введите Ваш комментарий"></textarea>
 
+    <div class="cell m_b-20">
+        <input type="text" class="field" placeholder="Name">
+    </div>
+
+    <div class="cell m_b-20">
+        <input type="text" class="field" placeholder="E-mail">
+    </div>
+
     <div class="fl_r m_b-30">
         <button class="blue-btn">Оставить коментарий</button>
     </div>

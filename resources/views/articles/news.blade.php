@@ -3,6 +3,10 @@
 @section('content')
    <div class="wrapper clearfix">
        <div class="cell9 p_r-10 cell-md">
+
+
+           @include('includes.bread-crumbs')
+
             <h1 class="cell text-center title">{{ $seo['h1'] or 'Новости' }}</h1>
 
             <div class="seo-text">{{ $seo['content'] or '' }}</div>
@@ -15,7 +19,7 @@
                        </div>
 
                        <div class="info-wrap cell-xs">
-                           <h3 class="blue-title cell m_b-10">{{ $article->title }}</h3>
+                           <p class="blue-title cell m_b-10">{{ $article->title }}</p>
                            <p class="cell text">{{ $article->description }}</p>
 
                            <div class="cell dop-info">
