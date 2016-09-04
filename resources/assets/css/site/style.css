@@ -1785,8 +1785,13 @@ a.nav-item {
     display: table;
     width: 100%;
     font-size: 16px;
+    max-width: 100%;
 }
-
+.table-wrap {
+    max-width: 100%;
+    display: block;
+    overflow: auto;
+}
 .table .table-cell {
     display: table-cell;
     padding: 15px 15px 10px;
