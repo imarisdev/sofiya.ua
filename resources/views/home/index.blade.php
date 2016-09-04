@@ -6,8 +6,6 @@
 
 @section('content')
 
-    @include('home.video')
-
     @include('home.video-carousel')
 
     @include('home.family')

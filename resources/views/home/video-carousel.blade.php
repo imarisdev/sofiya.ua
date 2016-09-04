@@ -1,40 +1,31 @@
 <!-- carousel video -->
+<div class="cell">
+    <h1 class="title-page">{{ $seo['h1'] or 'ЖК «София» от Мартынова: ваш собственный кусочек Европы' }}</h1>
+</div>
 <section class="carousel-section cell">
+    <div class="video-wrapper">
+        <div id="slider" class="flexslider">
+            <ul class="slides">
+                @foreach($video as $v)
+                    <li>
+                        <iframe src="//www.youtube.com/embed/{{ $v->url }}" frameborder="0" allowfullscreen width="1200" height="700"></iframe>
+                        <!--img width="1200" height="700" src="//img.youtube.com/vi/{{ $v->url }}/maxresdefault.jpg" /-->
+                    </li>
+                @endforeach
+                <!-- items mirrored twice, total of 12 -->
+            </ul>
+        </div>
+    </div>
     <div class="wrapper">
-        <div class="carousel-row carousel-row-index">
-            <div id="owl-carousel" class="owl-carousel owl-theme">
-
-                <div class="item">
-                    <iframe width="185" height="160" src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-                <div class="item">
-                    <iframe width="185" height="160"  src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-                <div class="item">
-                    <iframe width="185" height="160" src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-                <div class="item">
-                    <iframe width="185" height="160" src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-                <div class="item">
-                    <iframe width="185" height="160" src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-                <div class="item">
-                    <iframe width="185" height="160" src="https://www.youtube.com/embed/efqhudEJmFo" frameborder="0"
-                            allowfullscreen></iframe>
-                </div>
-
-            </div>
+        <div id="carousel" class="flexslider">
+            <ul class="slides">
+                @foreach($video as $v)
+                    <li>
+                        <img width="185" height="160" src="//img.youtube.com/vi/{{ $v->url }}/default.jpg" />
+                    </li>
+                @endforeach
+                <!-- items mirrored twice, total of 12 -->
+            </ul>
         </div>
     </div>
 </section>

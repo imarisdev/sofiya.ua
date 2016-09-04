@@ -83,6 +83,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/banners/update', array('as' => 'admin.banners.save', 'uses' => 'BannersController@update'));
         Route::post('/banners/delete', array('as' => 'admin.banners.delete', 'uses' => 'BannersController@delete'));
 
+        // Banners
+        Route::get('/video', array('as' => 'admin.video', 'uses' => 'VideoController@index'));
+        Route::get('/video/edit/{id}', array('as' => 'admin.video.edit', 'uses' => 'VideoController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/video/create', array('as' => 'admin.video.create', 'uses' => 'VideoController@create'));
+        Route::post('/video/save', array('as' => 'admin.video.save', 'uses' => 'VideoController@store'));
+        Route::post('/video/update', array('as' => 'admin.video.save', 'uses' => 'VideoController@update'));
+        Route::post('/video/delete', array('as' => 'admin.video.delete', 'uses' => 'VideoController@delete'));
+
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
