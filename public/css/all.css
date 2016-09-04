@@ -3069,6 +3069,17 @@ h5 {
     color: #f00000;
 }
 
+.black {
+    color: #000;
+}
+
+.under-link {
+    font-family: KelsonSans;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
 .bold {
     font-weight: 600;
     font-family: KelsonSansBold;
@@ -3318,6 +3329,11 @@ h5 {
 .blue {
     color: #53d1ee;
 }
+
+.dark-blue {
+    color: #01415f;
+}
+
 body {
     font-family: KelsonSans;
     position: relative;
@@ -3787,6 +3803,19 @@ a {
     text-align: center;
     font-family: KelsonSans;
 }
+.h2 {
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.h3 {
+    font-family: KelsonSans;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
 
 .video-wrapper {
     position: relative;
@@ -3924,6 +3953,8 @@ a {
     font-weight: 400;
     text-transform: uppercase;
     transition: all 0.3s ease-out 0.05s;
+    border: none;
+    font-family: KelsonSans;
 }
 
 .blue-btn:hover {
@@ -4214,7 +4245,7 @@ h1.title {
     content: '';
     display: block;
     position: absolute;
-    top: 1px;
+    top: -3px;
     width: 1px;
     height: 20px;
     background-color: #53d1ee;
@@ -4595,7 +4626,7 @@ h1.title {
 .br-item {
     position: relative;
     float: left;
-    min-height: 32px;
+    height: 32px;
     min-width: 32px;
     margin-right: 10px;
     padding: 4px 13px 0;
@@ -4677,6 +4708,7 @@ a.br-item {
 }
 .contacts-info .item:nth-child(3):after {
     top: 10px;
+    height: 40px;
     background: url(/img/sprites.png)no-repeat 0 -522px;
 }
 
@@ -4704,7 +4736,9 @@ a.br-item {
 .item-manager p {
     line-height: 26px;
 }
-
+.item-manager img {
+    border-radius: 50%  ;
+}
 .relative {
     position: relative;
 }
@@ -4796,7 +4830,7 @@ a.br-item {
     position: relative;
     top: -1px;
 }
-.tabs ul li{
+.tabs ul li {
     float: left;
     color: black;
     font-family: KelsonSans;
@@ -4804,7 +4838,6 @@ a.br-item {
     text-align: center;
     padding: 15px 40px 10px;
     white-space: nowrap;
-    width: 189px;
     height: 48px;
     background-color: #f3f3f3;
     border: 1px solid #d0d0d0;
@@ -4851,6 +4884,179 @@ a.br-item {
     font-size: 14px;
     font-weight: 700;
 }
+
+.rewiev-item {
+    margin-bottom: 40px;
+}
+
+.rewiev-title {
+    padding: 10px;
+    background-color: #f3f3f3;
+    padding-left: 100px;
+    position: relative;
+    border-radius: 50px 0 0 50px;
+}
+
+.rewiev-title img {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.rewiev-title .info {
+    color: #636161;
+    font-size: 12px;
+}
+
+.rewiev-title .name {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.icon-heart {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    margin-right: 5px;
+    background: url('/img/sprites.png') no-repeat 0 0;
+    background-position-y: -564px;
+}
+
+.rewiev-item .text {
+    margin: 15px 0;
+    padding-left: 100px;
+    color: #444;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.rewiev-item .like .icon-like {
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    margin-right: 5px;
+    background: url('/img/sprites.png') no-repeat 0 -581px;
+}
+
+.rewiev-item .like p {
+    color: #636161;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.rewiev-item .like {
+    padding-top: 5px;
+
+}
+.btn-gray {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #f3f3f3;
+    border: 1px solid #d0d0d0;
+    border-radius: 24px;
+    display: inline-block;
+    padding: 15px 20px 10px;
+}
+
+/*form*/
+
+.field {
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: italic;
+}
+
+input.field {
+    padding: 10px 20px;
+}
+
+label {
+    margin: 20px 0 5px;
+    font-family: KelsonSans;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+::-webkit-input-placeholder {
+    color: #9c9c9c;
+
+}
+
+:-moz-placeholder {
+    color: #9c9c9c;
+}
+
+textarea.field {
+    height: 160px;
+}
+
+form  .blue-btn {
+    font-size: 16px;
+    padding: 17px 30px 10px;
+    border-radius: 24px;
+}
+
+form.review {
+    padding-left: 100px;
+}
+
+.list-street li {
+    width: 25%;
+    float: left;
+    margin: 5px 0 5px 20px;
+    color: #01415f;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+}
+.list-street li:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    width: 5px;
+    height: 5px;
+    background-color: #53d1ee;
+    left: -12.5px;
+    border-radius: 50%;
+}
+.search input {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 48px;
+    margin-bottom: 30px;
+    float: left;
+    padding: 10px 20px 10px 55px;
+    z-index: 1;
+    background: url('/img/search.png') no-repeat 20px 60%;
+    background-color: #fefefe;
+    border: 1px solid #53d1ee;
+    border-radius: 24px;
+}
+
+.search .blue-btn {
+    float: right;
+    z-index: 3;
+    position: relative;
+    height: 48px;
+}
+
 @media all and (max-width: 990px) {
     .cell-md {
         float: left;
@@ -5045,6 +5251,13 @@ a.br-item {
     .blue-block-info .blue-btn {
         float: left;
     }
+
+    .one-line-block .blue-block-info .blue-btn {
+        float: none;
+    }
+    .one-line-block .blue-block-info {
+        padding-bottom: 40px;
+    }
 }
 
 @media all and (max-width: 990px) {
@@ -5225,9 +5438,20 @@ a.br-item {
     .item-news .info-wrap {
         width: 70%;
     }
+
+    #slideshow {
+        width: 100%;
+    }
+    .tabs ul li {
+        padding: 15px 10px 10px;
+    }
 }
 
 @media all and (max-width: 770px) {
+    .table-wrap {
+        max-width: 670px;
+        overflow-y: auto;
+    }
 
     .header-bottom-icons {
         display: none;
@@ -5340,12 +5564,20 @@ a.br-item {
         margin: 0 5% 5%;
     }
 
+    form.review,
+
+    .rewiev-item .text {
+        padding: 0;
+    }
 }
 @media all and (max-width: 420px) {
     .item-news .dop-info .blue-btn {
         width: 100%;
         text-align: center;
         margin: 15px 0;
+    }
+    .tabs ul li {
+        width: 100%;
     }
 }
 /*# sourceMappingURL=all.css.map */
