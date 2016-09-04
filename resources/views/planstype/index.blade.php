@@ -6,6 +6,9 @@
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
+
+            @include('includes.bread-crumbs')
+
             <h1 class="cell text-center title">{{ $type['title'] }}</h1>
             <div class="cell type-plans m_b-20">
                 @foreach($plans as $plan)

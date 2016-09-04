@@ -7,7 +7,7 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h3 class="title-page">ВИДЕОГАЛЕРЕЯ {{ $complex->title }}</h3>
+            <h3 class="title-page m_t-10">ВИДЕОГАЛЕРЕЯ {{ $complex->title }}</h3>
 
             @include('complex.video-block')
 

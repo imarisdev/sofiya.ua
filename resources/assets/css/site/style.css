@@ -2661,3 +2661,28 @@ form.review {
         width: 100%;
     }
 }
+
+
+.prev,
+.next {
+    height: 20px;
+
+    position: absolute;
+    margin-top: -15px;
+    width: 13px;
+    min-width: 25px;
+    padding: 35px 1%;
+    top: 15px;
+}
+.prev {
+    background: url('/img/prev.png') no-repeat 0 50%;
+    left: 0;
+}
+
+.next {
+    background: url('/img/next.png') no-repeat 100% 50% ;
+    right: 0;
+}
+.thumbs-container {
+    background: #fff;
+}
