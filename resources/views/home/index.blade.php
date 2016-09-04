@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
+@section('header')
+    @include('includes.header.header-index')
+@endsection
+
 @section('content')
 
-home page
+    @include('home.video-carousel')
 
-{!! Form::open(['route' => 'home.page', 'method' => 'post', 'role' => 'form']) !!}
+    @include('home.family')
 
-<div class="row">
+    @include('home.news')
 
-    {!! Form::text('query', '', ['class' => 'search']) !!}
-
-    {!! Form::submit('Поиск', ['class' => 'btn']) !!}
-
-</div>
-
-{!! Form::close() !!}
+    @include('home.seo')
 
 @endsection

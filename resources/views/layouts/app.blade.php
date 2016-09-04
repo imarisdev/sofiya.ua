@@ -3,21 +3,29 @@
     <head>
         @include('includes.head')
     </head>
-    <body class="body">
-        <div class="wrapper">
-            @include('includes.header')
-            <div class="container">
+
+    @include('includes.header.adaptive-menu')
+
+    <div class="main-content">
+
+        <body class="body">
+
+            @section('header')
+                @include('includes.header.header')
+            @show
+
+
+            <div class="content">
                 @yield('content')
             </div>
 
-            <footer class="footer--main">
+
+            <footer>
                 @include('includes.footer')
             </footer>
-        </div>
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </body>
+
+            <script src="{{ elixir('js/common.js') }}"></script>
+            <script src="{{ elixir('js/owl-carousel.js') }}"></script>
+        </body>
+    </div>
 </html>

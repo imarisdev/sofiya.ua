@@ -1,51 +1,196 @@
 <?php
 namespace App\Repositories;
 
+use Response;
 use App\Models\House;
 
 class HouseRepository extends BaseRepository {
 
-    public function __construct(House $house) {
+    protected $image;
+    protected $medialib;
+
+    private $house_class = [
+        1 => 'Комфорт-класс',
+        2 => 'Бизнес'
+    ];
+
+    private $house_decoration = [
+        1 => 'Без отделки',
+        2 => 'C отделкой'
+    ];
+
+    private $installments = [
+        1 => 'Рассрочка',
+        2 => 'Кредит',
+        3 => 'Вся сумма'
+    ];
+
+    public function __construct(House $house, ImageRepository $image, MedialibRepository $medialib) {
 
         $this->model = $house;
-
-    }
-
-    private function saveHouse($house, $inputs) {
-
-        $house->title = $inputs['title'];
-
-        return $house;
-
+        $this->image = $image;
+        $this->medialib = $medialib;
     }
 
     /**
-     * Обновление данных дома
+     * Дома комплекса
+     * @param $complex_id
+     * @return mixed
+     */
+    public function getByComplexId($complex_id) {
+
+        $houses = $this->model
+            ->where('complex_id', '=', $complex_id)
+            ->get();
+
+        return $houses;
+    }
+
+    /**
+     * Список домов
+     * @param null $request
+     * @param int $limit
+     * @return mixed
+     */
+    public function getHouses($request = null, $limit = 20) {
+
+        $house = $this->model;
+
+        if(!empty($request['decoration'])) {
+            $house = $house->where('decoration', '=', $request['decoration']);
+        }
+
+        if(!empty($request['complex_id'])) {
+            $house = $house->where('complex_id', '=', $request['complex_id']);
+        }
+
+        return $house->paginate($limit);
+    }
+
+    /**
+     * Список домов для формы
+     * @return array
+     */
+    public function getHousesForSelect() {
+        $houses = $this->model->all();
+
+        $houses_list = array();
+
+        foreach($houses as $house) {
+            $houses_list[$house->id] = $house->title;
+        }
+
+        return $houses_list;
+    }
+
+    /**
+     * Класы домов
+     * @return array
+     */
+    public function getHouseClass() {
+        return $this->house_class;
+    }
+
+    /**
+     * Отделка квартир
+     * @return array
+     */
+    public function getHouseDecoration() {
+        return $this->house_decoration;
+    }
+
+    /**
+     * Виды оплаты по дому
+     * @return array
+     */
+    public function getHouseInstallments() {
+        return $this->installments;
+    }
+
+    /**
+     * Сохранение
+     * @param $house
+     * @param $inputs
+     * @return mixed
+     */
+    private function save($house, $inputs) {
+        
+        $house->title           = $inputs['title'];
+        $house->status          = $inputs['status'];
+        $house->street_id       = $inputs['street_id'];
+        $house->complex_id      = $inputs['complex_id'];
+        $house->is_rent         = $inputs['is_rent'];
+        $house->number          = $inputs['number'];
+        $house->is_installments = $inputs['is_installments'];
+        $house->parking         = $inputs['parking'];
+        $house->building_type   = $inputs['building_type'];
+        $house->floors          = $inputs['floors'];
+        $house->transport       = $inputs['transport'];
+        $house->to_stop         = $inputs['to_stop'];
+        $house->completion_at   = $inputs['completion_at'];
+        $house->decoration      = $inputs['decoration'];
+        $house->flats           = $inputs['flats'];
+        $house->class           = $inputs['class'];
+        $house->content         = $inputs['content'];
+
+        if(empty($inputs['slug'])) {
+            $house->slug = $this->createSlug($inputs['title']);;
+        } else {
+            $house->slug = $inputs['slug'];
+        }
+
+        if(!empty($inputs['image'])) {
+            $house->image = $this->image->uploadImage($inputs['image'][0]);
+        }
+
+        try {
+
+            $house->save();
+
+            if(!empty($inputs['slider'])) {
+                $this->medialib->saveFiles($inputs['slider'], $house->id, 'house');
+            }
+
+            return Response::json(['item' => $house], 201);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
+    }
+
+    /**
+     * Обновление данных
      * @param $inputs
      */
-    public function update($post, $inputs) {
+    public function update($house, $inputs) {
 
-        $house = $this->saveHouse($post, $inputs);
+        return $this->save($house, $inputs);
 
     }
 
     /**
-     * Создание нового дома
+     * Создание
      * @param $inputs
      */
     public function store($inputs) {
 
-        $house = $this->saveHouse(new $this->model, $inputs);
+        return $this->save(new $this->model, $inputs);
 
     }
 
     /**
-     * Удаляет дом
+     * Удаление
      * @param $house
      */
     public function destroy($house) {
 
-        $house->delete();
+        try {
+
+            $house->delete();
+
+            return Response::json(['item' => true], 200);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
 
     }
 }

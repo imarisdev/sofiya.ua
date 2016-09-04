@@ -15,6 +15,7 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->smallInteger('status')->default(0);
+            $table->smallInteger('plans_type')->default(1)->index();
             $table->integer('house_id')->unsigned();
             $table->foreign('house_id')->references('id')->on('houses');
             $table->smallInteger('flats_count')->default(0);
@@ -24,8 +25,9 @@ class CreatePlansTable extends Migration
             $table->decimal('area', 5, 2)->index();
             $table->decimal('live', 5, 2)->index();
             $table->decimal('kitchen', 5, 2)->index();
-            $table->decimal('bathroom', 5, 2)->index();
-            $table->smallInteger('balcony')->default(0);
+            $table->decimal('bathroom_area', 5, 2)->index();
+            $table->smallInteger('bathroom')->default(0)->index();
+            $table->smallInteger('balcony')->default(0)->index();
             $table->text('content')->nullable();
             $table->timestamps();
         });

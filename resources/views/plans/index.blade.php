@@ -1,0 +1,23 @@
+@extends('layouts.app')
+
+@section('content')
+
+    <h1 class="cell text-center title">{{ $plan->title }}</h1>
+    <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
+
+    <div class="cell9 p_r-10 cell-md">
+        <div class="cell">
+            <img alt="" src="{{ Helpers::getImage($plan->image, '430x0') }}">
+            {!! $plan->content !!}
+            <p>Тип: {{ $type['title'] }}</p>
+            <p>Площадь: {{ $plan->area }}</p>
+            <p>Жилая: {{ $plan->live }}</p>
+            <p>Кухня: {{ $plan->kitchen }}</p>
+            <p>Санузел: {{ $plan->bathroom_area }}</p>
+        </div>
+    </div>
+    <div class="cell3 p_l-5 cell-md">
+
+    </div>
+
+@endsection

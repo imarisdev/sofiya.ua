@@ -15,9 +15,13 @@ class CreateComplexTable extends Migration
         Schema::create('complex', function (Blueprint $table) {
             $table->increments('id');
             $table->smallInteger('status')->default(0);
+            $table->integer('owner')->unsigned();
+            $table->foreign('owner')->references('id')->on('users');
             $table->string('title', 250);
             $table->string('slug', 250)->index();
-            $table->string('image', 250)->nullable();
+            $table->string('image_big', 250)->nullable();
+            $table->string('image_small', 250)->nullable();
+            $table->string('background', 250)->nullable();
             $table->text('content')->nullable();
             $table->timestamps();
         });
