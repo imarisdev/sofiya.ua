@@ -8,12 +8,12 @@
             </div>
 
 
-            <div class="cell2">
+            <div class="cell2 cell-xs-6">
                 @include('includes.social')
             </div>
 
             <div class="info-wrap cell-sm">
-                <div class="d_in mail m_t-15 m_r-20">
+                <div class="d_in mail m_t-15 m_r-20     cell-xs">
                     <i class="icon-mail"></i>SOFIYA-CITY@UKR.NET
                 </div>
 

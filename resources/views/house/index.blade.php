@@ -6,6 +6,8 @@
 
         <div class="cell9 p_r-10 cell-md">
 
+            @include('includes.bread-crumbs')
+
             <h1 class='cell title text-center'> Продажа квартир в доме {{ $house->street->title }}, {{ $house->number }}</h1>
 
             <div class="cell">

@@ -6,6 +6,9 @@
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
+
+            @include('includes.bread-crumbs')
+
             @if(!empty($plans) && count($plans) > 0)
                 <div class="cell type-plans m_b-20">
                     @foreach($plans as $plan)
