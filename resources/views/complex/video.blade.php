@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="wrapper clearfix">
-        <h1 class="cell text-center title"></h1>
+
 
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
