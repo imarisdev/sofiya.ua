@@ -3,6 +3,7 @@ namespace App\Helpers;
 
 use DB;
 use View;
+use App\Models\Articles;
 
 class Helpers {
 
@@ -217,5 +218,23 @@ class Helpers {
         }
 
         return $data;
+    }
+
+    /**
+     * Список материалов
+     * @param $type
+     * @param int $limit
+     * @return array
+     */
+    public static function getArticlesByType($type, $limit = 5) {
+
+        $news = Articles::select('id', 'title', 'slug', 'created_at', 'type', 'views', 'image')
+            ->where('type', '=', $type)
+            //->where('status', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->take($limit)
+            ->get();
+
+        return $news;
     }
 }

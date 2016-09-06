@@ -3,11 +3,12 @@
 @section('content')
 
     <div class="wrapper clearfix">
-        <h1>Планировки квартир</h1>
-
-        <div class="cell seo-text">{!! $seo['content'] or '' !!}</div>
 
         <div class="cell9 p_r-10 cell-md">
+            @include('includes.bread-crumbs')
+            <h1 class="cell text-center title">Планировки квартир</h1>
+
+            <div class="cell seo-text">{!! $seo['content'] or '' !!}</div>
             <div class="cell type-flats m_b-20">
                 @foreach($types as $tkey => $type)
                     <div class="cell4 cell-md-6 cell-xs">

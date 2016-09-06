@@ -14,7 +14,13 @@ class ContactsController extends Controller{
      */
     public function index() {
 
-        return view('contacts.index');
+        $breadcrumbs = [
+            [
+                'title' => "Наши контакты"
+            ]
+        ];
+
+        return view('contacts.index', compact('breadcrumbs'));
     }
 
 }
