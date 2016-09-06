@@ -111,7 +111,7 @@ Route::group(['middleware' => 'web'], function () {
     // News
     Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));
     Route::get('/akciy', array('as' => 'articles.shares', 'uses' => 'ArticlesController@shares'));
-    Route::get('/novosti/{id}-{slug}', array('as' => 'articles.page', 'uses' => 'ArticlesController@page'))->where(['id' => '[0-9]+', 'slug' => '[a-z0-9\-]+']);
+    Route::get('/{type}/{id}-{slug}', array('as' => 'articles.page', 'uses' => 'ArticlesController@page'))->where(['type' => '[novosti|akciy]+', 'id' => '[0-9]+', 'slug' => '[a-z0-9\-]+']);
 
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));

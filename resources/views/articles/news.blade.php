@@ -3,9 +3,7 @@
 @section('content')
    <div class="wrapper clearfix">
        <div class="cell9 p_r-10 cell-md">
-
-
-           @include('includes.bread-crumbs')
+            @include('includes.bread-crumbs')
 
             <h1 class="cell text-center title">{{ $seo['h1'] or 'Новости' }}</h1>
 
@@ -26,7 +24,7 @@
                                <div class="fl_l m_r-20 date">{{ Helpers::getDate($article->created_at, '%d.%m.%Y') }}</div>
                                <div class="fl_l watch"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">{{ $article->views }}</span></div>
 
-                               <a href="/novosti/{{ $article->link() }}" class="blue-btn fl_r">читать</a>
+                               <a href="{{ $article->link() }}" class="blue-btn fl_r">читать</a>
                            </div>
                        </div>
                     </div>

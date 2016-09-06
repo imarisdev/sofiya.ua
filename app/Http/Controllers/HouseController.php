@@ -80,8 +80,18 @@ class HouseController extends Controller {
 
         $this->seo->getSeoData($house->id, 'houses', $seo_params);
 
+        $breadcrumbs = [
+            [
+                'title' => "Софиевская Борщаговка",
+                'link' => "/sofievskaya-borshagovka"
+            ],
+            [
+                'title' => "{$house->title}"
+            ]
+        ];
+
         return view('house.index',
-            compact('house', 'plans', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types')
+            compact('house', 'plans', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs')
         );
 
     }

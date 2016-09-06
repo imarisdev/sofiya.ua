@@ -4,11 +4,9 @@
     <div class="clearfix wrapper">
 
         <div class="cell9 p_r-10 cell-md">
-
+            @include('includes.bread-crumbs')
             <h1 class="text-center cell title">{{ $type['title'] }}</h1>
             <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
-
-            @include('includes.bread-crumbs')
 
             @if(!empty($plans) && count($plans) > 0)
                 <div class="cell type-plans m_b-20">

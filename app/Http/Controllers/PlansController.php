@@ -30,7 +30,13 @@ class PlansController extends Controller {
 
         $types = $this->types->getPlansTypes();
 
-        return view('plans.allplans', compact('types'));
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+            ]
+        ];
+
+        return view('plans.allplans', compact('types', 'breadcrumbs'));
 
     }
 
@@ -45,7 +51,17 @@ class PlansController extends Controller {
 
         $plans = $this->plans->getPlansByType($type['key'], null);
 
-        return view('plans.typeplans', compact('type', 'plans'));
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}"
+            ]
+        ];
+
+        return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
 
     }
 
@@ -71,7 +87,21 @@ class PlansController extends Controller {
 
         $this->seo->getSeoData($plan->id, 'plans', $seo_params);
 
-        return view('plans.index', compact('plan', 'type'));
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}",
+                'link' => "/planirovki/{$type['slug']}"
+            ],
+            [
+                'title' => "{$plan->title}"
+            ]
+        ];
+
+        return view('plans.index', compact('plan', 'type', 'breadcrumbs'));
     }
 
 }

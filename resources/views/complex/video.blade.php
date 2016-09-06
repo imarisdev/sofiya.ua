@@ -9,8 +9,6 @@
 
             <h3 class="title-page m_t-10">ВИДЕОГАЛЕРЕЯ {{ $complex->title }}</h3>
 
-            @include('complex.video-block')
-
             @include('complex.video-carousel')
 
             <div class="cell m_t-20 m_b-30">

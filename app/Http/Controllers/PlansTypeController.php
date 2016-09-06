@@ -41,7 +41,17 @@ class PlansTypeController extends Controller {
             }
         }
 
-        return view('planstype.index', compact('houses', 'type', 'complex', 'plans'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->slug}"
+            ],
+            [
+                'title' => "{$type['title']}",
+            ]
+        ];
+
+        return view('planstype.index', compact('houses', 'type', 'complex', 'plans', 'breadcrumbs'));
 
     }
 
@@ -57,7 +67,17 @@ class PlansTypeController extends Controller {
 
         $houses = $this->house->getHouses(['decoration' => 1, 'complex_id' => $complex->id]);
 
-        return view('planstype.key', compact('houses', 'complex'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->slug}"
+            ],
+            [
+                'title' => "Квартиры под ключ",
+            ]
+        ];
+
+        return view('planstype.key', compact('houses', 'complex', 'breadcrumbs'));
     }
 
 }
