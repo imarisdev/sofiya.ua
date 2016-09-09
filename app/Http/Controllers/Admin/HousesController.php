@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Repositories\BuildingTypesRepository;
 use App\Repositories\ComplexRepository;
+use App\Repositories\SeoRepository;
 use App\Repositories\StreetRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
@@ -14,13 +15,15 @@ class HousesController extends AdminController implements AdminItemContract {
     protected $street;
     protected $complex;
     protected $building_types;
+    protected $seo;
 
-    public function __construct(HouseRepository $house, StreetRepository $street, ComplexRepository $complex, BuildingTypesRepository $building_types) {
+    public function __construct(HouseRepository $house, StreetRepository $street, ComplexRepository $complex, BuildingTypesRepository $building_types, SeoRepository $seo) {
 
         $this->house = $house;
         $this->street = $street;
         $this->complex = $complex;
         $this->building_types = $building_types;
+        $this->seo = $seo;
     }
 
     /**
@@ -89,7 +92,9 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $installments = $this->house->getHouseInstallments();
 
-        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments'));
+        $seo = $this->seo->getSeoItem($id, 'houses');
+
+        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments', 'seo'));
     }
 
     /**

@@ -51,6 +51,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/plans/update', array('as' => 'admin.plans.save', 'uses' => 'PlansController@update'));
         Route::post('/plans/delete', array('as' => 'admin.plans.delete', 'uses' => 'PlansController@delete'));
 
+        // Квартиры
+        Route::get('/flats', array('as' => 'admin.flats', 'uses' => 'FlatsController@index'));
+        Route::get('/flats/edit/{id}', array('as' => 'admin.flats.edit', 'uses' => 'FlatsController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/flats/create', array('as' => 'admin.flats.create', 'uses' => 'FlatsController@create'));
+        Route::post('/flats/save', array('as' => 'admin.flats.save', 'uses' => 'FlatsController@store'));
+        Route::post('/flats/update', array('as' => 'admin.flats.save', 'uses' => 'FlatsController@update'));
+        Route::post('/flats/delete', array('as' => 'admin.flats.delete', 'uses' => 'FlatsController@delete'));
+
         // Статьи
         Route::get('/articles', array('as' => 'admin.articles', 'uses' => 'ArticlesController@index'));
         Route::get('/articles/edit/{id}', array('as' => 'admin.articles.edit', 'uses' => 'ArticlesController@edit'))->where(['id' => '[0-9]+']);
@@ -90,6 +98,12 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/video/save', array('as' => 'admin.video.save', 'uses' => 'VideoController@store'));
         Route::post('/video/update', array('as' => 'admin.video.save', 'uses' => 'VideoController@update'));
         Route::post('/video/delete', array('as' => 'admin.video.delete', 'uses' => 'VideoController@delete'));
+
+    });
+
+    Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'crm', 'namespace' => 'Crm'], function () {
+
+        Route::get('/home', array('as' => 'crm.home', 'uses' => 'HomeController@index'));
 
     });
 
