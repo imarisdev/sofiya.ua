@@ -14,6 +14,8 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
                             <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
+                            <li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li>
+                            <li><a href="#tab_4" data-toggle="tab" aria-expanded="true">Документы</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -205,6 +207,15 @@
                                             </div>
                                         @endforeach
                                     @endif
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_3">
+                                @include('admin.forms.seo', ['item_id' => $house->id, 'item_type' => 'houses', 'item' => $seo])
+                            </div>
+                            <div class="tab-pane" id="tab_4">
+                                <div class="form-group">
+                                    <label for="files">Файлы документов</label>
+                                    <input type="file" class="form-control" id="files" name="files" multiple placeholder="Files" />
                                 </div>
                             </div>
                         </div>

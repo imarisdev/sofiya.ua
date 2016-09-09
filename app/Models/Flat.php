@@ -14,4 +14,12 @@ class Flat extends BaseModel {
         return $this->belongsTo('App\Models\Plans', 'plan_id');
     }
 
+    /**
+     * Дом
+     * @return mixed
+     */
+    public function house() {
+        return $this->belongsTo('App\Models\House', 'house_id');
+    }
+
 }

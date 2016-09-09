@@ -1,0 +1,21 @@
+/* Users role */
+.role-user {
+    color: #fff;
+    background-color: #00c0ef;
+    border-color: #00acd6;
+}
+.role-user:hover {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.role-head-admin {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: #d73925;
+}
+.role-head-admin:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
