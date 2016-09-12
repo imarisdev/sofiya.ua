@@ -41,7 +41,13 @@ class StreetController extends Controller {
 
         $houses = $this->house->getHouses();
 
-        return view('street.index', compact('streets', 'houses'));
+        $breadcrumbs = [
+            [
+                'title' => "Улицы"
+            ]
+        ];
+
+        return view('street.index', compact('streets', 'houses', 'breadcrumbs'));
     }
 
     /**
@@ -56,7 +62,17 @@ class StreetController extends Controller {
 
         $houses = $street->houses;
 
-        return view('street.street', compact('street', 'houses'));
+        $breadcrumbs = [
+            [
+                'title' => "Улицы",
+                'link' => "/ulitsy"
+            ],
+            [
+                'title' => "{$street->title}"
+            ]
+        ];
+
+        return view('street.street', compact('street', 'houses', 'breadcrumbs'));
     }
 
     /**

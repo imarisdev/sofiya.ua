@@ -5,6 +5,7 @@
 
 
         <div class="cell9 p_r-10 cell-md">
+            @include('includes.bread-crumbs')
             <h1 class="text-center cell title m_b-30">НАШИ КОНТАКТЫ</h1>
 
             <div class="contacts-info cell m_b-20">

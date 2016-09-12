@@ -6,6 +6,7 @@
         <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
+            @include('includes.bread-crumbs')
             <h1 class="cell text-center title">{{ $seo['h1'] or 'Квартиры под ключ' }}</h1>
             <div class="cell type-plans">
                 @foreach($houses as $house)
@@ -27,7 +28,7 @@
                     </div>
                 @endforeach
             </div>
-            @include('includes.navigation-page')
+            @include('includes.navigation-page', ['item' => $houses])
 
             @include('planstype.blue-info-block')
 

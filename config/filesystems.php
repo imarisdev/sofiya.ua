@@ -47,7 +47,10 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
+        'uploads' => [
+            'driver' => 'local',
+            'root'   => public_path(),
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -65,7 +68,8 @@ return [
     ],
 
     'folder' => [
-        'uploads' => '/uploads/'
+        'images' => '/uploads/images/',
+        'files' => '/uploads/files/'
     ],
 
     'fileowner' => 'www-data'

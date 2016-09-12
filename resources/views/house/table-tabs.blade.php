@@ -1,3 +1,4 @@
+<div class="table-wrap">
 <div class="table table-border">
     <div class="table-row table-caption">
         <div class="table-cell">
@@ -37,5 +38,5 @@
             </div>
         </div>
     @endforeach
-
+</div>
 </div>

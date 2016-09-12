@@ -5,6 +5,7 @@ var elixir = require('laravel-elixir');
  */
 elixir(function (mix) {
     mix.styles([
+        'site/flexslider.css',
         'site/slider.css',
         'site/animate.css',
         'site/style.css'
@@ -23,6 +24,7 @@ elixir(function (mix) {
         'jquery.min.js',
         'wow.js',
         'tabs.js',
+        'jquery.flexslider.js',
         'site/slider.js',
         'site/common.js',
     ], 'public/js/common.js');
@@ -61,6 +63,34 @@ elixir(function (mix) {
     ], 'public/js/admin-common.js');
 });
 
+/**
+ * CRM
+ */
+
+elixir(function (mix) {
+    mix.styles([
+        'admin/select2.min.css',
+        'admin/bootstrap.min.css',
+        'admin/datepicker3.css',
+        'admin/font-awesome.min.css',
+        'admin/AdminLTE.min.css',
+        'admin/skins/skin-blue.css',
+        'crm/common.css'
+    ], 'public/css/crm-common.css');
+});
+
+elixir(function (mix) {
+    mix.scripts([
+        'jquery.min.js',
+        'admin/bootstrap.min.js',
+        'admin/bootstrap-datepicker.js',
+        'admin/select2.full.min.js',
+        'admin/app.min.js',
+        'admin/common.js',
+        'crm/common.js'
+    ], 'public/js/crm-common.js');
+});
+
 //Version
 elixir(function (mix) {
     mix.version([
@@ -72,6 +102,9 @@ elixir(function (mix) {
 
 
         'css/admin-common.css',
-        'js/admin-common.js'
+        'js/admin-common.js',
+
+        'css/crm-common.css',
+        'js/crm-common.js'
     ]);
 });

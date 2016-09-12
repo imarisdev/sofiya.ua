@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ArticlesRepository;
+use App\Repositories\VideoRepository;
 use Cache;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
 
-    public function __construct() {
+    protected $articles;
+    protected $video;
 
+    public function __construct(ArticlesRepository $articles, VideoRepository $video) {
+
+        $this->articles = $articles;
+        $this->video = $video;
     }
 
     /**
@@ -18,6 +25,10 @@ class HomeController extends Controller {
      */
     public function index() {
 
-        return view('home.index');
+        $news = $this->articles->getArticles(['type' => 1]);
+
+        $video = $this->video->getVideo();
+
+        return view('home.index', compact('news', 'video'));
     }
 }

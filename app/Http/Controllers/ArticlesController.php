@@ -22,7 +22,13 @@ class ArticlesController extends Controller {
 
         $articles = $this->articles->getArticles(['type' => 1]);
 
-        return view('articles.news', compact('articles'));
+        $breadcrumbs = [
+            [
+                'title' => "Новости"
+            ]
+        ];
+
+        return view('articles.news', compact('articles', 'breadcrumbs'));
     }
 
     /**
@@ -30,9 +36,16 @@ class ArticlesController extends Controller {
      * @return mixed'
      */
     public function shares() {
+
         $articles = $this->articles->getArticles(['type' => 2]);
 
-        return view('articles.news', compact('articles'));
+        $breadcrumbs = [
+            [
+                'title' => "Акции"
+            ]
+        ];
+
+        return view('articles.news', compact('articles', 'breadcrumbs'));
     }
 
     /**
@@ -41,12 +54,22 @@ class ArticlesController extends Controller {
      * @param $slug
      * @return mixed
      */
-    public function page($id, $slug) {
+    public function page($type, $id, $slug) {
 
         $article = $this->articles->getById($id);
 
         $this->articles->increment($article->id);
 
-        return view('articles.page', compact('article'));
+        $breadcrumbs = [
+            [
+                'title' => "{$article->types[$article->type]['title']}",
+                'link' => "/{$article->types[$article->type]['slug']}"
+            ],
+            [
+                'title' => "{$article->title}"
+            ]
+        ];
+
+        return view('articles.page', compact('article', 'breadcrumbs'));
     }
 }

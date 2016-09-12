@@ -19,7 +19,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
                                 <input type="hidden" name="id" value="{{ $page->id or '' }}">
-                                <input type="hidden" name="item_type" value="page">
+                                <input type="hidden" name="item_type" value="pages">
                                 <div class="form-group">
                                     <label for="title">Название</label>
                                     <input type="text" class="form-control" id="title" name="title" placeholder="Title"
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab_3">
-                                @include('admin.forms.seo', ['item_id' => $page->id, 'item_type' => 'page', 'item' => $seo])
+                                @include('admin.forms.seo', ['item_id' => $page->id, 'item_type' => 'pages', 'item' => $seo])
                             </div>
                         </div>
                     </div>

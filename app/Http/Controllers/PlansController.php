@@ -5,6 +5,7 @@ use App\Repositories\ComplexRepository;
 use App\Repositories\HouseRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
+use App\Repositories\SeoRepository;
 
 class PlansController extends Controller {
 
@@ -12,12 +13,14 @@ class PlansController extends Controller {
     protected $house;
     protected $types;
     protected $plans;
+    protected $seo;
 
-    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans) {
+    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans, SeoRepository $seo) {
         $this->complex = $complex;
         $this->house = $house;
         $this->types = $types;
         $this->plans = $plans;
+        $this->seo = $seo;
     }
 
     /**
@@ -27,7 +30,13 @@ class PlansController extends Controller {
 
         $types = $this->types->getPlansTypes();
 
-        return view('plans.allplans', compact('types'));
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+            ]
+        ];
+
+        return view('plans.allplans', compact('types', 'breadcrumbs'));
 
     }
 
@@ -42,7 +51,17 @@ class PlansController extends Controller {
 
         $plans = $this->plans->getPlansByType($type['key'], null);
 
-        return view('plans.typeplans', compact('type', 'plans'));
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}"
+            ]
+        ];
+
+        return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
 
     }
 
@@ -61,7 +80,28 @@ class PlansController extends Controller {
 
         $plan = $this->plans->getById($id);
 
-        return view('plans.index', compact('plan', 'type'));
+        $seo_params = [
+            'name' => $plan->title,
+            'address' => $plan->house->street->title . ", " . $plan->house->number
+        ];
+
+        $this->seo->getSeoData($plan->id, 'plans', $seo_params);
+
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}",
+                'link' => "/planirovki/{$type['slug']}"
+            ],
+            [
+                'title' => "{$plan->title}"
+            ]
+        ];
+
+        return view('plans.index', compact('plan', 'type', 'breadcrumbs'));
     }
 
 }

@@ -16,6 +16,7 @@
                         </div>
                         <div class="col-xs-3">
                             <button type="submit" class="btn btn-primary">Найти</button>
+                            <a href="/{{ Request::path() }}" class="btn btn-primary">Сбросить фильтр</a>
                         </div>
                         <div class="col-xs-6">
                             <a href="/admin/articles/create" class="btn btn-primary pull-right">Добавить</a>
@@ -60,6 +61,9 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="navigation">
+                {!! $articles->setPath(Request::url())->appends(Request::query())->render() !!}
             </div>
         @endif
     </section>

@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="wrapper clearfix">
-        <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
         <div class="cell9 p_r-10 cell-md">
+<<<<<<< HEAD
 
             <h1 class="cell title text-center">Уютные квартиры</h1>
 
@@ -17,6 +17,15 @@
                 @foreach($streets as $street)
                    <li class="cell4"><a href="/ulitsy/{{ $street->link() }}">{{ $street->title }}</a></li>
                 @endforeach
+=======
+            @include('includes.bread-crumbs')
+            <h1 class="cell title text-center">{{ $seo['h1'] or 'Уютные квартиры' }}</h1>
+            <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
+            <ul>
+            @foreach($streets as $street)
+               <li><a href="/ulitsy/{{ $street->link() }}">{{ $street->title }}</a></li>
+            @endforeach
+>>>>>>> 8062e1e662d770e3bb5c3a3440eacbaf7dd99f89
             </ul>
 
             <ul class="cell list-street m_b-20">

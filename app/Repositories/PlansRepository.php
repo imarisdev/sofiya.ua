@@ -62,6 +62,22 @@ class PlansRepository extends BaseRepository {
     }
 
     /**
+     * Планировки для формы
+     * @param null $request
+     * @return mixed
+     */
+    public function getPlansForSelect($request = null) {
+
+        $plans = $this->model;
+
+        if(!empty($request['house_id'])) {
+            $plans = $plans->where('house_id', '=', $request['house_id']);
+        }
+
+        return $plans->get()->pluck('title', 'id');
+    }
+
+    /**
      * Изменение кол-ва планировок в доме
      * @param $plan
      * @param string $operator
@@ -114,7 +130,9 @@ class PlansRepository extends BaseRepository {
             $plan->slug = $this->createSlug($inputs['title']);;
         }
 
-        $plan->image = $this->image->uploadFile($inputs);
+        if(!empty($inputs['image'])) {
+            $plan->image = $this->image->uploadImage($inputs['image'][0]);
+        }
 
         try {
 

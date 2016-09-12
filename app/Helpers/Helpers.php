@@ -2,6 +2,8 @@
 namespace App\Helpers;
 
 use DB;
+use View;
+use App\Models\Articles;
 
 class Helpers {
 
@@ -68,14 +70,41 @@ class Helpers {
     public static function getMenu($position, $order = 'sort') {
 
        $menu = DB::table('menu')
+           ->select('id', 'title', 'path', 'external')
            ->where('position', '=', $position)
            ->where('status', '=', 1)
+           ->where('parent', '=', 0)
            ->orderBy($order, 'asc')
            ->get();
 
-        //dd( self::buildMenu((array) $menu));
-        return self::buildMenu((array) $menu);
+        foreach($menu as $key => $item) {
+            $menu[$key]->child = self::getMenuChild($item->id);
+            if($item->external == 0) {
+                $menu[$key]->link = "/{$item->path}";
+            } else {
+                $menu[$key]->link = $item->path;
+            }
 
+        }
+
+        return $menu;
+        //return self::buildMenu((array) $menu);
+
+    }
+
+    private static function getMenuChild($parent) {
+        $childs = DB::table('menu')
+            ->select('id', 'title', 'path', 'external')
+            ->where('parent', '=', $parent)
+            ->where('status', '=', 1)
+            ->orderBy('sort', 'asc')
+            ->get();
+
+        foreach($childs as $key => $item) {
+            $childs[$key]->link = "/{$item->path}";
+        }
+
+        return $childs;
     }
 
     /**
@@ -83,7 +112,7 @@ class Helpers {
      * @param $items
      * @return array
      */
-    public static function buildMenu($items) {
+    private static function buildMenu($items) {
 
         $menu = [];
 
@@ -148,4 +177,64 @@ class Helpers {
         return "{$quarter} квартал {$year} года";
     }
 
+    /**
+     * Ссылка на файл баннера
+     * @param $file
+     * @param $type
+     * @param null $size
+     */
+    public static function getBannerFile($file, $type, $size = null, $link = null, $class = null) {
+
+        $resource = @unserialize($file);
+
+        if($type == 1) {
+            $file = $resource['file'] . $resource['ext'];
+
+            $view = View::make('banners.image', ['link' => $link, 'file' => $file, 'size' => $size, 'class' => $class]);
+        } else if($type == 2) {
+            $file = $resource['file'] . $resource['ext'];
+
+            $view = View::make('banners.flash', ['file' => $file, 'size' => $size, 'class' => $class]);
+        }
+
+        return $view->render();
+    }
+
+    /**
+     * Вызова банера
+     * @param $position
+     */
+    public static function getBanners($position, $class = null) {
+
+        $banners = DB::table('banners')
+            ->where('position', '=', $position)
+            ->orderBy('sort', 'asc')
+            ->get();
+
+        $data = null;
+
+        foreach ($banners as $banner) {
+            $data .= self::getBannerFile($banner->file, $banner->type, ['width' => $banner->width, 'height' => $banner->height], $banner->link, $class);
+        }
+
+        return $data;
+    }
+
+    /**
+     * Список материалов
+     * @param $type
+     * @param int $limit
+     * @return array
+     */
+    public static function getArticlesByType($type, $limit = 5) {
+
+        $news = Articles::select('id', 'title', 'slug', 'created_at', 'type', 'views', 'image')
+            ->where('type', '=', $type)
+            //->where('status', '=', 1)
+            ->orderBy('created_at', 'desc')
+            ->take($limit)
+            ->get();
+
+        return $news;
+    }
 }

@@ -1,6 +1,6 @@
 <!-- video -->
 <section>
-    <h3 class="title-page">ЖК «София» от Мартынова: ваш собственный кусочек Европы</h3>
+    <h1 class="title-page">{{ $seo['h1'] or 'ЖК «София» от Мартынова: ваш собственный кусочек Европы' }}</h1>
 
     <div class="cell">
         <div class="video-wrapper">

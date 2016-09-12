@@ -31,7 +31,13 @@ class ComplexController extends Controller {
 
         $this->seo->getSeoData($complex->id, 'complex');
 
-        return view('complex.index', compact('complex', 'types'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}"
+            ]
+        ];
+
+        return view('complex.index', compact('complex', 'types', 'breadcrumbs'));
     }
 
     /**
@@ -43,7 +49,17 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
-        return view('complex.gallery', compact('complex'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->slug}"
+            ],
+            [
+                'title' => "Фото {$complex->title}"
+            ]
+        ];
+
+        return view('complex.gallery', compact('complex', 'breadcrumbs'));
 
     }
 
@@ -56,7 +72,17 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
-        return view('complex.video', compact('complex'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->slug}"
+            ],
+            [
+                'title' => "Видео {$complex->title}"
+            ]
+        ];
+
+        return view('complex.video', compact('complex', 'breadcrumbs'));
 
     }
 
@@ -69,7 +95,17 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
-        return view('complex.kids', compact('complex'));
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->slug}"
+            ],
+            [
+                'title' => "Школа и садик в {$complex->title}"
+            ]
+        ];
+
+        return view('complex.kids', compact('complex', 'breadcrumbs'));
 
     }
 }

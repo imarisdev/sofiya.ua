@@ -26,7 +26,13 @@ class PagesController extends Controller {
 
         $this->seo->getSeoData($page->id, 'page');
 
-        return view('pages.page', compact('page'));
+        $breadcrumbs = [
+            [
+                'title' => "{$page->title}"
+            ]
+        ];
+
+        return view('pages.page', compact('page', 'breadcrumbs'));
     }
 
 }

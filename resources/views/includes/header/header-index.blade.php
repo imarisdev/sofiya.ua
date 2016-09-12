@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="/">Главная</a></li>
                     @foreach(Helpers::getMenu('top') as $item)
-                        <li><a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
+                        <li><a href="{{ $item->link }}">{{ $item->title }}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -59,31 +59,15 @@
 
     <div class="left-nav fl_l">
         <ul>
-            <li class="wow bounceInLeft" data-wow-delay="0.5s" data-wow-duration="1.5s"><a href="">ГЕНПЛАН</a></li>
+            <li class="wow bounceInLeft" data-wow-delay="0.5s" data-wow-duration="1.5s"><a href="/genplan">ГЕНПЛАН</a></li>
             <li class="wow bounceInLeft" data-wow-delay="1s" data-wow-duration="1.5s"><a href="">ОНЛАЙН КАМЕРА</a></li>
-            <li class="wow bounceInLeft" data-wow-delay="1.5s" data-wow-duration="1.5s"><a href="">ФОТОГАЛЕРЕЯ</a></li>
+            <li class="wow bounceInLeft" data-wow-delay="1.5s" data-wow-duration="1.5s"><a href="/foto">ФОТОГАЛЕРЕЯ</a></li>
             <li class="wow bounceInLeft" data-wow-delay="2s" data-wow-duration="1.5s"><a href="">ВИДЕООТЗЫВЫ ПОКУПАТЕЛЕЙ</a></li>
         </ul>
     </div>
 
     <div class="actions-block fl_r">
-        <div class="white-block-action wow bounceInRight" data-wow-delay="0.5s" data-wow-duration="1.5s">
-            <div class="item">
-                <span class="bold red t-36">О%</span> РАССРОЧКА
-            </div>
-        </div>
-
-        <div class="white-block-action wow bounceInRight" data-wow-delay="1s" data-wow-duration="1.5s">
-            <div class="item">
-                КВАРТИРЫ ОТ <span class="bold red">12 500</span> грн/м2
-            </div>
-        </div>
-
-        <div class="white-block-action wow bounceInRight" data-wow-delay="1.5s" data-wow-duration="1.5s">
-            <div class="item">
-                АРЕНДА КВАРТИРЫ ОТ <span class="bold red">3 500</span> грн/мес.
-            </div>
-        </div>
+        @include('includes.header.prices-header-block')
 
         <div class="blue-block-action wow bounceInRight" data-wow-delay="2s" data-wow-duration="1.5s">
             <div class="item">

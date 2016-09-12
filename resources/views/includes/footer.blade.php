@@ -36,7 +36,7 @@
 
             <ul class="site-pages fl_r cell-md">
                 @foreach(Helpers::getMenu('top') as $item)
-                    <li class="cell-sm"><a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a></li>
+                    <li class="cell-sm"><a href="{{ $item->link }}">{{ $item->title }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -48,7 +48,7 @@
             <ul class="footer-nav fl_r cell-md">
                 @foreach(Helpers::getMenu('head') as $item)
                     <li class="cell-sm">
-                        <a href="{{ $item['item']['link'] }}">{{ $item['item']['title'] }}</a>
+                        <a href="{{ $item->link }}">{{ $item->title }}</a>
                     </li>
                 @endforeach
             </ul>
