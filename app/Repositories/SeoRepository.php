@@ -5,13 +5,16 @@ use DB;
 use View;
 use Response;
 use App\Models\Seo;
+use Illuminate\Http\Request;
 
 class SeoRepository extends BaseRepository {
 
-    public function __construct(Seo $seo) {
+    protected $request;
+
+    public function __construct(Seo $seo, Request $request) {
 
         $this->model = $seo;
-
+        $this->request = $request;
     }
 
     /**
@@ -20,11 +23,14 @@ class SeoRepository extends BaseRepository {
      * @param $object_type
      * @param null $params
      */
-    public function getSeoData($object_id, $object_type, $params = null) {
+    public function getSeoData($object_id = null, $object_type = null, $params = null) {
 
         $seo = $this->model
-            ->where('object_id', '=', $object_id)
-            ->where('object_type', '=', $object_type)
+            ->where(function($query) use ($object_id, $object_type) {
+                $query->where('object_id', '=', $object_id)
+                        ->where('object_type', '=', $object_type);
+            })
+            ->orWhere('seo.url', '=', $this->request->route()->getName())
             ->first();
 
         if(!empty($params) && !empty($seo)) {

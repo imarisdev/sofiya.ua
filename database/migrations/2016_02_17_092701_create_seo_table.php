@@ -16,6 +16,7 @@ class CreateSeoTable extends Migration
             $table->increments('id');
             $table->integer('object_id')->index();
             $table->string('object_type', 50)->index();
+            $table->string('url', 250)->nullable()->index();
             $table->string('title', 250);
             $table->text('description')->nullable();
             $table->text('keywords')->nullable();
