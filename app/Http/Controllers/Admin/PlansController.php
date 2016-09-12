@@ -108,4 +108,11 @@ class PlansController extends AdminController implements AdminItemContract {
 
     }
 
+    public function load(Request $request) {
+
+        $result = $this->plans->getPlans($request->all());
+
+        return response()->json(['items' => $result]);
+    }
+
 }

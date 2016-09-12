@@ -1,6 +1,8 @@
 <?php
 namespace App\Repositories;
 
+use Auth;
+use Response;
 use App\Models\Flat;
 
 class FlatsRepository extends BaseRepository {
@@ -61,7 +63,7 @@ class FlatsRepository extends BaseRepository {
         $flat->status          = $inputs['status'];
         $flat->house_id        = $inputs['house_id'];
         $flat->plan_id         = $inputs['plan_id'];
-        $flat->manager_id      = $inputs['manager_id'];
+        $flat->manager_id      = !empty($inputs['manager_id']) ? $inputs['manager_id'] : Auth::user()->id;
         $flat->floor           = $inputs['floor'];
         $flat->number          = $inputs['number'];
         $flat->content         = $inputs['content'];

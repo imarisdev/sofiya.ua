@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\HouseRepository;
+use App\Repositories\PlansRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
 use App\Repositories\FlatsRepository;
@@ -8,9 +10,13 @@ use App\Repositories\FlatsRepository;
 class FlatsController extends AdminController implements AdminItemContract {
 
     protected $flats;
+    protected $house;
+    protected $plans;
 
-    public function __construct(FlatsRepository $flats) {
+    public function __construct(FlatsRepository $flats, HouseRepository $house, PlansRepository $plans) {
         $this->flats = $flats;
+        $this->house = $house;
+        $this->plans = $plans;
     }
 
     /**
@@ -35,7 +41,7 @@ class FlatsController extends AdminController implements AdminItemContract {
 
         $sales = $this->flats->getSales();
 
-        $houses = [];
+        $houses = $this->house->getHousesForSelect();
 
         return view('admin.flats.create', compact('sales', 'houses'));
     }
@@ -46,7 +52,7 @@ class FlatsController extends AdminController implements AdminItemContract {
      */
     public function store(Request $request) {
 
-        return $this->plans->store($request->all());
+        return $this->flats->store($request->all());
 
     }
 
@@ -57,17 +63,15 @@ class FlatsController extends AdminController implements AdminItemContract {
      */
     public function edit($id) {
 
-        $plan = $this->plans->getById($id);
+        $flat = $this->flats->getById($id);
 
-        $plans_type = $this->plans_type->getPlansTypesForSelect();
+        $sales = $this->flats->getSales();
 
         $houses = $this->house->getHousesForSelect();
 
-        $bathroom_types = $this->plans->getBathroomTypes();
+        $plans = $this->plans->getPlansForSelect(['house_id' => $flat->house_id]);
 
-        $balcony_types = $this->plans->getBalconyTypes();
-
-        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types'));
+        return view('admin.flats.edit', compact('flat', 'sales', 'houses', 'plans'));
     }
 
     /**
@@ -76,9 +80,9 @@ class FlatsController extends AdminController implements AdminItemContract {
      */
     public function update(Request $request) {
 
-        $plan = $this->plans->getById($request->get('id'));
+        $flat = $this->flats->getById($request->get('id'));
 
-        return $this->plans->update($plan, $request->all());
+        return $this->flats->update($flat, $request->all());
 
     }
 
@@ -88,9 +92,9 @@ class FlatsController extends AdminController implements AdminItemContract {
      */
     public function delete(Request $request) {
 
-        $plan = $this->plans->getById($request->get('id'));
+        $flat = $this->flats->getById($request->get('id'));
 
-        return $this->plans->destroy($plan);
+        return $this->flats->destroy($flat);
 
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <section class="content">
-        <form role="form" id="pageedit" class="js-admin-form-save" action="/admin/flats/save" data-edit="/admin/flats/edit" method="POST">
+        <form role="form" id="pageedit" class="js-admin-form-save" action="/admin/flats/update" data-edit="/admin/flats/edit" method="POST">
             {!! csrf_field() !!}
             <div class="row">
                 <div class="col-md-10">
@@ -38,13 +38,21 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="house_id">Дом</label>
-                                            {!! Form::select('house_id', ['' => 'Выбрать дом'] + $houses, null, ['class' => 'form-control js-change-input', 'data-callback' => 'loadPlans']) !!}
+                                            @if(!empty($flat->house_id))
+                                                {!! Form::select('house_id', $houses, $flat->house_id, ['class' => 'form-control js-change-input', 'data-callback' => 'loadPlans']) !!}
+                                            @else
+                                                {!! Form::select('house_id', $houses, null, ['class' => 'form-control js-change-input', 'data-callback' => 'loadPlans']) !!}
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="plan_id">Планировка</label>
-                                            {!! Form::select('plan_id', [], null, ['class' => 'form-control']) !!}
+                                            @if(!empty($flat->plan_id))
+                                                {!! Form::select('plan_id', $plans, $flat->plan_id, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('plan_id', $plans, null, ['class' => 'form-control']) !!}
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

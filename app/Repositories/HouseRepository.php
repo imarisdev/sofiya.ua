@@ -71,9 +71,10 @@ class HouseRepository extends BaseRepository {
      * Список домов для формы
      * @return array
      */
+    // TODO: use lists();
     public function getHousesForSelect() {
+        //$houses = $this->model->all(['id', 'title'])->pluck('title', 'id');
         $houses = $this->model->all();
-
         $houses_list = array();
 
         foreach($houses as $house) {
