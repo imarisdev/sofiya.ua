@@ -13,11 +13,14 @@ var Admin = {
     formDeleteBtnClass: '.js-delete-item',
     formOverlayClass: '.js-overlay',
     formSelectClass: '.js-form-select',
+    formSelectAjaxClass: '.js-form-select-ajax',
     formDatePickerClass: '.js-date-picker',
+    formChangeClass: '.js-change-input',
     formData: null,
     formOverlay: null,
     editForm: null,
     editAction: null,
+    editItem: null,
     saveBtn: null,
     deleteBtn: null,
     itemEditLink: null,
@@ -30,6 +33,7 @@ var Admin = {
          */
         this.setEditForm(this.formClass);
         this.setEditAction();
+        this.setEditItem(this.formChangeClass);
         this.setTtemEditLink();
 
         /**
@@ -47,6 +51,7 @@ var Admin = {
          * Инициализация селект полей
          */
         this.formSelectInit();
+        this.formSelectAjaxInit();
 
         /**
          * Инициализация редактора
@@ -57,6 +62,11 @@ var Admin = {
          * Инициализация поля даты
          */
         this.initDatePicker();
+
+        /**
+         * Наблюдение за изменяемыми полями
+         */
+        this.watchEditableItems();
 
         /**
          * Сохранение данных формы
@@ -79,6 +89,9 @@ var Admin = {
     },
     setEditAction: function() {
         this.editAction = this.editForm.attr('action');
+    },
+    setEditItem: function(input) {
+        this.editItem = $(input);
     },
     setSaveBtn: function(btn) {
         this.saveBtn = $(btn);
@@ -138,6 +151,48 @@ var Admin = {
         $(this.formSelectClass).each(function(indx, element) {
             $(element).select2();
         });
+    },
+    formSelectAjaxInit: function() {
+        $(this.formSelectAjaxClass).each(function(indx, element) {
+            $(element).select2({
+                ajax: {
+                    url: $(this).data('load'),
+                    dataType: 'json',
+                    method: 'POST',
+                    cache: false,
+                    allowClear: true,
+                    data: function() {
+                        return {[$(this).data('depend')]: $('[name=' + $(this).data('depend') + ']').val()};
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data.items.data,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    }
+                },
+                templateResult: _this.formatRepoSelection,
+                templateSelection: _this.formatRepoSelection
+            });
+        });
+    },
+    formatRepo: function(repo) {
+        if (repo.loading) return repo.text;
+
+        var markup = "<div class='select2-result-repository clearfix'>" +
+            "<div class='select2-result-repository__meta'>" +
+            "<div class='select2-result-repository__title'>" + repo.title + "</div>";
+
+        markup += "</div></div>";
+
+        return markup;
+    },
+    formatRepoSelection: function(repo) {
+        return repo.title;
     },
     sendData: function(e) {
 
@@ -213,6 +268,34 @@ var Admin = {
                 $('#errors_modal').find('.modal-body').empty().append(html);
             });
         }
+    },
+    watchEditableItems: function() {
+        this.editItem.on('change', function(e) {
+            _this[$(this).data('callback')](this, $(this).data('to'));
+        });
+    },
+    loadPlans: function(item, to) {
+        $('[name=plan_id]').empty();
+
+        $.ajax({
+            url: '/admin/plans/load',
+            data: {house_id: $('[name=house_id]').val()},
+            dataType: 'json',
+            type: 'POST',
+            beforeSend: function(e) {
+
+            },
+            success: function (data) {
+                if(data.items.data.length > 0) {
+                    for(i in data.items.data) {
+                        $('[name=plan_id]').append('<option value="' + data.items.data[i].id + '">' + data.items.data[i].title + '</option>');
+                    }
+                }
+            },
+            error: function(data) {
+                _this.showError(data);
+            }
+        });
     }
 };
 

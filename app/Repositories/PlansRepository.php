@@ -62,6 +62,22 @@ class PlansRepository extends BaseRepository {
     }
 
     /**
+     * Планировки для формы
+     * @param null $request
+     * @return mixed
+     */
+    public function getPlansForSelect($request = null) {
+
+        $plans = $this->model;
+
+        if(!empty($request['house_id'])) {
+            $plans = $plans->where('house_id', '=', $request['house_id']);
+        }
+
+        return $plans->get()->pluck('title', 'id');
+    }
+
+    /**
      * Изменение кол-ва планировок в доме
      * @param $plan
      * @param string $operator

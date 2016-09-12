@@ -50,6 +50,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/plans/save', array('as' => 'admin.plans.save', 'uses' => 'PlansController@store'));
         Route::post('/plans/update', array('as' => 'admin.plans.save', 'uses' => 'PlansController@update'));
         Route::post('/plans/delete', array('as' => 'admin.plans.delete', 'uses' => 'PlansController@delete'));
+        Route::post('/plans/load', array('as' => 'admin.plans.load', 'uses' => 'PlansController@load'));
 
         // Квартиры
         Route::get('/flats', array('as' => 'admin.flats', 'uses' => 'FlatsController@index'));
