@@ -18,22 +18,7 @@
         <textarea class="field" name="question" id="question" placeholder="Введите Ваш вопрос"></textarea>
     </div>
     <div class="fl_r m_b-30 m_t-20">
-        <button class="blue-btn">ЗАДАТь ВОПРОС</button>
+        <button class="blue-btn">Задать вопрос</button>
     </div>
 </form>
 
-
-<ul class="cell list-street m_b-20">
-    <li>ул. АМОСОВА</li>
-    <li>ул. АМОСОВА</li>
-    <li>ул. АМОСОВА</li>
-    <li>ул. АМОСОВА</li>
-    <li>ул. АМОСОВА</li>
-</ul>
-
-<div class="search cell m_b-30">
-    <form>
-        <input type="" name="" placeholder="Введите название улицы">
-        <button class="blue-btn">ЗАДАТь ВОПРОС</button>
-    </form>
-</div>

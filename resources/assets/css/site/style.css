@@ -2043,8 +2043,7 @@ form.review {
     padding-left: 100px;
 }
 
-.list-street li {
-    width: 25%;
+.list-street li a {
     float: left;
     margin: 5px 0 5px 20px;
     color: #01415f;
@@ -2056,11 +2055,11 @@ form.review {
     content: '';
     display: block;
     position: absolute;
-    top: 4px;
+    top: 9px;
     width: 5px;
     height: 5px;
     background-color: #53d1ee;
-    left: -12.5px;
+    left: 0;
     border-radius: 50%;
 }
 .search input {
