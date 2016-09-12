@@ -46,6 +46,11 @@
                                            value="{{ $seo->object_type or '' }}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="url">URL</label>
+                                    <input type="text" class="form-control disabled" id="url" name="url" placeholder="URL"
+                                           value="{{ $seo->url or '' }}">
+                                </div>
+                                <div class="form-group">
                                     <label for="h1">H1</label>
                                     <input type="text" class="form-control" id="h1" name="h1" placeholder="H1"
                                            value="{{ $seo->h1 or '' }}">

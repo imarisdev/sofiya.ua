@@ -115,7 +115,7 @@ Route::group(['middleware' => 'web'], function () {
 
     });
 
-    Route::get('/', array('as' => 'home.page', 'uses' => 'HomeController@index'));
+    Route::get('/', array('as' => 'home.index', 'uses' => 'HomeController@index'));
 
     // Контакты
     Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));

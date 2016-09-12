@@ -40,6 +40,9 @@
                         <tr>
                             <td>ID</td>
                             <td>Название</td>
+                            <td>Дом</td>
+                            <td>Этаж</td>
+                            <td>Квартира</td>
                             <td>&nbsp;</td>
                         </tr>
                         </thead>
@@ -51,8 +54,10 @@
                                 <td width="30%">
                                     <a href="/admin/houses/edit/{{ $flat->house->id }}">{{ $flat->house->title }}</a>
                                     <br>
-                                    <small class="pull-right">Улица: <a href="/admin/streets/edit/{{ $flat->house->street->id }}">{{ $flat->house->street->title }}, {{ $flat->house->number }}</a></small>
+                                    <small class="pull-left">Улица: <a href="/admin/streets/edit/{{ $flat->house->street->id }}">{{ $flat->house->street->title }}, {{ $flat->house->number }}</a></small>
                                 </td>
+                                <td>{{ $flat->floor }}</td>
+                                <td>{{ $flat->number }}</td>
                                 <td>
                                     <div class="admin-tools">
                                         <a target="_blank" href="#" data-id="{{ $flat->id }}" data-action="/admin/flats" data-type="flat" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>
