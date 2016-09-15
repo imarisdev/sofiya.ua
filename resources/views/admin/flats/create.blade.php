@@ -64,7 +64,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-
+                                        <div class="form-group">
+                                            <label for="sale_at">Дата продажи</label>
+                                            <input type="text" class="form-control js-date-picker" id="sale_at" name="sale_at" placeholder="Дата продажи"
+                                                   value="{{ $flat->sale_at or '' }}">
+                                        </div>
                                     </div>
                                     <div class="col-md-3">
 

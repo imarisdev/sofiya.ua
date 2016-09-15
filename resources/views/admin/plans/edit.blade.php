@@ -101,6 +101,13 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
+                                            <label for="rooms">Комнат</label>
+                                            <input type="number" class="form-control" id="rooms" name="rooms" placeholder="Комнат"
+                                                   value="{{ $plan->rooms or '' }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
                                             <label for="bathroom">Санузел</label>
                                             @if(!empty($plan->bathroom))
                                                 {!! Form::select('bathroom', $bathroom_types, $plan->bathroom, ['class' => 'form-control']) !!}
@@ -118,9 +125,6 @@
                                                 {!! Form::select('balcony', $balcony_types, null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-
                                     </div>
                                     <div class="col-md-3">
 

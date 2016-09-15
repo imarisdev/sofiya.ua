@@ -106,6 +106,17 @@ Route::group(['middleware' => 'web'], function () {
 
         Route::get('/home', array('as' => 'crm.home', 'uses' => 'HomeController@index'));
 
+        Route::get('/search', array('as' => 'crm.search', 'uses' => 'SearchController@index'));
+        Route::get('/flats/{id}', array('as' => 'crm.search.show', 'uses' => 'SearchController@show'))->where(['id' => '[0-9]+']);
+
+        // Пользователи
+        Route::get('/managers', array('as' => 'crm.managers', 'uses' => 'ManagersController@index'));
+        Route::get('/managers/edit/{id}', array('as' => 'crm.managers.edit', 'uses' => 'ManagersController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/managers/create', array('as' => 'crm.managers.create', 'uses' => 'ManagersController@create'));
+        Route::post('/managers/save', array('as' => 'crm.managers.save', 'uses' => 'ManagersController@store'));
+        Route::post('/managers/update', array('as' => 'crm.managers.save', 'uses' => 'ManagersController@update'));
+        Route::post('/managers/delete', array('as' => 'crm.managers.delete', 'uses' => 'ManagersController@delete'));
+
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {

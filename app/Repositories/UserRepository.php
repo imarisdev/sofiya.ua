@@ -24,7 +24,7 @@ class UserRepository extends BaseRepository {
         $users = $this->model;
 
         if(!empty($request['role_id'])) {
-            $users = $users->where('role_id', '=', $request['role_id']);
+            $users = $users->whereIn('role_id', $request['role_id']);
         }
 
         $users = $users->orderBy('created_at', 'desc');
@@ -36,12 +36,16 @@ class UserRepository extends BaseRepository {
      * Список пользователей для формы
      * @return array
      */
-    public function getUsersForSelect() {
-        $users = $this->model->all();
+    public function getUsersForSelect($request = null) {
+        $users = $this->model->select('id', 'name');
+
+        if(!empty($request['role_id'])) {
+            $users->whereIn('role_id', $request['role_id']);
+        }
 
         $users_list = array();
 
-        foreach($users as $user) {
+        foreach($users->get() as $user) {
             $users_list[$user->id] = $user->name;
         }
 

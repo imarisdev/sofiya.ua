@@ -20,7 +20,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
                                 <input type="hidden" name="id" value="{{ $house->id or '' }}">
-                                <input type="hidden" name="item_type" value="street">
+                                <input type="hidden" name="item_type" value="houses">
                                 <div class="form-group">
                                     <label for="title">Название</label>
                                     <input type="text" class="form-control" id="title" name="title" placeholder="Title"

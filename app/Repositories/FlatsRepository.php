@@ -52,6 +52,81 @@ class FlatsRepository extends BaseRepository {
     }
 
     /**
+     * Поиск квартир
+     * @param null $request
+     * @param int $limit
+     */
+    public function searchFlats($request = null, $limit = 20) {
+
+        $flats = $this->model
+            ->select(
+                'flats.id',
+                'flats.title',
+                'flats.house_id',
+                'flats.plan_id',
+                'flats.floor',
+                'flats.number',
+                'flats.status',
+                'flats.comment',
+                'flats.sale_at',
+                'complex.id as complex_id',
+                'plans.area',
+                'plans.live',
+                'plans.kitchen',
+                'plans.plans_type',
+                'plans.rooms',
+                'houses.id as houses_id',
+                'houses.slug as houses_slug',
+                'houses.manager_id',
+                'houses.completion_at',
+                'users.name',
+                'users.id as user_id'
+            )
+            ->leftJoin('houses', 'houses.id', '=', 'flats.house_id')
+            ->leftJoin('plans', 'plans.id', '=', 'flats.plan_id')
+            ->leftJoin('complex', 'complex.id', '=', 'houses.complex_id')
+            ->leftJoin('users', 'users.id', '=', 'houses.manager_id');
+
+        if(!empty($request['house_id'])) {
+            $flats->where('flats.house_id', '=', $request['house_id']);
+        }
+
+        if(!empty($request['complex_id'])) {
+            $flats->where('complex.id', '=', $request['complex_id']);
+        }
+
+        if(!empty($request['plans_type'])) {
+            $flats->where('plans.plans_type', '=', $request['plans_type']);
+        }
+
+        if(!empty($request['is_rent'])) {
+            $flats->where('houses.is_rent', '=', $request['is_rent']);
+        }
+
+        if(!empty($request['area_from'])) {
+            $flats->where('plans.area', '>=', $request['area_from']);
+        }
+
+        if(!empty($request['area_to'])) {
+            $flats->where('plans.area', '<=', $request['area_to']);
+        }
+
+        if(!empty($request['floor_from'])) {
+            $flats->where('flats.floor', '>=', $request['floor_from']);
+        }
+
+        if(!empty($request['floor_to'])) {
+            $flats->where('flats.floor', '<=', $request['floor_to']);
+        }
+
+        $flats->where('flats.status', '>', 0);
+
+        $flats->orderBy('flats.id');
+
+        return $flats->paginate($limit);
+    }
+
+    /**
      * Сохранение
      * @param $house
      * @param $inputs
@@ -68,6 +143,7 @@ class FlatsRepository extends BaseRepository {
         $flat->number          = $inputs['number'];
         $flat->content         = $inputs['content'];
         $flat->comment         = $inputs['comment'];
+        $flat->sale_at         = $inputs['sale_at'];
 
         if(!empty($inputs['image'])) {
             $flat->image = $this->image->uploadImage($inputs['image'][0]);
