@@ -8,7 +8,7 @@
                 <form method="GET" role="form">
                     <div class="row">
                         <div class="col-xs-3">
-                            <select name="role_id" class="form-control">
+                            <select name="role_id[]" class="form-control">
                                 @foreach($roles as $role)
                                     <option value="{{ $role->id }}" @if(Input::get('role_id') == $role->id) selected @endif>{{ $role->title }}</option>
                                 @endforeach

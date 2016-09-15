@@ -46,7 +46,9 @@ class UsersController extends AdminController implements AdminItemContract {
 
         $accesses = $this->access_items->getItems();
 
-        return view('admin.users.create', compact('roles', 'accesses'));
+        $leaders = $this->user->getUsersForSelect(['role_id' => [3]]);
+
+        return view('admin.users.create', compact('roles', 'accesses', 'leaders'));
     }
 
     /**
@@ -80,7 +82,9 @@ class UsersController extends AdminController implements AdminItemContract {
 
         $accesses = $this->access_items->getItems();
 
-        return view('admin.users.edit', compact('user', 'accesses', 'roles'));
+        $leaders = $this->user->getUsersForSelect(['role_id' => [3]]);
+
+        return view('admin.users.edit', compact('user', 'accesses', 'roles', 'leaders'));
     }
 
     /**

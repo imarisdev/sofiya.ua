@@ -24,12 +24,31 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
      * @return mixed
      */
     public function access() {
-        return $this->morphedByMany('App\Models\AccessItems', 'accesses');
+        return $this->morphedByMany('App\Models\AccessItems', 'accesses')->orderBy('sort', 'asc');
     }
 
-
+    /**
+     * Роль пользователя
+     * @return mixed
+     */
     public function role() {
         return $this->belongsTo('App\Models\Role');
+    }
+
+    /**
+     * Руководитель (для менеджеров)
+     * @return mixed
+     */
+    public function head() {
+        return $this->belongsTo('App\Models\User', 'leader');
+    }
+
+    /**
+     * Дом (для менеджеров)
+     * @return mixed
+     */
+    public function house() {
+        return $this->hasOne('App\Models\House', 'manager_id');
     }
 
     public function hasRole($roles) {

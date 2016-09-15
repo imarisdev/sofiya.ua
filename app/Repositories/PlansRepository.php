@@ -118,6 +118,7 @@ class PlansRepository extends BaseRepository {
         $plan->plans_type      = $inputs['plans_type'];
         $plan->house_id        = $inputs['house_id'];
         $plan->flats_count     = $inputs['flats_count'];
+        $plan->rooms           = $inputs['rooms'];
         $plan->area            = $inputs['area'];
         $plan->live            = $inputs['live'];
         $plan->kitchen         = $inputs['kitchen'];

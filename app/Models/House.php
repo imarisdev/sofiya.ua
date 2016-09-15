@@ -16,6 +16,14 @@ class House extends BaseModel {
     }
 
     /**
+     * Менеджер проекта
+     * @return mixed
+     */
+    public function manager() {
+        return $this->belongsTo('App\Models\User', 'manager_id');
+    }
+
+    /**
      * Адрес здания
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
