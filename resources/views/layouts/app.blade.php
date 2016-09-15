@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html lang="ru">
     <head>
         @include('includes.head')
@@ -14,11 +14,11 @@
                 @include('includes.header.header')
             @show
 
+            @include('includes.call-link')
 
-            <div class="content">
+            <!--div class="content"-->
                 @yield('content')
-            </div>
-
+            <!--/div-->
 
             <footer>
                 @include('includes.footer')

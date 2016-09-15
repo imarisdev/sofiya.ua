@@ -1,5 +1,5 @@
-<section class="carousel-section cell">
-    <div class="video-wrapper">
+<section class="carousel-section cell m_b-30">
+    <div class="no-nav">
         <div id="slider" class="flexslider">
             <ul class="slides">
                 <li>
@@ -15,16 +15,16 @@
             </ul>
         </div>
     </div>
-    <div class="wrapper">
+    <div class="wrap-nav">
         <div id="carousel" class="flexslider">
             <ul class="slides">
                 <li>
-                    <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '70x70', null, 'fit') }}" width="70" height="70" />
+                    <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '100x70', null, 'fit') }}" />
                 </li>
                 @if(!empty($house->medialib) && count($house->medialib) > 0)
                     @foreach($house->medialib as $key => $medialib)
                         <li>
-                            <img alt="" title="" src="{{ Helpers::getImage($medialib->file, '70x70', null, 'fit') }}" width="70" height="70" />
+                            <img alt="" title="" src="{{ Helpers::getImage($medialib->file, '100x70', null, 'fit') }}"/>
                         </li>
                     @endforeach
                 @endif

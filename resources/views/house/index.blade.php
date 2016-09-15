@@ -16,9 +16,9 @@
                 <div class="cell seo-text m_b-20">{!! $house->content !!}</div>
 
                 <div class="cell">
-                    <div class="cell m_b-30">
+                    <div class="cell m_b-10">
                         <div class="cell6 p_r-10 cell-md cell-md">
-                            <div class="cell one-line-block m_b-20 cell-md">
+                            <div class="cell one-line-block cell-md">
                                 @include('house.slider')
 
                                 @include('planstype.blue-info-block')
