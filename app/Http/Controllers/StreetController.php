@@ -39,7 +39,7 @@ class StreetController extends Controller {
 
         $streets = $this->street->getStreets();
 
-        $houses = $this->house->getHouses();
+        $houses = $this->house->getHouses(null, 4);
 
         $breadcrumbs = [
             [

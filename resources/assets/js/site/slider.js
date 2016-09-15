@@ -3,7 +3,7 @@ $(window).load(function() {
     $('#carousel').flexslider({
         animation: "slide",
         controlNav: false,
-        animationLoop: false,
+        animationLoop: true,
         slideshow: false,
         itemWidth: 210,
         itemMargin: 5,
@@ -12,9 +12,10 @@ $(window).load(function() {
 
     $('#slider').flexslider({
         animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
+        directionNav:true,
+        controlNav:true,
+        animationLoop: true,
+        slideshow:true,
         sync: "#carousel"
     });
 });

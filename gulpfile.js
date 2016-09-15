@@ -12,12 +12,6 @@ elixir(function (mix) {
     ], 'public/css/all.css');
 });
 
-elixir(function (mix) {
-    mix.styles([
-        'owl/owl-carousel.css',
-        'owl/owl-theme.css'
-    ], 'public/css/owl-carousel.css');
-});
 
 elixir(function (mix) {
     mix.scripts([
@@ -28,12 +22,6 @@ elixir(function (mix) {
         'site/slider.js',
         'site/common.js',
     ], 'public/js/common.js');
-});
-
-elixir(function (mix) {
-    mix.scripts([
-        'owl/owl-carousel.js',
-    ], 'public/js/owl-carousel.js');
 });
 
 /**
