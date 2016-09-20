@@ -7,9 +7,9 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h3 class="title-page m_t-10">ВИДЕОГАЛЕРЕЯ {{ $complex->title }}</h3>
+            <h3 class="title-page m_t-10">ВИДЕОГАЛЕРЕЯ</h3>
 
-            @include('complex.video-carousel', ['items' => $complex->getVideo()])
+            @include('complex.video-carousel', ['items' => $video])
 
             <div class="cell m_t-20 m_b-30">
                 @include('planstype.blue-info-block')

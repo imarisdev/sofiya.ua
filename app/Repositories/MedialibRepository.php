@@ -15,11 +15,36 @@ class MedialibRepository extends BaseRepository {
     }
 
     /**
+     * Список файлов
+     * @param $object_id
+     * @param $oblect_type
+     * @return mixed
+     */
+    public function getFiles($request = null) {
+
+        $files = $this->model
+            ->select('id', 'file', 'title', 'created_at', 'object_type', 'object_id');
+
+        if(!empty($request['object_type'])) {
+            $files->where('object_type', '=', $request['object_type']);
+        }
+
+        if(!empty($request['object_id'])) {
+            $files->where('object_id', '=', $request['object_id']);
+        }
+
+        $files->orderBy('created_at');
+
+        return $files->get();
+    }
+
+    /**
      * Сохранение файлов в медиабиблиотеку
      * @param $files
      * @param $object_id
      * @param $oblect_type
      */
+    //TODO: можно использивать паттерн Прототип
     public function saveFiles($files, $object_id, $oblect_type) {
 
         foreach($files as $file) {

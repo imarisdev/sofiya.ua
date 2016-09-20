@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.crm')
 @section('content')
     <section class="content">
         <form role="form" id="pageedit" class="js-admin-form-save" action="/crm/flats/update" method="POST">

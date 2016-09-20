@@ -149,6 +149,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/ulitsy/{sid}-{street}', array('as' => 'street.street', 'uses' => 'StreetController@street'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+']);
     Route::get('/ulitsy/{sid}-{street}/{id}-{house}', array('as' => 'street.house', 'uses' => 'StreetController@house'))->where(['sid' => '[0-9]+', 'street' => '[A-Za-z0-9\-]+', 'id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
+    // Видео
+    Route::get('/video', array('as' => 'video.index', 'uses' => 'VideoController@index'));
+
+    // Фото
+    Route::get('/foto', array('as' => 'photo.index', 'uses' => 'PhotoController@index'));
+
     // Страница дома
     Route::get('/sofievskaya-borshagovka/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 

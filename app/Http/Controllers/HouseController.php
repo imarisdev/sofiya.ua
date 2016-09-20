@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Repositories\BuildingTypesRepository;
 use App\Repositories\ComplexRepository;
 use App\Repositories\HouseRepository;
+use App\Repositories\MedialibRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
 use App\Repositories\SeoRepository;
@@ -16,6 +17,7 @@ class HouseController extends Controller {
     protected $plans;
     protected $building_types;
     protected $seo;
+    protected $medialib;
 
     public function __construct(
         ComplexRepository $complex,
@@ -23,7 +25,8 @@ class HouseController extends Controller {
         PlansTypeRepository $types,
         PlansRepository $plans,
         BuildingTypesRepository $building_types,
-        SeoRepository $seo
+        SeoRepository $seo,
+        MedialibRepository $medialib
     ) {
         $this->complex = $complex;
         $this->house = $house;
@@ -31,6 +34,7 @@ class HouseController extends Controller {
         $this->plans = $plans;
         $this->building_types = $building_types;
         $this->seo = $seo;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -90,8 +94,10 @@ class HouseController extends Controller {
             ]
         ];
 
+        $photos = $this->medialib->getFiles(['object_id' => $house->id, 'object_type' => 'house']);
+
         return view('house.index',
-            compact('house', 'plans', 'house_class', 'building_types', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs')
+            compact('house', 'plans', 'house_class', 'building_types', 'photos', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs')
         );
 
     }

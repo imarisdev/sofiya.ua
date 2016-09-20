@@ -70,6 +70,10 @@
                                         <img src="{{ Helpers::getImage($complex->background, '300x0') }}" alt="..." class="margin">
                                     @endif
                                 </div>
+                                <div class="form-group">
+                                    <label for="slider">Фото комплекса</label>
+                                    <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
+                                </div>
                             </div>
                         </div>
                     </div>

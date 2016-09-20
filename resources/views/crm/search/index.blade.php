@@ -83,13 +83,17 @@
                         <tr>
                             <td>ID</td>
                             <td>Секция</td>
+                            <td>Номер квартиры<br> по БТИ</td>
                             <td>Этаж / Квартира</td>
-                            <td>Метраж (общ./жил./кухня)</td>
+                            <td>Метраж<br> (общ./жил./кухня)</td>
+                            <td>Метраж (общ.)<br> по БТИ</td>
                             <td>Кол. комнат</td>
                             <td>Статус</td>
                             <td>Примечание</td>
                             <td>Дата продажи</td>
                             <td>Менеджер</td>
+                            <td>Документы</td>
+                            <td>Експертная</td>
                             <td>Сдача дома</td>
                         </tr>
                         </thead>
@@ -97,14 +101,18 @@
                         @foreach ($flats as $flat)
                             <tr class="admin-tools-wrap article-{{ $flat->id }}">
                                 <td><a href="/crm/flats/{{ $flat->id }}">{{ $flat->id }}</a></td>
-                                <td></td>
+                                <td>{{ $flat->section }}</td>
+                                <td>{{ $flat->number_bti }}</td>
                                 <td>{{ $flat->floor }} / №{{ $flat->number }}</td>
-                                <td>{{ $flat->area }} м<sup>2</sup> / {{ $flat->live }} м<sup>2</sup> / {{ $flat->kitchen }} м<sup>2</sup></td>
-                                <td>{{ $plans_type[$flat->plans_type] }} ({{ $flat->rooms }})</td>
+                                <td width="15%">{{ $flat->area }} м<sup>2</sup> / {{ $flat->live }} м<sup>2</sup> / {{ $flat->kitchen }} м<sup>2</sup></td>
+                                <td>{{ $flat->area_bti }}</td>
+                                <td>{{-- $plans_type[$flat->plans_type] --}} {{ $flat->rooms }}</td>
                                 <td>{{ $status[$flat->status] }}</td>
                                 <td width="10%">{{ $flat->comment }}</td>
                                 <td>{{ Helpers::getDate($flat->sale_at, '%d.%m.%Y') }}</td>
                                 <td>{{ $flat->name }} (ID: {{ $flat->user_id }})</td>
+                                <td>Документы</td>
+                                <td>Експертная</td>
                                 <td>
                                     {{ Helpers::completion($flat->completion_at, '%d.%m.%Y') }}
                                     <br>
