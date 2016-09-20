@@ -36,4 +36,13 @@ class HomeController extends Controller {
 
         return view('home.index', compact('news', 'video'));
     }
+
+    /**
+     * Генплан комплекса
+     * @return mixed
+     */
+    public function genplan() {
+
+        return view('home.genplan');
+    }
 }

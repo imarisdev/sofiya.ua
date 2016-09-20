@@ -7,15 +7,22 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h3 class="title-page m_t-10">Фотогалерея</h3>
-
-            Фото
+            <h1 class="cell text-center title">Фотогалерея</h1>
 
             @if(!empty($photos) && count($photos) > 0)
-                @foreach($photos as $photo)
-                    <img alt="{{ $photo->title }}" src="{{ Helpers::getImage($photo->file, '435x320', null, 'fit') }}">
-                @endforeach
+                <div class="cell m_b-10">
+                    @foreach($photos as $photo)
+                        <div class="cell4 cell-xs-6 cell-xss">
+                            <div class="gallery-item">
+                                <a class="js-fancybox" href="{{ Helpers::getImage($photo->file) }}">
+                                    <img alt="{{ $photo->title }}" src="{{ Helpers::getImage($photo->file, '285x205', null, 'fit') }}">
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             @endif
+
 
             <div class="cell m_t-20 m_b-30">
                 @include('planstype.blue-info-block')

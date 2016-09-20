@@ -8,70 +8,23 @@
 
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">ФОТОГАЛЕРЕЯ {{ $complex->title }}</h1>
+            <h1 class="cell text-center title">Фотогалерея {{ $complex->title }}</h1>
 
-            <p class="seo-text cell">
-                С каждым днем все большее число коренных жителей и гостей столицы Украины предпочитают покупать современные квартиры в Киеве. При этом наибольшим спросом пользуются новостройки в пригороде столицы. К таким постройкам относят жилые комплексы в Борщаговке. Не меньшим спросом пользуются новостройки от Мартынова. Если вы хотите купить квартиру в Киеве, то по мнению большинства экспертов, одним из самых оптимальных вариантов покупки нового жилья от застройщика являются апартаменты в ЖК «София» от Мартынова.
-            </p>
+            <div class="seo-text cell">{{ $seo['content'] or '' }}</div>
 
-            <div class="cell m_b-10">
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
+            @if(!empty($photos) && count($photos) > 0)
+                <div class="cell m_b-10">
+                    @foreach($photos as $photo)
+                        <div class="cell4 cell-xs-6 cell-xss">
+                            <div class="gallery-item">
+                                <a class="js-fancybox" href="{{ Helpers::getImage($photo->file) }}">
+                                    <img alt="{{ $photo->title }}" src="{{ Helpers::getImage($photo->file, '285x205', null, 'fit') }}">
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-                <div class="cell4 cell-xs-6 cell-xss">
-                    <div class="gallery-item">
-                        <img src="/img/dsc-0186.png" alt="">
-                    </div>
-                </div>
-
-            </div>
-
-            @include('includes.navigation-page')
+            @endif
 
             @include('planstype.blue-info-block')
 
