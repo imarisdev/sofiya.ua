@@ -44,6 +44,14 @@ class User extends BaseModel implements AuthenticatableContract, CanResetPasswor
     }
 
     /**
+     * Подчиненные
+     * @return mixed
+     */
+    public function subordinates() {
+        return $this->hasMany('App\Models\User', 'leader');
+    }
+
+    /**
      * Дом (для менеджеров)
      * @return mixed
      */

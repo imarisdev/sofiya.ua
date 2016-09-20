@@ -6,13 +6,15 @@ use App\Models\Complex;
 
 class ComplexRepository extends BaseRepository {
 
+    protected $medialib;
     protected $image;
     protected $seo;
 
-    public function __construct(Complex $complex, ImageRepository $image, SeoRepository $seo) {
+    public function __construct(Complex $complex, ImageRepository $image, SeoRepository $seo, MedialibRepository $medialib) {
 
         $this->model = $complex;
         $this->image = $image;
+        $this->medialib = $medialib;
         $this->seo = $seo;
     }
 
@@ -91,6 +93,10 @@ class ComplexRepository extends BaseRepository {
             $complex->save();
 
             $this->seo->process($inputs['seo']);
+
+            if(!empty($inputs['slider'])) {
+                $this->medialib->saveFiles($inputs['slider'], $complex->id, 'complex');
+            }
 
             return Response::json(['item' => $complex], 201);
         } catch(\Exception $e) {

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Contracts\AdminItemContract;
+use App\Repositories\MedialibRepository;
 use App\Repositories\SeoRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
@@ -9,12 +10,14 @@ use App\Repositories\ComplexRepository;
 
 class ComplexController extends AdminController implements AdminItemContract {
 
+    protected $medialib;
     protected $complex;
     protected $user;
     protected $seo;
 
-    public function __construct(ComplexRepository $complex, UserRepository $user, SeoRepository $seo) {
+    public function __construct(ComplexRepository $complex, UserRepository $user, SeoRepository $seo, MedialibRepository $medialib) {
 
+        $this->medialib = $medialib;
         $this->complex = $complex;
         $this->user = $user;
         $this->seo = $seo;
@@ -68,7 +71,9 @@ class ComplexController extends AdminController implements AdminItemContract {
 
         $seo = $this->seo->getSeoItem($id, 'complex');
 
-        return view('admin.complex.edit', compact('complex', 'owners', 'seo'));
+        $photos = $this->medialib->getFiles(['object_id' => $complex->id, 'object_type' => 'complex']);
+
+        return view('admin.complex.edit', compact('complex', 'owners', 'seo', 'photos'));
     }
 
     /**

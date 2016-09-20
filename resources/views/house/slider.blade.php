@@ -5,10 +5,10 @@
                 <li>
                     <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '435x320', null, 'fit') }}" width="435" height="320" />
                 </li>
-                @if(!empty($house->medialib) && count($house->medialib) > 0)
-                    @foreach($house->medialib as $key => $medialib)
+                @if(!empty($photos) && count($photos) > 0)
+                    @foreach($photos as $key => $photo)
                         <li>
-                            <img alt="" title="" src="{{ Helpers::getImage($medialib->file, '435x320', null, 'fit') }}" width="435" height="320" />
+                            <img alt="" title="" src="{{ Helpers::getImage($photo->file, '435x320', null, 'fit') }}" width="435" height="320" />
                         </li>
                     @endforeach
                 @endif
@@ -21,10 +21,10 @@
                 <li>
                     <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '100x70', null, 'fit') }}" />
                 </li>
-                @if(!empty($house->medialib) && count($house->medialib) > 0)
-                    @foreach($house->medialib as $key => $medialib)
+                @if(!empty($photos) && count($photos) > 0)
+                    @foreach($photos as $key => $photo)
                         <li>
-                            <img alt="" title="" src="{{ Helpers::getImage($medialib->file, '100x70', null, 'fit') }}"/>
+                            <img alt="" title="" src="{{ Helpers::getImage($photo->file, '100x70', null, 'fit') }}"/>
                         </li>
                     @endforeach
                 @endif

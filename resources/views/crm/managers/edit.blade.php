@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.crm')
 @section('content')
     <section class="content">
         <form role="form" id="pageedit" class="js-admin-form-save" action="/crm/managers/update" data-edit="/crm/managers/edit" method="POST">
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="house_id">Дом</label>
-                                    {!! Form::select('house_id', ['' => '= Выбрать дом ='] + $houses, $manager->house->id, ['class' => 'form-control']) !!}
+                                    {!! Form::select('house_id', ['' => '= Выбрать дом ='] + $houses, $manager->house['id'], ['class' => 'form-control']) !!}
                                 </div>
                             </div>
                         </div>

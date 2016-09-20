@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Repositories\BuildingTypesRepository;
 use App\Repositories\ComplexRepository;
+use App\Repositories\MedialibRepository;
 use App\Repositories\SeoRepository;
 use App\Repositories\StreetRepository;
 use Illuminate\Http\Request;
@@ -11,19 +12,28 @@ use App\Repositories\HouseRepository;
 
 class HousesController extends AdminController implements AdminItemContract {
 
+    protected $medialib;
     protected $house;
     protected $street;
     protected $complex;
     protected $building_types;
     protected $seo;
 
-    public function __construct(HouseRepository $house, StreetRepository $street, ComplexRepository $complex, BuildingTypesRepository $building_types, SeoRepository $seo) {
+    public function __construct(
+        HouseRepository $house,
+        StreetRepository $street,
+        ComplexRepository $complex,
+        BuildingTypesRepository $building_types,
+        SeoRepository $seo,
+        MedialibRepository $medialib
+    ) {
 
         $this->house = $house;
         $this->street = $street;
         $this->complex = $complex;
         $this->building_types = $building_types;
         $this->seo = $seo;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -94,7 +104,9 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $seo = $this->seo->getSeoItem($id, 'houses');
 
-        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments', 'seo'));
+        $photos = $this->medialib->getFiles(['object_id' => $house->id, 'object_type' => 'house']);
+
+        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments', 'seo', 'photos'));
     }
 
     /**
