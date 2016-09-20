@@ -128,6 +128,9 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', array('as' => 'home.index', 'uses' => 'HomeController@index'));
 
+    // Генплан
+    Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
+
     // Контакты
     Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));
 
