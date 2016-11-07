@@ -11,8 +11,7 @@
             <h1 class="cell text-center title">{{ $plan->title }}</h1>
 
             <div class="cell6 cell-md text-center">
-                <img alt="" src="{{ Helpers::getImage($plan->image, '430x0') }}">
-
+                @include('plans.slider')
                 <div class="cell dark-social text-center m_b-30 cell-md">
                     @include('includes.social')
                 </div>

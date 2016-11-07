@@ -35,9 +35,7 @@
             <p class="info fl_l cell-md-none">© ЖК «Софія» от Мартынова, 2016</p>
 
             <ul class="site-pages fl_r cell-md">
-                @foreach(Helpers::getMenu('top') as $item)
-                    <li class="cell-sm"><a href="{{ $item->link }}">{{ $item->title }}</a></li>
-                @endforeach
+                @each('includes.header.menu-items', Helpers::renderMenu('top'), 'item')
             </ul>
         </div>
 
@@ -46,11 +44,7 @@
             <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
 
             <ul class="footer-nav fl_r cell-md">
-                @foreach(Helpers::getMenu('head') as $item)
-                    <li class="cell-sm">
-                        <a href="{{ $item->link }}">{{ $item->title }}</a>
-                    </li>
-                @endforeach
+                @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
             </ul>
         </div>
 

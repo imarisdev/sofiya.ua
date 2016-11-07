@@ -1,4 +1,4 @@
-<ul class="menu">
+{{--<!--ul class="menu">
     @foreach(Helpers::getMenu('head') as $item)
         <li @if(!empty($item->child)) class="parent-menu js-parent" @endif>
             <a href="{{ $item->link }}">{{ $item->title }}</a>
@@ -11,4 +11,4 @@
             @endif
         </li>
     @endforeach
-</ul>
+</ul-->--}}

@@ -410,7 +410,8 @@ a {
     padding: 0 10px;
 }
 
-.nav-top li a {
+.nav-top li a,
+.nav-top li span {
     position: relative;
     color: #010101;
     font-size: 16px;
@@ -418,7 +419,8 @@ a {
     line-height: 24px;
 }
 
-.nav-top li a:after {
+.nav-top li a:after,
+.nav-top li span:after {
     content: '';
     display: block;
     position: absolute;
@@ -479,7 +481,8 @@ a {
     display: none;
 }
 
-.nav-bottom ul li a {
+.nav-bottom ul li a,
+.nav-bottom ul li span {
     position: relative;
     color: black;
     font-size: 20px;

@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
 use App\Repositories\HouseRepository;
+use App\Repositories\MedialibRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
 use App\Repositories\SeoRepository;
@@ -14,13 +15,15 @@ class PlansController extends Controller {
     protected $types;
     protected $plans;
     protected $seo;
+    protected $medialib;
 
-    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans, SeoRepository $seo) {
+    public function __construct(ComplexRepository $complex, HouseRepository $house, PlansTypeRepository $types, PlansRepository $plans, SeoRepository $seo, MedialibRepository $medialib) {
         $this->complex = $complex;
         $this->house = $house;
         $this->types = $types;
         $this->plans = $plans;
         $this->seo = $seo;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -101,7 +104,9 @@ class PlansController extends Controller {
             ]
         ];
 
-        return view('plans.index', compact('plan', 'type', 'breadcrumbs'));
+        $photos = $this->medialib->getFiles(['object_id' => $plan->id, 'object_type' => 'plans']);
+
+        return view('plans.index', compact('plan', 'type', 'breadcrumbs', 'photos'));
     }
 
 }

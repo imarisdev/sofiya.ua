@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Repositories\HouseRepository;
+use App\Repositories\MedialibRepository;
 use App\Repositories\PlansRepository;
 use App\Repositories\PlansTypeRepository;
 use Illuminate\Http\Request;
@@ -12,11 +13,13 @@ class PlansController extends AdminController implements AdminItemContract {
     protected $plans;
     protected $plans_type;
     protected $house;
+    protected $medialib;
 
-    public function __construct(PlansRepository $plans, PlansTypeRepository $plans_type, HouseRepository $house) {
+    public function __construct(PlansRepository $plans, PlansTypeRepository $plans_type, HouseRepository $house, MedialibRepository $medialib) {
         $this->plans = $plans;
         $this->plans_type = $plans_type;
         $this->house = $house;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -81,7 +84,9 @@ class PlansController extends AdminController implements AdminItemContract {
 
         $balcony_types = $this->plans->getBalconyTypes();
 
-        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types'));
+        $photos = $this->medialib->getFiles(['object_id' => $plan->id, 'object_type' => 'plans']);
+
+        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types', 'photos'));
     }
 
     /**

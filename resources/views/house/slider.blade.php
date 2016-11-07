@@ -3,12 +3,16 @@
         <div id="slider" class="flexslider">
             <ul class="slides">
                 <li>
-                    <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '435x320', null, 'fit') }}" width="435" height="320" />
+                    <a rel="group" class="js-fancybox" href="{{ Helpers::getImage($house->image, '1024x768', null, 'fit-w') }}">
+                        <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '435x320', null, 'fit-w') }}" width="435" height="320" />
+                    </a>
                 </li>
                 @if(!empty($photos) && count($photos) > 0)
                     @foreach($photos as $key => $photo)
                         <li>
-                            <img alt="" title="" src="{{ Helpers::getImage($photo->file, '435x320', null, 'fit') }}" width="435" height="320" />
+                            <a rel="group" class="js-fancybox" href="{{ Helpers::getImage($photo->file, '1024x768', null, 'fit-w') }}">
+                                <img alt="" title="" src="{{ Helpers::getImage($photo->file, '435x320', null, 'fit-w') }}" width="435" height="320" />
+                            </a>
                         </li>
                     @endforeach
                 @endif

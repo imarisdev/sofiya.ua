@@ -13,4 +13,8 @@ class Complex extends BaseModel {
     public function getVideo() {
         return $this->video()->where('object_type', 1)->get();
     }
+
+    public function link() {
+        return "complex/$this->slug";
+    }
 }

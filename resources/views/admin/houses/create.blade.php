@@ -34,9 +34,9 @@
                                         <div class="form-group">
                                             <label for="status">Статус</label>
                                             @if(!empty($house->status))
-                                                {!! Form::select('status', ['Черновик', 'Опубликован'], $house->status, ['class' => 'form-control']) !!}
+                                                {!! Form::select('status', ['Добавлен в базу', 'Опубликован'], $house->status, ['class' => 'form-control']) !!}
                                             @else
-                                                {!! Form::select('status', ['Черновик', 'Опубликован'], null, ['class' => 'form-control']) !!}
+                                                {!! Form::select('status', ['Добавлен в базу', 'Опубликован'], null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="is_installments">Рассрочка</label>
+                                            <label for="is_installments">Оплата</label>
                                             @if(!empty($house->is_installments))
                                                 {!! Form::select('is_installments', $installments, $house->is_installments, ['class' => 'form-control']) !!}
                                             @else

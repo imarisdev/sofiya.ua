@@ -14,7 +14,7 @@
 
                         </div>
                         <div class="col-xs-6">
-                            <!--a href="/admin/pages/create" class="btn btn-primary pull-right">Добавить</a-->
+                            <a href="/admin/pages/create" class="btn btn-primary pull-right">Добавить</a>
                         </div>
                     </div>
                 </form>

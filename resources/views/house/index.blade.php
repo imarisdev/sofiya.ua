@@ -7,13 +7,9 @@
 
             @include('includes.bread-crumbs')
 
-            <h1 class='cell title text-center'> Продажа квартир в доме {{ $house->street->title }}, {{ $house->number }}</h1>
-
-            <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
+            <h1 class='cell title text-center'>{{ $house->street->title }}, {{ $house->number }}</h1>
 
             <div class="cell">
-
-                <div class="cell seo-text m_b-20">{!! $house->content !!}</div>
 
                 <div class="cell">
                     <div class="cell m_b-10">
@@ -33,6 +29,9 @@
                             @include('house.table-parameters')
                         </div>
                     </div>
+
+                    <div class="cell seo-text m_b-20">{!! $house->content !!}</div>
+
                     @include('house.tabs')
 
                     @include('home.seo')
