@@ -17,6 +17,8 @@ class CreateTrigger extends Migration
         FOR EACH ROW
             IF NEW.parent > 0 THEN
                 SET NEW.path = CONCAT((SELECT path FROM menu WHERE id = NEW.parent), '', NEW.slug);
+            ELSE
+				SET NEW.path = NEW.slug;
             END IF;
         ");
 
@@ -25,6 +27,8 @@ class CreateTrigger extends Migration
         FOR EACH ROW
             IF NEW.parent > 0 THEN
                 SET NEW.path = CONCAT(IFNULL((SELECT CONCAT(path, '/') FROM menu WHERE id = NEW.parent), ''), NEW.slug);
+            ELSE
+				SET NEW.path = NEW.slug;
             END IF;
         ");
     }

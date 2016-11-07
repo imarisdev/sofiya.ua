@@ -6,9 +6,7 @@
             <div class="wrapper">
                 <ul>
                     <li><a href="/">Главная</a></li>
-                    @foreach(Helpers::getMenu('top') as $item)
-                        <li><a href="{{ $item->link }}">{{ $item->title }}</a></li>
-                    @endforeach
+                    @each('includes.header.menu-items', Helpers::renderMenu('top'), 'item')
                 </ul>
             </div>
 
@@ -24,27 +22,13 @@
 
         <div class="nav-bottom cell">
             <div class="logo fl_l">
-                <a href="{{ Helpers::createComplexLink('jk-klubniy', Request::segment(2)) }}">
-                    <div class="top-logo-part">
-                        <img src="/img/logo-11.png" alt="">
-                    </div>
-                </a>
-
-                <a href="{{ Helpers::createComplexLink('jk-martinov', Request::segment(2)) }}">
-                    <div class="main-logo-part">
-                        <img src="/img/logo.png" alt="">
-                    </div>
-                </a>
-
-                <a href="{{ Helpers::createComplexLink('jk-elitniy', Request::segment(2)) }}">
-                    <div class="bottom-logo-part">
-                        <img src="/img/logo-1.png" alt="">
-                    </div>
-                </a>
+                {!! Helpers::renderComplex() !!}
             </div>
 
             <div class="wrapper">
-                @include('includes.header.menu-top')
+                <ul class="menu">
+                    @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
+                </ul>
             </div>
 
             <div class="call-block">

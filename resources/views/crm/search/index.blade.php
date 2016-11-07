@@ -21,41 +21,25 @@
                                 {!! Form::select('house_id', ['' => '=Выбор дома='] + $houses, Input::get('house_id'), ['class' => 'form-control']) !!}
                             </div>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <div class="form-group">
                                 {!! Form::select('is_rent', ['' => '=Аренда=', 'Нет', 'Да'], Input::get('is_rent'), ['class' => 'form-control']) !!}
                             </div>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
+                            <div class="form-group">
+                                {!! Form::select('status', ['' => '=Статус=', 0 => 'Свободно', 1 => 'Продано'], Input::get('status'), ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
                             <div class="form-group">
                                 <input type="number" class="form-control" id="area_from" name="area_from" placeholder="Площадь от (общ.)" value="{{ Input::get('area_from') }}"/>
                             </div>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
                             <div class="form-group">
                                 <input type="number" class="form-control" id="area_to" name="area_to" placeholder="Площадь до (общ.)" value="{{ Input::get('area_to') }}"/>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-2">
-                            <div class="form-group">
-                                <input type="number" class="form-control" id="floor_from" name="floor_from" placeholder="Этаж от" value="{{ Input::get('floor_from') }}"/>
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="form-group">
-                                <input type="number" class="form-control" id="floor_to" name="floor_to" placeholder="Этаж до" value="{{ Input::get('floor_to') }}"/>
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-
-                        </div>
-                        <div class="col-xs-2">
-
-                        </div>
-                        <div class="col-xs-2">
-
                         </div>
                         <div class="col-xs-2">
                             <div class="form-group">
@@ -78,15 +62,15 @@
                     </div>
                 </div>
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-font">
                         <thead>
                         <tr>
                             <td>ID</td>
                             <td>Секция</td>
-                            <td>Номер квартиры<br> по БТИ</td>
+                            <td>№ квартиры по БТИ</td>
                             <td>Этаж / Квартира</td>
-                            <td>Метраж<br> (общ./жил./кухня)</td>
-                            <td>Метраж (общ.)<br> по БТИ</td>
+                            <td>Метраж (общ.)</td>
+                            <td>Метраж (общ.) по БТИ</td>
                             <td>Кол. комнат</td>
                             <td>Статус</td>
                             <td>Примечание</td>
@@ -95,29 +79,29 @@
                             <td>Документы</td>
                             <td>Експертная</td>
                             <td>Сдача дома</td>
+                            <td>&nbsp;</td>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($flats as $flat)
-                            <tr class="admin-tools-wrap article-{{ $flat->id }}">
+                            <tr class="admin-tools-wrap flat-{{ $flat->id }}">
                                 <td><a href="/crm/flats/{{ $flat->id }}">{{ $flat->id }}</a></td>
                                 <td>{{ $flat->section }}</td>
                                 <td>{{ $flat->number_bti }}</td>
                                 <td>{{ $flat->floor }} / №{{ $flat->number }}</td>
-                                <td width="15%">{{ $flat->area }} м<sup>2</sup> / {{ $flat->live }} м<sup>2</sup> / {{ $flat->kitchen }} м<sup>2</sup></td>
+                                <td>{{ $flat->area }} м<sup>2</sup></td>
                                 <td>{{ $flat->area_bti }}</td>
                                 <td>{{-- $plans_type[$flat->plans_type] --}} {{ $flat->rooms }}</td>
                                 <td>{{ $status[$flat->status] }}</td>
                                 <td width="10%">{{ $flat->comment }}</td>
                                 <td>{{ Helpers::getDate($flat->sale_at, '%d.%m.%Y') }}</td>
-                                <td>{{ $flat->name }} (ID: {{ $flat->user_id }})</td>
+                                <td>{{ $flat->name }}</td>
                                 <td>Документы</td>
                                 <td>Експертная</td>
                                 <td>
-                                    {{ Helpers::completion($flat->completion_at, '%d.%m.%Y') }}
-                                    <br>
-                                    <a href="/sofievskaya-borshagovka/{{ $flat->houses_id }}-{{ $flat->houses_slug }}" target="_blank">Страница дома</a>
+                                    <a href="/sofievskaya-borshagovka/{{ $flat->houses_id }}-{{ $flat->houses_slug }}" target="_blank">{{ $flat->street_title }}, {{ $flat->houses_number }}<br> ({{ Helpers::completion($flat->completion_at, '%d.%m.%Y') }})</a>
                                 </td>
+                                <td><i class="fa fa-fw fa-info-circle"></i></td>
                             </tr>
                         @endforeach
                         </tbody>

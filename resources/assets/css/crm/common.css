@@ -19,3 +19,9 @@
     background-color: #c9302c;
     border-color: #ac2925;
 }
+.table-font {
+    font-size: 12px;
+}
+.table-font td {
+    padding: 1px !important;
+}

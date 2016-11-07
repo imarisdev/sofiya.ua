@@ -29,7 +29,7 @@ class SearchController extends CrmController {
      */
     public function index(Request $request) {
 
-        $flats = $this->flats->searchFlats($request->all(), 50);
+        $flats = $this->flats->searchFlats($request->all(), 200);
 
         $complex = $this->complex->getComplexesForSelect();
 

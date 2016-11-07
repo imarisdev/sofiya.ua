@@ -61,6 +61,9 @@
                     </table>
                 </div>
             </div>
+            <div class="navigation">
+                {!! $houses->setPath(Request::url())->appends(Request::query())->render() !!}
+            </div>
         @endif
     </section>
 

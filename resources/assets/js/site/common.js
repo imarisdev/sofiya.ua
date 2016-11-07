@@ -38,21 +38,18 @@ $(document).ready(function () {
     });
 
 
-    $(document).ready(function(){
+    $('.js-parent').hover(function () {
+        clearTimeout($.data(this,'timer'));
+        $('ul',this).stop(true,true).slideDown(200);
+    }, function () {
 
-        $('.js-parent').hover(function () {
-            clearTimeout($.data(this,'timer'));
-            $('ul',this).stop(true,true).slideDown(200);
-        }, function () {
-
-            $.data(this,'timer', setTimeout($.proxy(function() {
-                $('ul',this).stop(true,true).slideUp(200);
-            }, this), 100));
-        });
+        $.data(this,'timer', setTimeout($.proxy(function() {
+            $('ul',this).stop(true,true).slideUp(200);
+        }, this), 100));
     });
 
 
-
+    $('.js-fancybox').fancybox();
 
 
     $('.js-phone-click').click(function () {

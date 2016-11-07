@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories;
 
+use View;
 use Response;
 use App\Models\Complex;
 
@@ -38,7 +39,6 @@ class ComplexRepository extends BaseRepository {
     public function getAllComplexes() {
 
         $complex = $this->model
-            ->where('status', '=', 0)
             ->get();
 
         return $complex;
@@ -140,6 +140,14 @@ class ComplexRepository extends BaseRepository {
             return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
         }
 
+    }
+
+    /**
+     * Создаем переменную комплекса для шаблона
+     * @param $complex
+     */
+    public function shareComplex($complex) {
+        View::share(['complex' => $complex]);
     }
 
 }

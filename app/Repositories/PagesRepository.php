@@ -55,7 +55,9 @@ class PagesRepository extends BaseRepository {
 
             $page->save();
 
-            $this->seo->process($inputs['seo']);
+            if(isset($inputs['seo'])) {
+                $this->seo->process($inputs['seo']);
+            }
 
             return Response::json(['item' => $page], 201);
         } catch(\Exception $e) {

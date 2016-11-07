@@ -34,7 +34,7 @@
 
                             <div class="cell6 p_l-20 p_t-20 p_r-10">
                                 <a class="blue-title m_b-10 fl_l" href="{{ $house->link() }}">
-                                    {{ $house->title }}, {{ $house->number }}
+                                    {{ $street->title }}, {{ $house->number }}
                                 </a>
                                 <p class="bus cell m_b-10">{{ $house->transport }}</p>
                                 <p class="go-time cell m_b-10">До остановки: {{ $house->to_stop }}</p>

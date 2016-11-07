@@ -31,6 +31,8 @@ class PlansTypeController extends Controller {
 
         $complex = $this->complex->getBySlug($complex);
 
+        $this->complex->shareComplex($complex);
+
         $houses = $this->house->getByComplexId($complex->id);
 
         $plans = [];
@@ -44,7 +46,7 @@ class PlansTypeController extends Controller {
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
-                'link' => "/{$complex->slug}"
+                'link' => "/{$complex->link()}"
             ],
             [
                 'title' => "{$type['title']}",
@@ -65,12 +67,14 @@ class PlansTypeController extends Controller {
 
         $complex = $this->complex->getBySlug($complex);
 
+        $this->complex->shareComplex($complex);
+
         $houses = $this->house->getHouses(['decoration' => 1, 'complex_id' => $complex->id]);
 
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
-                'link' => "/{$complex->slug}"
+                'link' => "/{$complex->link()}"
             ],
             [
                 'title' => "Квартиры под ключ",

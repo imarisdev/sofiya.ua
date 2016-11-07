@@ -17,7 +17,7 @@
                             </div>
 
                             <div class="cell6 p_l-20 p_t-20 p_r-10">
-                                <a class="blue-title m_b-10 fl_l" href="/{{ $complex->slug }}/pod-klyuch/{{ $house->link() }}">
+                                <a class="blue-title m_b-10 fl_l" href="/{{ $complex->link() }}/pod-klyuch/{{ $house->link() }}">
                                     {{ $house->streetCache->title }}, {{ $house->number }}
                                 </a>
                                 <p class="bus cell m_b-10">{{ $house->transport }}</p>

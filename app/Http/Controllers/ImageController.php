@@ -49,7 +49,7 @@ class ImageController extends Controller {
                 $wt = Image::make(public_path() . '/img/watermark.png')->resize(($w * 0.5), null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
-                $img->insert($wt, 'bottom-right', 10, 10);
+                $img->insert($wt, 'center');
 
                 $img->save($image_file . '_' . $w . 'x' . $h . '_' . $type . '-w' . $ext);
             } else {

@@ -100,6 +100,24 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/video/update', array('as' => 'admin.video.save', 'uses' => 'VideoController@update'));
         Route::post('/video/delete', array('as' => 'admin.video.delete', 'uses' => 'VideoController@delete'));
 
+        // Menu
+        Route::get('/menu', array('as' => 'admin.menu', 'uses' => 'MenuController@index'));
+        Route::get('/menu/edit/{id}', array('as' => 'admin.menu.edit', 'uses' => 'MenuController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/menu/sort/{type}', array('as' => 'admin.menu.sort', 'uses' => 'MenuController@sort'))->where(['type' => '[a-z]+']);
+        Route::get('/menu/create', array('as' => 'admin.menu.create', 'uses' => 'MenuController@create'));
+        Route::post('/menu/save', array('as' => 'admin.menu.save', 'uses' => 'MenuController@store'));
+        Route::post('/menu/update', array('as' => 'admin.menu.save', 'uses' => 'MenuController@update'));
+        Route::post('/menu/rebuild', array('as' => 'admin.menu.rebuild', 'uses' => 'MenuController@rebuild'));
+        Route::post('/menu/delete', array('as' => 'admin.menu.delete', 'uses' => 'MenuController@delete'));
+
+        // Banners
+        Route::get('/gallery', array('as' => 'admin.gallery', 'uses' => 'GalleryController@index'));
+        Route::get('/gallery/edit/{id}', array('as' => 'admin.gallery.edit', 'uses' => 'GalleryController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/gallery/create', array('as' => 'admin.gallery.create', 'uses' => 'GalleryController@create'));
+        Route::post('/gallery/save', array('as' => 'admin.gallery.save', 'uses' => 'GalleryController@store'));
+        Route::post('/gallery/update', array('as' => 'admin.gallery.save', 'uses' => 'GalleryController@update'));
+        Route::post('/gallery/delete', array('as' => 'admin.gallery.delete', 'uses' => 'GalleryController@delete'));
+
     });
 
     Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'crm', 'namespace' => 'Crm'], function () {
@@ -161,17 +179,17 @@ Route::group(['middleware' => 'web'], function () {
     // Страница дома
     Route::get('/sofievskaya-borshagovka/{id}-{house}', array('as' => 'house.index', 'uses' => 'HouseController@index'))->where(['id' => '[0-9]+', 'house' => '[a-z0-9\-]+']);
 
-    // Страницы
-    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[kvartiry\-pod\-kievom|rassrochka|jkh|o\-zastroyshchike]+']);
-
     // Страница комплекса
-    Route::get('/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/photo-gallery', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/kids-study', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/foto', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/shkola-i-sadik', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
 
     // Страница типа планировки
-    Route::get('/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
+    Route::get('/complex/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
+
+    // Страницы
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-]+']);
 
 });

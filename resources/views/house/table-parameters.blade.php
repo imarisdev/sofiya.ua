@@ -81,10 +81,10 @@
         <div class="table-cell">{{ $house->parking }}</div>
     </div>
 
-    <div class="table-row">
+    <!--div class="table-row">
         <div class="table-cell">
             <span class="blue-title">Оплата:</span>
         </div>
         <div class="table-cell">{{ $installments[$house->is_installments] }}</div>
-    </div>
+    </div-->
 </div>

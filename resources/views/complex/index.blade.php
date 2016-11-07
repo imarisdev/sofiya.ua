@@ -16,14 +16,14 @@
                     <div class="cell4 cell-md-6 cell-xs">
                         <div class="item">
                             <i class="{{ $type['slug'] }} cell"></i>
-                            <p class="text-center cell"><a href="/{{ $complex->slug }}/{{ $type['slug'] }}">{{ $type['title'] }}</a></p>
+                            <p class="text-center cell"><a href="/{{ $complex->link() }}/{{ $type['slug'] }}">{{ $type['title'] }}</a></p>
                         </div>
                     </div>
                 @endforeach
                     <div class="cell4 cell-md-6 cell-xs">
                         <div class="item">
                             <i class="pod-klyuch cell"></i>
-                            <p class="text-center cell"><a href="/{{ $complex->slug }}/pod-klyuch">Под ключ</a></p>
+                            <p class="text-center cell"><a href="/{{ $complex->link() }}/pod-klyuch">Под ключ</a></p>
                         </div>
                     </div>
             </div>
