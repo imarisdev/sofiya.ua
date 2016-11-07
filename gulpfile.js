@@ -6,7 +6,7 @@ var elixir = require('laravel-elixir');
 elixir(function (mix) {
     mix.styles([
         'site/flexslider.css',
-        'site/slider.css',
+        'fancybox/jquery.fancybox.css',
         'site/animate.css',
         'site/style.css'
     ], 'public/css/all.css');
@@ -17,6 +17,7 @@ elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
         'wow.js',
+        'fancybox/jquery.fancybox.js',
         'tabs.js',
         'jquery.flexslider.js',
         'site/slider.js',
@@ -85,8 +86,8 @@ elixir(function (mix) {
         'css/all.css',
         'js/common.js',
 
-        'css/owl-carousel.css',
-        'js/owl-carousel.js',
+        //'css/owl-carousel.css',
+       // 'js/owl-carousel.js',
 
 
         'css/admin-common.css',

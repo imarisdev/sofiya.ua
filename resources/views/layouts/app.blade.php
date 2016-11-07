@@ -12,9 +12,11 @@
 
             @section('header')
                 @include('includes.header.header')
-            @show
 
-            @include('includes.call-link')
+                @section('call-link')
+                    @include('includes.call-link')
+                @show
+            @show
 
             <!--div class="content"-->
                 @yield('content')
@@ -25,7 +27,7 @@
             </footer>
 
             <script src="{{ elixir('js/common.js') }}"></script>
-            <script src="{{ elixir('js/owl-carousel.js') }}"></script>
+
         </body>
     </div>
 </html>
