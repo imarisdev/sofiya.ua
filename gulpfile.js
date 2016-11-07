@@ -18,6 +18,7 @@ elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
         'wow.js',
+        'fancybox/jquery.fancybox.js',
         'tabs.js',
         'jquery.flexslider.js',
         'jquery.fancybox.pack.js',
@@ -89,8 +90,8 @@ elixir(function (mix) {
         'css/all.css',
         'js/common.js',
 
-        'css/owl-carousel.css',
-        'js/owl-carousel.js',
+        //'css/owl-carousel.css',
+       // 'js/owl-carousel.js',
 
 
         'css/admin-common.css',

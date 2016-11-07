@@ -72,6 +72,11 @@
             <li><i class="fitness"></i><span>Свой фитнес клуб</span></li>
             <li><i class="metro"></i><span>15 мин. до метро</span></li>
         </ul>
+        @section('call-link')
+            <div class="header-call">
+                @include('includes.call-link')
+            </div>
+        @show
     </div>
 </header>
 <!-- end header -->
