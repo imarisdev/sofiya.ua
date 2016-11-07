@@ -6,7 +6,8 @@ var elixir = require('laravel-elixir');
 elixir(function (mix) {
     mix.styles([
         'site/flexslider.css',
-        'fancybox/jquery.fancybox.css',
+        'site/jquery.fancybox.css',
+        'site/slider.css',
         'site/animate.css',
         'site/style.css'
     ], 'public/css/all.css');
@@ -20,6 +21,7 @@ elixir(function (mix) {
         'fancybox/jquery.fancybox.js',
         'tabs.js',
         'jquery.flexslider.js',
+        'jquery.fancybox.pack.js',
         'site/slider.js',
         'site/common.js',
     ], 'public/js/common.js');
@@ -37,6 +39,7 @@ elixir(function (mix) {
         'admin/font-awesome.min.css',
         'admin/AdminLTE.min.css',
         'admin/skins/skin-blue.css',
+        'admin/sortable.css',
         'admin/common.css'
     ], 'public/css/admin-common.css');
 });
@@ -48,6 +51,7 @@ elixir(function (mix) {
         'admin/bootstrap-datepicker.js',
         'admin/select2.full.min.js',
         'admin/app.min.js',
+        'admin/jquery-sortable-lists.min.js',
         'admin/common.js'
     ], 'public/js/admin-common.js');
 });

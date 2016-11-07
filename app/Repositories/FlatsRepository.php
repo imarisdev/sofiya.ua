@@ -80,15 +80,18 @@ class FlatsRepository extends BaseRepository {
                 'plans.rooms',
                 'houses.id as houses_id',
                 'houses.slug as houses_slug',
+                'houses.number as houses_number',
                 'houses.manager_id',
                 'houses.completion_at',
+                'streets.title as street_title',
                 'users.name',
                 'users.id as user_id'
             )
             ->leftJoin('houses', 'houses.id', '=', 'flats.house_id')
             ->leftJoin('plans', 'plans.id', '=', 'flats.plan_id')
             ->leftJoin('complex', 'complex.id', '=', 'houses.complex_id')
-            ->leftJoin('users', 'users.id', '=', 'houses.manager_id');
+            ->leftJoin('users', 'users.id', '=', 'houses.manager_id')
+            ->leftJoin('streets', 'streets.id', '=', 'houses.street_id');
 
         if(!empty($request['house_id'])) {
             $flats->where('flats.house_id', '=', $request['house_id']);
@@ -152,11 +155,11 @@ class FlatsRepository extends BaseRepository {
         $flat->manager_id      = !empty($inputs['manager_id']) ? $inputs['manager_id'] : Auth::user()->id;
         $flat->floor           = $inputs['floor'];
         $flat->number          = $inputs['number'];
-        $flat->number_bti      = $inputs['number_bti'];
+        //$flat->number_bti      = $inputs['number_bti'];
         $flat->content         = $inputs['content'];
         $flat->comment         = $inputs['comment'];
         $flat->sale_at         = $inputs['sale_at'];
-        $flat->section         = $inputs['section'];
+        //$flat->section         = $inputs['section'];
 
         if(!empty($inputs['image'])) {
             $flat->image = $this->image->uploadImage($inputs['image'][0]);

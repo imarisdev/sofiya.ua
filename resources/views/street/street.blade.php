@@ -10,7 +10,7 @@
             <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
             <ul>
                 @foreach($houses as $house)
-                    <li><a href="{{ $house->link() }}">{{ $house->title }}</a></li>
+                    <li><a href="{{ $house->link() }}">{{ $street->title }}, {{ $house->number }}</a></li>
                 @endforeach
             </ul>
         </div>

@@ -26,27 +26,13 @@
         <div class="nav-bottom cell">
 
             <div class="logo fl_l">
-                <a href="/">
-                    <div class="top-logo-part">
-                        <img src="/img/logo-11.png" alt="">
-                    </div>
-                </a>
-
-                <a href="/">
-                    <div class="main-logo-part">
-                        <img src="/img/logo.png" alt="">
-                    </div>
-                </a>
-
-                <a href="/">
-                    <div class="bottom-logo-part">
-                        <img src="/img/logo-1.png" alt="">
-                    </div>
-                </a>
+                {!! Helpers::renderComplex() !!}
             </div>
 
             <div class="wrapper">
-                @include('includes.header.menu-top')
+                <ul class="menu">
+                    @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
+                </ul>
             </div>
 
             <div class="call-block">
@@ -55,7 +41,7 @@
         </div>
     </div>
 
-    <h2 class="cell text-center">Надежный застройщик с 2008 года</h2>
+    <h2 class="cell text-center">{{ $seo['h1'] or 'Надежный застройщик с 2008 года'}}</h2>
 
     <div class="left-nav fl_l">
         <ul>

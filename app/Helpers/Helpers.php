@@ -4,9 +4,11 @@ namespace App\Helpers;
 use DB;
 use View;
 use App\Models\Articles;
+use Illuminate\Http\Request as Request;
 
 class Helpers {
 
+    public static $this_complex = null;
 
     /**
      * Возвращает ссылку на картинку
@@ -112,26 +114,77 @@ class Helpers {
      * @param $items
      * @return array
      */
-    private static function buildMenu($items) {
+    public static function menuBuilder($menu, $parent = 0) {
 
-        $menu = [];
+        $result = [];
 
-        foreach ($items as $key => $item) {
-            if($item->parent == 0) {
-                if($item->external == 0) {
-                    $menu[$item->id]['item'] = (array) $item;
-                    $menu[$item->id]['item']['link']  = "/{$item->path}";
-                } else {
-                    $menu[$item->id]['item'] = (array) $item;
-                    $menu[$item->id]['item']['link']  = $item->path;
+        foreach ($menu as $row) {
+            if ($row['parent'] == $parent) {
+                $result[$row['id']] = $row;
+                if (self::hasChildren($menu, $row['id'])) {
+                    $result[$row['id']]['child'] = self::menuBuilder($menu, $row['id']);
                 }
-            } else {
-                $menu[$item->parent]['child'][$item->id]['item'] = (array) $item;
-                $menu[$item->parent]['child'][$item->id]['item']['link']  = "/{$item->path}";
             }
         }
+        return $result;
+    }
 
-        return $menu;
+    public static function hasChildren($rows, $id) {
+        foreach ($rows as $row) {
+            if ($row['parent'] == $id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static function renderMenu($position, $order = 'sort') {
+
+        $menu = DB::table('menu')
+            ->select('id', 'title', 'path', 'external', 'parent')
+            ->where('position', '=', $position)
+            ->orderBy('parent')
+            ->orderBy($order)
+            ->get();
+
+        foreach($menu as $key => $item) {
+            if($item->external == 0) {
+                $item->link = "/{$item->path}";
+            } else {
+                $item->link = $item->path;
+            }
+            $menu[$key] = (array) $item;
+        }
+
+        return self::menuBuilder($menu);
+
+        /*$view = View::make('includes.header.menu', ['menu' => self::menuBuilder($menu)]);
+
+        return $view->render();*/
+    }
+
+    /**
+     * Создает ссылку в меню
+     * @param $link
+     * @param $title
+     * @param null $complex
+     * @return string
+     */
+    public static function makeMenuLink($link, $title, $complex = null) {
+
+        $url = \Request::path();
+
+        $link = preg_replace_callback('/\{complex\}/', function($matches) use ($complex) {
+            return !empty($complex) ? $complex->link() . '/' : '';
+        }, $link);
+
+        if("/$url" == $link) {
+            return "<span>$title</span>";
+        } else {
+
+            return "<a href='$link'>$title</a>";
+        }
+
     }
 
     /**
@@ -140,8 +193,7 @@ class Helpers {
      */
     public static function getComplex() {
 
-        $complex = DB::table('complex')
-            ->where('status', '=', 1)
+        $complex = \App\Models\Complex::where('status', '=', 1)
             ->get();
 
         return $complex;
@@ -163,6 +215,35 @@ class Helpers {
 
     }
 
+    public static function renderComplex() {
+
+        $complex = self::getComplex();
+
+        $complex_active = null;
+
+        $active = false;
+
+        foreach($complex as $item) {
+
+            $item->active = false;
+
+            if (\Request::is($item->slug . '*')) {
+                $item->active = $active = true;
+                self::$this_complex = $item;
+                View::share('this_complex', self::$this_complex);
+            }
+        }
+        // TODO: сделать нормальный выборд дефолтного комплекса
+        if(!$active) {
+            $complex[0]->active = true;
+            View::share('complex_g', $complex[0]);
+        }
+
+        $view = View::make('includes.header.logo', compact('complex'));
+
+        return $view->render();
+    }
+
     /**
      * Выводит строку сдачи дома
      * @param $date
@@ -174,7 +255,17 @@ class Helpers {
 
         $year = date('Y', strtotime($date));
 
-        return "{$quarter} квартал {$year} года";
+        if($quarter < 1) {
+            $quarter = 1;
+        }
+
+        if(strtotime($date) > time()) {
+            return "{$quarter} квартал {$year} года";
+        } else {
+            return "{$year} год";
+        }
+
+
     }
 
     /**

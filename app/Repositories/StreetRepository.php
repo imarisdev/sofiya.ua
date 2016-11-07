@@ -58,6 +58,8 @@ class StreetRepository extends BaseRepository {
 
         if(empty($inputs['slug'])) {
             $street->slug = $this->createSlug($inputs['title']);;
+        } else {
+            $street->slug = $inputs['slug'];
         }
 
         try {

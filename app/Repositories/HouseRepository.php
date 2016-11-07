@@ -15,8 +15,8 @@ class HouseRepository extends BaseRepository {
     ];
 
     private $house_decoration = [
-        1 => 'Без отделки',
-        2 => 'C отделкой'
+        1 => 'Без ремонта',
+        2 => 'C ремонтом'
     ];
 
     private $installments = [

@@ -34,6 +34,8 @@ class ComplexController extends Controller {
 
         $this->seo->getSeoData($complex->id, 'complex');
 
+        $this->complex->shareComplex($complex);
+
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}"
@@ -52,10 +54,12 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
+        $this->complex->shareComplex($complex);
+
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
-                'link' => "/{$complex->slug}"
+                'link' => "/{$complex->link()}"
             ],
             [
                 'title' => "Фото {$complex->title}"
@@ -77,10 +81,12 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
+        $this->complex->shareComplex($complex);
+
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
-                'link' => "/{$complex->slug}"
+                'link' => "/{$complex->link()}"
             ],
             [
                 'title' => "Видео {$complex->title}"
@@ -100,10 +106,12 @@ class ComplexController extends Controller {
 
         $complex = $this->complex->cache('getBySlug', 'complex_' . $complex, $complex);
 
+        $this->complex->shareComplex($complex);
+
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
-                'link' => "/{$complex->slug}"
+                'link' => "/{$complex->link()}"
             ],
             [
                 'title' => "Школа и садик в {$complex->title}"

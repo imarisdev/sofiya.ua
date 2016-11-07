@@ -7,6 +7,7 @@ use App\Models\Plans;
 class PlansRepository extends BaseRepository {
 
     protected $image;
+    protected $medialib;
 
     private $bathroom_types = [
         0 => 'Нету',
@@ -20,10 +21,11 @@ class PlansRepository extends BaseRepository {
         2 => '2 балкона'
     ];
 
-    public function __construct(Plans $plans, ImageRepository $image) {
+    public function __construct(Plans $plans, ImageRepository $image, MedialibRepository $medialib) {
 
         $this->model = $plans;
         $this->image = $image;
+        $this->medialib = $medialib;
     }
 
     /**
@@ -130,6 +132,8 @@ class PlansRepository extends BaseRepository {
 
         if(empty($inputs['slug'])) {
             $plan->slug = $this->createSlug($inputs['title']);;
+        } else {
+            $plan->slug = $inputs['slug'];
         }
 
         if(!empty($inputs['image'])) {
@@ -139,6 +143,10 @@ class PlansRepository extends BaseRepository {
         try {
 
             $plan->save();
+
+            if(!empty($inputs['slider'])) {
+                $this->medialib->saveFiles($inputs['slider'], $plan->id, 'plans');
+            }
 
             return Response::json(['item' => $plan], 201);
         } catch(\Exception $e) {

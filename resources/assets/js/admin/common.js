@@ -69,6 +69,11 @@ var Admin = {
         this.watchEditableItems();
 
         /**
+         * Сортировки меню
+         */
+        this.sortableInit();
+
+        /**
          * Сохранение данных формы
          */
         this.saveBtn.on('click', function(e) {
@@ -221,7 +226,11 @@ var Admin = {
     },
     processItem: function(data) {
         if(data.item) {
-            location.href = this.itemEditLink + '/' + data.item.id;
+            if(data.item.id) {
+                location.href = this.itemEditLink + '/' + data.item.id;
+            } else {
+                location.reload();
+            }
         } else {
             console.log(data);
         }
@@ -295,6 +304,33 @@ var Admin = {
             error: function(data) {
                 _this.showError(data);
             }
+        });
+    },
+    sortableInit: function() {
+        var oldContainer;
+        $(".js-sortable-menu").sortableLists({
+            currElClass: 'currElemClass',
+            currElCss: {'background-color':'#efefef', 'color':'#fff'},
+            placeholderClass: 'placeholderClass',
+            placeholderCss: {'background-color':'#ececec'},
+            hintClass: 'hintClass',
+            hintCss: {'background-color':'#efefef', 'border':'1px dashed white'},
+            ignoreClass: 'clickable',
+            onChange: function(cEl) {
+                console.log('onChange');
+            },
+            complete: function(currEl) {
+                id = $(currEl).data('id');
+                parent = $(currEl).parents('li').data('id');
+                $('[name=menu_item_parent\\[' + id + '\\]]').val(parent);
+                _this.updateSortPositions(currEl);
+            }
+        });
+    },
+    updateSortPositions: function(element) {
+        var element_parent = $(element).parent();
+        $(element_parent).find('li').each(function(index, element){
+            $(element).find('[name=menu_item_sort\\[' + $(element).data('id') + '\\]]').val(index + 1);
         });
     }
 };

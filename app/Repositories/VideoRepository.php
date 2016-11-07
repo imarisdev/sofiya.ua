@@ -8,7 +8,7 @@ class VideoRepository extends BannersRepository {
 
     private $types = [
         1 => 'Комплекс',
-        2 => 'Дом'
+        //2 => 'Дом'
     ];
 
     public function __construct(Video $video) {
