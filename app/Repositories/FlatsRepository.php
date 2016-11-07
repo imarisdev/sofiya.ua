@@ -69,8 +69,11 @@ class FlatsRepository extends BaseRepository {
                 'flats.status',
                 'flats.comment',
                 'flats.sale_at',
+                'flats.section',
+                'flats.number_bti',
                 'complex.id as complex_id',
                 'plans.area',
+                'plans.area_bti',
                 'plans.live',
                 'plans.kitchen',
                 'plans.plans_type',
@@ -121,6 +124,14 @@ class FlatsRepository extends BaseRepository {
 
         $flats->where('flats.status', '>', 0);
 
+        $manager_ids[] = Auth::user()->id;
+
+        foreach(Auth::user()->subordinates as $users) {
+            $manager_ids[] = $users->id;
+        }
+
+        $flats->whereIn('houses.manager_id', $manager_ids);
+
         $flats->orderBy('flats.id');
 
         return $flats->paginate($limit);
@@ -141,9 +152,11 @@ class FlatsRepository extends BaseRepository {
         $flat->manager_id      = !empty($inputs['manager_id']) ? $inputs['manager_id'] : Auth::user()->id;
         $flat->floor           = $inputs['floor'];
         $flat->number          = $inputs['number'];
+        $flat->number_bti      = $inputs['number_bti'];
         $flat->content         = $inputs['content'];
         $flat->comment         = $inputs['comment'];
         $flat->sale_at         = $inputs['sale_at'];
+        $flat->section         = $inputs['section'];
 
         if(!empty($inputs['image'])) {
             $flat->image = $this->image->uploadImage($inputs['image'][0]);

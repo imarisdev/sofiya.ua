@@ -191,16 +191,16 @@
                                     <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
                                 </div>
                                 <div class="row">
-                                    @if(!empty($house->medialib) && count($house->medialib) > 0)
-                                        @foreach($house->medialib as $medialib)
-                                            <div class="col-md-3 medialib-{{ $medialib->id }}">
+                                    @if(!empty($photos) && count($photos) > 0)
+                                        @foreach($photos as $photo)
+                                            <div class="col-md-3 medialib-{{ $photo->id }}">
                                                 <div class="box">
                                                     <div class="box-body">
-                                                        <img src="{{ Helpers::getImage($medialib->file, '300x260', null, 'fit') }}" alt="..." class="img-thumbnail">
+                                                        <img src="{{ Helpers::getImage($photo->file, '300x260', null, 'fit') }}" alt="..." class="img-thumbnail">
                                                     </div>
                                                     <!-- /.box-body -->
                                                     <div class="box-footer">
-                                                        <a class="btn btn-danger btn-xs pull-right js-delete-item" data-id="{{ $medialib->id }}" data-reload="false" data-action="/admin/medialib" data-type="medialib">Удалить</a>
+                                                        <a class="btn btn-danger btn-xs pull-right js-delete-item" data-id="{{ $photo->id }}" data-reload="false" data-action="/admin/medialib" data-type="medialib">Удалить</a>
                                                     </div>
                                                     <!-- /.box-footer-->
                                                 </div>

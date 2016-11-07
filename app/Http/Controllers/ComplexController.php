@@ -2,18 +2,21 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
+use App\Repositories\MedialibRepository;
 use App\Repositories\PlansTypeRepository;
 use App\Repositories\SeoRepository;
 
 class ComplexController extends Controller {
 
+    protected $medialib;
     protected $complex;
     protected $types;
     protected $seo;
 
-    public function __construct(ComplexRepository $complex, PlansTypeRepository $types, SeoRepository $seo) {
+    public function __construct(ComplexRepository $complex, PlansTypeRepository $types, SeoRepository $seo, MedialibRepository $medialib) {
 
         $this->complex = $complex;
+        $this->medialib = $medialib;
         $this->types = $types;
         $this->seo = $seo;
     }
@@ -59,7 +62,9 @@ class ComplexController extends Controller {
             ]
         ];
 
-        return view('complex.gallery', compact('complex', 'breadcrumbs'));
+        $photos = $this->medialib->getFiles(['object_type' => 'complex', 'object_id' => $complex->id]);
+
+        return view('complex.gallery', compact('complex', 'breadcrumbs', 'photos'));
 
     }
 

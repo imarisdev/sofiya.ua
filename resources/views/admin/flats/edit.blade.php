@@ -59,6 +59,13 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
+                                            <label for="section">Секция</label>
+                                            <input type="number" class="form-control" id="section" name="section" placeholder="Секция"
+                                                   value="{{ $flat->section or '' }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
                                             <label for="floor">Этаж</label>
                                             <input type="number" class="form-control" id="floor" name="floor" placeholder="Этаж"
                                                    value="{{ $flat->floor or '' }}">
@@ -73,13 +80,19 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
+                                            <label for="number_bti">Номер квартиры по БТИ</label>
+                                            <input type="number" class="form-control" id="number_bti" name="number_bti" placeholder="Номер квартиры по БТИ"
+                                                   value="{{ $flat->number_bti or '' }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
                                             <label for="sale_at">Дата продажи</label>
                                             <input type="text" class="form-control js-date-picker" id="sale_at" name="sale_at" placeholder="Дата продажи"
                                                    value="{{ $flat->sale_at or '' }}">
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-
                                     </div>
                                 </div>
                                 <div class="form-group">

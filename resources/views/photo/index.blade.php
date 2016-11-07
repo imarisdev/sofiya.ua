@@ -5,12 +5,9 @@
 
 
         <div class="cell9 p_r-10 cell-md">
-
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">Фотогалерея {{ $complex->title }}</h1>
-
-            <div class="seo-text cell">{{ $seo['content'] or '' }}</div>
+            <h1 class="cell text-center title">Фотогалерея</h1>
 
             @if(!empty($photos) && count($photos) > 0)
                 <div class="cell m_b-10">
@@ -26,11 +23,13 @@
                 </div>
             @endif
 
-            @include('planstype.blue-info-block')
 
-            <div class="cell m_t-20">
-                @include('home.seo')
+            <div class="cell m_t-20 m_b-30">
+                @include('planstype.blue-info-block')
             </div>
+
+            @include('home.seo')
+
         </div>
 
         <div class="cell3 p_l-5 cell-md">

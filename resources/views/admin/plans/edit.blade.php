@@ -78,6 +78,13 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
+                                            <label for="area_bti">Площадь (общ.) по БТИ</label>
+                                            <input type="number" class="form-control" id="area_bti" name="area_bti" placeholder="Площадь (общ.)"
+                                                   value="{{ $plan->area_bti or '' }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
                                             <label for="live">Площадь жилая</label>
                                             <input type="number" class="form-control" id="live" name="live" placeholder="Площадь жилая"
                                                    value="{{ $plan->live or '' }}">
@@ -90,6 +97,8 @@
                                                    value="{{ $plan->kitchen or '' }}">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="bathroom_area">Площадь сан. узла</label>
@@ -97,8 +106,6 @@
                                                    value="{{ $plan->bathroom_area or '' }}">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="rooms">Комнат</label>
@@ -125,9 +132,6 @@
                                                 {!! Form::select('balcony', $balcony_types, null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-
                                     </div>
                                 </div>
                                 <div class="form-group">
