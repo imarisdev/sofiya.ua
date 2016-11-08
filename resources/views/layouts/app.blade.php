@@ -22,6 +22,10 @@
                 @yield('content')
             <!--/div-->
 
+
+            <div class="cell map">
+                @include('includes.map')
+            </div>
             <footer>
                 @include('includes.footer')
             </footer>

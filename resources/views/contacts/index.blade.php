@@ -6,11 +6,11 @@
 
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
-            <h1 class="text-center cell title m_b-30">НАШИ КОНТАКТЫ</h1>
+            <h1 class="text-center cell title m_b-30">ЦЕНТРАЛЬНЫЕ ОФИСЫ </h1>
 
             <div class="contacts-info cell m_b-20">
                 <div class="item cell4 cell-sm">
-                    <h4 class="blue-title">НАШ АДРЕС:</h4>
+                    <h4 class="blue-title">ЖК «София» от Мартынова</h4>
 
                     <p>Украина, Киевская обл.,<br>
                         Киево-Святошинский район,<br>
@@ -30,6 +30,107 @@
                     @include('includes.social')
                 </div>
             </div>
+
+            <div class="map-small cell">
+
+            </div>
+
+
+            <div class="contacts-info cell m_b-20">
+                <div class="item cell4 cell-sm">
+                    <h4 class="blue-title">ЖК София</h4>
+
+                    <p class="m_b-10"> 08131, Украина, Киевская область,
+                        г. Киев, Софиевская Борщаговка, улица Леси Украинки дом 12,
+                        Офисный Центр «София»</p>
+                </div>
+
+                <div class="item cell4 cell-sm">
+                    <h4 class="blue-title">НАШИ ТЕЛЕФОНЫ:</h4>
+                    <p class="m_b-10">+38(067)888-7090,<br> +38(095)905-6000,<br> +38(044)362-2000</p>
+                    <p class="m_b-10"><span class="blue-title">E-mail:</span> sofiya-city@ukr.net</p>
+                    <p><span class="blue-title">Сайт:</span> <a href="sofiya.ua">sofiya.ua</a></p>
+                </div>
+
+                <div class="item cell4 cell-sm dark-social">
+                    <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
+                    @include('includes.social')
+                </div>
+            </div>
+
+
+            <div class="map-small cell">
+
+            </div>
+
+
+            <div class="contacts-info cell m_b-20">
+                <div class="item cell4 cell-sm">
+                    <h4 class="blue-title">ЖК «София Клубный» от Мартынова </h4>
+
+                    <p class="m_b-10"> 08131, Украина, Киевская область,
+                        г. Киев, Софиевская Борщаговка, улица Леси Украинки дом 12,
+                        Офисный Центр «София»</p>
+                </div>
+
+                <div class="item cell4 cell-sm">
+                    <h4 class="blue-title">НАШИ ТЕЛЕФОНЫ:</h4>
+                    <p class="m_b-10">+38(095) 894-2000,<br> +38(097) 994-2000,<br> +38(044)-362-2000</p>
+                    <p class="m_b-10"><span class="blue-title">E-mail:</span> sofiya-city@ukr.net</p>
+                    <p><span class="blue-title">Сайт:</span> <a href="sofiya.ua">sofiya.ua</a></p>
+                </div>
+
+                <div class="item cell4 cell-sm dark-social">
+                    <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
+                    @include('includes.social')
+                </div>
+            </div>
+
+            <div class="map-small cell">
+
+            </div>
+
+            <h3 class="blue-title text-center h3 m_b-20">Отделы продаж  МАФы: </h3>
+            <div class="contacts-info cell m_b-30">
+                <div class="cell4 cell-sm  p_r-20">
+                    <p class="m_b-10"><span class="blue-title"></span>
+                        08131, Украина, Киевская обл., г. Киев, Киево-Святошинский район,
+                        с. Софиевская Борщаговка, ул. Ленина, 1-А
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">Телефоны</span>
+                        +38(095) 894-2000, +38(097) 994-2000, +38(044) 362-2000
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">E-mail</span>
+                        sofiya-city@ukr.net
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">Сайт</span><a href="sofiya.ua">sofiya.ua</a></p>
+                </div>
+
+                <div class="cell4 cell-sm">
+                    <p class="m_b-10"><span class="blue-title"></span>
+                        08131, Украина, Киевская обл., г. Киев, Киево-Святошинский район,
+                        с. Софиевская Борщаговка, ул. Леси Украинки, 11
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">Телефоны</span>
+                        +38 (066) 361-4000, +38(044) 361-4000,  +38(067) 971-4000
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">E-mail</span></p>
+                    <p class="m_b-10"><span class="blue-title">Сайт</span><a href="http://sofiya-city.com.ua">sofiya-city.com.ua</a></p>
+                </div>
+
+                <div class="cell4 cell-sm p_l-20">
+                    <p class="m_b-10"><span class="blue-title"></span>
+                        08131, Украина, Киевская обл., г. Киев, Киево-Святошинский район,
+                        с. Софиевская Борщаговка, ул. Леси Украинки, 12
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">Телефоны</span>
+                        +38(067) 79-51-777, +38(095) 57-01-777, +38(063) 34-03-777
+                    </p>
+                    <p class="m_b-10"><span class="blue-title">E-mail</span></p>
+                    <p class="m_b-10"><span class="blue-title">Сайт</span><a href="http://sofiya-city.biz.ua/">sofiya-city.biz.ua</a></p>
+                </div>
+            </div>
+
 
             <h3 class="cell dark-blue h3 text-center m_b-10">НАШИ МЕНЕДЖЕРЫ</h3>
             <div class="cell m_b-20">
