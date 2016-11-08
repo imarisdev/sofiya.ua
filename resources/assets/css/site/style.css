@@ -1,24 +1,95 @@
 /* latin */
 @font-face {
-    font-family: "KelsonSans";
+    font-family: "Roboto";
     src: url("/fonts/Kelson Sans Regular RU.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "KelsonSansLight";
+    font-family: "Roboto Thin";
     src: url("/fonts/Kelson Sans Light RU.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "KelsonSansBold";
+    font-family: "Roboto Bold";
     src: url("/fonts/Kelson Sans Bold RU.otf");
     font-weight: normal;
     font-style: normal;
 }
+
+
+/* cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v15/frNV30OaYdlFRtH2VnZZdhTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Fl4y0QdOxyyTHEGMXX8kcRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/isZ-wbCXNKAbnjo6_TwHThJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
 
 /*Reset*/
 * {
@@ -63,7 +134,7 @@ th {
 }
 .blue-title {
     color: #01415f;
-    font-family: KelsonSans !important;
+    font-family: Roboto !important;
     font-weight: 700;
     line-height: 24px;
     text-transform: uppercase;
@@ -93,7 +164,7 @@ h5 {
 }
 
 .under-link {
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     text-decoration: underline;
@@ -101,7 +172,7 @@ h5 {
 
 .bold {
     font-weight: 600;
-    font-family: KelsonSansBold;
+    font-family: Roboto Bold;
 }
 
 .box-border {
@@ -354,7 +425,7 @@ h5 {
 }
 
 body {
-    font-family: KelsonSans;
+    font-family: Roboto;
     position: relative;
     right: 0;
     overflow-x: hidden;
@@ -809,7 +880,7 @@ a {
     border-radius: 24px;
     box-shadow: 1.3px 2.7px 2px rgba(26, 25, 25, 0.35);
     border: none;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 18px;
     padding: 10px 10px 8px;
     text-align: center;
@@ -829,7 +900,7 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    font-family: KelsonSans;
+    font-family: Roboto;
 }
 .h2 {
     color: black;
@@ -839,7 +910,7 @@ a {
 }
 
 .h3 {
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
@@ -983,7 +1054,7 @@ a {
     text-transform: uppercase;
     transition: all 0.3s ease-out 0.05s;
     border: none;
-    font-family: KelsonSans;
+    font-family: Roboto;
 }
 
 .blue-btn:hover {
@@ -1045,7 +1116,7 @@ a {
 .zero-procent .item .title {
     color: black;
     font-size: 60px;
-    font-family: KelsonSansLight;
+    font-family: Roboto Thin;
     text-transform: uppercase;
     margin: 20px 10px;
     text-align: center;
@@ -1062,7 +1133,7 @@ a {
 
 .zero-procent .item .red {
     color: #ff0208;
-    font-family: KelsonSansBold;
+    font-family: Roboto Bold;
 }
 
 .news .item img {
@@ -1136,7 +1207,7 @@ a {
 
 h1.title {
     margin: 10px 0 20px;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1145,7 +1216,7 @@ h1.title {
 .seo-text .title,
 .seo-text .title-page {
     color: black;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 18px;
     text-transform: uppercase;
     text-align: center;
@@ -1290,7 +1361,7 @@ h1.title {
     padding: 0 25px;
     background: url('/img/arrow-b.png') no-repeat 100% 50%;
     color: #010101;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 14px;
     line-height: 24px;
 }
@@ -1427,6 +1498,9 @@ h1.title {
     font-weight: 700;
     text-transform: uppercase;
 }
+.type-flats .item p a:hover {
+    color: #00889d;
+}
 
 .seo-text {
     margin: 0 0 20px;
@@ -1442,7 +1516,7 @@ h1.title {
     min-height: 80px;
     padding: 20px 20px 15px;
     color: black;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 14px;
     background-color: rgba(83,209,238,0.1);
     text-transform: uppercase;
@@ -1637,7 +1711,7 @@ h1.title {
 
 .item-news .dop-info {
     color: #3e3e3e;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
@@ -1669,7 +1743,7 @@ h1.title {
     background-color: white;
     box-shadow: 0 0 3.9px 0.1px rgba(26, 25, 25, 0.35);
     color: #01415f;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
@@ -1711,7 +1785,7 @@ h1.title {
 
 .contacts-info p {
     color: black;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -1842,7 +1916,9 @@ h1.title {
     margin: 30px 0;
 }
 
-
+a.blue-title:hover {
+    color: #00889d;
+}
 /*tabs*/
 
 .tabs{
@@ -1871,7 +1947,7 @@ h1.title {
 .tabs ul li {
     float: left;
     color: black;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 16px;
     text-align: center;
     padding: 15px 40px 10px;
@@ -1918,7 +1994,7 @@ h1.title {
     padding: 15px 10px 10px;
     background-color: rgba(83,209,238,0.1);
     color: #01415f;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 14px;
     font-weight: 700;
 }
@@ -2024,7 +2100,7 @@ input.field {
 
 label {
     margin: 20px 0 5px;
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     color: black;
@@ -2113,7 +2189,7 @@ form.review {
 
 .breadcrumb a,
 .breadcrumb span {
-    font-family: KelsonSans;
+    font-family: Roboto;
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
@@ -2771,4 +2847,13 @@ form.review {
     .tabs ul li {
         width: 100%;
     }
+}
+
+.map {
+    margin-top: 30px;
+    height: 600px;
+}
+.map-small {
+    margin: 10px 0 20px;
+    height: 250px;
 }
