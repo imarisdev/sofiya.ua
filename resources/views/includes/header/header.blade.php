@@ -32,7 +32,7 @@
             </div>
 
             <div class="call-block">
-                <a class="call-btn" href="#">ЗАКАЗАТЬ ЗВОНОК</a>
+                <a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>
             </div>
         </div>
     </div>

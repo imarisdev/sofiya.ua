@@ -38,11 +38,13 @@ jQuery(function ($) {
 
         if (!eventInMenu.length) {
             $('.js-phone-block').hide();
+            $('.js-phone-click').removeClass('active');
         }
     });
 
     jQuery('.js-phone-click').click(function () {
         $('.js-phone-block').show();
+        $(this).addClass('active');
     });
 });
 

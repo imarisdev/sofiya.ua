@@ -26,7 +26,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="fl_r btn-wrap"><a class="yellow-btn call-btn" href="">ЗАКАЗАТЬ ЗВОНОК</a></div>
+                <div class="fl_r btn-wrap"><a class="yellow-btn call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a></div>
             </div>
         </div>
 
@@ -49,4 +49,5 @@
         </div>
 
     </div>
+    @include('includes.call-back')
 </footer>

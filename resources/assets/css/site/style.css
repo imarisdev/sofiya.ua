@@ -505,7 +505,7 @@ a {
 
 .nav-bottom {
     padding: 0 20px;
-    background-color: rgba(83, 209, 238, 0.8);
+    background-color: rgba(83, 209, 238, 0.68);
 }
 
 .nav-bottom ul {
@@ -520,7 +520,7 @@ a {
 
 .nav-bottom ul.menu li.parent-menu > a {
     padding-right: 20px;
-    background: url('/img/arrow-b.png') no-repeat 100% 25%;
+    background: url('/img/arrow-b.png') no-repeat 100% 50%;
 }
 
 .nav-bottom ul.menu li.parent-menu {
@@ -543,7 +543,8 @@ a {
     display: block;
 }
 
-.nav-bottom ul .child-menu li a {
+.nav-bottom ul .child-menu li a,
+.nav-bottom ul .child-menu li span{
     display: block;
     padding: 10px 15px;
 }
@@ -647,13 +648,17 @@ a {
 }
 
 .main-logo-part {
+    float: left;
     position: relative;
     padding: 10px;
-    background-color: #fff;
-    border: 5px solid #53d1ee;
+    background-color: #01415f;
+    border: 5px solid #fed20c;
     text-align: center;
     z-index: 2;
     box-shadow: 0 5px 5px rgba(4, 4, 4, 0.35);
+
+    height: 104px;
+    width: 260px;
 }
 
 .top-logo-part,
@@ -665,11 +670,13 @@ a {
     padding: 10px;
     background-color: #01415f;
     left: 16px;
+    height: 43px;
 }
 
 .top-logo-part:hover,
 .bottom-logo-part:hover {
-    background-color: #002333;
+    /*background-color: #002333;*/
+    background-color: #005984;
 }
 
 .top-logo-part {
@@ -691,7 +698,7 @@ a {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 15px solid #53d1ee;
+    border-top: 15px solid #fed20c;
 }
 
 .main-logo-part:before {
@@ -701,15 +708,17 @@ a {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #53d1ee;
+    border-bottom: 15px solid #fed20c;
     position: absolute;
     top: -15px;
     left: 50%;
     margin-left: -10px;
+    /*z-index: 6;*/
 }
 
 .main-logo-part:hover {
-    background-color: #53d1ee;
+    /*background-color: #53d1ee;*/
+    background-color: #005984;
 }
 
 .menu-adapt {
@@ -730,22 +739,26 @@ a {
     width: 200px;
     margin: 0 0 30% 20%;
     vertical-align: middle;
-    background-color: #fefefe;
+    background-color: rgba(254,254,254,0.9);
     border-radius: 30px;
     text-align: right;
     color: black;
-    font-size: 16px;
+    font-size: 14px;
 }
 
+.flexslider .slides > li:hover {
+    cursor: pointer;
+}
 .left-nav li a {
     display: table-cell;
     height: 60px;
-    padding-left: 55px;
+    padding-left: 60px;
     padding-top: 5px;
     color: black;
     vertical-align: middle;
     text-align: center;
     transition: all 1s ease-out 0.5s;
+    font-weight: 700;
 }
 
 .left-nav li:after {
@@ -789,7 +802,7 @@ a {
     bottom: 0;
     padding: 10px 0;
     width: 100%;
-    background-color: rgba(1, 65, 95, 0.85);
+    background-color: rgba(1, 65, 95, 0.92);
 }
 
 .header-bottom-icons ul {
@@ -1049,7 +1062,7 @@ a {
     background-color: #53d1ee;
     border-radius: 16px;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
     transition: all 0.3s ease-out 0.05s;
@@ -1535,7 +1548,7 @@ h1.title {
 }
 
 .blue-block-info .blue-btn {
-    padding: 17px 25px 12px;
+    padding: 14px 25px 12px;
     border-radius: 24px;
 }
 
@@ -2120,7 +2133,7 @@ textarea.field {
 
 form  .blue-btn {
     font-size: 16px;
-    padding: 17px 30px 10px;
+    padding: 10px 30px ;
     border-radius: 24px;
 }
 
@@ -2220,8 +2233,20 @@ form.review {
     display: none;
 }
 
+#carousel  .flex-viewport {
+    padding: 0 50px;
+}
+#carousel  .flex-direction-nav .flex-prev{
+    left: 0;
+}
+#carousel  .flex-direction-nav .flex-next{
+    right: 0;
+}
 
-
+#carousel .flex-direction-nav .flex-disabled {
+    opacity: 0.7!important;
+    z-index: 1;
+}
 .prev,
 .next {
     height: 20px;
@@ -2306,6 +2331,9 @@ form.review {
     100% { -webkit-transform: scale(2.1, 2.1); opacity: 0; }
 }
 @media all and (max-width: 990px) {
+    .news .item {
+        max-height: none;
+    }
     .cell-md {
         float: left;
         width: 100% !important;
@@ -2358,6 +2386,7 @@ form.review {
         display: none !important;
         visibility: hidden;
     }
+
 }
 
 @media all and (max-width: 480px) {
@@ -2376,6 +2405,7 @@ form.review {
         display: none !important;
         visibility: hidden;
     }
+
 }
 
 /**/
@@ -2385,8 +2415,8 @@ form.review {
     }
 
     .top-logo-part, .bottom-logo-part {
-        left: 7px;
-        width: 185px;
+        /*left: 7px;*/
+        /*width: 185px;*/
     }
 
     .nav-bottom ul li {
@@ -2417,24 +2447,36 @@ form.review {
         width: 60px;
         height: 60px;
         padding: 20px;
-        font-size: 0;
+
         background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
         text-indent: -10000px;
         border-radius: 50%;
     }
+    .news .item {
+        max-height: none;
+    }
+}
+@media all and (max-width: 1200px) and (min-width: 420px) {
+    header .phone-click {
+        display: none;
+    }
+
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 640px) {
     .header .call-btn {
         position: relative;
         bottom: 10px;
         width: 60px;
         height: 60px;
         padding: 20px;
-        font-size: 0;
         background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
         text-indent: -10000px;
         border-radius: 50%;
+    }
+
+    header .phone-click span {
+        color: transparent;
     }
 }
 
@@ -2446,6 +2488,7 @@ form.review {
         padding: 0;
     }
 }
+
 
 @media all and (max-width: 1200px) {
     .call-fixed-btn{
@@ -2459,9 +2502,7 @@ form.review {
         font-size: 24px;
     }
 
-    header .phone-click {
-        display: none;
-    }
+
 
 
 
@@ -2550,8 +2591,8 @@ form.review {
 
     .menu-adapt {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 13px;
+        right: 13px;
         display: block;
         width: 35px;
         height: 25px;
@@ -2635,11 +2676,11 @@ form.review {
     .menu-adapt-list li span {
         width: 100%;
         display: block;
-        padding: 10px;
+        padding: 10px 0 10px 20px;
         font-size: 18px;
         color: #4a4a4a;
-        font-family: 'PT Sans';
         text-align: left;
+        text-transform: lowercase;
     }
 
     .menu-adapt-list li a:after {
@@ -2778,6 +2819,43 @@ form.review {
 }
 
 @media all and (max-width: 640px) {
+
+
+    .top-logo-part{
+        top: -50px;
+    }
+    .nav-top {
+        height: 50px;
+    }
+    .main-logo-part{
+        top: -10px;
+    }
+
+    header .phone-click {
+        display: block;
+        position: absolute;
+        left: 18px;
+        top: 16px;
+        width: 8px;
+        padding: 0 17px;
+        background: url('/img/icon--arrow.png') no-repeat 100% 50%;
+    }
+    header .phone-click span {color: transparent}
+    header .phone-click .icon-phone {
+        display: none;
+    }
+
+    header .phone-block li {
+        display: block;
+        font-size: 16px;
+    }
+
+    header .phone-block {
+        display: block;
+        width: 200px;
+    }
+
+
     .item-news .img-wrap {
         text-align: center;
         margin-bottom: 20px;
@@ -2791,14 +2869,14 @@ form.review {
     }
 
     .header .logo {
-        width: 200px;
+        width: 260px;
         margin: auto;
         float: none;
     }
 
     .call-block {
         width: 100%;
-        margin-top: 35px;
+        /*margin-top: 35px;*/
     }
 
     .left-nav {
@@ -2847,6 +2925,7 @@ form.review {
     .tabs ul li {
         width: 100%;
     }
+    #form-call-back { width: 200px;}
 }
 
 .map {
@@ -2856,4 +2935,37 @@ form.review {
 .map-small {
     margin: 10px 0 20px;
     height: 250px;
+}
+#form-call-back { display:none;  width: 390px;}
+
+
+a.fancybox-item.fancybox-close {
+    width: 47px;
+    height: 47px;
+    background-color: #53d1ee;
+    border-radius: 50%;
+    background-image: none;
+    color: white;
+    font-family: KelsonSans;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+}
+a.fancybox-item.fancybox-close:hover {
+    background-color: #2abadb;
+}
+a.fancybox-item.fancybox-close:after{
+    content: 'X';
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    width: 47px;
+    display: block;
+    font-family: Arial;
+    font-weight: 700;
+    height: 47px;
+    line-height: 47px;
+}
+.text-small{
+    font-size: 12px;
 }
