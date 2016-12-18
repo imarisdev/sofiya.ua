@@ -1,0 +1,18 @@
+FROM php:7.0-fpm
+
+RUN pecl install -o -f xdebug; \
+    rm -rf /tmp/pear; \
+    echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini; \
+    echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/xdebug.ini; \
+    echo "xdebug.remote_connect_back=1" >> /usr/local/etc/php/conf.d/xdebug.ini
+
+# XXX: hack(s) for allow run remote test from phpstorm using embedded phpunit-launcher
+# it requires that at leas one of "include path" contain a dirrectory or file with name "PHPUnit"
+# and it unable to use autoloader (even if they claim it can, it can't event get there)
+# so make autoload script required for all executions
+RUN mkdir -p /usr/local/lib/php/PHPUnit; \
+    echo "auto_prepend_file=/code/vendor/autoload.php" > /usr/local/etc/php/conf.d/phpstorm-fix.ini
+
+ENV APP_ENV dev
+
+EXPOSE 88
