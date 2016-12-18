@@ -1,4 +1,6 @@
 @if(!empty($complex) && count($complex) > 0)
+    {{--*/ $class = ['logo-top', 'logo-bottom'] /*--}}
+    {{--*/ $logo = 0; /*--}}
     @foreach($complex as $key => $c)
         <style>
             .logo-part-{{ $key }} {
@@ -22,16 +24,17 @@
 
         @if($c->active)
             <a href="{{ Helpers::createComplexLink($c->link(), Request::segment(3)) }}">
-                <div class="main-logo-part logo-part-{{ $key }}">
+                <div class="main-logo-part logo-part-{{ $key }} active">
                     {{--<img src="{{ Helpers::getImage($c->image_big) }}" alt="{{ $c->title }}">--}}
                 </div>
             </a>
         @else
             <a href="{{ Helpers::createComplexLink($c->link(), Request::segment(3)) }}">
-                <div class="top-logo-part top-logo-part-{{ $key }}">
+                <div class="top-logo-part top-logo-part-{{ $key }} {{ $class[$logo] }}">
                     {{--<img src="{{ Helpers::getImage($c->image_small) }}" alt="{{ $c->title }}">--}}
                 </div>
             </a>
+            {{--*/ $logo++; /*--}}
         @endif
     @endforeach
 @endif
