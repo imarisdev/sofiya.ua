@@ -36,12 +36,12 @@
             </div>
 
             <div class="call-block">
-                <a class="call-btn" href="#">ЗАКАЗАТЬ ЗВОНОК</a>
+                <a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>
             </div>
         </div>
     </div>
 
-    <h2 class="cell text-center">{{ $seo['h1'] or 'Надежный застройщик с 2008 года'}}</h2>
+    <h2 class="cell text-center cell-xs-none">{{ $seo['h1'] or 'Надежный застройщик с 2008 года'}}</h2>
 
     <div class="left-nav fl_l">
         <ul>

@@ -7,7 +7,7 @@ elixir(function (mix) {
     mix.styles([
         'site/flexslider.css',
         'site/jquery.fancybox.css',
-        'site/slider.css',
+       // 'site/slider.css',
         'site/animate.css',
         'site/style.css'
     ], 'public/css/all.css');

@@ -9,7 +9,7 @@
         </div>
         <div class="table-cell">
             S кухня
-        </div>
+        </div>.left-nav li
         <div class="table-cell">
             Санузел
         </div>
