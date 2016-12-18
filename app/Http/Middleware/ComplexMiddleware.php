@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 use View;
 use Closure;
 
-class ComplexModdleware {
+class ComplexMiddleware {
 
     public function handle($request, Closure $next) {
 
