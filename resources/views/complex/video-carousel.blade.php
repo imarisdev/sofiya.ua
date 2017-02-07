@@ -2,7 +2,7 @@
 @if(!empty($items) && count($items) > 0)
     <section class="carousel-section cell">
         <div class="video-wrapper">
-            <div id="slider" class="flexslider">
+            <div id="slider" class="flexslider video-slider">
                 <ul class="slides">
                     @foreach($items as $v)
                     <li>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="wrapper">
-            <div id="carousel" class="flexslider">
+            <div id="carousel" class="flexslider video-carousel">
                 <ul class="slides">
                     @foreach($items as $v)
                     <li>

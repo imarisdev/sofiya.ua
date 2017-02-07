@@ -10,13 +10,13 @@ class PlansRepository extends BaseRepository {
     protected $medialib;
 
     private $bathroom_types = [
-        0 => 'Нету',
+        0 => 'Нет',
         1 => 'Смежный',
         2 => 'Раздельный'
     ];
 
     private $balcony_types = [
-        0 => 'Нету',
+        0 => 'Нет',
         1 => 'Есть',
         2 => '2 балкона'
     ];

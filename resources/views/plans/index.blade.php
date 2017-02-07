@@ -23,6 +23,20 @@
                 <div class="table">
                     <div class="table-row">
                         <div class="table-cell">
+                            <span class="blue-title">Дом:</span>
+                        </div>
+                        <div class="table-cell">{{ $plan->house->street->title }}, {{ $plan->house->number }}</div>
+                    </div>
+
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <span class="blue-title">Комнат:</span>
+                        </div>
+                        <div class="table-cell">{{ $plan->rooms }}</div>
+                    </div>
+
+                    <div class="table-row">
+                        <div class="table-cell">
                             <span class="blue-title">S общая:</span>
                         </div>
                         <div class="table-cell">{{ $plan->area }}</div>
@@ -30,10 +44,10 @@
 
                     <div class="table-row">
                         <div class="table-cell">
-                            <span class="blue-title">S жилая::</span>
+                            <span class="blue-title">S жилая:</span>
                         </div>
                         <div class="table-cell">
-                            <p class="bus-icons-block">{{ $plan->live }}</p>
+                            {{ $plan->live }}
                         </div>
                     </div>
 
@@ -42,7 +56,7 @@
                             <span class="blue-title">S кухня:</span>
                         </div>
                         <div class="table-cell">
-                            <p class="go-icons-block">{{ $plan->kitchen }}</p>
+                            {{ $plan->kitchen }}
                         </div>
                     </div>
 
@@ -50,36 +64,16 @@
                         <div class="table-cell">
                             <span class="blue-title">Санузел:</span>
                         </div>
-                        <div class="table-cell">{{ $plan->bathroom_area }}</div>
+                        <div class="table-cell">{{ $plan->bathroom_area }}, {{ $bathroom_types[$plan->bathroom] }}</div>
                     </div>
 
                     <div class="table-row">
                         <div class="table-cell">
                             <span class="blue-title">Балкон:</span>
                         </div>
-                        <div class="table-cell">4 квартал 2018 года</div>
+                        <div class="table-cell">{{ $balcony_types[$plan->balcony] }}</div>
                     </div>
 
-                    <div class="table-row">
-                        <div class="table-cell">
-                            <span class="blue-title">Дата сдачи:</span>
-                        </div>
-                        <div class="table-cell">Комфорт-класс</div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="table-cell">
-                            <span class="blue-title">Отделка::</span>
-                        </div>
-                        <div class="table-cell">Кирпич</div>
-                    </div>
-
-                    <div class="table-row">
-                        <div class="table-cell">
-                            <span class="blue-title">Оплата:</span>
-                        </div>
-                        <div class="table-cell">10</div>
-                    </div>
                 </div>
 
             </div>

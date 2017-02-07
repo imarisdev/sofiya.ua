@@ -30,7 +30,7 @@ class PagesController extends Controller {
 
         $page = $this->filter->filters($this->page->getBySlug($page), ['gallery'], ['content' => 'content']);
 
-        $this->seo->getSeoData($page->id, 'page');
+        $this->seo->getSeoData($page->id, 'pages');
 
         if (preg_match('/(jk-martinov|jk-text)/', $page, $complex_link)) {
             $complex = $this->complex->cache('getBySlug', 'complex_' . $complex_link[1], $complex_link[1]);

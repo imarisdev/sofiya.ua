@@ -52,7 +52,7 @@ class PlansController extends Controller {
 
         $type = $this->types->getPlansTypeBySlug($type);
 
-        $plans = $this->plans->getPlansByType($type['key'], null);
+        $plans = $this->plans->getPlans(['plans_type' => $type['key']], 16);
 
         $breadcrumbs = [
             [
@@ -63,6 +63,10 @@ class PlansController extends Controller {
                 'title' => "{$type['title']}"
             ]
         ];
+
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
 
         return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
 
@@ -106,7 +110,10 @@ class PlansController extends Controller {
 
         $photos = $this->medialib->getFiles(['object_id' => $plan->id, 'object_type' => 'plans']);
 
-        return view('plans.index', compact('plan', 'type', 'breadcrumbs', 'photos'));
+        $balcony_types = $this->plans->getBalconyTypes();
+        $bathroom_types = $this->plans->getBathroomTypes();
+
+        return view('plans.index', compact('plan', 'type', 'breadcrumbs', 'photos', 'balcony_types', 'bathroom_types'));
     }
 
 }

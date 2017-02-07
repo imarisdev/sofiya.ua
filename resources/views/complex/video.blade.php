@@ -11,6 +11,12 @@
 
             @include('complex.video-carousel', ['items' => $complex->getVideo()])
 
+            @foreach($complex_list as $cp)
+                @if($complex->slug != $cp->slug)
+                    <a href="/complex/{{ $cp->slug }}/video">Видеогалерея {{ $cp->title }}</a>
+                @endif
+            @endforeach
+
             <div class="cell m_t-20 m_b-30">
                 @include('planstype.blue-info-block')
             </div>

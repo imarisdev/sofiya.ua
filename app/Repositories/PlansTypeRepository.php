@@ -8,6 +8,7 @@ class PlansTypeRepository extends BaseRepository {
         1 => ['slug' => 'odnokomnatnye-kvartiry', 'title' => 'Однокомнатные квартиры', 'short' => 'Однокомнатные'],
         2 => ['slug' => 'dvuhkomnatnye-kvartiry', 'title' => 'Двухкомнатные квартиры', 'short' => 'Двухкомнатные'],
         3 => ['slug' => 'trehkomnatnye-kvartiry', 'title' => 'Трехкомнатные квартиры', 'short' => 'Трехкомнатные'],
+        7 => ['slug' => 'chetyrekhkomnatnyye-kvartiry', 'title' => 'Четырехкомнатные квартиры', 'short' => 'Четырехкомнатные'],
         4 => ['slug' => 'dvuhurovnevye-kvartiry', 'title' => 'Двухуровневые квартиры', 'short' => 'Двухуровневые'],
         5 => ['slug' => 'nezhilye-pomeshcheniya', 'title' => 'Нежилые помещения', 'short' => 'Нежилые'],
         //6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ']

@@ -20,9 +20,11 @@ class StreetRepository extends BaseRepository {
      */
     public function getStreets($request = null, $limit = 20) {
 
-        $street = $this->model;
+        $street = $this->model
+        ->select('id', 'title', 'slug')
+        ->take($limit);
 
-        return $street->paginate($limit);
+        return $street->get();
 
     }
 
