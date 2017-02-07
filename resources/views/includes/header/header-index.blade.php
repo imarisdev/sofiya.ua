@@ -13,8 +13,9 @@
                 </ul>
             </div>
 
-            <div class="js-phone-click phone-click fl_r">
-                <span><i class="icon-phone"></i>+38 (044) 361-4000<i class="down"></i> </span>
+            <div class="phone-click fl_r">
+                <span><i class="icon-phone"></i>+38 (044) 361-4000</span>
+                <i class="down js-phone-click"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
                     <li>+38 (066) 361-4000</li>
                     <li>+38 (067) 971-4000</li>

@@ -1370,13 +1370,20 @@ h1.title {
 .phone-click {
     height: 20px;
     position: relative;
-    margin-right: 30px;
     padding: 0 25px;
-    background: url('/img/arrow-b.png') no-repeat 100% 50%;
     color: #010101;
     font-family: Roboto;
     font-size: 14px;
     line-height: 24px;
+}
+
+.phone-click .down {
+    background: url(/img/arrow-b.png) no-repeat 100% 50%;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .phone-click .icon-phone {
@@ -1437,6 +1444,11 @@ h1.title {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
+
+}
+
+.footer .phone-click .down {
+    width: 22px;
     background: url('/img/arrow-fot.png') no-repeat 100% 50%;
 }
 
