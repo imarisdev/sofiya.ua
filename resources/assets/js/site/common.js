@@ -29,7 +29,7 @@ $(document).ready(function () {
     });*/
 
     $('.js-phone-click').click(function () {
-        $(this).find('.js-phone-block').toggle('slow');
+        $('.js-phone-block').toggle('slow');
     });
 
     new WOW().init();
@@ -38,7 +38,7 @@ $(document).ready(function () {
 /* phone menu */
 jQuery(function ($) {
     jQuery('body').click(function (event) {
-        var eventInMenu = $(event.target).parents('.js-phone-click');
+        var eventInMenu = $(event.target).parent('.phone-click');
 
         if (!eventInMenu.length) {
             $('.js-phone-block').hide();
