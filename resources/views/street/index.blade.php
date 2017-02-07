@@ -8,7 +8,7 @@
 
             <h1 class="cell title text-center">{{ $seo['h1'] or 'Уютные квартиры' }}</h1>
 
-            <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
+            <div class="cell seo-text">{!! $seo['content'] or '' !!}</div>
 
             <ul class="cell list-street m_b-20">
                 @foreach($streets as $street)

@@ -51,6 +51,8 @@ class HouseController extends Controller {
 
         $house = $this->house->getById($id);
 
+        $house->images_list = @unserialize($house->images_list);
+
         $types = $this->types->getPlansTypes();
 
         $plans_list = [];
@@ -77,6 +79,8 @@ class HouseController extends Controller {
 
         $balcony_types = $this->plans->getBalconyTypes();
 
+        $plans_types = $this->house->getModel()->getPlansTypes();
+
         $seo_params = [
             'name' => $house->title,
             'address' => $house->street->title . ", " . $house->number
@@ -97,7 +101,7 @@ class HouseController extends Controller {
         $photos = $this->medialib->getFiles(['object_id' => $house->id, 'object_type' => 'house']);
 
         return view('house.index',
-            compact('house', 'plans', 'house_class', 'building_types', 'photos', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs')
+            compact('house', 'plans', 'house_class', 'building_types', 'photos', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs', 'plans_types')
         );
 
     }

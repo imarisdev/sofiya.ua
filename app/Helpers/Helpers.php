@@ -174,8 +174,15 @@ class Helpers {
 
         $url = \Request::path();
 
-        $link = preg_replace_callback('/\{complex\}/', function($matches) use ($complex) {
-            return !empty($complex) ? $complex->link() . '/' : '';
+        $link = preg_replace_callback('/\{complex(?:\|([a-z0-9]+).*)?\}/', function($matches) use ($complex) {
+            $url = '';
+            if (!empty($complex)) {
+                $url = $complex->link() . '/';
+            } else if (!empty($matches[1])) {
+                $url = $matches[1] . '/';
+            }
+
+            return $url;
         }, $link);
 
         if("/$url" == $link) {
@@ -227,12 +234,13 @@ class Helpers {
 
             $item->active = false;
 
-            if (\Request::is($item->slug . '*')) {
+            if (\Request::is('*' . $item->slug . '*')) {
                 $item->active = $active = true;
                 self::$this_complex = $item;
                 View::share('this_complex', self::$this_complex);
             }
         }
+
         // TODO: сделать нормальный выборд дефолтного комплекса
         if(!$active) {
             $complex[0]->active = true;

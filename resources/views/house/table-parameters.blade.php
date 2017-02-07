@@ -7,14 +7,14 @@
         <div class="table-cell">Софиевская Борщаговка</div>
     </div>
 
-    <div class="table-row">
+    {{--<div class="table-row">
         <div class="table-cell">
             <span class="blue-title">Транспорт:</span>
         </div>
         <div class="table-cell">
             <p class="bus-icons-block">{{ $house->transport }}</p>
         </div>
-    </div>
+    </div>--}}
 
     <div class="table-row">
         <div class="table-cell">

@@ -16,6 +16,7 @@
                             <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Изображение</a></li>
                             <li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li>
                             <li><a href="#tab_4" data-toggle="tab" aria-expanded="true">Документы</a></li>
+                            <li><a href="#tab_5" data-toggle="tab" aria-expanded="true">План дома</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -217,6 +218,17 @@
                                     <label for="files">Файлы документов</label>
                                     <input type="file" class="form-control" id="files" name="files" multiple placeholder="Files" />
                                 </div>
+                            </div>
+                            <div class="tab-pane" id="tab_5">
+                                @foreach($plans_types as $tkey => $types)
+                                    <div class="form-group">
+                                        <label>{{ $types }}</label>
+                                        <input type="file" class="form-control" id="plans[{{ $tkey }}]" name="plans[{{ $tkey }}]" multiple placeholder="Files" />
+                                    </div>
+                                    @if(!empty($house->images_list[$tkey]))
+                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '300x260', null, 'fit') }}" alt="..." class="margin">
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>

@@ -34,6 +34,27 @@ class VideoRepository extends BannersRepository {
     }
 
     /**
+     * @param null $request
+     * @return mixed
+     */
+    public function getVideoByComplex($request = null) {
+        $video = $this->model
+            ->select('*');
+
+        if(!empty($request['object_type'])) {
+            $video->where('object_type', '=', $request['object_type']);
+        }
+
+        $videos = [];
+
+        foreach($video->get() as $item) {
+            $videos[$item->object_id]['video'][] = $item;
+        }
+
+        return $videos;
+    }
+
+    /**
      * Типы видео
      * @return array
      */

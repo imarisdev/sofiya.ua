@@ -31,6 +31,7 @@ class SeoRepository extends BaseRepository {
                         ->where('object_type', '=', $object_type);
             })
             ->orWhere('seo.url', '=', $this->request->route()->getName())
+            ->orWhere('seo.url', '=', $this->request->path())
             ->first();
 
         if(!empty($params) && !empty($seo)) {
@@ -42,6 +43,11 @@ class SeoRepository extends BaseRepository {
                 $seo->keywords = str_replace("%{$key}%", $param, $seo->keywords);
             }
 
+        }
+
+        $page = $this->request->get('page', 0);
+        if(!empty($seo) && !empty($page)) {
+            $seo->title = "{$seo->title} - Страница {$page}";
         }
 
         View::share(['seo' => $seo]);
@@ -82,7 +88,7 @@ class SeoRepository extends BaseRepository {
             $seo = $seo->where('object_id', '=', $request['object_id']);
         }
 
-        return $seo->paginate($limit);
+        return $seo->orderBy('id', 'desc')->paginate($limit);
     }
 
     /**
@@ -113,6 +119,7 @@ class SeoRepository extends BaseRepository {
         $seo->description   = $inputs['description'];
         $seo->keywords      = $inputs['keywords'];
         $seo->h1            = $inputs['h1'];
+        $seo->url           = $inputs['url'];
         $seo->content       = $inputs['content'];
 
         try {
@@ -245,6 +252,7 @@ class SeoRepository extends BaseRepository {
      * @return mixed
      */
     public function process($inputs) {
+        $inputs['url'] = !empty($inputs['slug']) ? $inputs['slug'] : null;
         if(isset($inputs['id']) && !empty($inputs['id'])) {
 
             $seo = $this->getById($inputs['id']);

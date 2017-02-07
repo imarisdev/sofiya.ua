@@ -7,9 +7,12 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h3 class="title-page m_t-10">ВИДЕОГАЛЕРЕЯ</h3>
+            <h1>{{ $seo['h1'] or 'Видео Жилих Комплексов' }}</h1>
 
-            @include('complex.video-carousel', ['items' => $video])
+            @foreach($videos as $video)
+                <h2 class="title-page m_t-10">Видеогалерея - {{ $video['complex']->title }}</h2>
+                @include('complex.video-carousel', ['items' => $video['video']])
+            @endforeach
 
             <div class="cell m_t-20 m_b-30">
                 @include('planstype.blue-info-block')

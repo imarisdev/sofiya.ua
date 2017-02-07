@@ -57,6 +57,8 @@ class Handler extends ExceptionHandler
      * @return \Symfony\Component\HttpFoundation\Response
      */
     protected function renderHttpException(HttpException $e) {
+        view()->share(['complex' => null]);
+
         if (view()->exists('errors.' . $e->getStatusCode())) {
 
             return response()->view('errors.' . $e->getStatusCode(), [], $e->getStatusCode());

@@ -8,7 +8,7 @@
                     <div class="cell3 cell-md-6 cell-xss m_b-20">
                         <div class="item cell">
                             <img src="{{ Helpers::getImage($item->image, '288x188') }}" alt="">
-                            <h4>{{ $item->title }}</h4>
+                            <div class="title-page">{{ $item->title }}</div>
 
                             <p class="text">{{ $item->description }}</p>
 
