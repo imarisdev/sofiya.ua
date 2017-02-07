@@ -1,6 +1,6 @@
 <section class="carousel-section cell m_b-30">
     <div class="no-nav">
-        <div id="slider" class="flexslider">
+        <div id="photo-slider" class="flexslider photo-slider">
             <ul class="slides">
                 <li>
                     <a rel="group" class="js-fancybox" href="{{ Helpers::getImage($house->image, '1024x768', null, 'fit-w') }}">
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="wrap-nav">
-        <div id="carousel" class="flexslider">
+        <div id="photo-carousel" class="flexslider photo-carousel">
             <ul class="slides">
                 <li>
                     <img alt="{{ $house->title }}" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '100x70', null, 'fit') }}" />
