@@ -34,6 +34,13 @@ abstract class BaseRepository {
     }
 
     /**
+     * @return mixed
+     */
+    public function getModel() {
+        return $this->model;
+    }
+
+    /**
      * Удалить объект модели по ID
      * @param $id
      */

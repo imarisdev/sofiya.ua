@@ -7,6 +7,7 @@
                 @foreach($plans_list as $title => $plan)
                     <li>{{ $title }}</li>
                 @endforeach
+                    <li>План дома</li>
             </ul>
             <div>
                 @foreach($plans_list as $title => $plan)
@@ -14,6 +15,18 @@
                         @include('house.table-tabs', ['info' => $plan['plans']])
                     </div>
                 @endforeach
+                    <div class="cell">
+                        @foreach($plans_types as $tkey => $types)
+                            @if(!empty($house->images_list[$tkey]))
+                                <div class="cell">
+                                    {{ $types }}
+                                    <a href="{{ Helpers::getImage($house->images_list[$tkey]) }}" class="js-fancybox">
+                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '300x260', null, 'fit') }}" alt="..." class="margin">
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
             </div>
         </div>
     </div>

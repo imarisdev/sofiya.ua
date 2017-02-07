@@ -21,7 +21,10 @@
                         <div class="col-xs-2">
 
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-3">
+                            <a href="/admin/seo/create" class="btn btn-primary pull-right">Создать</a>
+                        </div>
+                        <div class="col-xs-3">
                             <a href="/admin/seo/generate" class="btn btn-primary pull-right">Генератор</a>
                         </div>
                     </div>

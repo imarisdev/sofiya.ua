@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\HouseRepository;
+use App\Repositories\SeoRepository;
 use App\Repositories\StreetRepository;
 use App\Repositories\BuildingTypesRepository;
 use App\Repositories\PlansRepository;
@@ -15,13 +16,15 @@ class StreetController extends Controller {
     protected $types;
     protected $plans;
     protected $building_types;
+    protected $seo;
 
     public function __construct(
         StreetRepository $street,
         HouseRepository $house,
         PlansTypeRepository $types,
         PlansRepository $plans,
-        BuildingTypesRepository $building_types
+        BuildingTypesRepository $building_types,
+        SeoRepository $seo
     ) {
 
         $this->street = $street;
@@ -29,6 +32,7 @@ class StreetController extends Controller {
         $this->types = $types;
         $this->plans = $plans;
         $this->building_types = $building_types;
+        $this->seo = $seo;
     }
 
     /**
@@ -39,13 +43,17 @@ class StreetController extends Controller {
 
         $streets = $this->street->getStreets();
 
-        $houses = $this->house->getHouses(null, 4);
+        $houses = $this->house->getHouses(null, 16);
 
         $breadcrumbs = [
             [
                 'title' => "Улицы"
             ]
         ];
+
+        $seo_params = [];
+
+        $this->seo->getSeoData(null, 'streets', $seo_params);
 
         return view('street.index', compact('streets', 'houses', 'breadcrumbs'));
     }

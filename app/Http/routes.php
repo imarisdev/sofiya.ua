@@ -81,6 +81,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::get('/seo/generate', array('as' => 'admin.seo.generate', 'uses' => 'SeoController@generate'));
         Route::post('/seo/generate', array('as' => 'admin.seo.generate.post', 'uses' => 'SeoController@generateStore'));
         Route::get('/seo/edit/{id}', array('as' => 'admin.seo.edit', 'uses' => 'SeoController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/seo/create', array('as' => 'admin.seo.create', 'uses' => 'SeoController@create'));
+        Route::post('/seo/save', array('as' => 'admin.seo.save', 'uses' => 'SeoController@store'));
         Route::post('/seo/update', array('as' => 'admin.seo.save', 'uses' => 'SeoController@update'));
         Route::post('/seo/delete', array('as' => 'admin.seo.delete', 'uses' => 'SeoController@delete'));
 
@@ -145,6 +147,9 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::get('/', array('as' => 'home.index', 'uses' => 'HomeController@index'));
+
+    Route::get('/_debugbar/assets/stylesheets', ['as' => 'debugbar-css', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@css']);
+    Route::get('/_debugbar/assets/javascript', ['as' => 'debugbar-js', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@js']);
 
     // Генплан
     Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));

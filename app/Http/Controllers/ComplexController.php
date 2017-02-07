@@ -83,6 +83,8 @@ class ComplexController extends Controller {
 
         $this->complex->shareComplex($complex);
 
+        $complex_list = $this->complex->getAllComplexes();
+
         $breadcrumbs = [
             [
                 'title' => "{$complex->title}",
@@ -93,7 +95,7 @@ class ComplexController extends Controller {
             ]
         ];
 
-        return view('complex.video', compact('complex', 'breadcrumbs'));
+        return view('complex.video', compact('complex', 'breadcrumbs', 'complex_list'));
 
     }
 

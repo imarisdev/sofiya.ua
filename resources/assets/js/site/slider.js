@@ -1,15 +1,15 @@
 $(window).load(function() {
     // The slider being synced must be initialized first
-    $('#slider').flexslider({
+    $('.video-slider').flexslider({
         animation: "slide",
         controlNav: false,
         animationLoop: true,
         slideshow: false,
-        sync: "#carousel"
+        sync: ".video-carousel"
     });
 
 
-    $('#carousel').flexslider({
+    $('.video-carousel').flexslider({
         animation: "slide",
         directionNav:true,
         controlNav: false,
@@ -17,6 +17,6 @@ $(window).load(function() {
         slideshow:true,
         itemWidth: 100,
         itemMargin: 5,
-        asNavFor: '#slider'
+        asNavFor: '.video-slider'
     });
 });

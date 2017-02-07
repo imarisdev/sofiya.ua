@@ -60,6 +60,26 @@ class SeoController extends AdminController {
     }
 
     /**
+     * Новый объект
+     * @param $id
+     * @return mixed
+     */
+    public function create() {
+
+        return view('admin.seo.create');
+    }
+
+    /**
+     * Создание
+     * @param Request $request
+     */
+    public function store(Request $request) {
+
+        return $this->seo->store($request->all());
+
+    }
+
+    /**
      * Обновление данных
      * @param Request $request
      */

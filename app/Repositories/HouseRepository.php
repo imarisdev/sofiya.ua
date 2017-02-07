@@ -148,6 +148,10 @@ class HouseRepository extends BaseRepository {
 
             $house->save();
 
+            if(!empty($inputs['plans'])) {
+                $house->images_list = $this->processImagesList($inputs['plans'], $house);
+            }
+
             if(!empty($inputs['slider'])) {
                 $this->medialib->saveFiles($inputs['slider'], $house->id, 'house');
             }
@@ -156,6 +160,24 @@ class HouseRepository extends BaseRepository {
         } catch(\Exception $e) {
             return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
         }
+    }
+
+    /**
+     * @param $images
+     * @param $house
+     * @return array
+     */
+    private function processImagesList($images, $house) {
+
+        $images_list = @unserialize($house->images_list);
+
+        foreach($images as $key => $image) {
+            $images_list[$key] = $this->image->uploadImage($image[0]);
+        }
+
+        $house->images_list = @serialize($images_list);
+
+        $house->save();
     }
 
     /**

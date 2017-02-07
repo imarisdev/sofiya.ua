@@ -11,7 +11,6 @@
 
                 <div class="info-wrap cell-xs">
                     <h1 class="blue-title cell m_b-10">{{ $article->title }}</h1>
-                    <p class="cell text">{{ $article->description }}</p>
                     <div class="cell dop-info">{!! $article->content !!}</div>
                 </div>
             </div>

@@ -7,6 +7,17 @@ class House extends BaseModel {
 
     protected $table = 'houses';
 
+    protected $plans_types = [
+        1 => 'Цоколь',
+        2 => 'Первый этаж',
+        3 => 'Второй этаж',
+        4 => 'Третий - восьмой этаж',
+        5 => 'Девятый этаж',
+        6 => 'Десятый этаж',
+        7 => 'Двухуровневые квартиры - первый уровень',
+        9 => 'Двухуровневые квартиры - второй уровень'
+    ];
+
     /**
      * Строительный комплекс
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -87,5 +98,12 @@ class House extends BaseModel {
 
         return "/sofievskaya-borshagovka/{$this->id}-{$this->slug}";
 
+    }
+
+    /**
+     * @return array
+     */
+    public function getPlansTypes() {
+        return $this->plans_types;
     }
 }

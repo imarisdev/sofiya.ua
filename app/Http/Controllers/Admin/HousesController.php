@@ -106,7 +106,25 @@ class HousesController extends AdminController implements AdminItemContract {
 
         $photos = $this->medialib->getFiles(['object_id' => $house->id, 'object_type' => 'house']);
 
-        return view('admin.houses.edit', compact('house', 'streets', 'complex', 'building_types', 'house_class', 'house_decoration', 'installments', 'seo', 'photos'));
+        $plans_types = $this->house->getModel()->getPlansTypes();
+
+        $house->images_list = @unserialize($house->images_list);
+
+        return view(
+            'admin.houses.edit',
+            compact(
+                'house',
+                'streets',
+                'complex',
+                'building_types',
+                'house_class',
+                'house_decoration',
+                'installments',
+                'seo',
+                'photos',
+                'plans_types'
+            )
+        );
     }
 
     /**
