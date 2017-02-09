@@ -192,7 +192,7 @@ Route::group(['middleware' => 'web'], function () {
 
     // Страница типа планировки
     Route::get('/complex/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    Route::get('/complex/{complex}/plans/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
+    Route::get('/complex/{complex}/planirovki/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
     // Страницы
     Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-\_\\\/]+']);
