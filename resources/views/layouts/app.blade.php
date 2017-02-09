@@ -26,9 +26,13 @@
             <div class="cell map">
                 @include('includes.map')
             </div>
+
+
             <footer>
                 @include('includes.footer')
             </footer>
+
+            <div class="share42init" data-path="/img/" data-image="/public/img/nullicons.png"></div>
 
             <script src="{{ elixir('js/common.js') }}"></script>
 

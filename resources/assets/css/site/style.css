@@ -640,6 +640,7 @@ a {
 }
 
 .form-header .form-content {
+    display: none;
     max-width: 275px;
     padding: 15px 15px 20px;
     background-color: white;
@@ -648,18 +649,37 @@ a {
 }
 .form-header .form-label {
     padding: 20px 30px 5px 80px;
-    width: 100%;
+    width: 275px;
     height: 60px;
+    cursor: pointer;
     background: url(/img/apartment-b.png) #fed20c no-repeat 5% 50%;
 }
 .form-header {
     float: left;
     position: absolute;
-    top: 23%;
+    top: 220px;
     left: 30px;
     z-index: 9;
 }
-
+.logo-new {
+    padding: 0 10px;
+    background-color: #fefefe;
+    text-align: center;
+}
+.logo-new-name {
+    padding: 0 15px;
+    height: 110px;
+    background-color: #01415f;
+    float: left;
+    text-align: center;
+    line-height: 110px;
+    color: #fefefe;
+    font-size: 18px;
+}
+.logo-new img {
+    position: relative;
+    top: -25px;
+}
 .text-right {
     text-align: right;
 }
@@ -671,10 +691,13 @@ a {
 }
 
 .form-header input[type="checkbox"]{
+    position: relative;
+    top: 4px;
     width: 18px;
     height: 18px;
 }
 .form-header .btn {
+    cursor: pointer;
     width: 120px;
     height: 35px;
     background-color: #fed20c;
@@ -736,6 +759,8 @@ a {
     height: 43px;
 }
 
+
+.global .logo-center-block .item { margin-top: 40px;}
 .top-logo-part:hover,
 .bottom-logo-part:hover {
     /*background-color: #002333;*/
@@ -916,6 +941,16 @@ a {
     vertical-align: bottom;
 }
 
+.share42init {
+    position: fixed;
+    z-index: 9999;
+    margin-left: 0px;
+    top: 40%;
+}
+
+#share42  a {
+    display: list-item !important;
+}
 
 /**/
 
@@ -923,7 +958,7 @@ a {
     position: absolute;
     width: 100%;
     float: left;
-    top: 270px;
+    top: 380px;
 }
 
 .form-watch form {
@@ -1229,6 +1264,7 @@ a {
     margin: 10px 10px 100px 10px;
     transform: scale(1);
     transition: all .4s ease 0s;
+    cursor: pointer;
 }
 
 .logo-center-block .item.main {
@@ -2603,10 +2639,6 @@ form.review {
     .header h2 {
         font-size: 24px;
     }
-
-
-
-
 
     .nav-bottom ul li a {
         font-size: 14px;

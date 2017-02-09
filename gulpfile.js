@@ -17,12 +17,13 @@ elixir(function (mix) {
 elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
-        'wow.js',
+        'site/common.js',
         'fancybox/jquery.fancybox.js',
         'tabs.js',
         'jquery.flexslider.js',
         'jquery.fancybox.pack.js',
         'site/slider.js',
+        'share42/share42.js',
         'site/common.js',
     ], 'public/js/common.js');
 });
