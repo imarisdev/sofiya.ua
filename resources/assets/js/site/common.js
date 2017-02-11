@@ -21,8 +21,12 @@ $(document).ready(function () {
     });
 
 
-    $('.js-fancybox').fancybox();
-
+    $.fancybox({
+        
+    });
+    /*$('.js-fancybox').ceebox({
+        html: false
+    });*/
 
     $('.js-phone-click').click(function () {
         $('.js-phone-block').toggle('slow');
