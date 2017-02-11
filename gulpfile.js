@@ -25,6 +25,7 @@ elixir(function (mix) {
         'jquery.fancybox.pack.js',
         //'jquery.ceebox.js',
         'site/slider.js',
+        'share42/share42.js',
         'site/common.js',
     ], 'public/js/common.js');
 });

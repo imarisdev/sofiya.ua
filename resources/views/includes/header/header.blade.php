@@ -17,13 +17,20 @@
                     <li>+38 (067) 971-4000</li>
                 </ul>
             </div>
-
         </div>
 
+
+
         <div class="nav-bottom cell">
-            <div class="logo fl_l">
-                {!! Helpers::renderComplex() !!}
+            {{--<div class="logo fl_l">--}}
+                {{--{!! Helpers::renderComplex() !!}--}}
+            {{--</div>--}}
+
+            <div class="logo-new fl_l">
+                <img src="img/logo-new.png" alt="" />
             </div>
+            <div class="logo-new-name">ЖК КЛУБНЫЙ</div>
+
 
             <div class="wrapper">
                 <ul class="menu">
@@ -35,6 +42,12 @@
                 <a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>
             </div>
         </div>
+    </div>
+
+    @include('includes.header.header-form')
+
+    <div class="global">
+        @include('includes.header.header-logo-block')
     </div>
 
     <div class="actions-block fl_r">

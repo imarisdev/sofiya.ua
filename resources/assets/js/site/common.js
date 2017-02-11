@@ -50,6 +50,14 @@ jQuery(function ($) {
         $('.js-phone-block').show();
         $(this).addClass('active');
     });
+
+
+    //FORM
+    jQuery('.js-form-label').click(function () {
+        $('.js-form-content').toggle('slow');
+    });
+
+
 });
 
 /* adaptive */
