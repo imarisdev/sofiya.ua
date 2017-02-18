@@ -38,6 +38,15 @@
             <div class="wrapper">
                 <ul class="menu">
                     @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
+                    <li class="parent-menu js-parent cell-md-none">
+
+                        <img src="/img/menu.png">
+                        <ul class="js-child child-menu">
+                            <li class="">
+                                <a href="/planirovki/odnokomnatnye-kvartiry"> то что добавляют</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
