@@ -508,11 +508,8 @@ a {
 }
 
 .nav-bottom {
-    padding: 0 20px;
+    padding: 0 20px 0 50px;
     background-color: rgba(83, 209, 238, 0.68);
-}
-
-.nav-bottom ul {
 }
 
 .nav-bottom ul.menu > li {
@@ -658,7 +655,7 @@ a {
     float: left;
     position: absolute;
     top: 220px;
-    left: 30px;
+    left: 50px;
     z-index: 9;
 }
 .logo-new {
@@ -679,6 +676,7 @@ a {
 .logo-new img {
     position: relative;
     top: -25px;
+    max-height: 110px;
 }
 .text-right {
     text-align: right;
@@ -1093,6 +1091,20 @@ a {
 .carousel-row-index .item iframe {
     max-width: 100%;
 }
+
+.fixed-links {
+    position: fixed;
+    top: 35%;
+    left: 0;
+    background-color: rgba(254, 254, 254, 0.8);
+    padding: 10px 0;
+}
+.fixed-links a {
+    display: block;
+    padding: 7px 5px;
+    text-align: center;
+}
+
 
 /*action*/
 .white-block-action {

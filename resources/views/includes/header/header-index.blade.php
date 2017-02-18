@@ -53,11 +53,18 @@
                                 {{--*/ $m_key++; /*--}}
                             </li>
                         @else
-                            <li class="short-menu">
-                                {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
-                            </li>
+                            @if($m_key == 7)
+                                <li class="parent-menu js-parent cell-md-none">
+                                    <img src="/img/menu.png">
+                                    <ul class="js-child child-menu">
+                            @endif
+                                        <li>
+                                            {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                        </li>
                         @endif
                     @endforeach
+                                    </ul>
+                                </li>
                 </ul>
             </div>
 

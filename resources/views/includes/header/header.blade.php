@@ -37,7 +37,31 @@
 
             <div class="wrapper">
                 <ul class="menu">
-                    @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
+                    {{--*/ $m_key = 0; /*--}}
+                    @foreach(Helpers::renderMenu('head') as $item)
+                        @if($m_key <= 6)
+                            <li class="@if(!empty($item['child'])) parent-menu js-parent @endif">
+                                {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                @if(!empty($item['child']) && count($item['child']) > 0)
+                                    <ul class="js-child child-menu">
+                                        @each('includes.header.menu-items', $item['child'], 'item')
+                                    </ul>
+                                @endif
+                                {{--*/ $m_key++; /*--}}
+                            </li>
+                        @else
+                            @if($m_key == 7)
+                                <li class="parent-menu js-parent cell-md-none">
+                                    <img src="/img/menu.png">
+                                    <ul class="js-child child-menu">
+                            @endif
+                                <li>
+                                    {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                </li>
+                        @endif
+                    @endforeach
+                        </ul>
+                    </li>
                 </ul>
             </div>
 

@@ -3,7 +3,7 @@
         <div class="cell m_b-20">
             <div class="cell3 logo-footer fl_l">
                 <a href="#">
-                    <img src="/img/logo-w.png" alt="">
+                    <img src="/img/footer-logo.png" alt="">
                 </a>
             </div>
 
@@ -13,19 +13,34 @@
             </div>
 
             <div class="info-wrap cell-sm">
-                <div class="d_in mail m_t-15 m_r-20     cell-xs">
-                    <i class="icon-mail"></i>SOFIYA-CITY@UKR.NET
+                <div class="d_in phone m_t-15">
+                    <div class="phone-click ">
+                        <span><i class="icon-heart"></i></span>
+                        НАШ АДРЕС:<br>
+                        08131, Украина,<br>
+                        Киевская обл., г. Киев,<br>
+                        Софиевская Борщаговка,<br>
+                        ул. Леси Украинки, дом 12,<br>
+                        офисный центр «София»<br>
+                    </div>
                 </div>
 
                 <div class="d_in phone m_t-15">
-                    <div class="js-phone-click phone-click">
-                        <span><i class="icon-phone"></i>+38 (044) 361-4000<i class="down"></i> </span>
-                        <ul class="js-phone-block phone-block" style="display: none;">
+                    <div class="phone-click">
+                        <span><i class="icon-phone"></i></span>
+                        <ul>
+                            <li>+38 (044) 361-4000</li>
                             <li>+38 (066) 361-4000</li>
                             <li>+38 (067) 971-4000</li>
                         </ul>
                     </div>
+
+                    <div class="d_in mail m_t-15 m_r-20 cell-xs">
+                        <i class="icon-mail"></i>info@sofiya.ua
+                    </div>
                 </div>
+
+
                 <div class="fl_r btn-wrap"><a class="yellow-btn call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a></div>
             </div>
         </div>
