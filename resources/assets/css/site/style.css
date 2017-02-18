@@ -512,6 +512,41 @@ a {
     background-color: rgba(83, 209, 238, 0.68);
 }
 
+@media all and (min-width: 990px) {
+    .nav-bottom.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: rgba(83, 209, 238, 0.9);
+        height: 63px;
+    }
+    .nav-bottom.fixed .call-block {
+        height: auto;
+        padding: 6px 0;
+    }
+    .nav-bottom.fixed .logo-new img {
+        top: 0;
+        max-height: 63px;
+        padding: 3px 20px;
+    }
+    .nav-bottom.fixed ul.menu .child-menu {
+        top: 63px;
+    }
+    .nav-bottom.fixed .logo-new-name{
+        height: 63px;
+        line-height: 63px;
+    }
+    .nav-bottom.fixed ul.menu > li {
+        height: 55px;
+        padding: 15px 20px 15px 10px;
+    }
+    .header-top.fixed {
+        height: 150px;
+    }
+}
+
 .nav-bottom ul.menu > li {
     z-index: 33;
     float: left;
@@ -1377,6 +1412,12 @@ h1.title {
 
 .footer .address {
     float: left;
+}
+.footer .yellow-btn {
+    padding: 9px 35px 6px;
+    font-size: 16px;
+    border: none;
+    margin-top: 20px;
 }
 .footer .site-pages li {
     display: inline-block;
@@ -2686,7 +2727,7 @@ form.review {
     }
 
     .form-watch form {
-        margin: 0 5px;
+        margin: 10% auto;
     }
 
     .type-plans .item > .cell6 {
@@ -2718,6 +2759,24 @@ form.review {
 }
 
 @media all and (max-width: 990px) {
+    .logo-center-block .item.main {
+        width: 150px;
+        height: 150px;
+    }
+    .header {
+        min-height: auto;
+    }
+    .logo-center-block .item {
+        width: 120px;
+        height: 120px;
+    }
+    .logo-center-block .item img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .global .logo-center-block .item {
+        margin-top: 10px;
+    }
     .call-fixed-btn {
         display: none;
     }
@@ -2749,7 +2808,7 @@ form.review {
 
     .menu-adapt {
         position: absolute;
-        top: 13px;
+        top: 9px;
         right: 13px;
         display: block;
         width: 35px;
@@ -2977,8 +3036,6 @@ form.review {
 }
 
 @media all and (max-width: 640px) {
-
-
     .top-logo-part{
         top: -50px;
     }
@@ -3018,6 +3075,9 @@ form.review {
         text-align: center;
         margin-bottom: 20px;
     }
+    .logo-new img {
+        top: -5px;
+    }
 }
 
 @media all and (max-width: 540px) {
@@ -3032,10 +3092,7 @@ form.review {
         float: none;
     }
 
-    .call-block {
-        width: 100%;
-        /*margin-top: 35px;*/
-    }
+
 
     .left-nav {
         width: 100%;
@@ -3075,6 +3132,8 @@ form.review {
     }
 }
 @media all and (max-width: 420px) {
+
+
     .item-news .dop-info .blue-btn {
         width: 100%;
         text-align: center;

@@ -13,9 +13,9 @@
                 </ul>
             </div>
 
-            <div class="phone-click fl_r">
+            <div class="phone-click js-phone-click fl_r">
                 <span><i class="icon-phone"></i>+38 (044) 361-4000</span>
-                <i class="down js-phone-click"></i>
+                <i class="down"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
                     <li>+38 (066) 361-4000</li>
                     <li>+38 (067) 971-4000</li>
@@ -75,7 +75,7 @@
     <div class="actions-block fl_r">
         @include('includes.header.prices-header-block')
 
-        <div class="blue-block-action wow bounceInRight" data-wow-delay="2s" data-wow-duration="1.5s">
+        <div class="blue-block-action wow bounceInRight cell-sm-none" data-wow-delay="2s" data-wow-duration="1.5s">
             <div class="item">
                 <a href="">ЗАПИСАТЬСЯ НА ПРОСМОТР</a>
             </div>

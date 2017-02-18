@@ -1,4 +1,4 @@
-<div class="form-header">
+<div class="form-header cell-md-none">
     <div class="form-label js-form-label">ПОИСК КВАРТИР</div>
 
     <form>

@@ -45,6 +45,7 @@
                     <input class="field m_b-10" type="text" placeholder="Ваше имя">
                     <input class="field m_b-10" type="text" placeholder="Ваш телефон">
                     <textarea class="field" type="text" placeholder="Ваш комментарий"></textarea>
+                    <input type="submit" class="pull-right yellow-btn">
                 </form>
             </div>
         </div>
