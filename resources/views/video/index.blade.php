@@ -14,6 +14,19 @@
                 @include('complex.video-carousel', ['items' => $video['video']])
             @endforeach
 
+            @if(!empty($complex_list) && count($complex_list) > 0)
+                <div class="cell m_b-10">
+                    @foreach($complex_list as $item)
+                        <div class="cell4 cell-xs-6 cell-xss">
+                            <div class="gallery-item">
+                                <img alt="{{ $item->title }}" src="{{ Helpers::getImage($item->iamge_big, '285x205', null, 'fit') }}">
+                                <a href="/{{ $item->link() }}/video">{{ $item->title }}</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
             <div class="cell m_t-20 m_b-30">
                 @include('planstype.blue-info-block')
             </div>

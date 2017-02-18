@@ -336,4 +336,14 @@ class Helpers {
 
         return $news;
     }
+
+    /**
+     * @param $phone
+     */
+    public static function phone($phone) {
+
+        $phone = preg_replace('/\;/', ';<br>', $phone);
+
+        return $phone;
+    }
 }

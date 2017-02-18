@@ -4,7 +4,7 @@
     <div class="wrapper clearfix">
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
-            <h1 class="cell title text-center">{{ $page->title }}</h1>
+            <h1 class="cell title text-center">{{ $seo['h1'] or $page->title }}</h1>
 
             <div class="cell">{!! $page->content !!}</div>
         </div>

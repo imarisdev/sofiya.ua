@@ -7,10 +7,12 @@ use App\Models\User;
 
 class UserRepository extends BaseRepository {
 
-    public function __construct(User $user) {
+    protected $image;
+
+    public function __construct(User $user, ImageRepository $image) {
 
         $this->model = $user;
-
+        $this->image = $image;
     }
 
     /**
@@ -53,6 +55,20 @@ class UserRepository extends BaseRepository {
     }
 
     /**
+     * @param array $role_id
+     * @return array
+     */
+    public function getByRole($role_id = []) {
+        $users = $this->model->select('id', 'name', 'email', 'phone', 'photo');
+
+        if(!empty($role_id)) {
+            $users->whereIn('role_id', $role_id);
+        }
+
+        return $users->get();
+    }
+
+    /**
      * Метод сохранения
      * @param $user
      * @param $inputs
@@ -62,10 +78,15 @@ class UserRepository extends BaseRepository {
 
         $user->name = $inputs['name'];
         $user->email = $inputs['email'];
+        $user->phone = $inputs['phone'];
         $user->role_id = floatval($inputs['role_id']);
 
         if(!empty($inputs['password'])) {
             $this->updatePassword($user, $inputs['password']);
+        }
+
+        if(!empty($inputs['photo'])) {
+            $user->photo = $this->image->uploadImage($inputs['photo'][0]);
         }
 
         try {

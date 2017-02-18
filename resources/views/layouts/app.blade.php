@@ -23,10 +23,11 @@
             <!--/div-->
 
 
-            <div class="cell map">
-                @include('includes.map')
-            </div>
-
+            @if(!Request::is('kontakty'))
+                <div class="cell map">
+                    @include('includes.map')
+                </div>
+            @endif
 
             <footer>
                 @include('includes.footer')

@@ -22,15 +22,18 @@
 
 
         <div class="nav-bottom cell">
-            {{--<div class="logo fl_l">--}}
-                {{--{!! Helpers::renderComplex() !!}--}}
-            {{--</div>--}}
 
-            <div class="logo-new fl_l">
-                <img src="img/logo-new.png" alt="" />
-            </div>
-            <div class="logo-new-name">ЖК КЛУБНЫЙ</div>
-
+            @if($current_complex)
+                <div class="logo-new fl_l">
+                    <img src="{{ Helpers::getImage($current_complex->image_big) }}" alt="{{ $current_complex->title }}" />
+                </div>
+                <div class="logo-new-name">{{ $current_complex->title }}</div>
+            @else
+                <div class="logo-new fl_l">
+                    <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }}" />
+                </div>
+                <div class="logo-new-name">{{ $default_complex->title }}</div>
+            @endif
 
             <div class="wrapper">
                 <ul class="menu">

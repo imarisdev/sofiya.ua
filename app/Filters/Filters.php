@@ -2,6 +2,7 @@
 
 namespace App\Filters;
 
+use App\Repositories\UserRepository;
 use View;
 use App\Repositories\GalleryRepository;
 use App\Repositories\MedialibRepository;
@@ -10,10 +11,12 @@ class Filters {
 
     protected $gallery;
     protected $medialib;
+    protected $users;
 
-    public function __construct(GalleryRepository $gallery, MedialibRepository $medialib) {
+    public function __construct(GalleryRepository $gallery, MedialibRepository $medialib, UserRepository $users) {
         $this->gallery = $gallery;
         $this->medialib = $medialib;
+        $this->users = $users;
     }
 
     /**
@@ -59,5 +62,24 @@ class Filters {
 
         return $object;
     }
+
+    private function users($object, $param = ['content' => 'content']) {
+        $object->{$param['content']} = preg_replace_callback('/\[users role=(\d+)\]/',
+            function($matches) {
+                $users = $this->users->getByRole([$matches[1]]);
+
+                if(!empty($users) && count($users) > 0) {
+                    $view = View::make('includes.users', ['users' => $users]);
+
+                    return $view->render();
+                } else {
+                    return '';
+                }
+            }, $object->{$param['content']}
+        );
+
+        return $object;
+    }
+
 
 }

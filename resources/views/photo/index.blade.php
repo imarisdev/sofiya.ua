@@ -7,16 +7,20 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">Фотогалерея</h1>
+            <h1 class="cell text-center title">{{ $seo['h1'] or 'Фотогалерея Жилих Комплексов' }}</h1>
 
-            @if(!empty($photos) && count($photos) > 0)
+            @foreach($photos as $photo)
+                <h2 class="title-page m_t-10">Фотогалерея - {{ $photo['complex']->title }}</h2>
+                @include('complex.photo-carousel', ['items' => $photo['photos']])
+            @endforeach
+
+            @if(!empty($complex_list) && count($complex_list) > 0)
                 <div class="cell m_b-10">
-                    @foreach($photos as $photo)
+                    @foreach($complex_list as $item)
                         <div class="cell4 cell-xs-6 cell-xss">
                             <div class="gallery-item">
-                                <a class="js-fancybox" href="{{ Helpers::getImage($photo->file) }}">
-                                    <img alt="{{ $photo->title }}" src="{{ Helpers::getImage($photo->file, '285x205', null, 'fit') }}">
-                                </a>
+                                <img alt="{{ $item->title }}" src="{{ Helpers::getImage($item->iamge_big, '285x205', null, 'fit') }}">
+                                <a href="/{{ $item->link() }}/foto">{{ $item->title }}</a>
                             </div>
                         </div>
                     @endforeach
