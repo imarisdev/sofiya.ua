@@ -8,6 +8,6 @@
     </div>
 
     <div class="input-wrap">
-        <input type="submit" class="btn" value="ЗАПИСАТЬСЯ НА ПРОСМОТР">
+        <input type="submit" class="btn" value="ЗАКАЗАТЬ ЗВОНОК">
     </div>
 </form>
