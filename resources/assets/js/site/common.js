@@ -2,6 +2,16 @@ var Site = {
 
 };
 
+$(window).scroll(function() {
+    var top = $(document).scrollTop();
+
+    if (top > 150) {
+        $(".header-top .nav-bottom, .header-top").addClass('fixed')
+    } else {
+        $(".header, .header-top .nav-bottom ").removeClass('fixed');
+    }
+});
+
 $(document).ready(function () {
 
     //list
