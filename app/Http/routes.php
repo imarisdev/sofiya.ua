@@ -167,6 +167,8 @@ Route::group(['middleware' => 'web'], function () {
 
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
+    Route::get('/planirovki/arenda', array('as' => 'plans.type', 'uses' => 'PlansController@rent'));
+    Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.type', 'uses' => 'PlansController@decoration'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
     Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
@@ -192,6 +194,8 @@ Route::group(['middleware' => 'web'], function () {
 
     // Страница типа планировки
     Route::get('/complex/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/planirovki/arenda', array('as' => 'planstype.arenda', 'uses' => 'PlansTypeController@rent'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
+    Route::get('/complex/{complex}/planirovki/kvartiry-s-remontom', array('as' => 'planstype.decoration', 'uses' => 'PlansTypeController@decoration'));
     Route::get('/complex/{complex}/planirovki/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
     // Страницы

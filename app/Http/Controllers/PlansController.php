@@ -73,6 +73,66 @@ class PlansController extends Controller {
     }
 
     /**
+     * Аренда
+     * @return mixed
+     */
+    public function rent() {
+
+        $type = $this->types->getPlansTypeBySlug('arenda');
+
+        $houses = $this->house->getHouses(['is_rent' => 1]);
+
+        $house_ids = [];
+        foreach($houses as $house) {
+            $house_ids[] = $house->id;
+        }
+
+        $plans = $this->plans->getPlansForRent(['house_id' => $house_ids, 'plans_type' => 5], 16);
+
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}"
+            ]
+        ];
+
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
+
+        return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
+    }
+
+    /**
+     * Квартиры с ремонтом
+     * @return mixed
+     */
+    public function decoration() {
+        $type = $this->types->getPlansTypeBySlug('kvartiry-s-remontom');
+
+        $plans = $this->plans->getPlans(['is_decoration' => 1], 16);
+
+        $breadcrumbs = [
+            [
+                'title' => "Планировки квартир",
+                'link' => "/planirovki"
+            ],
+            [
+                'title' => "{$type['title']}"
+            ]
+        ];
+
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
+
+        return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
+    }
+
+    /**
      * Страница планировки
      * @param $url
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

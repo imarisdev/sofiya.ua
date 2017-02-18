@@ -64,6 +64,10 @@ class HouseRepository extends BaseRepository {
             $house = $house->where('complex_id', '=', $request['complex_id']);
         }
 
+        if(!empty($request['is_rent'])) {
+            $house = $house->where('is_rent', '=', $request['is_rent']);
+        }
+
         return $house->paginate($limit);
     }
 

@@ -123,13 +123,16 @@
                                             @endif
                                         </div>
                                     </div>
+
+                                </div>
+                                <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="balcony">Балкон</label>
-                                            @if(!empty($plan->balcony))
-                                                {!! Form::select('balcony', $balcony_types, $plan->balcony, ['class' => 'form-control']) !!}
+                                            <label for="is_decoration">Ремонт</label>
+                                            @if(!empty($plan->is_decoration))
+                                                {!! Form::select('is_decoration', $plans_decoration, $plan->is_decoration, ['class' => 'form-control']) !!}
                                             @else
-                                                {!! Form::select('balcony', $balcony_types, null, ['class' => 'form-control']) !!}
+                                                {!! Form::select('is_decoration', $plans_decoration, null, ['class' => 'form-control']) !!}
                                             @endif
                                         </div>
                                     </div>
