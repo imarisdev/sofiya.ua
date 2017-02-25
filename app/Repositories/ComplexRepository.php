@@ -36,12 +36,16 @@ class ComplexRepository extends BaseRepository {
      * Возвращает все комплексы
      * @return mixed
      */
-    public function getAllComplexes() {
+    public function getAllComplexes($request = null) {
 
         $complex = $this->model
-            ->get();
+            ->select('*');
 
-        return $complex;
+        if(!empty($request['status'])) {
+            $complex->where('status', '=', $request['status']);
+        }
+
+        return $complex->get();
 
     }
 
@@ -49,12 +53,16 @@ class ComplexRepository extends BaseRepository {
      * Список комплексов для формы
      * @return array
      */
-    public function getComplexesForSelect() {
-        $complexes = $this->model->all();
+    public function getComplexesForSelect($request = null) {
+        $complexes = $this->model->select('*');
+
+        if(!empty($request['status'])) {
+            $complexes->where('status', '=', $request['status']);
+        }
 
         $complexes_list = array();
 
-        foreach($complexes as $complex) {
+        foreach($complexes->get() as $complex) {
             $complexes_list[$complex->id] = $complex->title;
         }
 

@@ -28,7 +28,7 @@ class PagesController extends Controller {
      */
     public function page($page) {
 
-        $page = $this->filter->filters($this->page->getBySlug($page), ['gallery'], ['content' => 'content']);
+        $page = $this->filter->filters($this->page->getBySlug($page), ['gallery', 'users'], ['content' => 'content']);
 
         $this->seo->getSeoData($page->id, 'pages');
 

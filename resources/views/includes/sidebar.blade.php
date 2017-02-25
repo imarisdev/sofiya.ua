@@ -24,9 +24,9 @@
 <div class="left-nav fl_l">
     <ul>
         <li><a href="/genplan">ГЕНПЛАН</a></li>
-        <li><a href="">ОНЛАЙН КАМЕРА</a></li>
+        <!--li><a href="">ОНЛАЙН КАМЕРА</a></li-->
         <li><a href="/foto">ФОТОГАЛЕРЕЯ</a></li>
-        <li><a href="">ВИДЕООТЗЫВЫ ПОКУПАТЕЛЕЙ</a></li>
+        <!--li><a href="">ВИДЕООТЗЫВЫ ПОКУПАТЕЛЕЙ</a></li-->
     </ul>
 </div>
 

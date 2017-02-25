@@ -86,4 +86,26 @@ class MedialibRepository extends BaseRepository {
 
     }
 
+
+    /**
+     * @param null $request
+     * @return mixed
+     */
+    public function getPhotosByComplex($request = null) {
+        $medialib = $this->model
+            ->select('*');
+
+        if(!empty($request['object_type'])) {
+            $medialib->where('object_type', '=', $request['object_type']);
+        }
+
+        $photos = [];
+
+        foreach($medialib->get() as $item) {
+            $photos[$item->object_id]['photos'][] = $item;
+        }
+
+        return $photos;
+    }
+
 }

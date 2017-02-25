@@ -28,7 +28,9 @@ class VideoController extends Controller {
             $videos[$key]['complex'] = $this->complex->getById($key);
         }
 
-        return view('video.index', compact('videos'));
+        $complex_list = $this->complex->getAllComplexes(['status' => 1]);
+
+        return view('video.index', compact('videos', 'complex_list'));
     }
 
 }

@@ -13,6 +13,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
+                            <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Фото</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -27,6 +28,11 @@
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" id="email" name="email" placeholder="Email"
                                            value="{{ $user->email or '' }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Телефон"
+                                           value="{{ $user->phone or '' }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="role_id">Роль пользвателя</label>
@@ -47,6 +53,12 @@
                                 <div class="form-group">
                                     <label for="password">Пароль</label>
                                     <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_2">
+                                <div class="form-group">
+                                    <label for="photo">Фото</label>
+                                    <input type="file" class="form-control" id="photo" name="photo" placeholder="Фото" />
                                 </div>
                             </div>
                         </div>

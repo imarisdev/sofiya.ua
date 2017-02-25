@@ -22,27 +22,44 @@
 
 
         <div class="nav-bottom cell">
-            {{--<div class="logo fl_l">--}}
-                {{--{!! Helpers::renderComplex() !!}--}}
-            {{--</div>--}}
 
-            <div class="logo-new fl_l">
-                <img src="img/logo-new.png" alt="" />
-            </div>
-            <div class="logo-new-name">ЖК КЛУБНЫЙ</div>
-
+            @if($current_complex)
+                <div class="logo-new fl_l">
+                    <img src="{{ Helpers::getImage($current_complex->image_big) }}" alt="{{ $current_complex->title }}" />
+                </div>
+                <div class="logo-new-name">{{ $current_complex->title }}</div>
+            @else
+                <div class="logo-new fl_l">
+                    <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }}" />
+                </div>
+                <div class="logo-new-name">{{ $default_complex->title }}</div>
+            @endif
 
             <div class="wrapper">
                 <ul class="menu">
-                    @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
-
-                    <li class="parent-menu js-parent cell-md-none">
-
-                        <img src="/img/menu.png">
-                        <ul class="js-child child-menu">
-                            <li class="">
-                                <a href="/planirovki/odnokomnatnye-kvartiry"> то что добавляют</a>
+                    {{--*/ $m_key = 0; /*--}}
+                    @foreach(Helpers::renderMenu('head') as $item)
+                        @if($m_key <= 6)
+                            <li class="@if(!empty($item['child'])) parent-menu js-parent @endif">
+                                {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                @if(!empty($item['child']) && count($item['child']) > 0)
+                                    <ul class="js-child child-menu">
+                                        @each('includes.header.menu-items', $item['child'], 'item')
+                                    </ul>
+                                @endif
+                                {{--*/ $m_key++; /*--}}
                             </li>
+                        @else
+                            @if($m_key == 7)
+                                <li class="parent-menu js-parent cell-md-none">
+                                    <img src="/img/menu.png">
+                                    <ul class="js-child child-menu">
+                            @endif
+                                <li>
+                                    {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                </li>
+                        @endif
+                    @endforeach
                         </ul>
                     </li>
                 </ul>

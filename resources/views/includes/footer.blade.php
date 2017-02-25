@@ -27,14 +27,14 @@
                     <div class="phone-click cell">
                         <span><i class="icon-phone"></i></span>
                         <ul class="cell m_b-20">
-                            <li>+38 (044) 361-4000</li>
-                            <li>+38 (066) 361-4000</li>
-                            <li>+38 (067) 971-4000</li>
+                            <li><a href="tel:+38 (044) 361-4000">+38 (044) 361-4000</a></li>
+                            <li><a href="tel:+38 (066) 361-4000">+38 (066) 361-4000</a></li>
+                            <li><a href="tel:+38 (067) 971-4000">+38 (067) 971-4000</a></li>
                         </ul>
                     </div>
 
                     <div class="cell mail m_t-20 m_r-20 cell-xs">
-                        <i class="icon-mail"></i>info@sofiya.ua
+                        <i class="icon-mail"></i><a href="mailto:info@sofiya.ua">info@sofiya.ua</a>
                     </div>
                 </div>
             </div>

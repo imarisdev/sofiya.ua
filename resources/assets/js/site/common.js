@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 
     $.fancybox({
-        
+
     });
     /*$('.js-fancybox').ceebox({
         html: false

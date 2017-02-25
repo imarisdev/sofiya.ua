@@ -9,7 +9,7 @@
 
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">{{ $type['title'] }}</h1>
+            <h1 class="cell text-center title">{{ $seo['h1'] or $type['title'] }}</h1>
             <div class="cell type-plans m_b-20">
                 @foreach($plans as $plan)
                     <div class="cell6 cell-xs">

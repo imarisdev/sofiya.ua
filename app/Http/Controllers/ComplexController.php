@@ -68,7 +68,9 @@ class ComplexController extends Controller {
 
         $photos = $this->medialib->getFiles(['object_type' => 'complex', 'object_id' => $complex->id]);
 
-        return view('complex.gallery', compact('complex', 'breadcrumbs', 'photos'));
+        $complex_list = $this->complex->getAllComplexes(['status' => 1]);
+
+        return view('complex.gallery', compact('complex', 'breadcrumbs', 'photos', 'complex_list'));
 
     }
 
@@ -83,7 +85,7 @@ class ComplexController extends Controller {
 
         $this->complex->shareComplex($complex);
 
-        $complex_list = $this->complex->getAllComplexes();
+        $complex_list = $this->complex->getAllComplexes(['status' => 1]);
 
         $breadcrumbs = [
             [

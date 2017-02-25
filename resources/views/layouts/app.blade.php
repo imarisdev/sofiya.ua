@@ -22,9 +22,11 @@
                 @yield('content')
             <!--/div-->
 
-            <div class="cell map">
-                @include('includes.map')
-            </div>
+            @if(!Request::is('kontakty'))
+                <div class="cell map">
+                    @include('includes.map')
+                </div>
+            @endif
 
             <div class="fixed-links">
                 <a class="vk" href="https://vk.com/sofiyacity"><img src="/img/fixed-socials/vk.png" alt=""></a>
