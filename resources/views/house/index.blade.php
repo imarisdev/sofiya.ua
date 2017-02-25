@@ -39,6 +39,8 @@
 
                     @include('house.docs')
 
+                    @include('comments.comment', ['item' => ['id' => $house->id, 'type' => 'House'], 'comments' => $house->getComments()])
+
                     @include('house.reviews')
                 </div>
 

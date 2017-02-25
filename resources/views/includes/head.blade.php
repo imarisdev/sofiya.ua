@@ -18,3 +18,9 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
+
+<script>
+    window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+    ]); ?>
+</script>
