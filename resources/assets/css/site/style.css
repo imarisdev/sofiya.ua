@@ -1616,13 +1616,16 @@ h1.title {
 .footer .phone-click {
     margin-right: 0;
     padding: 0 30px;
-    color: #fffdfd;
+
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
     margin-bottom: 40px !important;
 }
-
+.footer .phone-click a,
+.footer .icon-mail + a{
+    color: #fffdfd;
+}
 .footer .phone-click .down {
     width: 22px;
     background: url('/img/arrow-fot.png') no-repeat 100% 50%;
@@ -2533,6 +2536,21 @@ form.review {
     0% { -webkit-transform: scale(0.9, 0.9); opacity: 1; }
     100% { -webkit-transform: scale(2.1, 2.1); opacity: 0; }
 }
+@media all and (max-width: 1200px) {
+    .cell-lg-none {
+        display: none;
+    }
+    .cell-lg-6 {
+        position: relative;
+        width: 50% !important;
+        float: left;
+    }
+    .cell-lg {
+        float: left;
+        width: 100% !important;
+    }
+}
+
 @media all and (max-width: 990px) {
     .news .item {
         max-height: none;
@@ -2626,11 +2644,13 @@ form.review {
         padding: 40px 10px 40px 10px;
     }
 
-    .nav-bottom ul li a:after {
+    .nav-bottom ul li a:after
+    .nav-bottom ul li span:after{
         right: -10px;
     }
 
-    .nav-bottom ul li a {
+    .nav-bottom ul li a,
+    .nav-bottom ul li span{
         font-size: 16px;
     }
 
@@ -2690,6 +2710,9 @@ form.review {
     .nav-bottom {
         padding: 0;
     }
+    .nav-bottom ul li a:after {
+        display: none;
+    }
 }
 
 
@@ -2701,33 +2724,19 @@ form.review {
         max-width: 170px;
     }
 
-    .header h2 {
-        font-size: 24px;
-    }
-
-    .nav-bottom ul li a {
+    .nav-bottom ul li a,
+    .nav-bottom ul li span{
         font-size: 14px;
     }
 
-    .footer .yellow-btn {
-        position: relative;
-        bottom: 10px;
-        width: 60px;
-        height: 60px;
-        padding: 20px;
-        font-size: 0;
-        background: url("/img/phone-header.png") no-repeat 50% 50% #fed20c;
-        text-indent: -10000px;
-        border-radius: 50%;
+    .form-header{
+        top: 150px;
+        left: 0;
     }
 
     .footer .info,
     .footer .info-s {
         display: none;
-    }
-
-    .form-watch form {
-        margin: 10% auto;
     }
 
     .type-plans .item > .cell6 {
@@ -2756,15 +2765,10 @@ form.review {
     .one-line-block .blue-block-info {
         padding-bottom: 40px;
     }
-}
 
-@media all and (max-width: 990px) {
     .logo-center-block .item.main {
         width: 150px;
         height: 150px;
-    }
-    .header {
-        min-height: auto;
     }
     .logo-center-block .item {
         width: 120px;
@@ -2775,8 +2779,35 @@ form.review {
         max-height: 90%;
     }
     .global .logo-center-block .item {
-        margin-top: 10px;
+        margin-top: 85px;
     }
+}
+
+@media all and (max-width: 1024px) {
+    .header {
+        min-height: 740px;
+    }
+    .header h2 {
+        display: none;
+    }
+    .nav-bottom ul.menu > li{
+        padding-right: 10px;
+    }
+}
+
+@media all and (max-width: 990px) {
+
+    .header-bottom-icons {
+        display: none;
+    }
+
+    .header:not(.header-all) {
+        min-height: auto;
+    }
+    .header-all {
+        min-height: 580px;
+    }
+
     .call-fixed-btn {
         display: none;
     }
@@ -2940,6 +2971,7 @@ form.review {
 
     .form-watch form {
         max-width: 50%;
+        margin-top: 130px;
     }
 
     .form-watch .input-wrap {
@@ -2977,10 +3009,6 @@ form.review {
     .table-wrap {
         max-width: 670px;
         overflow-y: auto;
-    }
-
-    .header-bottom-icons {
-        display: none;
     }
 
     .zero-procent .item .title {
@@ -3091,17 +3119,11 @@ form.review {
         margin: auto;
         float: none;
     }
-
-
-
-    .left-nav {
-        width: 100%;
-        padding-top: 10px;
+    .logo-center-block .item.main {
+        margin-top: 75px;
     }
-
-    .left-nav li {
-        width: 80%;
-        margin: 0 auto 35px;
+    .logo-center-block .item {
+        margin: 10px;
     }
 
     .actions-block {
@@ -3122,7 +3144,7 @@ form.review {
 
     .form-watch form {
         max-width: 90%;
-        margin: 0 5% 5%;
+
     }
 
     form.review,
@@ -3132,7 +3154,9 @@ form.review {
     }
 }
 @media all and (max-width: 420px) {
-
+    .form-watch form {
+        margin-top: 45px;
+    }
 
     .item-news .dop-info .blue-btn {
         width: 100%;
@@ -3185,4 +3209,9 @@ a.fancybox-item.fancybox-close:after{
 }
 .text-small{
     font-size: 12px;
+}
+.page-404 p {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #909090;
 }

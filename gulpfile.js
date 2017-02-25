@@ -8,7 +8,7 @@ elixir(function (mix) {
         'site/flexslider.css',
         'site/jquery.fancybox.css',
        // 'site/slider.css',
-        'site/animate.css',
+        //'site/animate.css',
         'site/style.css'
     ], 'public/css/all.css');
 });
@@ -17,7 +17,7 @@ elixir(function (mix) {
 elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
-        'wow.js',
+       // 'wow.js',
         'fancybox/jquery.mousewheel.pack.js',
         'fancybox/jquery.fancybox.pack.js',
         'tabs.js',

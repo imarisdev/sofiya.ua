@@ -7,10 +7,9 @@
 
             @include('includes.bread-crumbs')
 
-            <div class="cell">
-
-                404 page
-
+            <div class="cell text-center page-404">
+                <img src="img/404.png" alt="" />
+                <p class="text-bold ">К сожалению, страница не найдена</p>
             </div>
         </div>
 
