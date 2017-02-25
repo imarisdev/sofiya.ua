@@ -6,7 +6,6 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
             <h1 class="text-center cell title">{{ $type['title'] }}</h1>
-            <div class="cell seo-text">{!! $seo['content'] or '' !!}</div>
 
             @if(!empty($plans) && count($plans) > 0)
                 <div class="cell type-plans m_b-20">
@@ -32,7 +31,9 @@
 
             @include('planstype.blue-info-block')
 
-            @include('planstype.seo-text-block')
+            <div class="seo-text">
+                {!! $seo['content'] or '' !!}
+            </div>
         </div>
 
         <div class="cell3 p_l-5 cell-md">

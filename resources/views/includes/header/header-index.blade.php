@@ -81,7 +81,9 @@
 
     <div class="cell text-center logo-center-block">
         <div class="item main">
-            <img src="/img/martin.png" alt="" />
+            <a href="/">
+                <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="" />
+            </a>
         </div>
     </div>
 

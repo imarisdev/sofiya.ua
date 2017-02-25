@@ -195,7 +195,7 @@ Route::group(['middleware' => 'web'], function () {
     // Страница комплекса
     Route::get('/complex/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
     //Route::get('/complex/{complex}/foto', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    //Route::get('/complex/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
     //Route::get('/complex/{complex}/shkola-i-sadik', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
 
     // Страница типа планировки

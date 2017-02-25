@@ -1,4 +1,4 @@
-<div id="form-call-back" class="cell ">
+<div id="form-call-back" class="cell js-form-closed">
 
     <p class="text-center m_b-10 m_t-20">ЗАКАЖИТЕ ОБРАТНЫЙ ЗВОНОК</p>
     <p class="m_b-20 text-small"> Заполните форму и наш менеджер созвониться с Вами</p>

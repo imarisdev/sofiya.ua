@@ -73,7 +73,8 @@ $(document).ready(function () {
 
             },
             success: function (data) {
-                alert('Сообщение отправленно!')
+                $('.js-feedback-form')[0].reset();
+                $.fancybox.close();
             },
             error: function(data) {
 

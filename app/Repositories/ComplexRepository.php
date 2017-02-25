@@ -79,9 +79,12 @@ class ComplexRepository extends BaseRepository {
 
         $complex->title = $inputs['title'];
         $complex->owner = $inputs['owner'];
+        $complex->status = 1;
 
         if(empty($inputs['slug'])) {
             $complex->slug = $this->createSlug($inputs['title']);;
+        } else {
+            $complex->slug = $inputs['slug'];
         }
 
         if(!empty($inputs['image_big'])) {
@@ -100,7 +103,9 @@ class ComplexRepository extends BaseRepository {
 
             $complex->save();
 
-            $this->seo->process($inputs['seo']);
+            if(isset($inputs['seo'])) {
+                $this->seo->process($inputs['seo']);
+            }
 
             if(!empty($inputs['slider'])) {
                 $this->medialib->saveFiles($inputs['slider'], $complex->id, 'complex');
