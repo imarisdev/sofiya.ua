@@ -59,4 +59,19 @@ class PlansTypeRepository extends BaseRepository {
 
     }
 
+    /**
+     * Возвращает ключ типа по ID
+     * @param $slug
+     * @return mixed
+     */
+    public function getPlansTypeById($id) {
+
+        foreach($this->types as $tkey => $type) {
+            if($id == $tkey) {
+                return array_merge(['key' => $tkey], $type);
+            }
+        }
+
+    }
+
 }

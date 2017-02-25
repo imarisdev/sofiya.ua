@@ -154,6 +154,65 @@ class PlansRepository extends BaseRepository {
         return $this->balcony_types;
     }
 
+
+    /**
+     * Поиск планировок
+     *
+     * @param null $request
+     * @param int $limit
+     * @return mixed
+     */
+    public function searchPlans($request = null, $limit = 20) {
+        $plans = $this->model
+            ->select(
+                'complex.id as complex_id',
+                'plans.*',
+                'houses.id as houses_id',
+                'houses.slug as houses_slug',
+                'houses.number as houses_number',
+                'houses.manager_id',
+                'houses.completion_at',
+                'streets.title as street_title'
+            )
+            ->leftJoin('houses', 'houses.id', '=', 'plans.house_id')
+            ->leftJoin('complex', 'complex.id', '=', 'houses.complex_id')
+            ->leftJoin('streets', 'streets.id', '=', 'houses.street_id');
+
+        if(!empty($request['complex_id'])) {
+            $plans->where('complex.id', '=', $request['complex_id']);
+        }
+
+        if(!empty($request['streets'])) {
+            $plans->where('houses.street_id', '=', $request['streets']);
+        }
+
+        if(!empty($request['plans_type'])) {
+            $plans->where('plans.plans_type', '=', $request['plans_type']);
+        }
+
+        if(!empty($request['is_rent'])) {
+            $plans->where('houses.is_rent', '=', 1);
+        }
+
+        if(!empty($request['is_decoration'])) {
+            $plans->where('plans.is_decoration', '=', 1);
+        }
+
+        if(!empty($request['area_from'])) {
+            $plans->where('plans.area', '>=', $request['area_from']);
+        }
+
+        if(!empty($request['area_to'])) {
+            $plans->where('plans.area', '<=', $request['area_to']);
+        }
+
+        $plans->where('plans.status', '>', 0);
+
+        $plans->orderBy('plans.updated_at', 'desc');
+
+        return $plans->paginate($limit);
+    }
+
     /**
      * Сохранение
      * @param $house

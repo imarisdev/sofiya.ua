@@ -21,6 +21,15 @@
 </div>
 
 
+<div class="left-nav fl_l">
+    <ul>
+        <li><a href="/genplan">ГЕНПЛАН</a></li>
+        <!--li><a href="">ОНЛАЙН КАМЕРА</a></li-->
+        <li><a href="/foto">ФОТОГАЛЕРЕЯ</a></li>
+        <!--li><a href="">ВИДЕООТЗЫВЫ ПОКУПАТЕЛЕЙ</a></li-->
+    </ul>
+</div>
+
 <div class="border-list yellow-header no-img cell m_b-30">
     <p class="list-header cell">ПОСЛЕДНИЕ АКЦИИ</p>
     @foreach(Helpers::getArticlesByType(2) as $article)

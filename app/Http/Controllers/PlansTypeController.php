@@ -21,6 +21,7 @@ class PlansTypeController extends Controller {
         $this->house = $house;
         $this->complex = $complex;
         $this->seo = $seo;
+
     }
 
     /**
@@ -89,6 +90,7 @@ class PlansTypeController extends Controller {
 
     /**
      * Аренда
+     * @param $complex
      * @return mixed
      */
     public function rent($complex) {
@@ -101,10 +103,7 @@ class PlansTypeController extends Controller {
 
         $houses = $this->house->getHouses(['is_rent' => 1, 'complex_id' => $complex->id]);
 
-        $house_ids = [];
-        foreach($houses as $house) {
-            $house_ids[] = $house->id;
-        }
+        $house_ids = array_column($houses->toArray()['data'], 'id');
 
         $plans = $this->plans->getPlansForRent(['house_id' => $house_ids, 'plans_type' => 5], 16);
 
@@ -125,9 +124,36 @@ class PlansTypeController extends Controller {
         return view('plans.typeplans', compact('type', 'plans', 'breadcrumbs'));
     }
 
+    /**
+     * Квартиры с ремонтом
+     * @param $complex
+     * @return mixed
+     */
+    public function decoration($complex) {
 
-    public function decoration() {
-        
+        $complex = $this->complex->getBySlug($complex);
+
+        $this->complex->shareComplex($complex);
+
+        $type = $this->types->getPlansTypeBySlug('kvartiry-s-remontom');
+
+        $houses = $this->house->getHouses(['complex_id' => $complex->id]);
+
+        $house_ids = array_column($houses->toArray()['data'], 'id');
+
+        $plans = $this->plans->getPlans(['house_id' => $house_ids, 'is_decoration' => 1], 16);
+
+        $breadcrumbs = [
+            [
+                'title' => "{$complex->title}",
+                'link' => "/{$complex->link()}"
+            ],
+            [
+                'title' => "{$type['title']}",
+            ]
+        ];
+
+        return view('plans.typeplans', compact('houses', 'type', 'complex', 'plans', 'breadcrumbs'));
     }
 
 }

@@ -512,6 +512,41 @@ a {
     background-color: rgba(83, 209, 238, 0.68);
 }
 
+@media all and (min-width: 990px) {
+    .nav-bottom.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        background-color: rgba(83, 209, 238, 0.9);
+        height: 63px;
+    }
+    .nav-bottom.fixed .call-block {
+        height: auto;
+        padding: 6px 0;
+    }
+    .nav-bottom.fixed .logo-new img {
+        top: 0;
+        max-height: 63px;
+        padding: 3px 20px;
+    }
+    .nav-bottom.fixed ul.menu .child-menu {
+        top: 63px;
+    }
+    .nav-bottom.fixed .logo-new-name{
+        height: 63px;
+        line-height: 63px;
+    }
+    .nav-bottom.fixed ul.menu > li {
+        height: 55px;
+        padding: 15px 20px 15px 10px;
+    }
+    .header-top.fixed {
+        height: 150px;
+    }
+}
+
 .nav-bottom ul.menu > li {
     z-index: 33;
     float: left;
@@ -816,18 +851,17 @@ a {
 }
 
 .left-nav {
+    width: 100%;
     padding-top: 5%;
 }
 
 .left-nav li {
     position: relative;
-    display: table;
-    width: 200px;
-    margin: 0 0 30% 20%;
-    vertical-align: middle;
-    background-color: rgba(254,254,254,0.9);
-    border-radius: 30px;
-    text-align: right;
+    width: 100%;
+    margin: 0 0 25px 0;
+    height: 56px;
+    border: 1px solid #fed20c;
+    border-radius: 28px;
     color: black;
     font-size: 14px;
 }
@@ -836,25 +870,25 @@ a {
     cursor: pointer;
 }
 .left-nav li a {
-    display: table-cell;
-    height: 60px;
-    padding-left: 60px;
-    padding-top: 5px;
+    height: 100%;
     color: black;
-    vertical-align: middle;
-    text-align: center;
-    transition: all 1s ease-out 0.5s;
+    text-align: left;
     font-weight: 700;
+    display: block;
+    padding: 18px 0 0 78px;
 }
 
+.left-nav li a:hover {
+    text-decoration:underline;
+}
 .left-nav li:after {
     content: '';
-    top: -22px;
-    left: -27px;
+    top: -14px;
+    left: 0;
     display: block;
     position: absolute;
-    width: 94px;
-    height: 94px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     background-color: #fed20c;
     box-shadow: 1.8px 3.6px 2px rgba(27, 27, 27, 0.35);
@@ -862,13 +896,7 @@ a {
     transition: all 1s ease-out 0.1s;
 }
 
-.left-nav li:hover a {
-    padding-left: 0;
-}
 
-.left-nav li:hover:after {
-    left: 165px;
-}
 
 .left-nav li:nth-child(2):after {
     background: url('/img/technology.png') no-repeat 50% 50% #fed20c;
@@ -1098,6 +1126,7 @@ a {
     left: 0;
     background-color: rgba(254, 254, 254, 0.8);
     padding: 10px 0;
+    z-index: 10;
 }
 .fixed-links a {
     display: block;
@@ -1381,6 +1410,15 @@ h1.title {
     color: #fffdfd;
 }
 
+.footer .address {
+    float: left;
+}
+.footer .yellow-btn {
+    padding: 9px 35px 6px;
+    font-size: 16px;
+    border: none;
+    margin-top: 20px;
+}
 .footer .site-pages li {
     display: inline-block;
     position: relative;
@@ -1582,7 +1620,7 @@ h1.title {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
-
+    margin-bottom: 40px !important;
 }
 
 .footer .phone-click .down {
@@ -1596,6 +1634,16 @@ h1.title {
     background: url('/img/sprites.png') no-repeat 0 -169px;
 }
 
+.footer .wrapper {
+    max-width: 1280px;
+}
+.footer textarea.field {
+    height: 130px;
+}
+.footer .field {
+    border-radius: 30px;
+    height: 30px;
+}
 .footer .phone-block {
     background: #01415f;
 }
@@ -1872,6 +1920,11 @@ h1.title {
     font-size: 18px;
 }
 
+a.blue-title:hover,
+.list-street li a:hover,
+[class*='list-icons'] li a:hover{
+    text-decoration: underline;
+}
 .item-news .dop-info {
     color: #3e3e3e;
     font-family: Roboto;
@@ -2674,7 +2727,7 @@ form.review {
     }
 
     .form-watch form {
-        margin: 0 5px;
+        margin: 10% auto;
     }
 
     .type-plans .item > .cell6 {
@@ -2706,6 +2759,24 @@ form.review {
 }
 
 @media all and (max-width: 990px) {
+    .logo-center-block .item.main {
+        width: 150px;
+        height: 150px;
+    }
+    .header {
+        min-height: auto;
+    }
+    .logo-center-block .item {
+        width: 120px;
+        height: 120px;
+    }
+    .logo-center-block .item img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .global .logo-center-block .item {
+        margin-top: 10px;
+    }
     .call-fixed-btn {
         display: none;
     }
@@ -2737,7 +2808,7 @@ form.review {
 
     .menu-adapt {
         position: absolute;
-        top: 13px;
+        top: 9px;
         right: 13px;
         display: block;
         width: 35px;
@@ -2965,8 +3036,6 @@ form.review {
 }
 
 @media all and (max-width: 640px) {
-
-
     .top-logo-part{
         top: -50px;
     }
@@ -3006,6 +3075,9 @@ form.review {
         text-align: center;
         margin-bottom: 20px;
     }
+    .logo-new img {
+        top: -5px;
+    }
 }
 
 @media all and (max-width: 540px) {
@@ -3020,10 +3092,7 @@ form.review {
         float: none;
     }
 
-    .call-block {
-        width: 100%;
-        /*margin-top: 35px;*/
-    }
+
 
     .left-nav {
         width: 100%;
@@ -3063,6 +3132,8 @@ form.review {
     }
 }
 @media all and (max-width: 420px) {
+
+
     .item-news .dop-info .blue-btn {
         width: 100%;
         text-align: center;

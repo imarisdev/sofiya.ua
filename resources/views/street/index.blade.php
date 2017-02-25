@@ -16,12 +16,12 @@
                 @endforeach
             </ul>
 
-            <div class="search cell m_b-30">
+            <!--div class="search cell m_b-30">
                 <form>
                     <input type="" name="" placeholder="Введите название улицы">
                     <button class="blue-btn">Найти улицу</button>
                 </form>
-            </div>
+            </div-->
             <div class="cell type-plans m_b-20">
                 @foreach($houses as $house)
                     <div class="cell6 cell-xs">

@@ -198,6 +198,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/complex/{complex}/planirovki/kvartiry-s-remontom', array('as' => 'planstype.decoration', 'uses' => 'PlansTypeController@decoration'));
     Route::get('/complex/{complex}/planirovki/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
+    // Поиск
+    Route::get('/search', array('as' => 'search.index', 'uses' => 'SearchController@index'));
+
     // Страницы
     Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-\_\\\/]+']);
 

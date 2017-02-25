@@ -73,7 +73,7 @@
 
     @include('includes.header.header-form')
 
-    <div class="global">
+    <div class="global cell-sm-none">
         @include('includes.header.header-logo-block')
     </div>
 
