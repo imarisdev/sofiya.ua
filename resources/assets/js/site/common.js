@@ -51,6 +51,38 @@ $(document).ready(function () {
         $('.js-phone-block').toggle('slow');
     });
 
+
+    $('.js-feedback-form').on('submit', function() {
+
+        var formData = new FormData();
+
+        var formFields = $(this).serializeArray();
+        $.each(formFields, function (key, input) {
+            formData.append(input.name, input.value);
+        });
+
+        $.ajax({
+            url: '/feedback/send',
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            type: 'POST',
+            beforeSend: function(e) {
+
+            },
+            success: function (data) {
+                alert('Сообщение отправленно!')
+            },
+            error: function(data) {
+
+            }
+        });
+
+        return false;
+    });
+
     new WOW().init();
 });
 

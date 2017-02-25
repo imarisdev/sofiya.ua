@@ -152,7 +152,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/_debugbar/assets/javascript', ['as' => 'debugbar-js', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@js']);
 
     // Comments
-    Route::post('/comments/add/', ['as' => 'comments.add', 'uses' => 'CommentsController@addComment']);
+    Route::post('/comments/add', ['as' => 'comments.add', 'uses' => 'CommentsController@addComment']);
+
+    // Feedback
+    Route::post('/feedback/send', ['as' => 'feedback.send', 'uses' => 'FeedbackController@send']);
 
     // Генплан
     Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
