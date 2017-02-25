@@ -89,15 +89,15 @@
 
     @include('includes.header.header-logo-block')
 
-    <div class="actions-block fl_r">
-        @include('includes.header.prices-header-block')
+    {{--<div class="actions-block fl_r">--}}
+        {{--@include('includes.header.prices-header-block')--}}
 
-        <div class="blue-block-action wow bounceInRight cell-sm-none" data-wow-delay="2s" data-wow-duration="1.5s">
-            <div class="item">
-                <a href="">ЗАПИСАТЬСЯ НА ПРОСМОТР</a>
-            </div>
-        </div>
-    </div>
+        {{--<div class="blue-block-action wow bounceInRight cell-sm-none" data-wow-delay="2s" data-wow-duration="1.5s">--}}
+            {{--<div class="item">--}}
+                {{--<a href="">ЗАПИСАТЬСЯ НА ПРОСМОТР</a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
 
     <div class="header-bottom-icons cell">

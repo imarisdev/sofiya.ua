@@ -1,18 +1,18 @@
 <footer class="cell footer">
     <div class="wrapper">
         <div class="cell m_b-20">
-            <div class="cell2 logo-footer fl_l">
+            <div class="cell2 cell-lg-none logo-footer fl_l">
                 <a href="#">
                     <img src="/img/footer-logo.png" alt="">
                 </a>
             </div>
 
-            <div class="cell2 cell-xs-6">
+            <div class="cell2 cell-xs-6 cell-lg-none ">
                 @include('includes.social')
             </div>
 
-            <div class="cell5 info-wrap cell-sm">
-                <div class="cell6 address m_t-15">
+            <div class="cell5 info-wrap cell-lg-6 cell-xs cell-xss-none">
+                <div class="cell6 address cell-md m_t-15 cell-xs-6 ">
                     <div class="m_l-20 ">
                         <p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="" />НАШ АДРЕС:<br></p>
                         08131, Украина,<br>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="cell6 phone m_t-15">
+                <div class="cell6 phone cell-md m_t-15 cell-xs-6">
                     <div class="phone-click cell">
                         <span><i class="icon-phone"></i></span>
                         <ul class="cell m_b-20">
@@ -39,8 +39,13 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="cell3 m_t-15">
                 <form class="js-feedback-form">
+=======
+            <div class="cell3 cell-lg-6 cell-xs m_t-15">
+                <form>
+>>>>>>> 1d5f805b3c6145e47b8133cd3fb4a683eda57e0e
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
                     <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
                     <input class="field m_b-10" type="text" name="email" placeholder="Ваш телефон">
@@ -65,7 +70,7 @@
             <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
 
             <ul class="footer-nav fl_r cell-md">
-                @each('includes.header.menu-items', Helpers::renderMenu('head'), 'item')
+                @each('includes.header.menu-items-footer', Helpers::renderMenu('head'), 'item')
             </ul>
         </div>
 

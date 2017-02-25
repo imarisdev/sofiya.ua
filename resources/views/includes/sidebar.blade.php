@@ -21,7 +21,7 @@
 </div>
 
 
-<div class="left-nav fl_l">
+<div class="left-nav fl_l cell-lg-none">
     <ul>
         <li><a href="/genplan">ГЕНПЛАН</a></li>
         <!--li><a href="">ОНЛАЙН КАМЕРА</a></li-->
