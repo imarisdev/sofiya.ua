@@ -27,7 +27,7 @@
 
                 <div class="item cell4 cell-sm dark-social">
                     <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
-                    @include('includes.social')
+                    @include('includes.socialdark')
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="item cell4 cell-sm dark-social">
                     <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
-                    @include('includes.social')
+                    @include('includes.socialdark')
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
 
                 <div class="item cell4 cell-sm dark-social">
                     <h4 class="blue-title">МЫ В СОЦИАЛЬНЫХ СЕТЯХ:</h4>
-                    @include('includes.social')
+                    @include('includes.socialdark')
                 </div>
             </div>
 

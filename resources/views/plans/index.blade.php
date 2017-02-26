@@ -13,7 +13,7 @@
             <div class="cell6 cell-md text-center">
                 @include('plans.slider')
                 <div class="cell dark-social text-center m_b-30 cell-md">
-                    @include('includes.social')
+                    @include('includes.socialdark')
                 </div>
 
             </div>
