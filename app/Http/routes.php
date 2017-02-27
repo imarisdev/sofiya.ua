@@ -142,7 +142,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         // Medialib
+        Route::post('/medialib/info', array('as' => 'admin.medialib.upload', 'uses' => 'MedialibController@info'));
+        Route::post('/medialib/upload', array('as' => 'admin.medialib.upload', 'uses' => 'MedialibController@upload'));
         Route::post('/medialib/delete', array('as' => 'admin.medialib.delete', 'uses' => 'MedialibController@delete'));
+        Route::post('/medialib/load', array('as' => 'admin.medialib.load', 'uses' => 'MedialibController@load'));
 
     });
 

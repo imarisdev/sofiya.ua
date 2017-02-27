@@ -43,6 +43,7 @@ elixir(function (mix) {
         'admin/AdminLTE.min.css',
         'admin/skins/skin-blue.css',
         'admin/sortable.css',
+        'admin/uploadfile.css',
         'admin/common.css'
     ], 'public/css/admin-common.css');
 });
@@ -50,11 +51,14 @@ elixir(function (mix) {
 elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
+        'ejs_production.js',
         'admin/bootstrap.min.js',
         'admin/bootstrap-datepicker.js',
         'admin/select2.full.min.js',
+        'admin/jquery.uploadfile.min.js',
         'admin/app.min.js',
         'admin/jquery-sortable-lists.min.js',
+        'admin/medialib.js',
         'admin/common.js'
     ], 'public/js/admin-common.js');
 });

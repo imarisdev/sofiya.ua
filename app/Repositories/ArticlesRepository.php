@@ -63,7 +63,7 @@ class ArticlesRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $article->image = $this->image->uploadImage($inputs['image'][0]);
+            $article->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

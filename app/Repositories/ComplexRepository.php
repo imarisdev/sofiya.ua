@@ -88,15 +88,15 @@ class ComplexRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image_big'])) {
-            $complex->image_big = $this->image->uploadImage($inputs['image_big'][0]);
+            $complex->image_big = @serialize($this->image->uploadImage($inputs['image_big'][0]));
         }
 
         if(!empty($inputs['image_small'])) {
-            $complex->image_small = $this->image->uploadImage($inputs['image_small'][0]);
+            $complex->image_small = @serialize($this->image->uploadImage($inputs['image_small'][0]));
         }
 
         if(!empty($inputs['background'])) {
-            $complex->background = $this->image->uploadImage($inputs['background'][0]);
+            $complex->background = @serialize($this->image->uploadImage($inputs['background'][0]));
         }
 
         try {

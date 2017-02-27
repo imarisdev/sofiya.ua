@@ -30,6 +30,9 @@
                                            value="{{ $page->slug or '' }}">
                                 </div>
                                 <div class="form-group">
+                                    <span class="btn btn-primary js-call-medialib" type="button" data-toggle="modal" data-target="#medialib">Medialib</span>
+                                </div>
+                                <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $page->content or '' }}</textarea>
                                 </div>
@@ -63,5 +66,6 @@
                 </div>
             </div>
         </form>
+        @include('admin.medialib.upload')
     </section>
 @stop

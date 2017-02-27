@@ -43,5 +43,5 @@
             @include('includes.sidebar')
         </div>
     </div>
-    
+
 @endsection

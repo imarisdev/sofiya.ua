@@ -48,7 +48,7 @@ class PagesRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $page->image = $this->image->uploadImage($inputs['image'][0]);
+            $page->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

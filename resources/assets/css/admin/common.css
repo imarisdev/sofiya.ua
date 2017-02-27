@@ -22,3 +22,62 @@
 .table-font {
     font-size: 10px;
 }
+
+.modal-xlg {
+    width: 95%
+}
+.medialib-upload {
+
+}
+.medialib-upload > .max-weight {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+}
+.medialib-upload > #js-medialib-upload {
+    margin: 2% auto;
+    display: block;
+    width: 300px;
+}
+.medialib-upload .ajax-upload-dragdrop {
+    width: 100% !important;
+}
+.medialib-upload .ajax-upload-dragdrop > span {
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+}
+.medialib-upload .ajax-file-upload {
+    width: 100%;
+    padding: 10px 20px;
+    height: auto;
+    text-align: center;
+    margin: 0;
+}
+.medialib-images-block {
+
+}
+.medialib-images-block img.medialib-item {
+    cursor: pointer;
+    border: 2px solid #ccc;
+    width: 100%;
+}
+.medialib-images-block img.medialib-item:hover {
+    border-color: #3c8dbc;
+}
+.medialib-images-block > div {
+    padding-bottom: 15px;
+}
+.ajax-file-upload-container {
+    width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+.ajax-file-upload-statusbar {
+    width: 100% !important;
+}
+.ajax-file-upload-filename {
+    width: auto;
+}

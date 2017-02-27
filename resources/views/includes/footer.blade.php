@@ -38,14 +38,9 @@
                     </div>
                 </div>
             </div>
-
-<<<<<<< HEAD
-            <div class="cell3 m_t-15">
-                <form class="js-feedback-form">
-=======
+            
             <div class="cell3 cell-lg-6 cell-xs m_t-15">
-                <form>
->>>>>>> 1d5f805b3c6145e47b8133cd3fb4a683eda57e0e
+                <form class="js-feedback-form">
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
                     <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
                     <input class="field m_b-10" type="text" name="email" placeholder="Ваш телефон">
