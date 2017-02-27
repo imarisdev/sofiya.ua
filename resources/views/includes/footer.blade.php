@@ -65,7 +65,15 @@
             <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
 
             <ul class="footer-nav fl_r cell-md">
-                @each('includes.header.menu-items-footer', Helpers::renderMenu('head'), 'item')
+                {{--*/ $m_key = 0; /*--}}
+                @foreach(Helpers::renderMenu('head') as $item)
+                    @if($m_key <= 6)
+                        <li>
+                            {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                        </li>
+                        {{--*/ $m_key++; /*--}}
+                    @endif
+                @endforeach
             </ul>
         </div>
 

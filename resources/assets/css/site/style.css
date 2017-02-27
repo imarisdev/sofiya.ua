@@ -1477,7 +1477,7 @@ h1.title {
     margin: 0 2px;
 }
 
-.social li a,
+
 .icon-mail,
 .icon-phone {
     display: inline-block;
@@ -1502,24 +1502,24 @@ h1.title {
     background-position-y: -167px;
 }
 
-.social li a {
-    background-position-y: 7px;
-}
+/*.social li a {*/
+    /*background-position-y: 7px;*/
+/*}*/
 
-.social .fb {
-    background-position-y: -27px;
-}
+/*.social .fb {*/
+    /*background-position-y: -27px;*/
+/*}*/
 
-.social .gp {
-    background-position-y: -61px;
-}
+/*.social .gp {*/
+    /*background-position-y: -61px;*/
+/*}*/
 
-.social .yt {
-    background-position-y: -99px;
-}
+/*.social .yt {*/
+    /*background-position-y: -99px;*/
+/*}*/
 
-.footer-nav {
-}
+/*.footer-nav {*/
+/*}*/
 
 .footer-nav li {
     display: inline-block;
@@ -1536,7 +1536,7 @@ h1.title {
     content: '';
     display: block;
     position: absolute;
-    top: -3px;
+    top: 2px;
     width: 1px;
     height: 20px;
     background-color: #53d1ee;
@@ -1645,6 +1645,7 @@ h1.title {
 }
 .footer .field {
     border-radius: 30px;
+    padding: 5px 10px;
     height: 30px;
 }
 .footer .phone-block {
