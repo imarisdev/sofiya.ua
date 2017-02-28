@@ -151,6 +151,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/_debugbar/assets/stylesheets', ['as' => 'debugbar-css', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@css']);
     Route::get('/_debugbar/assets/javascript', ['as' => 'debugbar-js', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@js']);
 
+    // Comments
+    Route::post('/comments/add/', ['as' => 'comments.add', 'uses' => 'CommentsController@addComment']);
+
     // Генплан
     Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
 
@@ -200,6 +203,9 @@ Route::group(['middleware' => 'web'], function () {
 
     // Поиск
     Route::get('/search', array('as' => 'search.index', 'uses' => 'SearchController@index'));
+
+    // Поиск
+    Route::get('/sitemap', array('as' => 'sitemap.index', 'uses' => 'SitemapController@html'));
 
     // Страницы
     Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-\_\\\/]+']);

@@ -106,4 +106,20 @@ class House extends BaseModel {
     public function getPlansTypes() {
         return $this->plans_types;
     }
+
+    /**
+     * Комментарии
+     * @return mixed
+     */
+    public function comments() {
+        return $this->morphMany('App\Models\Comments', 'commentable');
+    }
+
+    /**
+     * Проверенные комментарии
+     * @return mixed
+     */
+    public function getComments() {
+        return $this->comments()->where('status', '=', 1)->get();
+    }
 }
