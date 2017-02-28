@@ -30,7 +30,7 @@
                                            value="{{ $article->slug or '' }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="type">Клас дома</label>
+                                    <label for="type">Тип материала</label>
                                     @if(!empty($article->type))
                                         {!! Form::select('type', $types, $article->type, ['class' => 'form-control']) !!}
                                     @else
@@ -40,6 +40,9 @@
                                 <div class="form-group">
                                     <label for="description">Описание</label>
                                     <textarea class="form-control" id="description" name="description" rows="3" cols="80">{{ $article->description or '' }}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <span class="btn btn-primary js-call-medialib" type="button" data-toggle="modal" data-target="#medialib">Medialib</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="slug">Контент</label>
@@ -75,5 +78,6 @@
                 </div>
             </div>
         </form>
+        @include('admin.medialib.upload')
     </section>
 @stop

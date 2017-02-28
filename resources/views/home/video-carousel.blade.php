@@ -4,7 +4,7 @@
 </div>
 <section class="carousel-section cell">
     <div class="video-wrapper">
-        <div id="slider" class="flexslider">
+        <div id="slider" class="flexslider video-slider">
             <ul class="slides">
                 @foreach($video as $v)
                     <li>
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="wrapper">
-        <div id="carousel" class="flexslider">
+        <div id="carousel" class="flexslider video-carousel">
             <ul class="slides">
                 @foreach($video as $v)
                     <li>

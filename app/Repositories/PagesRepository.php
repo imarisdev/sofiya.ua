@@ -24,7 +24,8 @@ class PagesRepository extends BaseRepository {
      */
     public function getPages($request = null, $limit = 20) {
 
-        $pages = $this->model;
+        $pages = $this->model
+        ->orderBy('created_at', 'desc');
 
         return $pages->paginate($limit);
 
@@ -48,7 +49,7 @@ class PagesRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $page->image = $this->image->uploadImage($inputs['image'][0]);
+            $page->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

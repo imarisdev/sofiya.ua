@@ -38,13 +38,13 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="cell3 cell-lg-6 cell-xs m_t-15">
-                <form>
+                <form class="js-feedback-form">
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
-                    <input class="field m_b-10" type="text" placeholder="Ваше имя">
-                    <input class="field m_b-10" type="text" placeholder="Ваш телефон">
-                    <textarea class="field" type="text" placeholder="Ваш комментарий"></textarea>
+                    <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
+                    <input class="field m_b-10" type="text" name="email" placeholder="Ваш телефон">
+                    <textarea class="field" type="text" name="content" placeholder="Ваш комментарий"></textarea>
                     <input type="submit" class="pull-right yellow-btn">
                 </form>
             </div>

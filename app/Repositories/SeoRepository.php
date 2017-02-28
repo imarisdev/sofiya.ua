@@ -48,6 +48,9 @@ class SeoRepository extends BaseRepository {
         $page = $this->request->get('page', 0);
         if(!empty($seo) && !empty($page)) {
             $seo->title = "{$seo->title} - Страница {$page}";
+
+            unset($seo->content);
+
         }
 
         View::share(['seo' => $seo]);

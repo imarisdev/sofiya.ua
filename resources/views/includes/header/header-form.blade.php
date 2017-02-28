@@ -1,3 +1,4 @@
+@if($search_from)
 <div class="form-header">
     <div class="form-label js-form-label">ПОИСК КВАРТИР</div>
 
@@ -49,3 +50,4 @@
         </div>
     </form>
 </div>
+@endif

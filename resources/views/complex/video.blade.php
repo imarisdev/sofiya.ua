@@ -15,10 +15,14 @@
                 <div class="cell m_b-10">
                     @foreach($complex_list as $item)
                         @if($complex->id != $item->id)
-                            <div class="cell4 cell-xs-6 cell-xss">
+                            <div class="cell3 cell-xs-6 cell-xss">
                                 <div class="gallery-item">
-                                    <img alt="{{ $item->title }}" src="{{ Helpers::getImage($item->iamge_big, '285x205', null, 'fit') }}">
-                                    <a href="/{{ $item->link() }}/video">{{ $item->title }}</a>
+                                    <div class="text-center">
+                                        <img alt="{{ $item->title }}" src="{{ Helpers::getImage($item->image_small, '60x60', null, 'resize') }}">
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="/{{ $item->link() }}/video">{{ $item->title }}</a>
+                                    </div>
                                 </div>
                             </div>
                         @endif
@@ -37,9 +41,5 @@
         <div class="cell3 p_l-5 cell-md">
             @include('includes.sidebar')
         </div>
-    </div>
-
-    <div class="map cell">
-
     </div>
 @endsection

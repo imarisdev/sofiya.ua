@@ -20,7 +20,7 @@ class MedialibRepository extends BaseRepository {
      * @param $oblect_type
      * @return mixed
      */
-    public function getFiles($request = null) {
+    public function getFiles($request = null, $limit = 20) {
 
         $files = $this->model
             ->select('id', 'file', 'title', 'created_at', 'object_type', 'object_id');
@@ -33,40 +33,61 @@ class MedialibRepository extends BaseRepository {
             $files->where('object_id', '=', $request['object_id']);
         }
 
-        $files->orderBy('created_at');
+        $files->orderBy('created_at', 'asc');
+        $files->take($limit);
 
-        return $files->get();
+        $images = $files->get();
+
+        foreach ($images as $key => $file) {
+            $item = @unserialize($file->file);
+            $images{$key}->info = $this->image->getImageInfo(public_path() . $item['file'] . $item['ext']);
+            /*$item = @unserialize($file->file);
+            $item['id'] = $file->id;
+            $item['info'] = $this->image->getImageInfo(public_path() . $item['file'] . $item['ext']);
+
+            $images[] = $item;*/
+        }
+
+        return $images;
     }
 
     /**
      * Сохранение файлов в медиабиблиотеку
-     * @param $files
+     * @param $file
      * @param $object_id
      * @param $oblect_type
      */
-    //TODO: можно использивать паттерн Прототип
-    public function saveFiles($files, $object_id, $oblect_type) {
+    public function saveFiles($file, $object_id = null, $oblect_type = null) {
+        if(!empty($file)) {
+            try {
+                $image = $this->image->uploadImage($file);
 
-        foreach($files as $file) {
-            if(!empty($file)) {
-                try {
-                    $image = $this->image->uploadImage($file);
+                $medialib = new $this->model;
 
-                    $medialib = new $this->model;
-
+                if ($object_id) {
                     $medialib->object_id = $object_id;
-                    $medialib->object_type = $oblect_type;
-                    $medialib->file = $image;
-
-                    $medialib->save();
-
-                } catch(\Exception $e) {
-                    return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
-                    die();
                 }
+                if ($oblect_type) {
+                    $medialib->object_type = $oblect_type;
+                }
+                $medialib->file = @serialize($image);
+
+                $medialib->save();
+
+                $imge_info = $this->image->getImageInfo($file);
+
+                $file = $image;
+                $file['id'] = $medialib->id;
+                $file['title'] = $medialib->title;
+                $file['info'] = $imge_info;
+
+                return Response::json(['file' => $file], 201);
+
+            } catch(\Exception $e) {
+                return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+                die();
             }
         }
-
     }
 
     /**
@@ -106,6 +127,17 @@ class MedialibRepository extends BaseRepository {
         }
 
         return $photos;
+    }
+
+    public function getFileInfo($request = null) {
+        $medialib = $this->model->find($request['id']);
+
+        $medialib->file = @unserialize($medialib->file);
+
+        $file = public_path() . $medialib->file['file'] . $medialib->file['ext'];
+        $medialib->info = $this->image->getImageInfo($file);
+
+        return Response::json(['medialib' => $medialib], 200);
     }
 
 }

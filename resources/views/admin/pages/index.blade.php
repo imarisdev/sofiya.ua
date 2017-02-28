@@ -37,6 +37,7 @@
                             <td>ID</td>
                             <td>Название</td>
                             <td>&nbsp;</td>
+                            <td>&nbsp;</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -44,6 +45,9 @@
                             <tr class="admin-tools-wrap page-{{ $page->id }}">
                                 <td>{{ $page->id }}</td>
                                 <td width="30%"><a href="/admin/pages/edit/{{ $page->id }}">{{ $page->title }}</a></td>
+                                <td>
+                                    <a target="_blank" class="btn btn-primary btn-xs pull-right" href="/{{ $page->slug }}">Перейти</a>
+                                </td>
                                 <td>
                                     <div class="admin-tools">
                                         <a target="_blank" href="#" data-id="{{ $page->id }}" data-action="/admin/pages" data-type="page" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>

@@ -27,7 +27,8 @@ class ArticlesRepository extends BaseRepository {
      */
     public function getArticles($request = null, $limit = 20) {
 
-        $articles = $this->model;
+        $articles = $this->model
+            ->orderBy('created_at', 'desc');
 
         if(!empty($request['type'])) {
             $articles = $articles->where('type', '=', $request['type']);
@@ -63,7 +64,7 @@ class ArticlesRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $article->image = $this->image->uploadImage($inputs['image'][0]);
+            $article->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

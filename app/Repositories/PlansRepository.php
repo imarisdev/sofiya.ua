@@ -244,7 +244,7 @@ class PlansRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $plan->image = $this->image->uploadImage($inputs['image'][0]);
+            $plan->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

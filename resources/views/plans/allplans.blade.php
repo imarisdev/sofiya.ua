@@ -29,9 +29,5 @@
             @include('includes.sidebar')
         </div>
     </div>
-
-    <div class="map cell">
-
-    </div>
     
 @endsection

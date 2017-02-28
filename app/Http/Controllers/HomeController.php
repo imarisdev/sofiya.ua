@@ -28,7 +28,7 @@ class HomeController extends Controller {
      */
     public function index() {
 
-        $news = $this->articles->getArticles(['type' => 1]);
+        $news = $this->articles->getArticles(['type' => 1], 4);
 
         $video = $this->video->getVideo();
 

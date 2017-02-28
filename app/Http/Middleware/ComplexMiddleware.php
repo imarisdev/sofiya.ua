@@ -39,6 +39,7 @@ class ComplexMiddleware {
 
         View::share(['current_complex' => $this->current_complex]);
         View::share(['default_complex' => $this->default_complex]);
+        View::share(['complex_list' => $complexList]);
 
         return $next($request);
 
