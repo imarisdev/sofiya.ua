@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use App\Repositories\ComplexRepository;
+use View;
 use Exception;
+use Psr\Log\LoggerInterface;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -11,6 +14,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
+    protected $log;
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -22,6 +27,22 @@ class Handler extends ExceptionHandler
         ModelNotFoundException::class,
         ValidationException::class,
     ];
+
+    protected $complex;
+
+    /**
+     * Create a new exception handler instance.
+     *
+     * @param  \Psr\Log\LoggerInterface  $log
+     * @param $complex
+     * @return void
+     */
+    public function __construct(LoggerInterface $log, ComplexRepository $complex)
+    {
+        parent::__construct($log);
+        $this->log = $log;
+        $this->complex = $complex;
+    }
 
     /**
      * Report or log an exception.
@@ -57,6 +78,11 @@ class Handler extends ExceptionHandler
      * @return \Symfony\Component\HttpFoundation\Response
      */
     protected function renderHttpException(HttpException $e) {
+
+        view()->share(['current_complex' => null]);
+        view()->share(['default_complex' => $this->complex->getById(1)]);
+        view()->share(['complex_list' => []]);
+        view()->share(['search_from' => []]);
         view()->share(['complex' => null]);
 
         if (view()->exists('errors.' . $e->getStatusCode())) {

@@ -161,7 +161,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/feedback/send', ['as' => 'feedback.send', 'uses' => 'FeedbackController@send']);
 
     // Генплан
-    Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
+    //Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
 
     // Контакты
     //Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));
@@ -214,6 +214,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/sitemap', array('as' => 'sitemap.index', 'uses' => 'SitemapController@html'));
 
     // Страницы
-    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-\_\\\/]+']);
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z0-9\-\_\\\/]+']);
 
 });

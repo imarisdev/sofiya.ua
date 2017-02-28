@@ -43,6 +43,7 @@
                             <td>Название</td>
                             <td>Тип</td>
                             <td>&nbsp;</td>
+                            <td>&nbsp;</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -51,6 +52,9 @@
                                 <td>{{ $article->id }}</td>
                                 <td width="30%"><a href="/admin/articles/edit/{{ $article->id }}">{{ $article->title }}</a></td>
                                 <td>{{ $types[$article->type] }}</td>
+                                <td>
+                                    <a target="_blank" class="btn btn-primary btn-xs pull-right" href="{{ $article->link() }}">Перейти</a>
+                                </td>
                                 <td>
                                     <div class="admin-tools">
                                         <a target="_blank" href="#" data-id="{{ $article->id }}" data-action="/admin/articles" data-type="article" class="btn btn-danger btn-xs pull-right js-delete-item">Удалить</a>

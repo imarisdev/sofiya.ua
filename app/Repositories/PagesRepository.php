@@ -24,7 +24,8 @@ class PagesRepository extends BaseRepository {
      */
     public function getPages($request = null, $limit = 20) {
 
-        $pages = $this->model;
+        $pages = $this->model
+        ->orderBy('created_at', 'desc');
 
         return $pages->paginate($limit);
 

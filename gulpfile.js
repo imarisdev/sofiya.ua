@@ -17,7 +17,7 @@ elixir(function (mix) {
 elixir(function (mix) {
     mix.scripts([
         'jquery.min.js',
-       // 'wow.js',
+        'wow.js',
         'fancybox/jquery.mousewheel.pack.js',
         'fancybox/jquery.fancybox.pack.js',
         'tabs.js',
