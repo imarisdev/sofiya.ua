@@ -82,8 +82,6 @@
 
 
             @include('home.seo')
-
-            @include('house.reviews')
         </div>
         <div class="cell3 p_l-5 cell-md">
             @include('includes.sidebar')

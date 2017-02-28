@@ -75,7 +75,7 @@ class BannersRepository extends BaseRepository {
 
         if(!empty($inputs['file'])) {
             if($inputs['type'] == 1) {
-                $banner->file = $this->image->uploadImage($inputs['file'][0]);
+                $banner->file = @serialize($this->image->uploadImage($inputs['file'][0]));
             } else if($inputs['type'] == 2) {
                 $banner->file = $this->file->uploadFile($inputs['file'][0]);
             }

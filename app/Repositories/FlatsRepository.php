@@ -162,7 +162,7 @@ class FlatsRepository extends BaseRepository {
         //$flat->section         = $inputs['section'];
 
         if(!empty($inputs['image'])) {
-            $flat->image = $this->image->uploadImage($inputs['image'][0]);
+            $flat->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {

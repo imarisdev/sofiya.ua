@@ -1,0 +1,13 @@
+<% if (file_description) { %>
+<% if (typeof linkfile != "undefined") { %>
+<div class="attach-image <%= file_float %>"><a href="<%= file_file %><%= file_ext %>"><img src="<%= file_file %><%= file_sizes %><% if (typeof watermark != "undefined") { %>-w<% } %><%= file_ext %>" class="attach-image <%= file_float %>" alt="<%= file_title %>" title="<%= file_title %>" /></a><% if (file_description) { %><span class="attach-description"><%= file_description %></span><% } %></div>
+<% } else { %>
+<div class="attach-image <%= file_float %>"><img src="<%= file_file %><%= file_sizes %><% if (typeof watermark != "undefined") { %>-w<% } %><%= file_ext %>" class="attach-image <%= file_float %>" alt="<%= file_title %>" title="<%= file_title %>" /><% if (file_description) { %><span class="attach-description"><%= file_description %></span><% } %></div>
+<% } %>
+<% } else { %>
+<% if (typeof linkfile != "undefined") { %>
+<p><a class="attach-image <%= file_float %>" href="<%= file_file %><%= file_ext %>"><img src="<%= file_file %><%= file_sizes %><% if (typeof watermark != "undefined") { %>-w<% } %><%= file_ext %>" class="attach-image <%= file_float %>" alt="<%= file_title %>" title="<%= file_title %>" /></a></p>
+<% } else { %>
+<img class="attach-image <%= file_float %>" src="<%= file_file %><%= file_sizes %><% if (typeof watermark != "undefined") { %>-w<% } %><%= file_ext %>" alt="<%= file_title %>" title="<%= file_title %>" />
+<% } %>
+<% } %>

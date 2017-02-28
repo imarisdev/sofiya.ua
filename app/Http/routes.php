@@ -142,7 +142,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
         // Medialib
+        Route::post('/medialib/info', array('as' => 'admin.medialib.upload', 'uses' => 'MedialibController@info'));
+        Route::post('/medialib/upload', array('as' => 'admin.medialib.upload', 'uses' => 'MedialibController@upload'));
         Route::post('/medialib/delete', array('as' => 'admin.medialib.delete', 'uses' => 'MedialibController@delete'));
+        Route::post('/medialib/load', array('as' => 'admin.medialib.load', 'uses' => 'MedialibController@load'));
 
     });
 
@@ -152,10 +155,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/_debugbar/assets/javascript', ['as' => 'debugbar-js', 'uses' => '\Barryvdh\Debugbar\Controllers\AssetController@js']);
 
     // Comments
-    Route::post('/comments/add/', ['as' => 'comments.add', 'uses' => 'CommentsController@addComment']);
+    Route::post('/comments/add', ['as' => 'comments.add', 'uses' => 'CommentsController@addComment']);
+
+    // Feedback
+    Route::post('/feedback/send', ['as' => 'feedback.send', 'uses' => 'FeedbackController@send']);
 
     // Генплан
-    Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
+    //Route::get('/genplan', array('as' => 'home.genplan', 'uses' => 'HomeController@genplan'));
 
     // Контакты
     //Route::get('/kontakty', array('as' => 'contacts.index', 'uses' => 'ContactsController@index'));
@@ -192,7 +198,7 @@ Route::group(['middleware' => 'web'], function () {
     // Страница комплекса
     Route::get('/complex/{complex}', array('as' => 'complex.index', 'uses' => 'ComplexController@index'))->where(['complex' => '[A-Za-z0-9\-]+']);
     //Route::get('/complex/{complex}/foto', array('as' => 'complex.gallery', 'uses' => 'ComplexController@gallery'))->where(['complex' => '[A-Za-z0-9\-]+']);
-    //Route::get('/complex/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
+    Route::get('/complex/{complex}/video', array('as' => 'complex.video', 'uses' => 'ComplexController@video'))->where(['complex' => '[A-Za-z0-9\-]+']);
     //Route::get('/complex/{complex}/shkola-i-sadik', array('as' => 'complex.kids', 'uses' => 'ComplexController@kids'))->where(['complex' => '[A-Za-z0-9\-]+']);
 
     // Страница типа планировки
@@ -208,6 +214,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/sitemap', array('as' => 'sitemap.index', 'uses' => 'SitemapController@html'));
 
     // Страницы
-    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z\-\_\\\/]+']);
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z0-9\-\_\\\/]+']);
 
 });

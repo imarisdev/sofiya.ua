@@ -12,7 +12,7 @@
 
                             <p class="text">{{ $item->description }}</p>
 
-                            <div class="text-center"><a href="/novosti/{{ $item->link() }}" class="blue-btn">читать</a></div>
+                            <div class="text-center"><a href="{{ $item->link() }}" class="blue-btn">читать</a></div>
 
                             <div class="cell info">
                                 <span class="date fl_l">{{ Helpers::getDate($item->created_at, '%d.%m.%Y') }}</span>

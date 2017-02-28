@@ -86,7 +86,7 @@ class UserRepository extends BaseRepository {
         }
 
         if(!empty($inputs['photo'])) {
-            $user->photo = $this->image->uploadImage($inputs['photo'][0]);
+            $user->photo = @serialize($this->image->uploadImage($inputs['photo'][0]));
         }
 
         try {
