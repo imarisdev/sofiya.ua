@@ -21,7 +21,7 @@
                             </div>
 
                             <div class="cell dark-social text-center m_b-30 cell-md">
-                                @include('includes.social')
+                                @include('includes.socialdark')
                             </div>
                         </div>
 
