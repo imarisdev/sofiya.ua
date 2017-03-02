@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\Reports::class,
         Commands\DeleteFiles::class,
+        Commands\Sitemap::class
     ];
 
     /**

@@ -158,7 +158,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Roumen\Sitemap\SitemapServiceProvider::class,
     ],
 
     /*
