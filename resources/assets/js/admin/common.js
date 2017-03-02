@@ -88,6 +88,14 @@ var Admin = {
             e.preventDefault();
             _this.deleteItem(this);
         });
+
+        /**
+         * Смена типа в SEO
+         */
+        $('.js-object_type-change').on('click', function() {
+            $('.js-object_type-select').hide();
+            $('.js-object_type-input').show().removeClass('hide').attr('disabled', false);
+        });
     },
     setEditForm: function(form) {
         this.editForm = $(form);

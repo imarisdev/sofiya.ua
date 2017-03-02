@@ -56,7 +56,9 @@ class SeoController extends AdminController {
 
         $seo = $this->seo->getById($id);
 
-        return view('admin.seo.edit', compact('seo'));
+        $types = $this->seo->getTypes();
+
+        return view('admin.seo.edit', compact('seo', 'types'));
     }
 
     /**
@@ -66,7 +68,9 @@ class SeoController extends AdminController {
      */
     public function create() {
 
-        return view('admin.seo.create');
+        $types = $this->seo->getTypes();
+
+        return view('admin.seo.create', compact('types'));
     }
 
     /**

@@ -32,6 +32,7 @@ class SeoRepository extends BaseRepository {
             })
             ->orWhere('seo.url', '=', $this->request->route()->getName())
             ->orWhere('seo.url', '=', $this->request->path())
+            ->orderBy('seo.priority', 'desc')
             ->first();
 
         if(!empty($params) && !empty($seo)) {
@@ -124,6 +125,7 @@ class SeoRepository extends BaseRepository {
         $seo->h1            = $inputs['h1'];
         $seo->url           = !empty($inputs['url']) ? $inputs['url'] : null;
         $seo->content       = $inputs['content'];
+        $seo->priority      = $inputs['priority'];
 
         try {
 
