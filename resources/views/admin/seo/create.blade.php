@@ -42,8 +42,19 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="object_type">Тип объекта</label>
-                                    <input type="text" class="form-control disabled" id="object_type" name="object_type" placeholder="Тип объекта"
-                                           value="{{ $seo->object_type or '' }}">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <select name="object_type" class="form-control js-object_type-select">
+                                                @foreach($types as $tkey => $type)
+                                                    <option value="{{ $type->object_type }}">{{ $type->object_type }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input type="text" class="form-control hide js-object_type-input" id="object_type" name="object_type" placeholder="Тип объекта" disabled>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="btn btn-primary js-object_type-change">Новый тип</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
@@ -58,7 +69,7 @@
                                 <div class="form-group">
                                     <label for="priority">Приоритет</label>
                                     <input type="number" class="form-control" id="priority" name="priority" placeholder="Приоритет"
-                                           value="{{ $seo->priority or '' }}" disabled>
+                                           value="{{ $seo->priority or '' }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="slug">Контент</label>

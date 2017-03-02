@@ -176,8 +176,8 @@ Route::group(['middleware' => 'web'], function () {
 
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
-    Route::get('/planirovki/arenda', array('as' => 'plans.type', 'uses' => 'PlansController@rent'));
-    Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.type', 'uses' => 'PlansController@decoration'));
+    Route::get('/planirovki/arenda', array('as' => 'plans.rent', 'uses' => 'PlansController@rent'));
+    Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
     Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
 
