@@ -427,6 +427,11 @@ h5 {
     color: #01415f;
 }
 
+.image-float-left {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
 body {
     font-family: Roboto;
     position: relative;

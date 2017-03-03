@@ -6,15 +6,15 @@
             @include('includes.bread-crumbs')
             <div class="cell content-text content-new m_b-20">
                 <div class="cell m_b-10">
-                    <div class="cell2 p_r-10">
-                        <img src="{{ Helpers::getImage($article->image, '144x143') }}" class="" alt="">
-                    </div>
-                    <div class="cell10">
+                    <div class="cell12">
                         <h1 class="title m_b-10">{{ $article->title }}</h1>
                     </div>
                 </div>
                 <hr class="m_b-10">
-                <div class="cell">{!! $article->content !!} </div>
+                <div class="cell m_b-10">
+                    <img src="{{ Helpers::getImage($article->image, '250x0') }}" class="image-float-left" alt="{{ $article->title }}">
+                    {!! $article->content !!}
+                </div>
             </div>
         </div>
 
