@@ -18,7 +18,7 @@ class FeedbackController extends Controller {
         try {
 
             Mail::send('emails.feedback', ['data' => $request->all()], function ($m) use ($request) {
-                $m->from('info@sofiya.ua', 'Sofiya.ua');
+                $m->from('server@sofiya.ua', 'Sofiya.ua');
                 $m->to('info@sofiya.ua', $request->get('name', 'Гость'))->subject('Форма обратной связи');
             });
 

@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /feedback.php
+Disallow: /data_adm/
+Disallow: /map
+Host: https://www.sofiya.ua
+Sitemap: https://www.sofiya.ua/sitemap.xml
