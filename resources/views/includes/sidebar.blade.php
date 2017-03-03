@@ -3,9 +3,9 @@
 </div>
 @if(!empty($house) && count($house) > 0)
     <ul class="cell list-icons-martinov m_b-10">
-        <li><a href="/{{ $house->complex->link() }}/photo-gallery">ФОТО {{ $house->complex->title }}</a></li>
+        <li><a href="/{{ $house->complex->link() }}/foto">ФОТО {{ $house->complex->title }}</a></li>
         <li><a href="/{{ $house->complex->link() }}/video">ВИДЕО {{ $house->complex->title }}</a></li>
-        <li><a href="/{{ $house->complex->link() }}/kids-study">ШКОЛА И САДИК В {{ $house->complex->title }}</a></li>
+        <li><a href="/{{ $house->complex->link() }}/shkola-i-sadik">ШКОЛА И САДИК В {{ $house->complex->title }}</a></li>
     </ul>
 @endif
 <div class="border-list blue-header with-img cell m_b-20">
