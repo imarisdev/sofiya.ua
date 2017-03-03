@@ -10,7 +10,7 @@
                         <img src="{{ Helpers::getImage($item->image, '288x188') }}" alt="">
                         <div class="title">{{ $item->title }}</div>
 
-                        <p class="text">{{ $item->description }}</p>
+                        <p class="text">{!! $item->getShortText() !!}</p>
 
                         <div class="text-center"><a href="{{ $item->link() }}" class="blue-btn">читать</a></div>
 

@@ -20,4 +20,12 @@ class Articles extends BaseModel {
         return "/{$this->types[$this->type]['slug']}/{$this->id}-{$this->slug}";
 
     }
+
+    /**
+     * Скращенный текст
+     * @return mixed
+     */
+    public function getShortText($length = 100) {
+        return $this->truncate($this->content, $length);
+    }
 }
