@@ -40,7 +40,7 @@
             <footer>
                 @include('includes.footer')
             </footer>
-
+	    <script src='//callbackhub.com/l/call.js'></script>
             <script src="{{ elixir('js/common.js') }}"></script>
 
         </body>
