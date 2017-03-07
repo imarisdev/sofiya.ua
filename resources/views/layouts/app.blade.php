@@ -13,9 +13,9 @@
             @section('header')
                 @include('includes.header.header')
 
-                @section('call-link')
+                {{--@section('call-link')
                     @include('includes.call-link')
-                @show
+                @show--}}
             @show
 
             <!--div class="content"-->
@@ -40,8 +40,13 @@
             <footer>
                 @include('includes.footer')
             </footer>
-	    <script src='//callbackhub.com/l/call.js'></script>
+	        <script src='//callbackhub.com/l/call.js'></script>
             <script src="{{ elixir('js/common.js') }}"></script>
+
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q4STN"
+                              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
 
         </body>
     </div>
