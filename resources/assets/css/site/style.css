@@ -2444,25 +2444,26 @@ form.review {
     text-transform: uppercase;
 }
 
-.breadcrumb a {
-    color: #222;
-}
-
-.breadcrumb span {
+.breadcrumb a span{
     color: #030953;
 }
 
+.breadcrumb span {
+    color: #222;
+}
+
 .breadcrumb .item {
-    padding: 0 5px;
+    padding: 0 7px;
     position: relative;
+    display: inline-block;
 }
 
 .breadcrumb .item:after {
     content: '/';
     display: block;
     position: absolute;
-    top: -1px;
-    right: 0;
+    top: 1px;
+    right: -6px;
 }
 
 .breadcrumb .item:last-child:after {
