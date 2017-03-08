@@ -4,9 +4,9 @@ Route::group(['middleware' => 'web'], function () {
 
     //Route::auth();
 
-    Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@showLoginForm']);
-    Route::get('post', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@login']);
-    Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@logout']);
+    $this->get('login', 'Auth\AuthController@showLoginForm');
+    $this->post('login', 'Auth\AuthController@login');
+    $this->get('logout', 'Auth\AuthController@logout');
 
     Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
