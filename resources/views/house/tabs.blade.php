@@ -21,7 +21,7 @@
                                 <div class="cell m_b-20">
                                     <div class="cell m_b-10"> {{ $types }}</div>
                                     <a href="{{ Helpers::getImage($house->images_list[$tkey]) }}" class="js-fancybox">
-                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '500x460', null, 'fit') }}" alt="..." class="margin">
+                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '500x460', null, 'fit') }}" alt="ЖК София" class="margin">
                                     </a>
                                 </div>
                             @endif

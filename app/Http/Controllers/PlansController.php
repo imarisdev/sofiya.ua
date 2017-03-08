@@ -52,6 +52,10 @@ class PlansController extends Controller {
 
         $type = $this->types->getPlansTypeBySlug($type);
 
+        if (!$type) {
+            abort(404);
+        }
+
         $plans = $this->plans->getPlans(['plans_type' => $type['key']], 16);
 
         $breadcrumbs = [
@@ -144,6 +148,10 @@ class PlansController extends Controller {
         //$house = $this->house->getById($id);
 
         $type = $this->types->getPlansTypeBySlug($type);
+
+        if (!$type) {
+            abort(404);
+        }
 
         $plan = $this->plans->getById($id);
 

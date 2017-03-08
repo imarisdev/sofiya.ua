@@ -13,7 +13,7 @@
                     <div class="cell6 cell-xs">
                         <div class="item box-border cell">
                             <div class="cell6">
-                                <img src="/img/martinov/zagl.png" alt="{{ $house->streetCache->title }}">
+                                <img src="/img/martinov/zagl.png" alt="{{ $house->streetCache->title }} - ЖК София">
                             </div>
 
                             <div class="cell6 p_l-20 p_t-20 p_r-10">

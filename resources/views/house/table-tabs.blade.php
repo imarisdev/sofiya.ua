@@ -33,11 +33,11 @@
             <div class="table-cell">{{ Helpers::completion($house->completion_at) }}</div>
             <div class="table-cell">
                 <a class="js-fancybox" href="#fancybox-house-{{ $key }}" data-href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">
-                    <img alt="" src="{{ Helpers::getImage($item->image, '0x70') }}" />
+                    <img alt="ЖК София" src="{{ Helpers::getImage($item->image, '0x70') }}" />
                 </a>
 
                 <div id="fancybox-house-{{ $key }}" class="text-center d_n">
-                    <img src="{{ Helpers::getImage($item->image, '0x500') }}" alt="">
+                    <img src="{{ Helpers::getImage($item->image, '0x500') }}" alt="ЖК София">
                     <br>
                     <a class="blue-btn" href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">Подробнее</a>
                     <br>

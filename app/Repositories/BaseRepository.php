@@ -204,4 +204,32 @@ abstract class BaseRepository {
             mt_rand(0, 0xffff)
         );
     }
+
+    /**
+     * Создает условия для поиска
+     * @param $query
+     * @param null $request
+     * @return mixed
+     */
+    public function makeCondition($query, $request = null) {
+
+        $columns = $this->model->getTableColumns();
+
+        if ($request) {
+            foreach($request as $field => $value) {
+                if(empty($value)) {
+                    continue;
+                }
+                if(array_search($field, $columns) !== false) {
+                    if(is_array($value)) {
+                        $query->whereIn($field, $value);
+                    } else {
+                        $query->where($field, '=', $value);
+                    }
+                }
+            }
+        }
+
+        return $query;
+    }
 }

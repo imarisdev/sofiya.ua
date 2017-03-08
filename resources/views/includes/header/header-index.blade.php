@@ -28,12 +28,12 @@
 
             @if($current_complex)
                 <div class="logo-new fl_l">
-                    <img src="{{ Helpers::getImage($current_complex->image_big) }}" alt="{{ $current_complex->title }}" />
+                    <img src="{{ Helpers::getImage($current_complex->image_big) }}" alt="{{ $current_complex->title }} - ЖК София" />
                 </div>
                 <div class="logo-new-name">{{ $current_complex->title }}</div>
             @else
                 <div class="logo-new fl_l">
-                    <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }}" />
+                    <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }} - ЖК София" />
                 </div>
                 <div class="logo-new-name">{{ $default_complex->title }}</div>
             @endif
@@ -82,7 +82,7 @@
     <div class="cell text-center logo-center-block">
         <div class="item main">
             <a href="/">
-                <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="" />
+                <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="ЖК София" />
             </a>
         </div>
     </div>

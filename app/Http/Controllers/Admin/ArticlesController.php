@@ -2,15 +2,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Repositories\ArticlesRepository;
+use App\Repositories\SeoRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
 
 class ArticlesController extends AdminController implements AdminItemContract {
 
     protected $articles;
+    protected $seo;
 
-    public function __construct(ArticlesRepository $articles) {
-
+    public function __construct(ArticlesRepository $articles, SeoRepository $seo) {
+        $this->seo = $seo;
         $this->articles = $articles;
 
     }
@@ -39,7 +41,9 @@ class ArticlesController extends AdminController implements AdminItemContract {
 
         $types = $this->articles->getArticleTypes();
 
-        return view('admin.articles.create', compact('types'));
+        $seo = [];
+
+        return view('admin.articles.create', compact('types', 'seo'));
     }
 
     /**
@@ -63,7 +67,9 @@ class ArticlesController extends AdminController implements AdminItemContract {
 
         $types = $this->articles->getArticleTypes();
 
-        return view('admin.articles.edit', compact('article', 'types'));
+        $seo = $this->seo->getSeoItem($id, 'articles');
+
+        return view('admin.articles.edit', compact('article', 'types', 'seo'));
     }
 
     /**

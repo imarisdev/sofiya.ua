@@ -70,6 +70,8 @@ class StreetController extends Controller {
 
         $houses = $street->houses;
 
+        $this->seo->getSeoData($street->id, 'streets');
+
         $breadcrumbs = [
             [
                 'title' => "Улицы",

@@ -17,7 +17,7 @@
                             <div class="item box-border cell">
                                 <div class="cell6">
                                     <a rel="nofollow" class="blue-title m_b-10 fl_l" href="{{ $plan->pathLink() }}">
-                                        <img src="{{ Helpers::getImage($plan->image, '210x155') }}" alt="{{ $plan->title }}">
+                                        <img src="{{ Helpers::getImage($plan->image, '210x155') }}" alt="{{ $plan->title }} - ЖК София">
                                     </a>
                                 </div>
 

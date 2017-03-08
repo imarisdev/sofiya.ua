@@ -2,7 +2,7 @@
 
 <div class="cell rewiev-item">
     <div class="rewiev-title cell">
-        <img src="/img/no-photo.png" alt="">
+        <img src="/img/no-photo.png" alt="ЖК София">
 
         <div class="cell10">
             <p class="cell name">Светлана Маслова</p>
@@ -39,7 +39,7 @@
 
 <div class="cell rewiev-item m_b-20">
     <div class="rewiev-title cell">
-        <img src="/img/no-photo.png" alt="">
+        <img src="/img/no-photo.png" alt="ЖК София">
         <div class="cell8">
             <p class="cell name m_t-10 m_b-5">Гость</p>
         </div>

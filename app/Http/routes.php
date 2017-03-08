@@ -129,6 +129,14 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/gallery/update', array('as' => 'admin.gallery.save', 'uses' => 'GalleryController@update'));
         Route::post('/gallery/delete', array('as' => 'admin.gallery.delete', 'uses' => 'GalleryController@delete'));
 
+        // Banners
+        Route::get('/redirects', array('as' => 'admin.redirects', 'uses' => 'RedirectsController@index'));
+        Route::get('/redirects/edit/{id}', array('as' => 'admin.redirects.edit', 'uses' => 'RedirectsController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/redirects/create', array('as' => 'admin.redirects.create', 'uses' => 'RedirectsController@create'));
+        Route::post('/redirects/save', array('as' => 'admin.redirects.save', 'uses' => 'RedirectsController@store'));
+        Route::post('/redirects/update', array('as' => 'admin.redirects.save', 'uses' => 'RedirectsController@update'));
+        Route::post('/redirects/delete', array('as' => 'admin.redirects.delete', 'uses' => 'RedirectsController@delete'));
+
     });
 
     Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'crm', 'namespace' => 'Crm'], function () {
@@ -219,10 +227,10 @@ Route::group(['middleware' => 'web'], function () {
     // Поиск
     Route::get('/search', array('as' => 'search.index', 'uses' => 'SearchController@index'));
 
-    // Поиск
+    // Карта сайта
     Route::get('/sitemap', array('as' => 'sitemap.index', 'uses' => 'SitemapController@html'));
 
     // Страницы
-    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z0-9\-\_\\\/]+']);
+    Route::get('/{page}', array('as' => 'pages.page', 'uses' => 'PagesController@page'))->where(['page' => '[a-z0-9\-\_\\\/\.]+']);
 
 });

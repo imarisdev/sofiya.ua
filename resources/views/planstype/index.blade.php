@@ -16,7 +16,7 @@
                         <div class="item box-border cell">
                             <div class="cell6">
                                 <a href="{{ $plan->houseCahce->link() }}">
-                                    <img src="{{ Helpers::getImage($plan->houseCahce->image, '210x155', null, 'fit') }}" alt="{{ $plan->houseCahce->streetCache->title }}">
+                                    <img src="{{ Helpers::getImage($plan->houseCahce->image, '210x155', null, 'fit') }}" alt="{{ $plan->houseCahce->streetCache->title }} - ЖК София">
                                 </a>
                             </div>
 
