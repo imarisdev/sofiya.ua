@@ -31,7 +31,8 @@ class Kernel extends HttpKernel
             //\App\Http\Middleware\VerifyCsrfToken::class,
             \App\Http\Middleware\ComplexMiddleware::class,
             \App\Http\Middleware\SearchFormMiddleware::class,
-            \App\Http\Middleware\RedirectsMiddleware::class
+            \App\Http\Middleware\RedirectsMiddleware::class,
+            \App\Http\Middleware\HeadersMiddleware::class
         ],
 
         'api' => [

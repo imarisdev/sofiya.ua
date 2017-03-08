@@ -168,9 +168,10 @@ class Helpers {
      * @param $link
      * @param $title
      * @param null $complex
+     * @param $external
      * @return string
      */
-    public static function makeMenuLink($link, $title, $complex = null) {
+    public static function makeMenuLink($link, $title, $complex = null, $external = null) {
 
         $url = \Request::path();
 
@@ -188,8 +189,11 @@ class Helpers {
         if("/$url" == $link) {
             return "<span>$title</span>";
         } else {
-
-            return "<a href='$link'>$title</a>";
+            if($external == 1) {
+                return "<!--noindex--><a target='_blank' rel='nofollow' href='$link'>$title</a><!--/noindex-->";
+            } else {
+                return "<a href='$link'>$title</a>";
+            }
         }
 
     }
