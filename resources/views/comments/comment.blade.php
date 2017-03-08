@@ -6,22 +6,22 @@
         <form class="js-comment-form row" action="/comments/add" role="form" method="POST">
             <input type="hidden" name="commentable_id" value="{{ $item['id'] }}">
             <input type="hidden" name="commentable_type" value="{{ $item['type'] }}">
-            <div class="cell-6 m_b-10">
+            <div class="cell6 m_b-10 p_r-20">
                 <label>Имя</label>
                 <input class="field" type="text" name="name" required />
             </div>
 
-            <div class="cell-6 m_b-10">
+            <div class="cell6 m_b-10">
                 <label>E-mail</label>
-                <input class="field" type="email" name="email" required />
+                <input class="field m_b-20" type="email" name="email" required />
             </div>
 
-            <div class="cell-12 m_b-10">
+            <div class="cell12 m_b-10">
                 <textarea class="field" name="content" required></textarea>
             </div>
 
-            <div class="cell-12">
-                <button type="submit" class="btn-blue pull-right js-comment-send-btn">Отправить</button>
+            <div class="cell12">
+                <button type="submit" class="blue-btn pull-right js-comment-send-btn">Отправить</button>
             </div>
         </form>
     </div>

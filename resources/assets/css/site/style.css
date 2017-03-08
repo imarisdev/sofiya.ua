@@ -147,7 +147,7 @@ ul {
 }
 
 div {
-    zoom: 1;
+    /*zoom: 1;*/
 }
 h1,
 h2,
@@ -501,7 +501,7 @@ a {
     line-height: 24px;
 }
 
-.nav-top li a:after,
+.nav-top .wrapper li a:after,
 .nav-top li span:after {
     content: '';
     display: block;
@@ -543,7 +543,7 @@ a {
     }
     .nav-bottom.fixed .logo-new-name{
         height: 63px;
-        line-height: 63px;
+        padding-top: 17px;
     }
     .nav-bottom.fixed ul.menu > li {
         height: 55px;
@@ -604,7 +604,7 @@ a {
 }
 
 .nav-bottom ul li a:before,
-.nav-top li a:before {
+.nav-top .wrapper li a:before {
     content: "";
     display: block;
     position: absolute;
@@ -703,17 +703,18 @@ a {
 .logo-new {
     padding: 0 10px;
     background-color: #fefefe;
+    width: 130px;
     text-align: center;
 }
 .logo-new-name {
-    padding: 0 15px;
+    padding: 45px 0 0 0;
     height: 110px;
     background-color: #01415f;
     float: left;
     text-align: center;
-    line-height: 110px;
     color: #fefefe;
     font-size: 18px;
+    width: 185px;
 }
 .logo-new img {
     position: relative;

@@ -14,11 +14,11 @@
             </div>
 
             <div class="phone-click js-phone-click fl_r">
-                <span><i class="icon-phone"></i>+38 (044) 361-4000</span>
+                <span><i class="icon-phone"></i><a class="black" href="tel:+380443622000">+38 (044) 362-2000</a></span>
                 <i class="down"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
-                    <li>+38 (066) 361-4000</li>
-                    <li>+38 (067) 971-4000</li>
+                    <li><a class="black" href="tel:+380678887090">+38 (067) 888-7090</a></li>
+                    <li><a class="black" href="tel:+380959056000">+38 (095) 905-6000</a></li>
                 </ul>
             </div>
 
