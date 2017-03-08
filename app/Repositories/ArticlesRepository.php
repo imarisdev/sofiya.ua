@@ -7,16 +7,18 @@ use App\Models\Articles;
 class ArticlesRepository extends BaseRepository {
 
     protected $image;
+    protected $seo;
 
     private $types = [
         1 => 'Новости',
         2 => 'Акции'
     ];
 
-    public function __construct(Articles $articles, ImageRepository $image) {
+    public function __construct(Articles $articles, ImageRepository $image, SeoRepository $seo) {
 
         $this->model = $articles;
         $this->image = $image;
+        $this->seo = $seo;
     }
 
     /**
@@ -70,6 +72,10 @@ class ArticlesRepository extends BaseRepository {
         try {
 
             $article->save();
+
+            if(isset($inputs['seo'])) {
+                $this->seo->process($inputs['seo']);
+            }
 
             return Response::json(['item' => $article], 201);
         } catch(\Exception $e) {

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\SeoRepository;
 use App\Repositories\StreetRepository;
 use Illuminate\Http\Request;
 use App\Contracts\AdminItemContract;
@@ -8,11 +9,12 @@ use App\Contracts\AdminItemContract;
 class StreetsController extends AdminController implements AdminItemContract {
 
     protected $street;
+    protected $seo;
 
-    public function __construct(StreetRepository $street) {
+    public function __construct(StreetRepository $street, SeoRepository $seo) {
 
         $this->street = $street;
-
+        $this->seo = $seo;
     }
 
     /**
@@ -57,7 +59,9 @@ class StreetsController extends AdminController implements AdminItemContract {
 
         $street = $this->street->getById($id);
 
-        return view('admin.streets.edit', compact('street'));
+        $seo = $this->seo->getSeoItem($id, 'streets');
+
+        return view('admin.streets.edit', compact('street', 'seo'));
     }
 
     /**

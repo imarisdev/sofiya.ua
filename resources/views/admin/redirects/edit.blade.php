@@ -1,46 +1,37 @@
 @extends('layouts.admin')
 @section('content')
     <section class="content">
-        <form role="form" id="pageedit" class="js-admin-form-save" action="/admin/streets/update" data-edit="/admin/streets/edit" method="POST">
+        <form role="form" id="pageedit" class="js-admin-form-save" action="/admin/redirects/update" data-edit="/admin/redirects/edit" method="POST">
             {!! csrf_field() !!}
             <div class="row">
                 <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-8">
-                            <h2 class="page-header">{{ $street->title or '' }}</h2>
+
                         </div>
                     </div>
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Информация</a></li>
-                            <li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
-                                <input type="hidden" name="id" value="{{ $street->id or '' }}">
-                                <input type="hidden" name="item_type" value="street">
+                                <input type="hidden" name="id" value="{{ $redirect->id or '' }}">
+                                <input type="hidden" name="item_type" value="redirect">
                                 <div class="form-group">
-                                    <label for="title">Название</label>
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Title"
-                                           value="{{ $street->title or '' }}">
+                                    <label for="url_from">URL from</label>
+                                    <input type="text" class="form-control" id="url_from" name="url_from" placeholder="URL from"
+                                           value="{{ $redirect->url_from or '' }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="path">Path</label>
-                                    <input type="text" class="form-control" id="path" name="path" placeholder="Title"
-                                           value="{{ $street->path or '' }}">
+                                    <label for="url_to">URL to</label>
+                                    <input type="text" class="form-control" id="url_to" name="url_to" placeholder="URL to"
+                                           value="{{ $redirect->url_to or '' }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="slug">URL</label>
-                                    <input type="text" class="form-control" id="slug" name="slug" placeholder="URL"
-                                           value="{{ $street->slug or '' }}">
+                                    <label for="code">Код</label>
+                                    {!! Form::select('code', [301 => 301, 302 => 302], $redirect->code, ['class' => 'form-control']) !!}
                                 </div>
-                                <div class="form-group">
-                                    <label for="slug">Контент</label>
-                                    <textarea id="content" name="content" rows="10" cols="80">{{ $street->content or '' }}</textarea>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_3">
-                                @include('admin.forms.seo', ['item_id' => $street->id, 'item_type' => 'streets', 'item' => $seo])
                             </div>
                         </div>
                     </div>
