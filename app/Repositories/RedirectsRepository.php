@@ -106,4 +106,20 @@ class RedirectsRepository extends BaseRepository {
         return Response::json(['items' => $items->get()], 200);
     }
 
+    /**
+     * Удаление
+     * @param $house
+     */
+    public function destroy($article) {
+
+        try {
+
+            $article->delete();
+
+            return Response::json(['item' => true], 200);
+        } catch(\Exception $e) {
+            return Response::json(['error' => true, 'msg' => array($e->getMessage())], 400);
+        }
+
+    }
 }
