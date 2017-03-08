@@ -3,7 +3,7 @@
         <div class="cell m_b-20">
             <div class="cell2 cell-lg-none logo-footer fl_l">
                 <a href="#">
-                    <img src="/img/footer-logo.png" alt="">
+                    <img src="/img/footer-logo.png" alt="ЖК София">
                 </a>
             </div>
 
@@ -14,7 +14,7 @@
             <div class="cell5 info-wrap cell-lg-6 cell-xs cell-xss-none">
                 <div class="cell6 address cell-md m_t-15 cell-xs-6 ">
                     <div class="m_l-20 ">
-                        <p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="" />НАШ АДРЕС:<br></p>
+                        <p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="ЖК София" />НАШ АДРЕС:<br></p>
                         08131, Украина,<br>
                         Киевская обл., г. Киев,<br>
                         Софиевская Борщаговка,<br>
@@ -62,7 +62,7 @@
 
 
         <div class="cell m_b-25 cell-sm-6 cell-xss">
-            <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt=""></p>
+            <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt="ЖК София"></p>
 
             <ul class="footer-nav fl_r cell-md">
                 {{--*/ $m_key = 0; /*--}}

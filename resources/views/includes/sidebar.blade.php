@@ -12,7 +12,7 @@
     <p class="list-header cell">ПОСЛЕДНИЕ НОВОСТИ</p>
     @foreach(Helpers::getArticlesByType(1) as $article)
         <div class="item cell">
-            <img src="{{ Helpers::getImage($article->image, '65x65') }}" class="" alt="{{ $article->title }}">
+            <img src="{{ Helpers::getImage($article->image, '65x65') }}" class="" alt="{{ $article->title }} - ЖК София">
             <a href="{{ $article->link() }}" class="text cell m_b-15">{{ $article->title }}</a>
             <div class="fl_l m_r-20">{{ Helpers::getDate($article->created_at, '%d.%m.%Y') }}</div>
             <div class="fl_l"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">{{ $article->views }}</span></div>

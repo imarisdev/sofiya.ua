@@ -13,7 +13,7 @@
                 @foreach($articles as $article)
                     <div class="cell item-news box-border m_b-20">
                        <div class="img-wrap cell-xs">
-                           <img src="{{ Helpers::getImage($article->image, '144x143') }}" class="" alt="">
+                           <img src="{{ Helpers::getImage($article->image, '144x143') }}" class="" alt="{{ $article->title }} - ЖК София">
                        </div>
 
                        <div class="info-wrap cell-xs">

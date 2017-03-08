@@ -16,7 +16,7 @@
                         <div class="item box-border cell">
                             <div class="cell6">
                                 <a href="{{ $house->link() }}">
-                                    <img src="{{ Helpers::getImage($house->image, '210x155') }}" alt="{{ $house->title }}">
+                                    <img src="{{ Helpers::getImage($house->image, '210x155') }}" alt="{{ $house->title }} - ЖК София">
                                 </a>
                             </div>
 

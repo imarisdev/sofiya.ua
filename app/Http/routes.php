@@ -227,7 +227,7 @@ Route::group(['middleware' => 'web'], function () {
     // Поиск
     Route::get('/search', array('as' => 'search.index', 'uses' => 'SearchController@index'));
 
-    // Поиск
+    // Карта сайта
     Route::get('/sitemap', array('as' => 'sitemap.index', 'uses' => 'SitemapController@html'));
 
     // Страницы

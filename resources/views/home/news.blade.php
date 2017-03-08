@@ -7,7 +7,7 @@
                 @foreach($news as $item)
 
                     <div class="item cell">
-                        <img src="{{ Helpers::getImage($item->image, '288x188') }}" alt="">
+                        <img src="{{ Helpers::getImage($item->image, '288x188') }}" alt="{{ $item->title }} - ЖК София">
                         <div class="title">{{ $item->title }}</div>
 
                         <p class="text">{!! $item->getShortText() !!}</p>
