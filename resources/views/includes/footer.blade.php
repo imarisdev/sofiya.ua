@@ -62,7 +62,7 @@
 
 
         <div class="cell m_b-25 cell-sm-6 cell-xss">
-            <p class="info-s fl_l cell-md-none">Создание сайта <img src="/img/imaris.png" alt="ЖК София"></p>
+            <p class="info-s fl_l cell-md-none">Создание сайта <a href="https://www.imaris.com.ua/" target="_blank"><img src="/img/imaris.png" alt="imaris"></a></p>
 
             <ul class="footer-nav fl_r cell-md">
                 {{--*/ $m_key = 0; /*--}}

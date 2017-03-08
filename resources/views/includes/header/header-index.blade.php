@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <h2 class="cell text-center cell-xs-none">{{ $seo['h1'] or 'Надежный застройщик с 2008 года'}}</h2>
+    <div class="h1 cell text-center cell-xs-none">{{ $seo['h1'] or 'Надежный застройщик с 2008 года'}}</div>
 
     @include('includes.header.header-form')
 
