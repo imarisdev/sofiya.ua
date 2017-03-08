@@ -1,16 +1,25 @@
 @if(!empty($breadcrumbs) && count($breadcrumbs) > 0)
-    <div class="breadcrumb cell m_b-20">
-        <span class="item">
-             <a href="/">Главная</a>
-        </span>
-        @foreach($breadcrumbs as $breadcrumb)
+    <ul class="breadcrumb cell m_b-20" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="/">
+                <span itemprop="name">Главная</span>
+                <meta itemprop="position" content="0">
+            </a>
+        </li>
+        @foreach($breadcrumbs as $bkey => $breadcrumb)
             @if(!empty($breadcrumb['link']))
-                <span class="item">
-                     <a href="{{ $breadcrumb['link'] }}">{{ $breadcrumb['title'] }}</a>
-                </span>
+                <li class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                     <a itemprop="item" href="{{ $breadcrumb['link'] }}">
+                         <span itemprop="name">{{ $breadcrumb['title'] }}</span>
+                         <meta itemprop="position" content="{{ $bkey + 1 }}">
+                     </a>
+                </li>
             @else
-                <span class="item">{{ $breadcrumb['title'] }}</span>
+                <li class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">{{ $breadcrumb['title'] }}</span>
+                    <meta itemprop="position" content="{{ $bkey + 1 }}">
+                </li>
             @endif
         @endforeach
-    </div>
+    </ul>
 @endif
