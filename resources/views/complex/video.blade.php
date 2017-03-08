@@ -18,7 +18,7 @@
                             <div class="cell3 cell-xs-6 cell-xss">
                                 <div class="gallery-item">
                                     <div class="text-center">
-                                        <img alt="{{ $item->title }}" src="{{ Helpers::getImage($item->image_small, '60x60', null, 'resize') }}">
+                                        <img alt="{{ $item->title }} - ЖК София" src="{{ Helpers::getImage($item->image_small, '60x60', null, 'resize') }}">
                                     </div>
                                     <div class="text-center">
                                         <a href="/{{ $item->link() }}/video">{{ $item->title }}</a>

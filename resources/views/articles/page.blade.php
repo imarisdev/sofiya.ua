@@ -12,7 +12,7 @@
                 </div>
                 <hr class="m_b-10">
                 <div class="cell m_b-10">
-                    <img src="{{ Helpers::getImage($article->image, '250x0') }}" class="image-float-left" alt="{{ $article->title }}">
+                    <img src="{{ Helpers::getImage($article->image, '250x0') }}" class="image-float-left" alt="{{ $article->title }} - ЖК София">
                     {!! $article->content !!}
                 </div>
             </div>
