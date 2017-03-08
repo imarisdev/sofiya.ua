@@ -6,7 +6,7 @@
             @include('includes.bread-crumbs')
             <h1 class="cell title text-center">Вход</h1>
             <div class="cell content-text">
-                <form class="form-horizontal" role="form" method="POST" action="/login/">
+                <form class="form-horizontal" role="form" method="POST" action="/login">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
