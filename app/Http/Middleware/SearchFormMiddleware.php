@@ -35,7 +35,7 @@ class SearchFormMiddleware {
 
         $search_from['complex_list'] = $this->complex->getComplexesForSelect(['status' => 1]);
         $search_from['streets'] = $this->street->getStreetsForSelect();
-        $search_from['plan_types'] = $this->plansType->getPlansTypesForSelect();
+        $search_from['plan_types'] = $this->plansType->getPlansTypesForSelect([8]);
 
         View::share(['search_from' => $search_from]);
     }

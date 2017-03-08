@@ -84,7 +84,17 @@ $(document).ready(function () {
         return false;
     });
 
+    setTimeout(function() {
+        onYouTubeIframeAPIReady();
+    }, 5000);
+
     new WOW().init();
+
+    $('.js-stop-video').on('click', function() {
+        for (var i = 0; i < video_players.length; i++) {
+            video_players[i].stopVideo();
+        }
+    });
 });
 
 /* phone menu */
@@ -135,3 +145,29 @@ $(document).ready(function(){
 $(document).ready(function() {
     $(".js-fancybox").fancybox();
 });
+
+video_players = new Array();
+
+function onYouTubeIframeAPIReady() {
+    var temp = $("iframe.js-iframe-video");
+    for (var i = 0; i < temp.length; i++) {
+        var t = new YT.Player($(temp[i]).attr('id'), {
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+        video_players.push(t);
+    }
+    console.log('test');
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        var temp = event.target.a.src;
+        var tempPlayers = $("iframe.js-iframe-video");
+        for (var i = 0; i < video_players.length; i++) {
+            if (video_players[i].a.src != temp)
+                video_players[i].stopVideo();
+        }
+    }
+}

@@ -6,9 +6,9 @@
     <div class="video-wrapper">
         <div id="slider" class="flexslider video-slider">
             <ul class="slides">
-                @foreach($video as $v)
+                @foreach($video as $vkey => $v)
                     <li>
-                        <iframe src="//www.youtube.com/embed/{{ $v->url }}" frameborder="0" allowfullscreen width="1200" height="700"></iframe>
+                        <iframe class="js-iframe-video" id="{{ $v->url }}" src="//www.youtube.com/embed/{{ $v->url }}?rel=0&controls=0&enablejsapi=1" frameborder="0" allowfullscreen width="1200" height="700"></iframe>
                         <!--img width="1200" height="700" src="//img.youtube.com/vi/{{ $v->url }}/maxresdefault.jpg" /-->
                     </li>
                 @endforeach
@@ -21,7 +21,7 @@
             <ul class="slides">
                 @foreach($video as $v)
                     <li>
-                        <img width="185" height="160" src="//img.youtube.com/vi/{{ $v->url }}/default.jpg" />
+                        <img class="js-stop-video" width="185" height="160" src="//img.youtube.com/vi/{{ $v->url }}/default.jpg" />
                     </li>
                 @endforeach
                 <!-- items mirrored twice, total of 12 -->
