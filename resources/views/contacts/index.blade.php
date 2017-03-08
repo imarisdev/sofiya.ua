@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="clearfix wrapper">
-
+ все в админке!!!!!!!!!!!
 
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
@@ -20,9 +20,9 @@
 
                 <div class="item cell4 cell-sm">
                     <h4 class="blue-title">НАШИ ТЕЛЕФОНЫ:</h4>
-                    <p>(044) 361-4000<br>
-                        (066) 361-4000<br>
-                        (067) 971-4000</p>
+                    <a class="" href="tel:+3800443614000">(044) 361-4000</a><br>
+                    <a class="" href="tel:+3800663614000">(066) 361-4000</a><br>
+                    <a class="" href="tel:+3800679714000">(067) 971-4000</a>
                 </div>
 
                 <div class="item cell4 cell-sm dark-social">
@@ -47,7 +47,11 @@
 
                 <div class="item cell4 cell-sm">
                     <h4 class="blue-title">НАШИ ТЕЛЕФОНЫ:</h4>
-                    <p class="m_b-10">+38(067)888-7090,<br> +38(095)905-6000,<br> +38(044)362-2000</p>
+                    <p class="m_b-10">
+                        <a target="_blank" class="black" href="tel:+3800678887090">+38(067)888-7090</a>,<br>
+                        <a class="black" href="tel:+3800959056000">+38(095)905-6000</a>,<br>
+                        <a class="black" href="tel:+3800443622000">+38(044)362-2000</a>
+                    </p>
                     <p class="m_b-10"><span class="blue-title">E-mail:</span> sofiya-city@ukr.net</p>
                     <p><span class="blue-title">Сайт:</span> <a href="sofiya.ua">sofiya.ua</a></p>
                 </div>

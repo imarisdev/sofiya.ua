@@ -9,7 +9,8 @@
 
             <div class="cell text-center page-404">
                 <img src="/img/404.png" alt="" />
-                <p class="text-bold ">К сожалению, страница не найдена</p>
+                <h1 class="text-bold m_b-20">Такой страницы не существует</h1>
+                <p><a href="/" class="blue">Главная</a></p>
             </div>
         </div>
 

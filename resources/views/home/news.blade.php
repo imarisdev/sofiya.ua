@@ -12,14 +12,15 @@
 
                         <p class="text">{!! $item->getShortText() !!}</p>
 
-                        <div class="text-center"><a href="{{ $item->link() }}" class="blue-btn">читать</a></div>
+                        <div class="fix-block">
+                            <div class="text-center"><a href="{{ $item->link() }}" class="blue-btn">читать</a></div>
 
-                        <div class="cell info">
-                            <span class="date fl_l">{{ Helpers::getDate($item->created_at, '%d.%m.%Y') }}</span>
-                            <span class="watch fl_r"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">{{ $item->views }}</span></span>
+                            <div class="cell info">
+                                <span class="date fl_l">{{ Helpers::getDate($item->created_at, '%d.%m.%Y') }}</span>
+                                <span class="watch fl_r"><i class="icon-watch"></i>ПРОСМОТРОВ: <span class="blue">{{ $item->views }}</span></span>
+                            </div>
                         </div>
                     </div>
-
                 @endforeach
             </div>
         </div>
