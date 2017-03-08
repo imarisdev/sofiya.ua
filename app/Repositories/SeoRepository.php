@@ -49,6 +49,7 @@ class SeoRepository extends BaseRepository {
         $page = $this->request->get('page', 0);
         if(!empty($seo) && !empty($page)) {
             $seo->title = "{$seo->title} - Страница {$page}";
+            $seo->description = "{$seo->description} - Страница {$page}";
 
             unset($seo->content);
 
