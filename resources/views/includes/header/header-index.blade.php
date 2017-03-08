@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="/">Главная</a></li>
                     @foreach(Helpers::getMenu('top') as $item)
-                        <li><a href="{{ $item->link }}">{{ $item->title }}</a></li>
+                        <li>{!! Helpers::makeMenuLink($item->link, $item->title, $current_complex, $item->external) !!}</li>
                     @endforeach
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                     @foreach(Helpers::renderMenu('head') as $item)
                         @if($m_key <= 6)
                             <li class="@if(!empty($item['child'])) parent-menu js-parent @endif">
-                                {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
+                                {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex, $item['external']) !!}
                                 @if(!empty($item['child']) && count($item['child']) > 0)
                                     <ul class="js-child child-menu">
                                         @each('includes.header.menu-items', $item['child'], 'item')
@@ -58,13 +58,13 @@
                                     <img src="/img/menu.png">
                                     <ul class="js-child child-menu">
                             @endif
-                                        <li>
-                                            {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex) !!}
-                                        </li>
+                                <li>
+                                    {!! Helpers::makeMenuLink($item['link'], $item['title'], $current_complex, $item['external']) !!}
+                                </li>
                         @endif
                     @endforeach
-                                    </ul>
-                                </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 

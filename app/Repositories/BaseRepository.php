@@ -159,7 +159,7 @@ abstract class BaseRepository {
         $title = preg_replace('/-+$/', '', $title);
         $title = strtolower($title);
 
-        return $title;
+        return trim($title);
     }
 
     public function slugify($text) {
