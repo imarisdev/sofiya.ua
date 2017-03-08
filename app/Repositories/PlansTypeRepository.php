@@ -31,14 +31,17 @@ class PlansTypeRepository extends BaseRepository {
 
     /**
      * Типы планировок для формы
+     * @param $exclude
      * @return array
      */
-    public function getPlansTypesForSelect() {
+    public function getPlansTypesForSelect($exclude = []) {
 
         $plans_type_list = array();
 
         foreach($this->types as $key => $type) {
-            $plans_type_list[$key] = $type['title'];
+            if(!in_array($key, $exclude)) {
+                $plans_type_list[$key] = $type['title'];
+            }
         }
 
         return $plans_type_list;

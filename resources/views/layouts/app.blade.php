@@ -40,6 +40,7 @@
             <footer>
                 @include('includes.footer')
             </footer>
+            <script src="//www.youtube.com/player_api"></script>
 	        <script src='//callbackhub.com/l/call.js'></script>
             <script src="{{ elixir('js/common.js') }}"></script>
 
