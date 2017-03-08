@@ -6,10 +6,12 @@ use App\Models\Street;
 
 class StreetRepository extends BaseRepository {
 
-    public function __construct(Street $street) {
+    protected $seo;
+
+    public function __construct(Street $street, SeoRepository $seo) {
 
         $this->model = $street;
-
+        $this->seo = $seo;
     }
 
     /**
@@ -67,6 +69,10 @@ class StreetRepository extends BaseRepository {
         try {
 
             $street->save();
+
+            if(isset($inputs['seo'])) {
+                $this->seo->process($inputs['seo']);
+            }
 
             return Response::json(['item' => $street], 201);
         } catch(\Exception $e) {

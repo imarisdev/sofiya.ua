@@ -72,6 +72,26 @@ class RedirectsRepository extends BaseRepository {
     }
 
     /**
+     * Обновление данных
+     * @param $inputs
+     */
+    public function update($article, $inputs) {
+
+        return $this->save($article, $inputs);
+
+    }
+
+    /**
+     * Создание
+     * @param $inputs
+     */
+    public function store($inputs) {
+
+        return $this->save(new $this->model, $inputs);
+
+    }
+
+    /**
      * Поиск
      * @param null $request
      * @param $limit

@@ -125,7 +125,7 @@ class SeoRepository extends BaseRepository {
         $seo->h1            = $inputs['h1'];
         $seo->url           = !empty($inputs['url']) ? $inputs['url'] : null;
         $seo->content       = $inputs['content'];
-        $seo->priority      = $inputs['priority'];
+        $seo->priority      = !empty($inputs['priority']) ? $inputs['priority'] : 0;
 
         try {
 

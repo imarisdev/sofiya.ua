@@ -3,15 +3,17 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\ArticlesRepository;
+use App\Repositories\SeoRepository;
 
 class ArticlesController extends Controller {
 
     protected $articles;
+    protected $seo;
 
-    public function __construct(ArticlesRepository $articles) {
+    public function __construct(ArticlesRepository $articles, SeoRepository $seo) {
 
         $this->articles = $articles;
-
+        $this->seo = $seo;
     }
 
     /**
@@ -59,6 +61,8 @@ class ArticlesController extends Controller {
         $article = $this->articles->getById($id);
 
         $this->articles->increment($article->id);
+
+        $this->seo->getSeoData($article->id, 'articles');
 
         $breadcrumbs = [
             [
