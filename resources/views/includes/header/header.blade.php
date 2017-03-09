@@ -11,11 +11,11 @@
             </div>
 
             <div class="phone-click js-phone-click fl_r">
-                <span><i class="icon-phone"></i><a class="black" href="tel:+380443622000">+38 (044) 362-2000</a></span>
+                <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}">{{ $options['phone_1'] or '' }}</a></span>
                 <i class="down"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
-                    <li><a class="black" href="tel:+380678887090">+38 (067) 888-7090</a></li>
-                    <li><a class="black" href="tel:+380959056000">+38 (095) 905-6000</a></li>
+                    <li><a class="black" href="tel:{{ $options['phone_2'] or '' }}">{{ $options['phone_2'] or '' }}</a></li>
+                    <li><a class="black" href="tel:{{ $options['phone_3'] or '' }}">{{ $options['phone_3'] or '' }}</a></li>
                 </ul>
             </div>
         </div>
