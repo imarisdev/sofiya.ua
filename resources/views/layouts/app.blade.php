@@ -1,4 +1,5 @@
-<!DOCTYPE>
+<!DOCTYPE html>
+
 <html lang="ru">
     <head>
         @include('includes.head')
@@ -6,10 +7,9 @@
 
     @include('includes.header.adaptive-menu')
 
-    <div class="main-content">
 
-        <body class="body">
-
+    <body class="body">
+        <div class="main-content">
             @section('header')
                 @include('includes.header.header')
 
@@ -49,6 +49,6 @@
                               height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- End Google Tag Manager (noscript) -->
 
-        </body>
-    </div>
+        </div>
+    </body>
 </html>

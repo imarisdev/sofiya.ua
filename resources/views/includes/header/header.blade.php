@@ -10,16 +10,15 @@
                 </ul>
             </div>
 
-            <div class="js-phone-click phone-click fl_r">
-                <span><i class="icon-phone"></i>{{ $options['phone_1'] or '' }}<i class="down"></i> </span>
+            <div class="phone-click js-phone-click fl_r">
+                <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}">{{ $options['phone_1'] or '' }}</a></span>
+                <i class="down"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
-                    <li>{{ $options['phone_2'] or '' }}</li>
-                    <li>{{ $options['phone_3'] or '' }}</li>
+                    <li><a class="black" href="tel:{{ $options['phone_2'] or '' }}">{{ $options['phone_2'] or '' }}</a></li>
+                    <li><a class="black" href="tel:{{ $options['phone_3'] or '' }}">{{ $options['phone_3'] or '' }}</a></li>
                 </ul>
             </div>
         </div>
-
-
 
         <div class="nav-bottom cell">
 
