@@ -32,7 +32,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\ComplexMiddleware::class,
             \App\Http\Middleware\SearchFormMiddleware::class,
             \App\Http\Middleware\RedirectsMiddleware::class,
-            \App\Http\Middleware\HeadersMiddleware::class
+            \App\Http\Middleware\HeadersMiddleware::class,
+            \App\Http\Middleware\OptionsMiddleware::class
         ],
 
         'api' => [

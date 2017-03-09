@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use App\Repositories\ComplexRepository;
+use App\Repositories\OptionsRepository;
 use View;
 use Exception;
 use Psr\Log\LoggerInterface;
@@ -30,6 +31,8 @@ class Handler extends ExceptionHandler
 
     protected $complex;
 
+    protected $options;
+
     /**
      * Create a new exception handler instance.
      *
@@ -37,11 +40,12 @@ class Handler extends ExceptionHandler
      * @param $complex
      * @return void
      */
-    public function __construct(LoggerInterface $log, ComplexRepository $complex)
+    public function __construct(LoggerInterface $log, ComplexRepository $complex, OptionsRepository $options)
     {
         parent::__construct($log);
         $this->log = $log;
         $this->complex = $complex;
+        $this->options = $options;
     }
 
     /**
@@ -79,6 +83,13 @@ class Handler extends ExceptionHandler
      */
     protected function renderHttpException(HttpException $e) {
 
+        $optionsList = [];
+
+        foreach($this->options->getAllOptions() as $option) {
+            $optionsList[$option['options_key']] = $option['options_value'];
+        }
+
+        view()->share(['options' => $optionsList]);
         view()->share(['current_complex' => null]);
         view()->share(['default_complex' => $this->complex->getById(1)]);
         view()->share(['complex_list' => []]);

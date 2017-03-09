@@ -129,13 +129,21 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/gallery/update', array('as' => 'admin.gallery.save', 'uses' => 'GalleryController@update'));
         Route::post('/gallery/delete', array('as' => 'admin.gallery.delete', 'uses' => 'GalleryController@delete'));
 
-        // Banners
+        // Redirects
         Route::get('/redirects', array('as' => 'admin.redirects', 'uses' => 'RedirectsController@index'));
         Route::get('/redirects/edit/{id}', array('as' => 'admin.redirects.edit', 'uses' => 'RedirectsController@edit'))->where(['id' => '[0-9]+']);
         Route::get('/redirects/create', array('as' => 'admin.redirects.create', 'uses' => 'RedirectsController@create'));
         Route::post('/redirects/save', array('as' => 'admin.redirects.save', 'uses' => 'RedirectsController@store'));
         Route::post('/redirects/update', array('as' => 'admin.redirects.save', 'uses' => 'RedirectsController@update'));
         Route::post('/redirects/delete', array('as' => 'admin.redirects.delete', 'uses' => 'RedirectsController@delete'));
+
+        // Options
+        Route::get('/options', array('as' => 'admin.options', 'uses' => 'OptionsController@index'));
+        Route::get('/options/edit/{id}', array('as' => 'admin.options.edit', 'uses' => 'OptionsController@edit'))->where(['id' => '[0-9]+']);
+        Route::get('/options/create', array('as' => 'admin.options.create', 'uses' => 'OptionsController@create'));
+        Route::post('/options/save', array('as' => 'admin.options.save', 'uses' => 'OptionsController@store'));
+        Route::post('/options/update', array('as' => 'admin.options.save', 'uses' => 'OptionsController@update'));
+        Route::post('/options/delete', array('as' => 'admin.options.delete', 'uses' => 'OptionsController@delete'));
 
     });
 

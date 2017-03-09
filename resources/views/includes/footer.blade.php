@@ -15,11 +15,7 @@
                 <div class="cell6 address cell-md m_t-15 cell-xs-6 ">
                     <div class="m_l-20 ">
                         <p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="ЖК София" />НАШ АДРЕС:<br></p>
-                        08131, Украина,<br>
-                        Киевская обл., г. Киев,<br>
-                        Софиевская Борщаговка,<br>
-                        ул. Леси Украинки, дом 12,<br>
-                        офисный центр «София»<br>
+                        {!! $options['address'] or '' !!}
                     </div>
                 </div>
 
@@ -27,14 +23,14 @@
                     <div class="phone-click cell">
                         <span><i class="icon-phone"></i></span>
                         <ul class="cell m_b-20">
-                            <li><a href="tel:+38 (044) 361-4000">+38 (044) 361-4000</a></li>
-                            <li><a href="tel:+38 (066) 361-4000">+38 (066) 361-4000</a></li>
-                            <li><a href="tel:+38 (067) 971-4000">+38 (067) 971-4000</a></li>
+                            <li><a href="tel:{{ $options['phone_1'] or '' }}">{{ $options['phone_1'] or '' }}</a></li>
+                            <li><a href="tel:{{ $options['phone_2'] or '' }}">{{ $options['phone_2'] or '' }}</a></li>
+                            <li><a href="tel:{{ $options['phone_3'] or '' }}">{{ $options['phone_3'] or '' }}</a></li>
                         </ul>
                     </div>
 
                     <div class="cell mail m_t-20 m_r-20 cell-xs">
-                        <i class="icon-mail"></i><a href="mailto:info@sofiya.ua">info@sofiya.ua</a>
+                        <i class="icon-mail"></i><a href="mailto:{{ $options['footer_email'] or '' }}">{{ $options['footer_email'] or '' }}</a>
                     </div>
                 </div>
             </div>
