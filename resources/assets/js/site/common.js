@@ -77,7 +77,7 @@ $(document).ready(function () {
                 $.fancybox.close();
             },
             error: function(data) {
-
+                alert('Заполните обязательные поля!')
             }
         });
 
