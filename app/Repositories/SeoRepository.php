@@ -55,6 +55,10 @@ class SeoRepository extends BaseRepository {
 
         }
 
+        if(empty($seo->h1)) {
+            unset($seo->h1);
+        }
+
         View::share(['seo' => $seo]);
     }
 
