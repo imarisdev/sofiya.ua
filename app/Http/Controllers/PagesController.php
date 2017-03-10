@@ -32,16 +32,30 @@ class PagesController extends Controller {
 
         $this->seo->getSeoData($page->id, 'pages');
 
-        if (preg_match('/(jk-martinov|jk-text)/', $page, $complex_link)) {
+        $complex = null;
+
+        if (preg_match('/(jk-martinov|jk-sofiya-smart|jk-klubniy|jk-sofiya-rezidens)/', $page, $complex_link)) {
             $complex = $this->complex->cache('getBySlug', 'complex_' . $complex_link[1], $complex_link[1]);
             $this->complex->shareComplex($complex);
         }
 
-        $breadcrumbs = [
-            [
-                'title' => "{$page->title}"
-            ]
-        ];
+        if($complex) {
+            $breadcrumbs = [
+                [
+                    'link' => "/{$complex->link()}",
+                    'title' => $complex->title
+                ],
+                [
+                    'title' => "{$page->title}"
+                ]
+            ];
+        } else {
+            $breadcrumbs = [
+                [
+                    'title' => "{$page->title}"
+                ]
+            ];
+        }
 
         return view('pages.page', compact('page', 'breadcrumbs'));
     }
