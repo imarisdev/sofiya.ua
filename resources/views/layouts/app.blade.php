@@ -40,9 +40,9 @@
             <footer>
                 @include('includes.footer')
             </footer>
-            <script src="//www.youtube.com/player_api"></script>
-	        <script src='//callbackhub.com/l/call.js'></script>
-            <script src="{{ elixir('js/common.js') }}"></script>
+            <script async src="//www.youtube.com/player_api"></script>
+	        <script async src='//callbackhub.com/l/call.js'></script>
+            <script async src="{{ elixir('js/common.js') }}"></script>
 
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q4STN"
