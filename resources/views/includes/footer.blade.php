@@ -39,7 +39,7 @@
                 <form class="js-feedback-form">
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
                     <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
-                    <input class="field m_b-10" type="text" name="email" placeholder="Ваш телефон">
+                    <input class="field m_b-10" type="text" name="phone" placeholder="Ваш телефон">
                     <textarea class="field" type="text" name="content" placeholder="Ваш комментарий"></textarea>
                     <input type="submit" class="pull-right yellow-btn">
                 </form>
