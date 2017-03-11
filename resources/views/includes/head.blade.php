@@ -13,9 +13,9 @@
 
 @include('includes.head-pages')
 
-<link rel="icon" href="/favicon.png">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+{{--<link rel="icon" href="/img/favicon.png">--}}
+<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
 <link href="{{ elixir('css/all.css') }}" rel="stylesheet">
 
