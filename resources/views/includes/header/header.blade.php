@@ -24,7 +24,7 @@
 
             @if($current_complex)
                 <div class="logo-new fl_l">
-                    <img src="{{ Helpers::getImage($current_complex->image_big) }}" alt="{{ $current_complex->title }} - ЖК София" />
+                    <img src="{{ Helpers::getImage($current_complex->image_small) }}" alt="{{ $current_complex->title }} - ЖК София" />
                 </div>
                 <div class="logo-new-name">{{ $current_complex->title }}</div>
             @else
