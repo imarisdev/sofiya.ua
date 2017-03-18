@@ -110,6 +110,7 @@ img {
 img {
     max-width: 100%;
     vertical-align: middle;
+    height: auto;
 }
 
 button,
@@ -460,7 +461,11 @@ a {
 .fl_r {
     float: right;
 }
-
+/*.nav-bottom.fixed .call-btn {*/
+    /*bottom: 5px;*/
+    /*width: 55px;*/
+    /*height: 55px;*/
+/*}*/
 /*---------------------------------------------*/
 .header {
     background: url("/img/main_photo.png");
@@ -518,16 +523,19 @@ a {
     padding: 0 20px 0 50px;
     background-color: rgba(83, 209, 238, 0.68);
 }
-
+.banner object {
+    max-width: 100%;
+}
 @media all and (min-width: 990px) {
     .nav-bottom.fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 99;
-        background-color: rgba(83, 209, 238, 0.9);
-        height: 63px;
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*z-index: 99;*/
+        /*background-color: rgba(83, 209, 238, 0.9);*/
+        /*height: 63px;*/
+        display: none;
     }
     .nav-bottom.fixed .call-block {
         height: auto;
@@ -1062,11 +1070,11 @@ a {
 }
 
 .video-wrapper {
-    position: relative;
-    padding-bottom: 37%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
+    /*position: relative;*/
+    /*padding-bottom: 37%;*/
+    /*padding-top: 30px;*/
+    /*height: 0;*/
+    /*overflow: hidden;*/
 }
 
 .video-wrapper,
@@ -2601,6 +2609,11 @@ form.review {
         display: none !important;
         visibility: hidden;
     }
+    .video-wrapper, .video-wrapper iframe {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 400px;
+    }
 }
 
 @media all and (max-width: 770px) {
@@ -2748,6 +2761,13 @@ form.review {
 
 
 @media all and (max-width: 1200px) {
+    .flex-direction-nav .flex-nav-next,
+    .flex-direction-nav .flex-nav-prev{
+        display: none;
+    }
+    .seo-text {
+        padding: 0 10px;
+    }
     .call-fixed-btn{
         display: none;
     }
@@ -2758,11 +2778,6 @@ form.review {
     .nav-bottom ul li a,
     .nav-bottom ul li span{
         font-size: 14px;
-    }
-
-    .form-header{
-        top: 150px;
-        left: 0;
     }
 
     .footer .info,
@@ -2810,7 +2825,10 @@ form.review {
         max-height: 90%;
     }
     .global .logo-center-block .item {
-        margin-top: 85px;
+        margin-top: 135px;
+    }
+    .form-watch {
+        top: 430px;
     }
 }
 
@@ -2818,16 +2836,27 @@ form.review {
     .header {
         min-height: 740px;
     }
-    .header h2 {
+    .header h2,    .nav-bottom.fixed .call-btn {
         display: none;
     }
     .nav-bottom ul.menu > li{
         padding-right: 10px;
     }
+    .global .logo-center-block .item {
+        margin-top: 165px;
+    }
+    .form-watch {
+        top: 470px;
+    }
+    .header-all {
+        min-height: 655px;
+    }
 }
 
 @media all and (max-width: 990px) {
-
+    .global .logo-center-block .item {
+        display: none;
+    }
     .header-bottom-icons {
         display: none;
     }
@@ -3002,7 +3031,7 @@ form.review {
 
     .form-watch form {
         max-width: 50%;
-        margin-top: 130px;
+        margin-top: 90px;
     }
 
     .form-watch .input-wrap {
@@ -3030,6 +3059,13 @@ form.review {
 }
 
 @media all and (max-width: 770px) {
+    .video-wrapper, .video-wrapper iframe {
+        min-height: 300px;
+    }
+    .header .h1 {
+        font-size: 20px;
+        margin-bottom: 70px;
+    }
     .news .item {
         height: 470px;
         float: left;
@@ -3110,6 +3146,9 @@ form.review {
     .blue-block-info .blue-btn {
         float: none;
     }
+    .news .item {
+        height: 390px;
+    }
 }
 
 @media all and (max-width: 640px) {
@@ -3155,10 +3194,27 @@ form.review {
     .logo-new img {
         top: -5px;
     }
+
+    .form-header {
+        position: absolute;
+        top: 71px;
+        left: auto;
+        right: 75px;
+    }
+    .form-header .form-label {
+        box-shadow: 3.2px 6.2px 2px rgba(27, 27, 27, 0.35);
+        text-indent: -10000px;
+        border-radius: 50%;
+        float: right;
+        padding: 20px 0px 5px 60px;
+        overflow: hidden;
+        width: 60px;
+        background: url(/img/apartment-b.png) #fed20c no-repeat 56% 50%;
+        background-size: 60%;
+    }
 }
 
 @media all and (max-width: 540px) {
-
     .type-plans > .cell6 {
         padding: 10px 0;
     }
@@ -3193,18 +3249,25 @@ form.review {
 
     .form-watch form {
         max-width: 90%;
-
     }
-
     form.review,
-
     .rewiev-item .text {
         padding: 0;
     }
+    .header .call-btn {
+        display: none;
+    }
+    .form-header {
+        right: 10px;
+    }
 }
 @media all and (max-width: 420px) {
+    .logo-new-name {
+        font-size: 16px;
+        width: 170px;
+    }
     .news .item {
-        height: 500px;
+        height: auto;
         width: 100%;
     }
     .form-watch form {
@@ -3220,6 +3283,7 @@ form.review {
         width: 100%;
     }
     #form-call-back { width: 200px;}
+
 }
 
 .map {
@@ -3228,7 +3292,7 @@ form.review {
 }
 .map-small {
     margin: 10px 0 20px;
-    height: 250px;
+    height: 400px;
 }
 #form-call-back { display:none;  width: 390px;}
 
@@ -3270,6 +3334,7 @@ a.fancybox-item.fancybox-close:after{
 }
 
 .content-text {
+    margin-bottom: 10px;
     font-family: Arial;
     line-height: 1.6;
     font-size: 14px;
