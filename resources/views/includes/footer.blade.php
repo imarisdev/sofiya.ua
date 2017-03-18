@@ -46,9 +46,7 @@
             </div>
         </div>
 
-
-
-        <div class="cell m_b-20 m_t-10 cell-sm-6 cell-xss">
+        <div class="cell m_b-20 m_t-10 cell-sm-6 cell-xs">
             <p class="info fl_l cell-md-none">© ЖК «Софія» от Мартынова, 2016</p>
 
             <ul class="site-pages fl_r cell-md">
@@ -56,8 +54,7 @@
             </ul>
         </div>
 
-
-        <div class="cell m_b-25 cell-sm-6 cell-xss">
+        <div class="cell m_b-25 cell-sm-6 cell-xs">
             <p class="info-s fl_l cell-md-none">Создание сайта <a href="https://www.imaris.com.ua/" target="_blank"><img src="/img/imaris.png" alt="imaris"></a></p>
 
             <ul class="footer-nav fl_r cell-md">
