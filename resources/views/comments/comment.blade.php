@@ -37,7 +37,7 @@
 
 @foreach($comments as $comment)
     <div class="comment-{{ $comment->id }}">
-        <div class="cell-1">
+        <div class="cell1 cell-sm-none">
             <img class="avatar" alt="ЖК София" src="http://1.gravatar.com/avatar/?s=48&amp;d=mm&amp;r=g" />
         </div>
 

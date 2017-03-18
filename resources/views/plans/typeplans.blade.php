@@ -12,7 +12,7 @@
                     @foreach($plans as $plan)
                         <div class="cell6 cell-xs">
                             <div class="item box-border cell">
-                                <div class="cell6">
+                                <div class="cell6 text-center">
                                     <a rel="nofollow" class="blue-title m_b-10 fl_l" href="/planirovki/{{ $type['slug'] }}/{{ $plan->link() }}">
                                         <img src="{{ Helpers::getImage($plan->image, '210x155') }}" alt="{{ $plan->title }} - ЖК София">
                                     </a>
