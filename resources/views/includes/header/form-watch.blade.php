@@ -1,10 +1,10 @@
-<form>
+<form id="t_contact" class="js-feedback-form" name="contact">
     <div class="input-wrap">
-        <input type="text" placeholder="Ваше имя">
+        <input type="text" placeholder="Ваше имя" name="name">
     </div>
 
     <div class="input-wrap">
-        <input type="text" placeholder="+380    ">
+        <input type="text" placeholder="+380    " name="phone">
     </div>
 
     <div class="input-wrap">
