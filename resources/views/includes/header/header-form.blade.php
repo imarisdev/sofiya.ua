@@ -5,13 +5,13 @@
     <form action="/search" method="GET">
         <div class="js-form-content form-content cell">
             <p class="m_b-5">Выберите ЖК:</p>
-            {!! Form::select('complex_list', $search_from['complex_list'], Request::get('complex_list', null), ['class' => 'field m_b-10']) !!}
+            {!! Form::select('complex_list', ['' => 'Все'] + $search_from['complex_list'], Request::get('complex_list', null), ['class' => 'field m_b-10']) !!}
 
             <p class="m_b-5">Выберите улицу:</p>
-            {!! Form::select('streets', $search_from['streets'], Request::get('streets', null), ['class' => 'field m_b-10']) !!}
+            {!! Form::select('streets', ['' => 'Все'] + $search_from['streets'], Request::get('streets', null), ['class' => 'field m_b-10']) !!}
 
             <p class="m_b-5">Количество комнат:</p>
-            {!! Form::select('plan_types', ['' => 'Все'] + $search_from['plan_types'], Request::get('plan_types', null), ['class' => 'field m_b-10']) !!}
+            {!! Form::select('plans_type', ['' => 'Все'] + $search_from['plan_types'], Request::get('plans_type', null), ['class' => 'field m_b-10']) !!}
 
             <p class="m_b-5">Метраж:</p>
             <div class="cell m_b-10">
