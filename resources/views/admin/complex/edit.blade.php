@@ -31,6 +31,11 @@
                                            value="{{ $complex->slug or '' }}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="map">Карта</label>
+                                    <input type="text" class="form-control" id="map" name="map" placeholder="Карта"
+                                           value="{{ $complex->map or '' }}">
+                                </div>
+                                <div class="form-group">
                                     <label for="owner">Владелец комплекса</label>
                                     @if(!empty($complex->owner))
                                         {!! Form::select('owner', $owners, $complex->owner, ['class' => 'form-control']) !!}
