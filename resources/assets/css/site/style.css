@@ -511,7 +511,7 @@ a {
     content: '';
     display: block;
     position: absolute;
-    top: 4px;
+    top: 36%;
     width: 5px;
     height: 5px;
     background-color: #53d1ee;
@@ -1138,8 +1138,8 @@ a {
 
 .fixed-links {
     position: fixed;
-    top: 35%;
-    left: 0;
+    top: 50%;
+    right: 0;
     background-color: rgba(254, 254, 254, 0.8);
     padding: 10px 0;
     z-index: 10;
@@ -2207,7 +2207,7 @@ a.blue-title:hover {
     font-family: Roboto;
     font-size: 16px;
     text-align: center;
-    padding: 15px 40px 10px;
+    padding: 15px 2% 10px;
     white-space: nowrap;
     height: 48px;
     background-color: #f3f3f3;
@@ -2651,7 +2651,10 @@ form.review {
         display: none !important;
         visibility: hidden;
     }
-
+    .item-manager {
+        padding: 20px 0;
+        min-height: 260px;
+    }
 }
 
 @media all and (max-width: 480px) {
@@ -3072,6 +3075,40 @@ form.review {
 }
 
 @media all and (max-width: 770px) {
+
+    .tabs {
+        -webkit-user-select: none;
+        display: block;
+        height: 46px;
+        overflow-y: hidden;
+        padding: 0;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs  ul {
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+        height: 44px;
+        overflow-x: scroll;
+    }
+
+    .tabs ul li {
+        display: inline-block;
+        height: 45px;
+        white-space: nowrap;
+        float: none;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+    }
+    .contacts-info .cell4 {
+        padding: 0 0 10px !important;
+    }
+    .contacts-info .item:after {
+        display: none;
+    }
     .video-wrapper, .video-wrapper iframe {
         min-height: 300px;
     }
@@ -3165,6 +3202,25 @@ form.review {
 }
 
 @media all and (max-width: 640px) {
+    .pagination li a, .pagination li span {
+        font-size: 14px;
+        height: 25px;
+        min-width: 24px;
+        padding: 0;
+    }
+    .pagination li{
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .type-plans .item a {
+        float: none;
+        text-align: center;
+        display: block;
+    }
+    .type-plans .item img {
+        margin-top: 10px;
+    }
     .top-logo-part{
         top: -50px;
     }
@@ -3310,7 +3366,15 @@ form.review {
         width: 100%;
     }
     #form-call-back { width: 200px;}
+    .form-watch .input-wrap {
+        padding: 10px 25px;
+    }
+}
 
+@media all and (max-width: 360px) {
+    .logo-new-name{
+        display: none;
+    }
 }
 
 .map {
