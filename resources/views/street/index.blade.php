@@ -12,7 +12,7 @@
 
             <ul class="cell list-street m_b-20">
                 @foreach($streets as $street)
-                   <li class="cell4"><a href="/ulitsy/{{ $street->link() }}">{{ $street->title }}</a></li>
+                   <li class="cell4 cell-sm-6 cell-xss"><a href="/ulitsy/{{ $street->link() }}">{{ $street->title }}</a></li>
                 @endforeach
             </ul>
 
