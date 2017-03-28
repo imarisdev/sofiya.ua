@@ -178,8 +178,8 @@ class PlansRepository extends BaseRepository {
             ->leftJoin('complex', 'complex.id', '=', 'houses.complex_id')
             ->leftJoin('streets', 'streets.id', '=', 'houses.street_id');
 
-        if(!empty($request['complex_id'])) {
-            $plans->where('complex.id', '=', $request['complex_id']);
+        if(!empty($request['complex_list'])) {
+            $plans->where('complex.id', '=', $request['complex_list']);
         }
 
         if(!empty($request['streets'])) {
