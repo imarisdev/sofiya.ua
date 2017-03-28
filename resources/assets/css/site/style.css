@@ -1000,7 +1000,7 @@ a {
     position: absolute;
     width: 100%;
     float: left;
-    top: 380px;
+    top: 420px;
 }
 
 .form-watch form {
@@ -2083,8 +2083,21 @@ a.blue-title:hover,
 .contacts-info .social .fb {
     background-position-y: -25px;
 }
-
-
+.choose {
+    position: absolute;
+    top: 67%;
+    width: 100%;
+    text-align: center;
+}
+.choose span {
+    background: #fff;
+    box-shadow: 0px 0px 28px 16px #fff;
+    padding: 0 10px;
+    font-family: Roboto;
+    font-size: 18px;
+    color: #01415f;
+    font-weight: 600;
+}
 .item-manager {
     margin: 10px;
     padding: 20px;
@@ -2175,6 +2188,12 @@ a.blue-title:hover,
 
 a.blue-title:hover {
     color: #00889d;
+}
+.fancybox-house img {
+    max-height: 400px;
+}
+.line-bl {
+    height: 35px;
 }
 /*tabs*/
 
