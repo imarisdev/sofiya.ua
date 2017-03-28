@@ -469,7 +469,7 @@ a {
 /*---------------------------------------------*/
 .header {
     background: url("/img/main_photo.png");
-    min-height: 971px;
+    min-height: 920px;
     background-size: cover;
 }
 
@@ -956,21 +956,21 @@ a {
 }
 
 .header-bottom-icons li .school {
-    background-position-y: -81px;
+    background-position: 0 -81px;
     height: 68px;
 }
 
 .header-bottom-icons li .eco {
-    background-position-y: -151px;
+    background-position: 0 -151px;
     height: 68px;
 }
 
 .header-bottom-icons li .fitness {
-    background-position-y: -220px;
+    background-position: 0 -220px;
 }
 
 .header-bottom-icons li .metro {
-    background-position-y: -300px;
+    background-position: 0 -300px;
     height: 60px;
 }
 
@@ -1516,7 +1516,7 @@ h1.title {
     width: 30px;
     height: 30px;
     background: url('/img/sprites.png') no-repeat 0 0;
-    background-position-y: -133px;
+    background-position: 0 -133px;
 }
 
 .icon-mail,
@@ -1531,27 +1531,8 @@ h1.title {
 }
 
 .icon-phone {
-    background-position-y: -167px;
+    background-position: 0 -167px;
 }
-
-/*.social li a {*/
-    /*background-position-y: 7px;*/
-/*}*/
-
-/*.social .fb {*/
-    /*background-position-y: -27px;*/
-/*}*/
-
-/*.social .gp {*/
-    /*background-position-y: -61px;*/
-/*}*/
-
-/*.social .yt {*/
-    /*background-position-y: -99px;*/
-/*}*/
-
-/*.footer-nav {*/
-/*}*/
 
 .footer-nav li {
     display: inline-block;
@@ -1808,11 +1789,11 @@ h1.title {
 }
 
 .list-icons-martinov li:nth-child(2) a {
-    background-position-y: -234px;
+    background-position: 0 -234px;
 }
 
 .list-icons-martinov li:nth-child(3) a {
-    background-position-y: -267px;
+    background-position: 0 -267px;
 }
 
 
@@ -2010,7 +1991,7 @@ a.blue-title:hover,
 }
 
 .pagination li span {
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .pagination li a {
@@ -2077,15 +2058,14 @@ a.blue-title:hover,
 .dark-social .social li a {
     width: 37px;
     height: 32px;
-    background-position-x: -52px;
 }
 
 .contacts-info .social .fb {
-    background-position-y: -25px;
+    background-position: 0 -25px;
 }
 .choose {
     position: absolute;
-    top: 67%;
+    top: 69%;
     width: 100%;
     text-align: center;
 }
@@ -2313,8 +2293,7 @@ a.blue-title:hover {
     width: 15px;
     height: 12px;
     margin-right: 5px;
-    background: url('/img/sprites.png') no-repeat 0 0;
-    background-position-y: -564px;
+    background: url('/img/sprites.png') no-repeat 0 -564px;
 }
 
 .rewiev-item .text {
