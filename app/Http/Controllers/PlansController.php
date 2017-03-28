@@ -28,10 +28,16 @@ class PlansController extends Controller {
 
     /**
      * Страница всех планировок
+     *
+     * @param $complex
      */
-    public function allPlans() {
+    public function allPlans($complex = null) {
 
         $types = $this->types->getPlansTypes();
+
+        if($complex) {
+            $complex = $this->complex->getBySlug($complex);
+        }
 
         $breadcrumbs = [
             [
@@ -39,7 +45,7 @@ class PlansController extends Controller {
             ]
         ];
 
-        return view('plans.allplans', compact('types', 'breadcrumbs'));
+        return view('plans.allplans', compact('types', 'breadcrumbs', 'complex'));
 
     }
 

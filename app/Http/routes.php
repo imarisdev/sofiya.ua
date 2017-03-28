@@ -230,6 +230,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/complex/{complex}/pod-klyuch', array('as' => 'planstype.key', 'uses' => 'PlansTypeController@key'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/complex/{complex}/planirovki/arenda', array('as' => 'planstype.arenda', 'uses' => 'PlansTypeController@rent'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
     Route::get('/complex/{complex}/planirovki/kvartiry-s-remontom', array('as' => 'planstype.decoration', 'uses' => 'PlansTypeController@decoration'));
+    Route::get('/complex/{complex}/planirovki', array('as' => 'planstype.all', 'uses' => 'PlansController@allPlans'))->where(['complex' => '[A-Za-z0-9\-]+']);
     Route::get('/complex/{complex}/planirovki/{type}', array('as' => 'planstype.index', 'uses' => 'PlansTypeController@index'))->where(['complex' => '[A-Za-z0-9\-]+', 'type' => '[a-z0-9\-]+']);
 
     // Поиск

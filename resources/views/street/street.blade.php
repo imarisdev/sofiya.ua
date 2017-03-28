@@ -6,7 +6,7 @@
 
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
-            <h1 class="cell title text-center">{{ $street->title }}</h1>
+            <h1 class="cell title text-center">{{ $seo['h1'] or $street->title }}</h1>
 
             <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
 
