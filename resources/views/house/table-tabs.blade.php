@@ -36,11 +36,13 @@
                     <img alt="ЖК София" src="{{ Helpers::getImage($item->image, '0x70') }}" />
                 </a>
 
-                <div id="fancybox-house-{{ $key }}" class="text-center d_n">
-                    <img src="{{ Helpers::getImage($item->image, '0x500') }}" alt="ЖК София">
-                    <br>
-                    <a class="blue-btn" href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">Подробнее</a>
-                    <br>
+                <div id="fancybox-house-{{ $key }}" class="text-center fancybox-house d_n">
+                    <div class="cell">
+                        <img class="m_b-20" src="{{ Helpers::getImage($item->image, '0x500') }}" alt="ЖК София">
+                    </div>
+                    <div class="cell line-bl">
+                        <a class="blue-btn m_b-20" href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">Подробнее</a>
+                    </div>
                 </div>
             </div>
         </div>

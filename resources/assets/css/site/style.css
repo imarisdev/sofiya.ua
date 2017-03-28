@@ -469,7 +469,7 @@ a {
 /*---------------------------------------------*/
 .header {
     background: url("/img/main_photo.png");
-    min-height: 971px;
+    min-height: 920px;
     background-size: cover;
 }
 
@@ -511,7 +511,7 @@ a {
     content: '';
     display: block;
     position: absolute;
-    top: 4px;
+    top: 36%;
     width: 5px;
     height: 5px;
     background-color: #53d1ee;
@@ -956,21 +956,21 @@ a {
 }
 
 .header-bottom-icons li .school {
-    background-position-y: -81px;
+    background-position: 0 -81px;
     height: 68px;
 }
 
 .header-bottom-icons li .eco {
-    background-position-y: -151px;
+    background-position: 0 -151px;
     height: 68px;
 }
 
 .header-bottom-icons li .fitness {
-    background-position-y: -220px;
+    background-position: 0 -220px;
 }
 
 .header-bottom-icons li .metro {
-    background-position-y: -300px;
+    background-position: 0 -300px;
     height: 60px;
 }
 
@@ -1000,7 +1000,7 @@ a {
     position: absolute;
     width: 100%;
     float: left;
-    top: 380px;
+    top: 420px;
 }
 
 .form-watch form {
@@ -1138,8 +1138,8 @@ a {
 
 .fixed-links {
     position: fixed;
-    top: 35%;
-    left: 0;
+    top: 50%;
+    right: 0;
     background-color: rgba(254, 254, 254, 0.8);
     padding: 10px 0;
     z-index: 10;
@@ -1516,7 +1516,7 @@ h1.title {
     width: 30px;
     height: 30px;
     background: url('/img/sprites.png') no-repeat 0 0;
-    background-position-y: -133px;
+    background-position: 0 -133px;
 }
 
 .icon-mail,
@@ -1531,27 +1531,8 @@ h1.title {
 }
 
 .icon-phone {
-    background-position-y: -167px;
+    background-position: 0 -167px;
 }
-
-/*.social li a {*/
-    /*background-position-y: 7px;*/
-/*}*/
-
-/*.social .fb {*/
-    /*background-position-y: -27px;*/
-/*}*/
-
-/*.social .gp {*/
-    /*background-position-y: -61px;*/
-/*}*/
-
-/*.social .yt {*/
-    /*background-position-y: -99px;*/
-/*}*/
-
-/*.footer-nav {*/
-/*}*/
 
 .footer-nav li {
     display: inline-block;
@@ -1808,11 +1789,11 @@ h1.title {
 }
 
 .list-icons-martinov li:nth-child(2) a {
-    background-position-y: -234px;
+    background-position: 0 -234px;
 }
 
 .list-icons-martinov li:nth-child(3) a {
-    background-position-y: -267px;
+    background-position: 0 -267px;
 }
 
 
@@ -2010,7 +1991,7 @@ a.blue-title:hover,
 }
 
 .pagination li span {
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .pagination li a {
@@ -2077,14 +2058,26 @@ a.blue-title:hover,
 .dark-social .social li a {
     width: 37px;
     height: 32px;
-    background-position-x: -52px;
 }
 
 .contacts-info .social .fb {
-    background-position-y: -25px;
+    background-position: 0 -25px;
 }
-
-
+.choose {
+    position: absolute;
+    top: 69%;
+    width: 100%;
+    text-align: center;
+}
+.choose span {
+    background: #fff;
+    box-shadow: 0px 0px 28px 16px #fff;
+    padding: 0 10px;
+    font-family: Roboto;
+    font-size: 18px;
+    color: #01415f;
+    font-weight: 600;
+}
 .item-manager {
     margin: 10px;
     padding: 20px;
@@ -2176,6 +2169,12 @@ a.blue-title:hover,
 a.blue-title:hover {
     color: #00889d;
 }
+.fancybox-house img {
+    max-height: 400px;
+}
+.line-bl {
+    height: 35px;
+}
 /*tabs*/
 
 .tabs{
@@ -2207,7 +2206,7 @@ a.blue-title:hover {
     font-family: Roboto;
     font-size: 16px;
     text-align: center;
-    padding: 15px 40px 10px;
+    padding: 15px 2% 10px;
     white-space: nowrap;
     height: 48px;
     background-color: #f3f3f3;
@@ -2294,8 +2293,7 @@ a.blue-title:hover {
     width: 15px;
     height: 12px;
     margin-right: 5px;
-    background: url('/img/sprites.png') no-repeat 0 0;
-    background-position-y: -564px;
+    background: url('/img/sprites.png') no-repeat 0 -564px;
 }
 
 .rewiev-item .text {
@@ -2651,7 +2649,10 @@ form.review {
         display: none !important;
         visibility: hidden;
     }
-
+    .item-manager {
+        padding: 20px 0;
+        min-height: 260px;
+    }
 }
 
 @media all and (max-width: 480px) {
@@ -2742,8 +2743,17 @@ form.review {
         border-radius: 50%;
     }
 
-    header .phone-click span {
-        color: transparent;
+    header .phone-click > span {
+        display: none;
+    }
+
+    header .phone-click i.down{
+        background: none;
+        width: 38px;
+        height: 20px;
+        margin-left: 0;
+        position: relative;
+        left: -15px;
     }
 }
 
@@ -2761,6 +2771,10 @@ form.review {
 
 
 @media all and (max-width: 1200px) {
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .flex-direction-nav .flex-nav-next,
     .flex-direction-nav .flex-nav-prev{
         display: none;
@@ -3059,6 +3073,40 @@ form.review {
 }
 
 @media all and (max-width: 770px) {
+
+    .tabs {
+        -webkit-user-select: none;
+        display: block;
+        height: 46px;
+        overflow-y: hidden;
+        padding: 0;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs  ul {
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+        height: 44px;
+        overflow-x: scroll;
+    }
+
+    .tabs ul li {
+        display: inline-block;
+        height: 45px;
+        white-space: nowrap;
+        float: none;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+    }
+    .contacts-info .cell4 {
+        padding: 0 0 10px !important;
+    }
+    .contacts-info .item:after {
+        display: none;
+    }
     .video-wrapper, .video-wrapper iframe {
         min-height: 300px;
     }
@@ -3152,6 +3200,25 @@ form.review {
 }
 
 @media all and (max-width: 640px) {
+    .pagination li a, .pagination li span {
+        font-size: 14px;
+        height: 25px;
+        min-width: 24px;
+        padding: 0;
+    }
+    .pagination li{
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .type-plans .item a {
+        float: none;
+        text-align: center;
+        display: block;
+    }
+    .type-plans .item img {
+        margin-top: 10px;
+    }
     .top-logo-part{
         top: -50px;
     }
@@ -3260,6 +3327,20 @@ form.review {
     .form-header {
         right: 10px;
     }
+    .blue-block-info .blue-btn {
+        padding: 11px 10px 9px;
+        font-size: 14px;
+    }
+    .one-line-block .item:last-child {
+        margin: 0;
+    }
+    .one-line-block .blue-block-info .item {
+        margin: 0 0 5px;
+    }
+    .one-line-block .blue-block-info {
+        padding-bottom: 10px;
+        margin-bottom: 0 !important;
+    }
 }
 @media all and (max-width: 420px) {
     .logo-new-name {
@@ -3283,7 +3364,15 @@ form.review {
         width: 100%;
     }
     #form-call-back { width: 200px;}
+    .form-watch .input-wrap {
+        padding: 10px 25px;
+    }
+}
 
+@media all and (max-width: 360px) {
+    .logo-new-name{
+        display: none;
+    }
 }
 
 .map {
