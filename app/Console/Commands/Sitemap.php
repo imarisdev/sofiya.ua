@@ -64,7 +64,7 @@ class Sitemap extends Command
                 ->orderBy('created_at', 'desc')
                 ->get();
             foreach ($articles as $article) {
-                $sitemap->add($host . $article->link(), $article->created_at, '0.4', 'monthly');
+                $sitemap->add($host . $article->link(), $article->created_at, '0.8', 'monthly');
             }
 
             // Pages
@@ -72,14 +72,14 @@ class Sitemap extends Command
                 ->orderBy('created_at', 'desc')
                 ->get();
             foreach ($pages as $page) {
-                $sitemap->add($host . '/' . $page->slug, $page->created_at, '0.4', 'monthly');
+                $sitemap->add($host . '/' . $page->slug, $page->created_at, '0.5', 'monthly');
             }
 
             // Streets
             $streets = Street::select('id', 'title', 'slug')
                 ->get();
             foreach ($streets as $street) {
-                $sitemap->add($host . '/ulitsy/' . $street->id . '-' . $street->slug, null, '0.4', 'monthly');
+                $sitemap->add($host . '/ulitsy/' . $street->id . '-' . $street->slug, null, '0.5', 'monthly');
             }
 
             // Houses
@@ -87,7 +87,7 @@ class Sitemap extends Command
                 ->where('status', '=', 1)
                 ->get();
             foreach ($houses as $house) {
-                $sitemap->add($host . '/sofievskaya-borshagovka/' . $house->id . '-' . $house->slug , null, '0.4', 'monthly');
+                $sitemap->add($host . '/sofievskaya-borshagovka/' . $house->id . '-' . $house->slug , null, '0.5', 'monthly');
             }
 
             // Plans
@@ -95,7 +95,7 @@ class Sitemap extends Command
                 ->where('status', '=', 1)
                 ->get();
             foreach ($plans as $plan) {
-                $sitemap->add($host . $plan->pathLink() , null, '0.4', 'monthly');
+                $sitemap->add($host . $plan->pathLink() , null, '0.5', 'monthly');
             }
         }
 

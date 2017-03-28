@@ -25,7 +25,7 @@
                         <div class="table-cell">
                             <span class="blue-title">Дом:</span>
                         </div>
-                        <div class="table-cell">{{ $plan->house->street->title }}, {{ $plan->house->number }}</div>
+                        <div class="table-cell"><a href="{{ $plan->house->link() }}">{{ $plan->house->street->title }}, {{ $plan->house->number }}</a></div>
                     </div>
 
                     <div class="table-row">

@@ -1,4 +1,5 @@
 <form id="t_contact" class="js-feedback-form" name="contact">
+    <input type="hidden" value="Форма в шапке" name="place">
     <div class="input-wrap">
         <input type="text" placeholder="Ваше имя" name="name">
     </div>
