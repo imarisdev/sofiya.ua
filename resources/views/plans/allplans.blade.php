@@ -13,7 +13,11 @@
                 @foreach($types as $tkey => $type)
                     <div class="cell4 cell-md-6 cell-xs">
                         <div class="item">
-                            <a href="/planirovki/{{ $type['slug'] }}"><i class="{{ $type['slug'] }} cell"></i></a>
+                            @if($complex)
+                                <a href="/{{ $complex->link() }}/planirovki/{{ $type['slug'] }}"><i class="{{ $type['slug'] }} cell"></i></a>
+                            @else
+                                <a href="/planirovki/{{ $type['slug'] }}"><i class="{{ $type['slug'] }} cell"></i></a>
+                            @endif
                             <p class="text-center cell"><a href="/planirovki/{{ $type['slug'] }}">{{ $type['title'] }}</a></p>
                         </div>
                     </div>

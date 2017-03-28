@@ -34,7 +34,9 @@
 
             @include('planstype.blue-info-block')
 
-            @include('planstype.seo-text-block')
+            <div class="seo-text cell m_b-30">
+                {!! $seo['content'] or '' !!}
+            </div>
         </div>
 
         <div class="cell3 p_l-5 cell-md">
