@@ -126,8 +126,8 @@ class ImageRepository extends BaseRepository {
      * @return array
      */
     public function getImageInfo($file) {
-        if (file_exists($file)) {
 
+        if (file_exists($file)) {
             list($width, $height, $type, $attr) = getimagesize(trim((string)$file));
             $filesize = filesize(trim((string)$file));
 

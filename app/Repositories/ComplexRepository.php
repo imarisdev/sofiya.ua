@@ -110,7 +110,9 @@ class ComplexRepository extends BaseRepository {
             }
 
             if(!empty($inputs['slider'])) {
-                $this->medialib->saveFiles($inputs['slider'], $complex->id, 'complex');
+                foreach($inputs['slider'] as $image) {
+                    $this->medialib->saveFiles($image, $complex->id, 'complex');
+                }
             }
 
             return Response::json(['item' => $complex], 201);
