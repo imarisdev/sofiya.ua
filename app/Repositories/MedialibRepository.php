@@ -40,6 +40,10 @@ class MedialibRepository extends BaseRepository {
 
         foreach ($images as $key => $file) {
             $item = @unserialize($file->file);
+            if (!$item) {
+                unset($images{$key});
+                continue;
+            }
             $images{$key}->info = $this->image->getImageInfo(public_path() . $item['file'] . $item['ext']);
             /*$item = @unserialize($file->file);
             $item['id'] = $file->id;

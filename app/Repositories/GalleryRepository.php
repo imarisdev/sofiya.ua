@@ -48,7 +48,9 @@ class GalleryRepository extends BaseRepository {
             $gallery->save();
 
             if(!empty($inputs['slider'])) {
-                $this->medialib->saveFiles($inputs['slider'], $gallery->id, 'gallery');
+                foreach($inputs['slider'] as $image) {
+                    $this->medialib->saveFiles($image, $gallery->id, 'gallery');
+                }
             }
 
             return Response::json(['item' => $gallery], 201);
