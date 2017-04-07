@@ -57,6 +57,10 @@ class PlansTypeController extends Controller {
             ]
         ];
 
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
+
         return view('planstype.index', compact('houses', 'type', 'complex', 'plans', 'breadcrumbs'));
 
     }
@@ -84,6 +88,10 @@ class PlansTypeController extends Controller {
                 'title' => "Квартиры под ключ",
             ]
         ];
+
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
 
         return view('planstype.key', compact('houses', 'complex', 'breadcrumbs'));
     }
