@@ -1,6 +1,6 @@
 <!-- header -->
 <header class="cell header">
-    <div class="choose"><span>ВЫБЕРЕТЕ ЖИЛОЙ КОМПЛЕКС</span></div>
+    <div class="choose"><span>ВЫБЕРИТЕ ЖИЛОЙ КОМПЛЕКС</span></div>
     <div class="header-top">
         <div class="nav-top cell">
 
