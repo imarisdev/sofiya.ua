@@ -17,7 +17,8 @@ class BannersRepository extends BaseRepository {
 
     private $types = [
         1 => 'Изображение',
-        2 => 'Flash-файл'
+        2 => 'Flash-файл',
+        3 => 'HTML'
     ];
 
     public function __construct(Banners $banners, ImageRepository $image, FileRepository $file) {
@@ -72,6 +73,7 @@ class BannersRepository extends BaseRepository {
         $banner->height        = $inputs['height'];
         $banner->width         = $inputs['width'];
         $banner->position      = $inputs['position'];
+        $banner->html          = $inputs['html'];
 
         if(!empty($inputs['file'])) {
             if($inputs['type'] == 1) {

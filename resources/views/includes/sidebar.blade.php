@@ -1,4 +1,4 @@
-<div class="fitness-block cell m_b-10">
+<div class="text-center cell m_b-10">
     {!! Helpers::getBanners(2) !!}
 </div>
 @if(!empty($house) && count($house) > 0)

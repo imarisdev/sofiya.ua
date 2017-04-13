@@ -286,7 +286,7 @@ class Helpers {
      * @param $type
      * @param null $size
      */
-    public static function getBannerFile($file, $type, $size = null, $link = null, $class = null) {
+    public static function getBannerFile($file, $type, $size = null, $link = null, $class = null, $html = null) {
 
         $resource = @unserialize($file);
 
@@ -298,6 +298,8 @@ class Helpers {
             $file = $resource['file'] . $resource['ext'];
 
             $view = View::make('banners.flash', ['file' => $file, 'size' => $size, 'class' => $class]);
+        } else if($type == 3) {
+            $view = View::make('banners.html', ['html' => $html, 'class' => $class]);
         }
 
         return $view->render();
@@ -317,7 +319,7 @@ class Helpers {
         $data = null;
 
         foreach ($banners as $banner) {
-            $data .= self::getBannerFile($banner->file, $banner->type, ['width' => $banner->width, 'height' => $banner->height], $banner->link, $class);
+            $data .= self::getBannerFile($banner->file, $banner->type, ['width' => $banner->width, 'height' => $banner->height], $banner->link, $class, $banner->html);
         }
 
         return $data;
