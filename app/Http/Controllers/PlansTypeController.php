@@ -161,6 +161,10 @@ class PlansTypeController extends Controller {
             ]
         ];
 
+        $seo_params = [];
+
+        $this->seo->getSeoData($type['key'], 'planstype', $seo_params);
+
         return view('plans.typeplans', compact('houses', 'type', 'complex', 'plans', 'breadcrumbs'));
     }
 

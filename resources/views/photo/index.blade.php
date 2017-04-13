@@ -7,7 +7,7 @@
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">{{ $seo['h1'] or 'Фотогалерея Жилих Комплексов' }}</h1>
+            <h1 class="cell text-center title">{{ $seo['h1'] or 'Фотогалерея Жилых Комплексов' }}</h1>
 
             @foreach($photos as $photo)
                 <h2 class="title-page m_t-10">Фотогалерея - {{ $photo['complex']->title }}</h2>

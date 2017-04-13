@@ -16,15 +16,16 @@ class Helpers {
      * @param null $size
      * @param null $empty
      * @param string $resize_type
+     * @param $size_empty
      * @return null|string
      */
-    public static function getImage($file = null, $size = null, $empty = 'http://placehold.it/', $resize_type = 'resize') {
+    public static function getImage($file = null, $size = null, $empty = 'http://placehold.it/', $resize_type = 'resize', $size_empty = true) {
         if (empty($file)) {
             $sizes = explode('x', $size);
 
-            if(!empty($sizes[0]) && !empty($sizes[1])) {
+            if(!empty($sizes[0]) && !empty($sizes[1]) && $size_empty) {
                 return $empty . $size;
-            } else if(!empty($size)) {
+            } else if(!empty($size) && $size_empty) {
                 $size = ($sizes[0] != '0') ? "{$sizes[0]}x{$sizes[0]}" : "{$sizes[1]}x{$sizes[1]}";
                 return $empty . $size;
             } else {

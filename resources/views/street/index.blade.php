@@ -26,9 +26,9 @@
                 @foreach($houses as $house)
                     <div class="cell6 cell-xs">
                         <div class="item box-border cell">
-                            <div class="cell6">
+                            <div class="cell6 text-center">
                                 <a href="{{ $house->link() }}">
-                                    <img src="{{ Helpers::getImage($house->image, '210x155') }}" alt="{{ $house->title }} - ЖК София">
+                                    <img src="{{ Helpers::getImage($house->image, '210x155', '/img/sofiamar.png', 'fit', false) }}" alt="{{ $house->title }} - ЖК София">
                                 </a>
                             </div>
 
