@@ -79,8 +79,12 @@
                                 </div>
                                 <div class="form-group">
                                     @if(!empty($banner->file))
-                                        {!! Helpers::getBannerFile($banner->file, $banner->type, ['width' => '300px', 'height' => '250px']) !!}
+                                        {!! Helpers::getBannerFile($banner->file, $banner->type, ['width' => '300px', 'height' => '250px'], null, null, $banner->html) !!}
                                     @endif
+                                </div>
+                                <div class="form-group">
+                                    <label for="html">HTML</label>
+                                    <textarea class="form-control" id="html" name="html" placeholder="HTML">{{ $banner->html or '' }}</textarea>
                                 </div>
                             </div>
                         </div>
