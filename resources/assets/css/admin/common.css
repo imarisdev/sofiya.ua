@@ -81,3 +81,6 @@
 .ajax-file-upload-filename {
     width: auto;
 }
+.ban-block { 
+    min-height: 260px;
+}
