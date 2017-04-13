@@ -3,12 +3,10 @@
 @section('content')
     <div class="clearfix wrapper">
 
-        <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
-
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
 
-            <h1 class="cell text-center title">{{ $plan->title }}</h1>
+            <h1 class="cell text-center title">{{ $seo['h1']  or $plan->title }}</h1>
 
             <div class="cell6 cell-md text-center">
                 @include('plans.slider')
@@ -80,8 +78,8 @@
 
             @include('planstype.blue-info-block')
 
-
-            @include('home.seo')
+            <div class="cell seo-text">{{ $seo['content'] or '' }}</div>
+            {{--@include('home.seo')--}}
         </div>
         <div class="cell3 p_l-5 cell-md">
             @include('includes.sidebar')

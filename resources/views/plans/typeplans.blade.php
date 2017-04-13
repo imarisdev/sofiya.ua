@@ -5,7 +5,7 @@
 
         <div class="cell9 p_r-10 cell-md">
             @include('includes.bread-crumbs')
-            <h1 class="text-center cell title">{{ $type['title'] }}</h1>
+            <h1 class="text-center cell title">{{ $seo['h1']  or $type['title'] }}</h1>
 
             @if(!empty($plans) && count($plans) > 0)
                 <div class="cell type-plans m_b-20">

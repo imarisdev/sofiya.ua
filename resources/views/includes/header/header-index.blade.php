@@ -31,12 +31,12 @@
                 <div class="logo-new fl_l">
                     <img src="{{ Helpers::getImage($current_complex->image_small) }}" alt="{{ $current_complex->title }} - ЖК София" />
                 </div>
-                <div class="logo-new-name">{{ $current_complex->title }}</div>
+                <!--div class="logo-new-name">{{ $current_complex->title }}</div-->
             @else
                 <div class="logo-new fl_l">
                     <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }} - ЖК София" />
                 </div>
-                <div class="logo-new-name">{{ $default_complex->title }}</div>
+                <!--div class="logo-new-name">{{ $default_complex->title }}</div-->
             @endif
 
             <div class="wrapper">
