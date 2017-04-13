@@ -3496,3 +3496,6 @@ a.fancybox-item.fancybox-close:after{
     border: none;
     height: 1px;
 }
+.ban-block { 
+    min-height: 260px;
+}
