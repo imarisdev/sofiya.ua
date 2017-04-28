@@ -58,7 +58,7 @@ class GalleryController extends AdminController {
 
         $gallery = $this->gallery->getById($id);
 
-        $photos = $this->medialib->getFiles(['object_id' => $gallery->id, 'object_type' => 'gallery']);
+        $photos = $this->medialib->getFiles(['object_id' => $gallery->id, 'object_type' => 'gallery'], 100);
 
         return view('admin.gallery.edit', compact('gallery', 'photos'));
     }
