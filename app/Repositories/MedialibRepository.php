@@ -20,7 +20,7 @@ class MedialibRepository extends BaseRepository {
      * @param $oblect_type
      * @return mixed
      */
-    public function getFiles($request = null, $limit = 20) {
+    public function getFiles($request = null, $limit = 100) {
 
         $files = $this->model
             ->select('id', 'file', 'title', 'created_at', 'object_type', 'object_id');
