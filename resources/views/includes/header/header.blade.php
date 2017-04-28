@@ -33,7 +33,7 @@
                 <div class="logo-new fl_l">
                     <img src="{{ Helpers::getImage($default_complex->image_big) }}" alt="{{ $default_complex->title }} - ЖК София" />
                 </div>
-                <div class="logo-new-name">{{ $default_complex->title }}</div>
+                <div class="logo-new-name">ЖК София</div>
             @endif
 
             <div class="wrapper">
