@@ -141,22 +141,24 @@ Medialib = {
     },
     loadImages: function() {
 
-        $.ajax({
-            url: "/admin/medialib/load",
-            data: {object_id: _medialib.objectId, object_type: _medialib.objectType},
-            dataType: "json",
-            method: "POST",
-            success: function (data) {
-                if(data) {
-                    $('.medialib-images-block').empty();
-                    for(i in data) {
-                        _medialib.addImageThumbnail(data[i]);
+        if (_medialib.objectId) {
+            $.ajax({
+                url: "/admin/medialib/load",
+                data: {object_id: _medialib.objectId, object_type: _medialib.objectType},
+                dataType: "json",
+                method: "POST",
+                success: function (data) {
+                    if (data) {
+                        $('.medialib-images-block').empty();
+                        for (i in data) {
+                            _medialib.addImageThumbnail(data[i]);
+                        }
+                    } else {
+                        console.log('Error load images');
                     }
-                } else {
-                    console.log('Error load images');
                 }
-            }
-        });
+            });
+        }
     }
 };
 
