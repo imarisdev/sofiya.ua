@@ -2111,18 +2111,18 @@ a.blue-title:hover,
     position: relative;
 }
 
-.item-manager .icon-phone {
+/*.item-manager .icon-phone {
     position: absolute;
     top: -2px;
     left: 30px;
-}
+}*/
 .item-manager p.tel {
     padding-left: 10px;
     text-align: left;
     font-size: 14px;
 }
 
-.item-manager p.mail i {
+.item-manager p.tel i {
     margin-right: 8px;
 }
 .item-manager p.mail {
