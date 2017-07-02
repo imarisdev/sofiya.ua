@@ -6,10 +6,11 @@
             <div class="text-center name m_b-10">{{ $user->name }}</div>
 
             @if(!empty($user->phone))
-                <div class="relative">
+                <!--div class="relative">
                     <i class="icon-phone"></i>
                     <p>{!! Helpers::phone($user->phone) !!}</p>
-                </div>
+                </div-->
+                <p class="tel"><i class="icon-phone"></i>{!! Helpers::phone($user->phone) !!}</p>
             @endif
 
             @if(!empty($user->email))
