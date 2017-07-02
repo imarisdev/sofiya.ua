@@ -233,7 +233,7 @@ class PlansRepository extends BaseRepository {
         $plan->kitchen         = $inputs['kitchen'];
         $plan->bathroom_area   = $inputs['bathroom_area'];
         $plan->bathroom        = $inputs['bathroom'];
-        $plan->balcony         = $inputs['balcony'];
+        $plan->balcony         = !empty($inputs['balcony']) ? $inputs['balcony'] : 0;
         $plan->content         = $inputs['content'];
         $plan->is_decoration   = $inputs['is_decoration'];
 

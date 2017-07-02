@@ -65,6 +65,8 @@ class UserRepository extends BaseRepository {
             $users->whereIn('role_id', $role_id);
         }
 
+        $users->orderBy('name');
+
         return $users->get();
     }
 
