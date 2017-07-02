@@ -13,11 +13,11 @@
             </div>
 
             <div class="phone-click js-phone-click fl_r">
-                <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}">{{ $options['phone_1'] or '' }}</a></span>
+                <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></span>
                 <i class="down"></i>
                 <ul class="js-phone-block phone-block" style="display: none;">
-                    <li><a class="black" href="tel:{{ $options['phone_2'] or '' }}">{{ $options['phone_2'] or '' }}</a></li>
-                    <li><a class="black" href="tel:{{ $options['phone_3'] or '' }}">{{ $options['phone_3'] or '' }}</a></li>
+                    <li><a class="black" href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>
+                    <li><a class="black" href="tel:{{ $options['phone_3'] or '' }}"onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>
                 </ul>
             </div>
         </div>

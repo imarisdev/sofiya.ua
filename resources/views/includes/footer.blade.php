@@ -23,9 +23,9 @@
                     <div class="phone-click cell">
                         <span><i class="icon-phone"></i></span>
                         <ul class="cell m_b-20">
-                            <li><a href="tel:{{ $options['phone_1'] or '' }}">{{ $options['phone_1'] or '' }}</a></li>
-                            <li><a href="tel:{{ $options['phone_2'] or '' }}">{{ $options['phone_2'] or '' }}</a></li>
-                            <li><a href="tel:{{ $options['phone_3'] or '' }}">{{ $options['phone_3'] or '' }}</a></li>
+                            <li><a href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></li>
+                            <li><a href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>
+                            <li><a href="tel:{{ $options['phone_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>
                         </ul>
                     </div>
 
@@ -36,7 +36,7 @@
             </div>
             
             <div class="cell3 cell-lg-6 cell-xs m_t-15">
-                <form class="js-feedback-form">
+                <form class="js-feedback-form" onsubmit="yaCounter27077372.reachGoal('formF'); ga('send', 'event', 'formF', 'sendForm')">
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
                     <input type="hidden" value="Форма в футере" name="place">
                     <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">

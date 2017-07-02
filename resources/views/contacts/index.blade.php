@@ -18,9 +18,9 @@
         <div class="item cell4 cell-sm">
             <div class="blue-title h4">НАШИ ТЕЛЕФОНЫ:</div>
 
-            <p><a class="black" href="tel:+380443614000"><span itemprop="telephone">(044) 361-4000</span></a><br />
-                <a class="black" href="tel:+380663614000"><span itemprop="telephone">(066) 361-4000</span></a><br />
-                <a class="black" href="tel:+380679714000"><span itemprop="telephone">(067) 971-4000</span></a>
+            <p><a class="black" href="tel:+380443614000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')"><span itemprop="telephone">(044) 361-4000</span></a><br />
+                <a class="black" href="tel:+380663614000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')"><span itemprop="telephone">(066) 361-4000</span></a><br />
+                <a class="black" href="tel:+380679714000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')"><span itemprop="telephone">(067) 971-4000</span></a>
             </p>
         </div>
 
