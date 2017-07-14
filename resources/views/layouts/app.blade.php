@@ -41,14 +41,8 @@
                 @include('includes.footer')
             </footer>
             <script async src="//www.youtube.com/player_api"></script>
-			<script type="text/javascript">
-  (function(d, w, s) {
- var widgetHash = '3i65z3b075w3xqf30qn1', ctw = d.createElement(s); ctw.type = 'text/javascript'; ctw.async = true;
- ctw.src = '//widgets.binotel.com/calltracking/widgets/'+ widgetHash +'.js';
- var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(ctw, sn);
-  })(document, window, 'script');
-</script>
-	        <script async src="{{ elixir('js/common.js') }}"></script>
+	        <script async src='//callbackhub.com/l/call.js'></script>
+            <script async src="{{ elixir('js/common.js') }}"></script>
 
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q4STN"
