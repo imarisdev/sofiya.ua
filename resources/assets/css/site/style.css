@@ -2547,6 +2547,7 @@ form.review {
 .map {
     margin-top: 30px;
     height: 600px;
+	overflow:hidden;
 }
 .map-small {
     margin: 10px 0 20px;
