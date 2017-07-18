@@ -5,11 +5,13 @@
         <div id="photo-slider" class="flexslider photo-slider">
             <ul class="slides">
                 @foreach($items as $item)
+				@if($item->file !== 'N;')
                     <li>
                         <a rel="group" class="js-fancybox" href="{{ Helpers::getImage($item->file, '1024x768', null, 'fit-w') }}">
                             <img alt="ЖК София" src="{{ Helpers::getImage($item->file, '800x640', null, 'fit-w') }}" width="435" height="320" />
                         </a>
                     </li>
+					@endif
                 @endforeach
             </ul>
         </div>
@@ -17,10 +19,12 @@
     <div class="wrap-nav">
         <div id="photo-carousel" class="flexslider photo-carousel">
             <ul class="slides">
-                @foreach($items as $item)
+				@foreach($items as $item)
+				     @if($item->file !== 'N;')
                     <li>
                         <img alt="ЖК София" src="{{ Helpers::getImage($item->file, '100x70', null, 'fit') }}"/>
                     </li>
+					@endif
                 @endforeach
             </ul>
         </div>
