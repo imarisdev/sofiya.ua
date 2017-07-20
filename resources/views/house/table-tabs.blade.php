@@ -32,11 +32,11 @@
             <div class="table-cell">{{ $balcony_types[$item->balcony] }}</div>
             <div class="table-cell">{{ Helpers::completion($house->completion_at) }}</div>
             <div class="table-cell">
-                <a class="js-fancybox" href="#fancybox-house-{{ $item->room.$key }}" data-href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">
+                <a class="js-fancybox" href="#fancybox-house-{{ $item->rooms.$key }}" data-href="/planirovki/{{ $plan['info']['slug'] }}/{{ $item->link() }}">
                     <img alt="ЖК София" src="{{ Helpers::getImage($item->image, '0x70') }}" />
                 </a>
 
-                <div id="fancybox-house-{{ $item->room.$key }}" class="text-center fancybox-house d_n">
+                <div id="fancybox-house-{{ $item->rooms.$key }}" class="text-center fancybox-house d_n">
                     <div class="cell">
                         <img class="m_b-20" src="{{ Helpers::getImage($item->image, '0x500') }}" alt="ЖК София">
                     </div>
