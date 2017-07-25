@@ -40,7 +40,7 @@
                                     <input type="file" class="form-control" id="slider" name="slider" multiple placeholder="Image" />
                                 </div>
                                 <div class="row">
-								{{-- @if(!empty($photos) && count($photos) > 0) --}}
+                                    @if(!empty($photos) && count($photos) > 0)
                                         @foreach($photos as $photo)
                                             <div class="col-md-3 medialib-{{ $photo->id }}">
                                                 <div class="box">
@@ -55,7 +55,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
-										{{-- @endif --}}
+                                    @endif
                                 </div>
                             </div>
                         </div>
