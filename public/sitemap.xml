@@ -3,8 +3,56 @@
   <url>
     <loc>https://www.sofiya.ua/</loc>
 		<priority>1.0</priority>
-		<lastmod>2017-07-01T21:01:02+00:00</lastmod>
+		<lastmod>2017-07-24T21:01:01+00:00</lastmod>
 		<changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/32-dostoinstva-i-nedostatki-rassrochki-na-novuyu-kvarti</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-22T09:11:44+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/31-prodolzhaet-rasshiryatsya-zhk-sofiya-klubnyj</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-19T09:17:03+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/30-dlya-komfortnogo-prozhivaniya-obustraivaem-territor</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-18T09:28:43+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/29-ekvator-projden</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-07T08:35:29+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/27-novyj-sezon-rabot-v-zhk-sofia-residence-nachato</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-07T06:59:56+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/26-sravnenie-pervichnogo-i-vtorichnogo-rynka-nedvizhimosti</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-06T08:42:42+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/25-gde-luchshe-kupit-kvartiru-v-kieve</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-04T08:22:03+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/novosti/23-obzor-cen-na-odnokomnatnye-kvartiry-v-kieve</loc>
+		<priority>0.8</priority>
+		<lastmod>2017-07-03T06:37:13+00:00</lastmod>
+		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.sofiya.ua/novosti/20-prodazha-kvartir-v-zhk-sofiya-siti</loc>
@@ -551,6 +599,11 @@
   </url>
   <url>
     <loc>https://www.sofiya.ua/sofievskaya-borshagovka/61-dom-yablonevaya-15</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/sofievskaya-borshagovka/62-dom-pr-martynova-2</loc>
 		<priority>0.5</priority>
 		<changefreq>monthly</changefreq>
   </url>
@@ -7061,6 +7114,146 @@
   </url>
   <url>
     <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1312-yabl-15-2-h-urovnevaya-kvartira-101-6</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1313-pr-martinova-2-odnokomnatnaya-kvartira-37-4</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1315-pr-martinova-2-odnokomnatnaya-kvartira-37-4</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1316-pr-martinova-2-odnokomnatnaya-kvartira-38-9-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1317-pr-martinova-2-odnokomnatnaya-kvartira-38-9-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1318-pr-martinova-2-odnokomnatnaya-kvartira-40-8</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1319-pr-martinova-2-2-h-komnatnaya-kvartira-57-8-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1320-pr-martinova-2-2-h-komnatnaya-kvartira-57-8-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1321-pr-martinova-2-2-h-komnatnaya-kvartira-67</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1322-pr-martinova-2-odnokomnatnaya-kvartira-36-6</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1323-pr-martinova-2-2-h-komnatnaya-kvartira-67-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1324-pr-martinova-2-2-h-komnatnaya-kvartira-58-2</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1325-pr-martinova-2-odnokomnatnaya-kvartira-43-1</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1326-pr-martinova-2-odnokomnatnaya-kvartira-42-1</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1327-pr-martinova-2-2-h-komnatnaya-kvartira-65-4</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1328-pr-martinova-2-2-h-urovnevaya-kvartira-75-7</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1329-pr-martinova-2-2-h-urovnevaya-kvartira-93-6</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1330-pr-martinova-2-2-h-urovnevaya-kvartira-99</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1331-pr-martinova-4-odnokomnatnaya-kvartira-37-4-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1332-pr-martinova-4-odnokomnatnaya-kvartira-37-4</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1333-pr-martinova-2-2-h-urovnevaya-kvartira-79-9-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1334-pr-martinova-4-odnokomnatnaya-kvartira-37-4-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1335-pr-martinova-4-odnokomnatnaya-kvartira-38-9-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/odnokomnatnye-kvartiry/1336-pr-martinova-4-odnokomnatnaya-kvartira-38-9-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhkomnatnye-kvartiry/1337-pr-martinova-4-2-h-komnatnaya-kvartira-67-2</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1338-pr-martinova-2-2-h-urovnevaya-kvartira-107-8-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1339-pr-martinova-2-2-h-urovnevaya-kvartira-107-8-l</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1340-pr-martinova-2-2-h-urovnevaya-kvartira-75-7-r</loc>
+		<priority>0.5</priority>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.sofiya.ua/planirovki/dvuhurovnevye-kvartiry/1341-pr-martinova-2-2-h-urovnevaya-kvartira-96-3</loc>
 		<priority>0.5</priority>
 		<changefreq>monthly</changefreq>
   </url>

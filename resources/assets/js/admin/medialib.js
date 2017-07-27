@@ -130,6 +130,7 @@ Medialib = {
     includeImage: function(e) {
         this.setFormData();
         attach = new EJS({url: '/ejs/attach_file.ejs'}).render(_medialib.insertData);
+		console.log(attach);
         if (this.currentInstance && this.currentInstance.length > 0) {
             CKEDITOR.instances[this.currentInstance].insertHtml(attach);
         } else {
