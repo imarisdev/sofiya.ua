@@ -144,13 +144,10 @@ class HouseRepository extends BaseRepository {
             $house->slug = $inputs['slug'];
         }
 
-        //if(!empty($inputs['image'])) {
-        //    $house->image = $this->image->uploadImage($inputs['image'][0]);
-        //}
 		if(!empty($inputs['image'])) {
             $house->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
-
+      
         try {
 
             $house->save();
