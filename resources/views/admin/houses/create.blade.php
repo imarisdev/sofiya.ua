@@ -75,7 +75,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="number">Номер дома</label>
-                                            <input type="number" class="form-control" id="number" name="number" placeholder="Номер дома"
+                                            <input type="text" class="form-control" id="number" name="number" placeholder="Номер дома"
                                                    value="{{ $house->number or '' }}">
                                         </div>
                                     </div>

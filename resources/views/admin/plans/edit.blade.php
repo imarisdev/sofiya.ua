@@ -123,7 +123,16 @@
                                             @endif
                                         </div>
                                     </div>
-
+									<div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="balcony">Балкон</label>
+                                            @if(!empty($plan->balcony))
+                                                {!! Form::select('balcony', $balcony_types, $plan->balcony, ['class' => 'form-control']) !!}
+                                            @else
+                                                {!! Form::select('balcony', $balcony_types, null, ['class' => 'form-control']) !!}
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
