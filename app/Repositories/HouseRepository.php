@@ -145,7 +145,7 @@ class HouseRepository extends BaseRepository {
         }
 
         if(!empty($inputs['image'])) {
-            $house->image = $this->image->uploadImage($inputs['image'][0]);
+            $house->image = @serialize($this->image->uploadImage($inputs['image'][0]));
         }
 
         try {
