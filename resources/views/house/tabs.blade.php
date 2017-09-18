@@ -20,8 +20,8 @@
                             @if(!empty($house->images_list[$tkey]))
                                 <div class="cell m_b-20">
                                     <div class="cell m_b-10"> {{ $types }}</div>
-                                    <a href="{{ Helpers::getImage($house->images_list[$tkey]) }}" class="js-fancybox">
-                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '500x460', null, 'fit') }}" alt="ЖК София" class="margin">
+                                    <a href="{{ Helpers::getImage($house->images_list[$tkey], '800x600', null, 'fit', true, false) }}" class="js-fancybox">
+                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '500x460', null, 'fit', true, false) }}" alt="ЖК София" class="margin">
                                     </a>
                                 </div>
                             @endif
