@@ -19,7 +19,7 @@ class Helpers {
      * @param $size_empty
      * @return null|string
      */
-    public static function getImage($file = null, $size = null, $empty = 'http://placehold.it/', $resize_type = 'resize', $size_empty = true) {
+    public static function getImage($file = null, $size = null, $empty = 'http://placehold.it/', $resize_type = 'resize', $size_empty = true, $unserialize = true) {
         if (empty($file)) {
             $sizes = explode('x', $size);
 
@@ -35,7 +35,9 @@ class Helpers {
         } else {
 
             if(isset($file) && !empty($file)) {
-                $file = @unserialize($file);
+                if ($unserialize) {
+                    $file = @unserialize($file);
+                }
             }
 
             if (empty($size)) {
@@ -188,7 +190,7 @@ class Helpers {
         }, $link);
 
         if("/$url" == $link) {
-            return "<span>$title</span>";
+            return "<span class='current'>$title</span>";
         } else {
             if($external == 1) {
                 return "<!--noindex--><a target='_blank' rel='nofollow' href='$link'>$title</a><!--/noindex-->";

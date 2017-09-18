@@ -252,7 +252,7 @@ class PlansRepository extends BaseRepository {
             $plan->save();
 
             if(!empty($inputs['slider'])) {
-                $this->medialib->saveFiles($inputs['slider'], $plan->id, 'plans');
+                $this->medialib->saveSliderImages($inputs['slider'], $plan->id, 'plans');
             }
 
             return Response::json(['item' => $plan], 201);

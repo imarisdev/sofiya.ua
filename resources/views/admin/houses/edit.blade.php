@@ -226,7 +226,7 @@
                                         <input type="file" class="form-control" id="plans[{{ $tkey }}]" name="plans[{{ $tkey }}]" multiple placeholder="Files" />
                                     </div>
                                     @if(!empty($house->images_list[$tkey]))
-                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '300x260', null, 'fit') }}" alt="..." class="margin">
+                                        <img src="{{ Helpers::getImage($house->images_list[$tkey], '300x260', null, 'fit', true, false) }}" alt="..." class="margin">
                                     @endif
                                 @endforeach
                             </div>

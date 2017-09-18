@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories;
 
+use Mockery\Exception;
 use Response;
 use App\Models\Medialib;
 
@@ -66,6 +67,10 @@ class MedialibRepository extends BaseRepository {
             try {
                 $image = $this->image->uploadImage($file);
 
+                if (empty($image)) {
+                    return Response::json(['error' => true, 'msg' => array('Error in save image file')], 400);
+                }
+
                 $medialib = new $this->model;
 
                 if ($object_id) {
@@ -92,6 +97,56 @@ class MedialibRepository extends BaseRepository {
                 die();
             }
         }
+    }
+
+    /**
+     * @param $files
+     * @param null $object_id
+     * @param null $oblect_type
+     * @return array|bool
+     */
+    public function saveSliderImages($files, $object_id = null, $oblect_type = null) {
+
+        if(empty($files)) {
+            throw new Exception('Empty file');
+        }
+
+        $filesList = [];
+
+        foreach ($files as $file) {
+            $image = $this->image->uploadImage($file);
+
+            if (empty($image)) {
+                throw new Exception('Error in save image file');
+            }
+
+            $medialib = new $this->model;
+
+            if ($object_id) {
+                $medialib->object_id = $object_id;
+            }
+            if ($oblect_type) {
+                $medialib->object_type = $oblect_type;
+            }
+            $medialib->file = @serialize($image);
+
+            try {
+                $medialib->save();
+            } catch(\Exception $e) {
+                throw new Exception($e->getMessage());
+            }
+
+            $imge_info = $this->image->getImageInfo($file);
+
+            $file = $image;
+            $file['id'] = $medialib->id;
+            $file['title'] = $medialib->title;
+            $file['info'] = $imge_info;
+
+            $filesList[] = $file;
+        }
+
+        return $filesList;
     }
 
     /**
