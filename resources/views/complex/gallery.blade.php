@@ -43,6 +43,7 @@
 
             @if(!empty($complex_list) && count($complex_list) > 0)
                 <div class="cell m_b-10">
+                    <p class="text-center h3 m_b-10">Выбрать другой комплекс</p>
                     @foreach($complex_list as $item)
                         @if($complex->id != $item->id)
                             <div class="cell4 cell-xs-6 cell-xss">
