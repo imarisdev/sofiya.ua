@@ -204,7 +204,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/planirovki/arenda', array('as' => 'plans.rent', 'uses' => 'PlansController@rent'));
     Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
-    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-]+']);
+    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-\.]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-\.]+']);
 
     // Улицы
     Route::get('/ulitsy', array('as' => 'street.index', 'uses' => 'StreetController@index'));

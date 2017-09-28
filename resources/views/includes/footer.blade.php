@@ -75,22 +75,12 @@
         </div>
 
     </div>
-	<script type="text/javascript">
-  (function(d, w, s) {
- var widgetHash = '3i65z3b075w3xqf30qn1', ctw = d.createElement(s); ctw.type = 'text/javascript'; ctw.async = true;
- ctw.src = '//widgets.binotel.com/calltracking/widgets/'+ widgetHash +'.js';
- var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(ctw, sn);
-  })(document, window, 'script');
-</script>
-<<<<<<< HEAD
-<script type="text/javascript"> 
- (function(d, w, s) { 
-var widgetHash = 'dyzfiw8gzl7znubmohgx', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true; 
-gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js'; 
-var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn); 
- })(document, window, 'script'); 
-</script> 
-=======
->>>>>>> c96b2ebae65665d5f8bf00105c2223d61cc577a8
+    <script type="text/javascript">
+     (function(d, w, s) {
+    var widgetHash = 'dyzfiw8gzl7znubmohgx', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+    gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+    var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+     })(document, window, 'script');
+    </script>
     @include('includes.call-back')
 </footer>
