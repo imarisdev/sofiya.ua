@@ -519,6 +519,10 @@ a {
     border-radius: 50%;
 }
 
+.nav-top li span.current {
+    border-bottom: 2px solid #09f;
+}
+
 .nav-bottom {
     padding: 0 20px 0 50px;
     background-color: rgba(83, 209, 238, 0.68);
