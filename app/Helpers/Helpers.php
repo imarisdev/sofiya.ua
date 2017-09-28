@@ -42,7 +42,7 @@ class Helpers {
                 }
             }
 
-            if (!isset($file['file']) || !isset($file['ext']) {
+            if (!isset($file['file']) || !isset($file['ext'])) {
                 if(!empty($sizes[0]) && !empty($sizes[1]) && $size_empty) {
                     return $empty . $size;
                 } else if(!empty($size) && $size_empty) {
