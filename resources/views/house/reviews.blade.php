@@ -1,4 +1,4 @@
-<h3 class="text-center h2 m_t-20 m_b-20">ОТЗЫВЫ (12)</h3>
+{{--<h3 class="text-center h2 m_t-20 m_b-20">ОТЗЫВЫ (12)</h3>
 
 <div class="cell rewiev-item">
     <div class="rewiev-title cell">
@@ -61,4 +61,4 @@
     <div class="fl_r m_b-30">
         <button class="blue-btn">Оставить коментарий</button>
     </div>
-</form>
+</form>--}}
