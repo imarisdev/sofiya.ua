@@ -11,7 +11,7 @@
 
             @foreach($photos as $photo)
                 <h2 class="title-page m_t-10">Фотогалерея - {{ $photo['complex']->title }}</h2>
-                @include('complex.photo-carousel', ['items' => $photo['photos']])
+                @include('complex.photo-carousel', ['items' => $photo['photos'], 'photo_id' => $photo['complex']->id])
             @endforeach
 
             @if(!empty($complex_list) && count($complex_list) > 0)

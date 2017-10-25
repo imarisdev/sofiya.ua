@@ -2,7 +2,7 @@
 @if(!empty($items) && count($items) > 0)
 <section class="carousel-section cell m_b-30">
     <div class="no-nav">
-        <div id="photo-slider" class="flexslider photo-slider">
+        <div id="photo-slider-{{ $photo_id }}" data-id="{{ $photo_id }}" class="flexslider js-photo-slider photo-slider photo-slider-{{ $photo_id }}">
             <ul class="slides">
                 @foreach($items as $item)
 				@if($item->file !== 'N;')
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="wrap-nav">
-        <div id="photo-carousel" class="flexslider photo-carousel">
+        <div id="photo-carousel-{{ $photo_id }}" data-id="{{ $photo_id }}" class="flexslider js-photo-carousel photo-carousel photo-carousel-{{ $photo_id }}">
             <ul class="slides">
 				@foreach($items as $item)
 				     @if($item->file !== 'N;')

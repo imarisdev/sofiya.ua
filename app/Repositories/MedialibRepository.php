@@ -179,6 +179,8 @@ class MedialibRepository extends BaseRepository {
             $medialib->where('object_type', '=', $request['object_type']);
         }
 
+        $medialib->orderBy('created_at', 'desc');
+
         $photos = [];
 
         foreach($medialib->get() as $item) {
