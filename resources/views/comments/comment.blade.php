@@ -1,4 +1,4 @@
-<div class="m_b-20">
+{{--<div class="m_b-20">
 
     <div class="comment-form m_b-20 clearfix">
         <p class="m_b-10 text-lg bold">Добавить комментарий</p>
@@ -28,6 +28,7 @@
 </div>
 
 {{--<hr class="m_b-10" />--}}
+{{--
 @if(count($comments) > 0)
     <p class="m_b-10 h3 bold">Комментарии</p>
 @endif
@@ -53,3 +54,4 @@
 
 
 @endforeach
+--}}

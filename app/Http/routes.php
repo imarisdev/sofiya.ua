@@ -194,17 +194,17 @@ Route::group(['middleware' => 'web'], function () {
     // Images resize
     Route::get('/uploads/images/{path}_{w}x{h}_{type}{ext}', 'ImageController@resizeImage')->where(['path' => '[a-z0-9\-\/]+', 'w' => '[0-9]+', 'h' => '[0-9]+', 'type' => '[a-zA-Z\-]+', 'ext' => '[jpg|png|gif|jpeg|JPG|PNG\.]+']);
 
-    // News
-    Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));
-    Route::get('/akciy', array('as' => 'articles.shares', 'uses' => 'ArticlesController@shares'));
-    Route::get('/{type}/{id}-{slug}', array('as' => 'articles.page', 'uses' => 'ArticlesController@page'))->where(['type' => '[novosti|akciy]+', 'id' => '[0-9]+', 'slug' => '[a-z0-9\-]+']);
-
     // Планировки
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
     Route::get('/planirovki/arenda', array('as' => 'plans.rent', 'uses' => 'PlansController@rent'));
     Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
     Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-\.]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-\.]+']);
+
+    // News
+    Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));
+    Route::get('/akciy', array('as' => 'articles.shares', 'uses' => 'ArticlesController@shares'));
+    Route::get('/{type}/{id}-{slug}', array('as' => 'articles.page', 'uses' => 'ArticlesController@page'))->where(['type' => '[novosti|akciy]+', 'id' => '[0-9]+', 'slug' => '[a-z0-9\-]+']);
 
     // Улицы
     Route::get('/ulitsy', array('as' => 'street.index', 'uses' => 'StreetController@index'));

@@ -20,23 +20,28 @@ $(window).load(function() {
         asNavFor: '.video-slider'
     });
 
-    $('.photo-slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: true,
-        slideshow: false,
-        sync: ".photo-carousel"
+    $(".js-photo-slider").each(function( index ) {
+        var id = $(this).data('id');
+        $('.photo-slider-' + id).flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: true,
+            slideshow: false,
+            sync: ".photo-carousel-" + id
+        });
     });
 
-
-    $('.photo-carousel').flexslider({
-        animation: "slide",
-        directionNav:true,
-        controlNav: false,
-        animationLoop: true,
-        slideshow:true,
-        itemWidth: 100,
-        itemMargin: 5,
-        asNavFor: '.photo-slider'
+    $(".js-photo-carousel").each(function( index ) {
+        var id = $(this).data('id');
+        $('.photo-carousel-' + id).flexslider({
+            animation: "slide",
+            directionNav:true,
+            controlNav: false,
+            animationLoop: true,
+            slideshow:true,
+            itemWidth: 100,
+            itemMargin: 5,
+            asNavFor: '.photo-slider-' + id
+        });
     });
 });

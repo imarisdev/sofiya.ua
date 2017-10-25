@@ -162,6 +162,7 @@ class PlansController extends Controller {
         $plan = $this->plans->getById($id);
 
         $seo_params = [
+            'id' => $plan->id,
             'name' => $plan->title,
             'address' => $plan->house->street->title . ", " . $plan->house->number
         ];

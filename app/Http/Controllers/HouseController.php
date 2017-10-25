@@ -82,6 +82,7 @@ class HouseController extends Controller {
         $plans_types = $this->house->getModel()->getPlansTypes();
 
         $seo_params = [
+            'id' => $house->id,
             'name' => $house->title,
             'address' => $house->street->title . ", " . $house->number
         ];
