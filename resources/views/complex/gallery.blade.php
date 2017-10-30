@@ -15,7 +15,7 @@
             @if(!empty($items) && count($items) > 0)
                 <section class="carousel-section cell m_b-30">
                     <div class="no-nav">
-                        <div id="photo-slider" class="flexslider photo-slider">
+                        <div id="photo-slider-{{ $complex->id }}" data-id="{{ $complex->id }}" class="flexslider js-photo-slider photo-slider photo-slider-{{ $complex->id }}">
                             <ul class="slides">
                                 @foreach($items as $item)
                                     <li>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="wrap-nav">
-                        <div id="photo-carousel" class="flexslider photo-carousel">
+                        <div id="photo-carousel-{{ $complex->id }}" data-id="{{ $complex->id }}" class="flexslider js-photo-carousel photo-carousel photo-carousel-{{ $complex->id }}">
                             <ul class="slides">
                                 @foreach($items as $item)
                                     <li>
