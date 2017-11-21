@@ -1,6 +1,6 @@
 <section class="carousel-section cell m_b-30">
     <div class="no-nav">
-        <div id="photo-slider" class="flexslider photo-slider">
+        <div id="photo-slider" data-id="{{ $house->id }}" class="flexslider photo-slider photo-slider-{{ $house->id }} js-photo-slider">
             <ul class="slides">
                 <li>
                     <a rel="group" class="js-fancybox" href="{{ Helpers::getImage($house->image, '1024x768', null, 'fit-w') }}">
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="wrap-nav">
-        <div id="photo-carousel" class="flexslider photo-carousel">
+        <div id="photo-carousel" data-id="{{ $house->id }}" class="flexslider photo-carousel photo-carousel-{{ $house->id }} js-photo-carousel">
             <ul class="slides">
                 <li>
                     <img alt="{{ $house->title }} - ЖК София" title="{{ $house->title }}" src="{{ Helpers::getImage($house->image, '100x70', '/img/sofiamar.png', 'fit', false) }}" />
