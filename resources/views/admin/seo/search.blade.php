@@ -8,24 +8,21 @@
                 <form method="GET" role="form">
                     <div class="row">
                         <div class="col-xs-2">
+                            <a class="btn btn-primary" href="/admin/seo/">SEO Мод</a>
+                        </div>
+                        <div class="col-xs-2">
                             <select name="object_type" class="form-control">
+                                <option value="">- Типы -</option>
                                 @foreach($types as $tkey => $type)
                                     <option value="{{ $type->object_type }}" @if(Input::get('object_type') == $type->object_type) selected @endif>{{ $type->object_type }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-xs-2">
-                            <button type="submit" class="btn btn-primary">Найти</button>
-                            <a href="/{{ Request::path() }}" class="btn btn-primary">Сбросить фильтр</a>
+                        <div class="col-xs-6">
+                            <input type="text" name="query" class="form-control" placeholder="Поиск по URL" value="{{ Request::get('query') }}" />
                         </div>
                         <div class="col-xs-2">
-                            <a href="/admin/seo/search" class="btn btn-primary pull-right">Поиск</a>
-                        </div>
-                        <div class="col-xs-3">
-                            <a href="/admin/seo/create" class="btn btn-primary pull-right">Создать</a>
-                        </div>
-                        <div class="col-xs-3">
-                            <a href="/admin/seo/generate" class="btn btn-primary pull-right">Генератор</a>
+                            <button type="submit" class="btn btn-primary">Поиск</button>
                         </div>
                     </div>
                 </form>

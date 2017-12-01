@@ -94,6 +94,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/seo/save', array('as' => 'admin.seo.save', 'uses' => 'SeoController@store'));
         Route::post('/seo/update', array('as' => 'admin.seo.save', 'uses' => 'SeoController@update'));
         Route::post('/seo/delete', array('as' => 'admin.seo.delete', 'uses' => 'SeoController@delete'));
+        Route::get('/seo/search', array('as' => 'admin.seo.search', 'uses' => 'SeoController@search'));
 
         // Banners
         Route::get('/banners', array('as' => 'admin.banners', 'uses' => 'BannersController@index'));

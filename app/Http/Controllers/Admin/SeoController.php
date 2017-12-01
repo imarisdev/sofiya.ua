@@ -107,4 +107,23 @@ class SeoController extends AdminController {
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(Request $request) {
+
+        $seo = [];
+
+        $query = $request->get('query', null);
+        $objectType = $request->get('object_type', null);;
+
+        if ($query) {
+            $seo = $this->seo->search($query, $objectType);
+        }
+
+        $types = $this->seo->getTypes();
+
+        return view('admin.seo.search', compact('seo', 'types'));
+    }
 }
