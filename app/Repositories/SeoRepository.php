@@ -290,4 +290,22 @@ class SeoRepository extends BaseRepository {
 
     }
 
+    /**
+     * @param $query
+     * @param $objectType
+     * @param int $limit
+     * @return mixed
+     */
+    public function search($query, $objectType, $limit = 20) {
+        $seo = $this->model
+            ->where('seo.url', 'like', "%{$query}%")
+            ->orderBy('seo.priority', 'desc');
+
+        if(!empty($objectType)) {
+            $seo = $seo->where('object_type', '=', $objectType);
+        }
+
+        return $seo->paginate($limit);
+    }
+
 }
