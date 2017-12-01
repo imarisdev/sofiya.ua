@@ -56,7 +56,10 @@
                                 <td width="5%">{{ $s->id }}</td>
                                 <td width="10%"><a href="/admin/{{ $s->object_type }}/edit/{{ $s->object_id }}">{{ $s->object_id }}</a></td>
                                 <td width="10%">{{ $s->object_type }}</td>
-                                <td width="30%"><a href="/admin/seo/edit/{{ $s->id }}">{{ $s->title }}</a></td>
+                                <td width="30%">
+                                    <p><a href="/admin/seo/edit/{{ $s->id }}">{{ $s->title }}</a></p>
+                                    <small>URL: {{ $s->url }}</small>
+                                </td>
                                 <td width="30%">{{ $s->description }}</td>
                                 <td>
                                     <div class="admin-tools">
