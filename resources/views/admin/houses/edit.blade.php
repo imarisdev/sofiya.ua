@@ -215,8 +215,31 @@
                             </div>
                             <div class="tab-pane" id="tab_4">
                                 <div class="form-group">
-                                    <label for="files">Файлы документов</label>
-                                    <input type="file" class="form-control" id="files" name="files" multiple placeholder="Files" />
+                                    <label for="documents[image]">Файл документа (JPG/PNG)</label>
+                                    <input type="file" class="form-control" id="documents[image]" name="documents[image]" placeholder="Images" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Подпись картинки</label>
+                                    <input type="text" class="form-control" name="documents[title]" placeholder="Title">
+                                </div>
+                                <div class="row">
+                                    @if(!empty($house->documents) && count($house->documents) > 0)
+                                        @foreach($house->documents as $document)
+                                            <div class="col-md-3 document-{{ $document->id }}">
+                                                <div class="box">
+                                                    <div class="box-body">
+                                                        <img src="{{ Helpers::getImage($document->image, '300x260', null, 'fit') }}" alt="..." class="img-thumbnail">
+                                                        <p>{{ $document->title }}</p>
+                                                    </div>
+                                                    <!-- /.box-body -->
+                                                    <div class="box-footer">
+                                                        <a class="btn btn-danger btn-xs pull-right js-delete-item" data-id="{{ $document->id }}" data-reload="false" data-action="/admin/documents" data-type="document">Удалить</a>
+                                                    </div>
+                                                    <!-- /.box-footer-->
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <div class="tab-pane" id="tab_5">

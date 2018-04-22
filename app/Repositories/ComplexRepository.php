@@ -80,7 +80,7 @@ class ComplexRepository extends BaseRepository {
         $complex->title     = $inputs['title'];
         $complex->owner     = $inputs['owner'];
         $complex->map       = $inputs['map'];
-	$complex->content   = $inputs['content'];
+	    $complex->content   = $inputs['content'];
         $complex->status    = 1;
 
         if(empty($inputs['slug'])) {
