@@ -83,6 +83,14 @@ class House extends BaseModel {
     }
 
     /**
+     * Документы
+     * @return mixed
+     */
+    public function documents() {
+        return $this->hasMany('App\Models\Documents', 'house_id', 'id');
+    }
+
+    /**
      * Картинки в медиа библиотеке - кэшируемый
      * @return mixed
      */

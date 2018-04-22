@@ -173,6 +173,8 @@ Route::group(['middleware' => 'web'], function () {
         Route::post('/medialib/delete', array('as' => 'admin.medialib.delete', 'uses' => 'MedialibController@delete'));
         Route::post('/medialib/load', array('as' => 'admin.medialib.load', 'uses' => 'MedialibController@load'));
 
+        // Documents
+        Route::post('/documents/delete', array('as' => 'admin.documents.delete', 'uses' => 'DocumentsController@delete'));
     });
 
     Route::get('/', array('as' => 'home.index', 'uses' => 'HomeController@index'));
@@ -200,7 +202,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/planirovki/arenda', array('as' => 'plans.rent', 'uses' => 'PlansController@rent'));
     Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'));
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
-    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-\.]+', 'id' => '[0-9]+', 'plan' => '[a-z0-9\-\.]+']);
+    Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-\.]+', 'id' => '[0-9]+', 'plan' => '[a-zA-Z0-9\-\.]+']);
 
     // News
     Route::get('/novosti', array('as' => 'articles.news', 'uses' => 'ArticlesController@news'));

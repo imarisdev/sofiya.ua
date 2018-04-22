@@ -92,6 +92,7 @@ html[xmlns] .flexslider .slides {
 }
 .flexslider .slides {
   /*zoom: 1;*/
+  padding-left: 0;
 }
 .flexslider .slides img {
   height: auto;
@@ -112,6 +113,7 @@ html[xmlns] .flexslider .slides {
   margin-right: 5px;
 }
 .flex-direction-nav {
+  list-style-type: none !important;
   /**height: 0;*/
 }
 .no-nav .flex-direction-nav {
