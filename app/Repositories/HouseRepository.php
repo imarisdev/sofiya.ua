@@ -169,7 +169,6 @@ class HouseRepository extends BaseRepository {
             }
 
             if(!empty($inputs['documents']['image'])) {
-                print_r($inputs['documents']);exit;
                 $this->documents->saveDocument($inputs['documents'], $house->id, $house->title);
             }
 
