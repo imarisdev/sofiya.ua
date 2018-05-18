@@ -163,6 +163,8 @@ class PlansController extends Controller {
 
         $plan = $this->plans->getById($id);
 
+        $this->checkURL($plan->pathLink());
+
         $seo_params = [
             'id' => $plan->id,
             'name' => $plan->title,

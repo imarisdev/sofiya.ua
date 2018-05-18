@@ -17,7 +17,15 @@ class Controller extends BaseController {
 
     }
 
-    public function checkURL($item_url) {
+    public function checkURL($link) {
+        $requestPath = \Request::server('REQUEST_URI');
 
+        if ($queryString = \Request::server('QUERY_STRING')) {
+            $link = $link . "?" . $queryString;
+        }
+
+        if ($requestPath != $link) {
+            header("Location: " . $link, 301, true);
+        }
     }
 }
