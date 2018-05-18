@@ -26,12 +26,12 @@ class SeoRepository extends BaseRepository {
     public function getSeoData($object_id = null, $object_type = null, $params = null) {
 
         $seo = $this->model
-            ->where(function($query) use ($object_id, $object_type) {
+            ->where('seo.url', '=', $this->request->route()->getName())
+            ->orWhere('seo.url', '=', $this->request->path())
+            ->orWhere(function($query) use ($object_id, $object_type) {
                 $query->where('object_id', '=', $object_id)
                         ->where('object_type', '=', $object_type);
             })
-            ->orWhere('seo.url', '=', $this->request->route()->getName())
-            ->orWhere('seo.url', '=', $this->request->path())
             ->orderBy('seo.priority', 'desc')
             ->first();
 

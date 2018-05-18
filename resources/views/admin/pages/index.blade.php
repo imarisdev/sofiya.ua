@@ -59,6 +59,9 @@
                     </table>
                 </div>
             </div>
+            <div class="navigation">
+                {!! $pages->setPath(Request::url())->appends(Request::query())->render() !!}
+            </div>
         @endif
     </section>
 

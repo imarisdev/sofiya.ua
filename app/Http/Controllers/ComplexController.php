@@ -70,6 +70,8 @@ class ComplexController extends Controller {
 
         $complex_list = $this->complex->getAllComplexes(['status' => 1]);
 
+        $this->seo->getSeoData();
+
         return view('complex.gallery', compact('complex', 'breadcrumbs', 'photos', 'complex_list'));
 
     }
@@ -97,6 +99,8 @@ class ComplexController extends Controller {
             ]
         ];
 
+        $this->seo->getSeoData();
+
         return view('complex.video', compact('complex', 'breadcrumbs', 'complex_list'));
 
     }
@@ -121,6 +125,8 @@ class ComplexController extends Controller {
                 'title' => "Школа и садик в {$complex->title}"
             ]
         ];
+
+        $this->seo->getSeoData();
 
         return view('complex.kids', compact('complex', 'breadcrumbs'));
 

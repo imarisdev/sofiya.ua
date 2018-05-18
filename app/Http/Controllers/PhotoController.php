@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ComplexRepository;
 use App\Repositories\MedialibRepository;
+use App\Repositories\SeoRepository;
 
 class PhotoController extends Controller {
 
-    protected $medialib;
-    protected $complex;
+    private $medialib;
+    private $complex;
+    private $seo;
 
-    public function __construct(MedialibRepository $medialib, ComplexRepository $complex) {
-
+    public function __construct(
+        MedialibRepository $medialib,
+        ComplexRepository $complex,
+        SeoRepository $seo
+    ) {
         $this->medialib = $medialib;
         $this->complex = $complex;
+        $this->seo = $seo;
     }
 
     /**
@@ -29,6 +35,8 @@ class PhotoController extends Controller {
         }
 
         $complex_list = $this->complex->getAllComplexes(['status' => 1]);
+
+        $this->seo->getSeoData();
 
         return view('photo.index', compact('photos', 'complex_list'));
     }

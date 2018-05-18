@@ -3,17 +3,23 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\ComplexRepository;
+use App\Repositories\SeoRepository;
 use App\Repositories\VideoRepository;
 
 class VideoController extends Controller {
 
-    protected $video;
-    protected $complex;
+    private $video;
+    private $complex;
+    private $seo;
 
-    public function __construct(VideoRepository $video, ComplexRepository $complex) {
-
+    public function __construct(
+        VideoRepository $video,
+        ComplexRepository $complex,
+        SeoRepository $seo
+    ) {
         $this->video = $video;
         $this->complex = $complex;
+        $this->seo = $seo;
     }
 
     /**
@@ -29,6 +35,8 @@ class VideoController extends Controller {
         }
 
         $complex_list = $this->complex->getAllComplexes(['status' => 1]);
+
+        $this->seo->getSeoData();
 
         return view('video.index', compact('videos', 'complex_list'));
     }

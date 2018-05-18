@@ -41,6 +41,8 @@ class SitemapController extends Controller {
 
         $plans = $this->plans->getPlans(null, 500);
 
+        $this->seo->getSeoData();
+
         return view('sitemap.html', compact('houses', 'streets', 'complexes', 'plans'));
     }
 }

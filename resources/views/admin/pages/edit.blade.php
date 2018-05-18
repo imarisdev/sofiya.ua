@@ -9,6 +9,9 @@
                         <div class="col-md-8">
                             <h2 class="page-header">{{ $page->title or '' }}</h2>
                         </div>
+                        <div class="col-md-4">
+                            <a target="_blank" class="btn btn-primary pull-right" href="/{{ $page->slug }}">Перейти</a>
+                        </div>
                     </div>
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
