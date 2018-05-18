@@ -30,6 +30,8 @@ class ArticlesController extends Controller {
             ]
         ];
 
+        $this->seo->getSeoData();
+
         return view('articles.news', compact('articles', 'breadcrumbs'));
     }
 
@@ -46,6 +48,8 @@ class ArticlesController extends Controller {
                 'title' => "Акции"
             ]
         ];
+
+        $this->seo->getSeoData();
 
         return view('articles.news', compact('articles', 'breadcrumbs'));
     }

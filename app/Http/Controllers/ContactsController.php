@@ -2,10 +2,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Repositories\SeoRepository;
+
 class ContactsController extends Controller{
 
-    public function __construct() {
+    private $seo;
 
+    public function __construct(SeoRepository $seo) {
+        $this->seo = $seo;
     }
 
     /**
@@ -19,6 +23,8 @@ class ContactsController extends Controller{
                 'title' => "Наши контакты"
             ]
         ];
+
+        $this->seo->getSeoData();
 
         return view('contacts.index', compact('breadcrumbs'));
     }

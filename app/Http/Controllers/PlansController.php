@@ -45,6 +45,8 @@ class PlansController extends Controller {
             ]
         ];
 
+        $this->seo->getSeoData();
+
         return view('plans.allplans', compact('types', 'breadcrumbs', 'complex'));
 
     }

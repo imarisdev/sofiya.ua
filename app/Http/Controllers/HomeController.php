@@ -43,6 +43,8 @@ class HomeController extends Controller {
      */
     public function genplan() {
 
+        $this->seo->getSeoData();
+
         return view('home.genplan');
     }
 }
