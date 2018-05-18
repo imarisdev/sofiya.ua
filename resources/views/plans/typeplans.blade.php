@@ -19,7 +19,7 @@
                                 </div>
 
                                 <div class="cell6 p_l-20 p_t-20 p_r-10">
-                                    <a class="blue-title m_b-10 fl_l" href="/planirovki/{{ $type['slug'] }}/{{ $plan->link() }}">{{ $plan->title }}</a>
+                                    <a class="blue-title m_b-10 fl_l" href="{{ $plan->pathLink() }}">{{ $plan->title }}</a>
                                 </div>
                             </div>
                         </div>
