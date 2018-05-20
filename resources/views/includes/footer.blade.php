@@ -47,7 +47,21 @@
             </div>
         </div>
 
-        <div class="cell m_b-20 m_t-10 cell-sm-6 cell-xs">
+        @if('planirovki' != Request::path())
+            <div class="cell m_b-20 cell-sm-6 cell-xs">
+                <p class="info fl_l cell-md-none"></p>
+
+                <ul class="site-pages fl_r cell-md">
+                    <li><a href="/planirovki/odnokomnatnye-kvartiry">Однокомнатные</a></li>
+                    <li><a href="/planirovki/dvuhkomnatnye-kvartiry">Двухкомнатные</a></li>
+                    <li><a href="/planirovki/trehkomnatnye-kvartiry">Трехкомнатные</a></li>
+                    <li><a href="/planirovki/kvartiry-s-remontom">Квартиры с ремонтом</a></li>
+                    <li><a href="/planirovki/dvuhurovnevye-kvartiry">Двухуровневые квартиры</a></li>
+                </ul>
+            </div>
+        @endif
+
+        <div class="cell m_b-20 cell-sm-6 cell-xs">
             <p class="info fl_l cell-md-none">© ЖК «Софія» от Мартынова, 2016</p>
 
             <ul class="site-pages fl_r cell-md">
