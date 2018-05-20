@@ -25,7 +25,9 @@ class Controller extends BaseController {
         }
 
         if ($requestPath != $link) {
-            header("Location: " . $link, 301, true);
+            //header("Location: " . $link, 301, true);
+            header('Location: ' . $link, true, 301);
+            die();
         }
     }
 }
