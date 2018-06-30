@@ -718,14 +718,14 @@ a {
     z-index: 9;
 }
 .logo-new {
-    padding: 0 10px;
+    padding: 10px 10px;
     background-color: #fefefe;
     width: 130px;
     text-align: center;
 }
 .logo-new-name {
-    padding: 45px 0 0 0;
-    height: 110px;
+    padding: 55px 0 0 0;
+    height: 130px;
     background-color: #01415f;
     float: left;
     text-align: center;
@@ -1589,6 +1589,7 @@ h1.title {
     font-family: Roboto;
     font-size: 14px;
     line-height: 24px;
+    cursor: pointer;
 }
 
 .phone-click .down {
@@ -2568,6 +2569,68 @@ form.review {
     height: 400px;
 }
 
+/*
+    sales-department
+ */
+.sales-department {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background: #fff;
+    width: 50%;
+    height: 350px;
+    margin: 0 -25% 0;
+    box-shadow: 0 0 20px #333;
+}
+.sales-department .close {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    color: #15425a;
+    cursor: pointer;
+}
+.sales-department .close:after {
+    content: 'x';
+    color: #15425a;
+    font-size: 24px;
+    text-align: center;
+    width: 47px;
+    display: block;
+    font-family: Arial;
+    font-weight: 700;
+    height: 47px;
+    line-height: 47px;
+}
+.sales-department .top-title {
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0 20px;
+}
+.sales-department .departments {
+
+}
+.sales-department .departments .item {
+    float: left;
+    width: 20%;
+    font-size: 14px;
+    text-align: center;
+}
+.sales-department .departments .item .img {
+    height: 130px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+.sales-department .departments .item .title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+}
+.sales-department .departments .item a {
+    color: #333;
+    display: block;
+}
 .call-fixed-btn {
     display: block;
     position: fixed;
@@ -2790,7 +2853,7 @@ form.review {
     }
 
     header .phone-click > span {
-        display: none;
+        /*display: none;*/
     }
 
     header .phone-click i.down{
@@ -3249,6 +3312,28 @@ form.review {
     .map {
         height: 400px;
     }
+    .sales-department {
+        top: 2%;
+        width: 95%;
+        left: 2.5%;
+        height: auto;
+        margin: 0;
+        z-index: 99;
+    }
+    .sales-department .departments {
+        display: inline-block;
+        width: 100%;
+        background: #fff;
+        padding-bottom: 20px;
+    }
+    .sales-department .departments .item {
+        width: 50%;
+        height: 210px;
+    }
+    .sales-department .departments .item img {
+        max-height: 100px;
+        height: 110px;
+    }
 }
 
 @media all and (max-width: 640px) {
@@ -3290,9 +3375,13 @@ form.review {
         padding: 0 17px;
         background: url('/img/icon--arrow.png') no-repeat 100% 50%;
     }
-    header .phone-click span {color: transparent}
+    header .phone-click span {
+        /*color: transparent*/
+        margin-left: 25px;
+        font-size: 18px;
+    }
     header .phone-click .icon-phone {
-        display: none;
+        /*display: none;*/
     }
 
     header .phone-block li {
