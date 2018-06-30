@@ -72,6 +72,10 @@
                                            value="{{ $seo->priority or '' }}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="slug">Контент верхний</label>
+                                    <textarea id="content_top" name="content_top" rows="10" cols="80">{{ $seo->content_top or '' }}</textarea>
+                                </div>
+                                <div class="form-group">
                                     <label for="slug">Контент</label>
                                     <textarea id="content" name="content" rows="10" cols="80">{{ $seo->content or '' }}</textarea>
                                 </div>

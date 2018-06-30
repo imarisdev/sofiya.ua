@@ -143,6 +143,7 @@ class HouseRepository extends BaseRepository {
         $house->flats           = $inputs['flats'];
         $house->class           = $inputs['class'];
         $house->content         = $inputs['content'];
+        $house->is_finished     = $inputs['is_finished'];
 
         if(empty($inputs['slug'])) {
             $house->slug = $this->createSlug($inputs['title']);;

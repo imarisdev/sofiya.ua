@@ -56,7 +56,14 @@ class PlansController extends AdminController implements AdminItemContract {
 
         $plans_decoration = $this->plans->getPlansDecoration();
 
-        return view('admin.plans.create', compact('plans_type', 'houses', 'bathroom_types', 'balcony_types', 'plans_decoration'));
+        $price_range = $this->plans->getPriceRange();
+
+        $installment_plans = $this->plans->getInstallmentPlans();
+
+        return view(
+            'admin.plans.create',
+            compact('plans_type', 'houses', 'bathroom_types', 'balcony_types', 'plans_decoration', 'price_range', 'installment_plans')
+        );
     }
 
     /**
@@ -90,7 +97,14 @@ class PlansController extends AdminController implements AdminItemContract {
 
         $plans_decoration = $this->plans->getPlansDecoration();
 
-        return view('admin.plans.edit', compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types', 'photos', 'plans_decoration'));
+        $price_range = $this->plans->getPriceRange();
+
+        $installment_plans = $this->plans->getInstallmentPlans();
+
+        return view(
+            'admin.plans.edit',
+            compact('plan', 'plans_type', 'houses', 'bathroom_types', 'balcony_types', 'photos', 'plans_decoration', 'price_range', 'installment_plans')
+        );
     }
 
     /**

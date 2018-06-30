@@ -21,9 +21,39 @@ class PlansRepository extends BaseRepository {
         2 => '2 балкона'
     ];
 
+    /**
+     * Цены для поиска
+     * @var array
+     */
+    private $price_range = [
+        0 => 'Нет',
+        10000 => '10000 USD',
+        15000 => '15000 USD',
+        20000 => '20000 USD',
+        25000 => '25000 USD',
+        30000 => '30000 USD',
+        35000 => '35000 USD',
+        40000 => '40000 USD',
+        50000 => '50000 USD',
+        60000 => '60000 USD'
+    ];
+
+    private $installment_plans = [
+        0 => 'Нет',
+        5 => 'Рассрочка 5 лет',
+        10 => 'Рассрочка 10 лет',
+        20 => 'Рассрочка 20 лет'
+    ];
+
     private $plans_decoration = [
         1 => 'Без ремонта',
         2 => 'C ремонтом'
+    ];
+
+    private $rooms_count = [
+        'odnokomnatnye' => 1,
+        'dvuhkomnatnye' => 2,
+        'trehkomnatnye' => 3
     ];
 
     public function __construct(Plans $plans, ImageRepository $image, MedialibRepository $medialib) {
@@ -39,6 +69,27 @@ class PlansRepository extends BaseRepository {
      */
     public function getPlansDecoration() {
         return $this->plans_decoration;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPriceRange() {
+        return $this->price_range;
+    }
+
+    /**
+     * @return array
+     */
+    public function getInstallmentPlans() {
+        return $this->installment_plans;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRoomsCount() {
+        return $this->rooms_count;
     }
 
     /**
@@ -236,6 +287,12 @@ class PlansRepository extends BaseRepository {
         $plan->balcony         = !empty($inputs['balcony']) ? $inputs['balcony'] : 0;
         $plan->content         = $inputs['content'];
         $plan->is_decoration   = $inputs['is_decoration'];
+        $plan->is_studio       = isset($inputs['is_studio']) ? 1 : 0;
+        $plan->is_smart        = isset($inputs['is_smart']) ? 1 : 0;
+        $plan->is_elit         = isset($inputs['is_elit']) ? 1 : 0;
+        $plan->is_credit       = isset($inputs['is_credit']) ? 1 : 0;
+        $plan->price_range     = $inputs['price_range'];
+        $plan->installment_plan = $inputs['installment_plan'];
 
         if(empty($inputs['slug'])) {
             $plan->slug = $this->createSlug($inputs['title']);;

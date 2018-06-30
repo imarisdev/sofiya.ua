@@ -41,7 +41,7 @@
         </div>
 
         <div class="cell3 p_l-5 cell-md">
-            @include('includes.sidebars.plans')
+            @include('includes.sidebar')
         </div>
     </div>
 @endsection

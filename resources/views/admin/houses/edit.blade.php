@@ -169,7 +169,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3">
-
+                                        <div class="form-group">
+                                            <label for="is_finished">Дом сдан</label>
+                                            {!! Form::select('is_finished', ['Нет', 'Да'], $house->is_finished, ['class' => 'form-control']) !!}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">

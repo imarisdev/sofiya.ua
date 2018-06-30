@@ -145,6 +145,48 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="price_range">Цена</label>
+                                            {!! Form::select('price_range', $price_range, null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="installment_plan">Рассрочка</label>
+                                            {!! Form::select('installment_plan', $installment_plans, null, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="is_studio" type="checkbox"> Квартиры студии
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="is_smart" type="checkbox"> Смарт квартира
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="is_elit" type="checkbox"> Элитные квартиры
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="is_credit" type="checkbox"> Квартира в кредит
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="slug">Контент</label>

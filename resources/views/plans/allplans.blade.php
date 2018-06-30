@@ -30,7 +30,7 @@
         </div>
 
         <div class="cell3 p_l-5 cell-md">
-            @include('includes.sidebar')
+            @include('includes.sidebars.plans')
         </div>
     </div>
     

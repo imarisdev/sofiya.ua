@@ -201,6 +201,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/planirovki', array('as' => 'plans.index', 'uses' => 'PlansController@allPlans'));
     Route::get('/planirovki/arenda', array('as' => 'plans.rent', 'uses' => 'PlansController@rent'));
     Route::get('/planirovki/kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'));
+    Route::get('/planirovki/{rooms_count}-kvartiry-s-remontom', array('as' => 'plans.decoration', 'uses' => 'PlansController@decoration'))->where(['rooms_count' => '[odnokomnatnye|dvuhkomnatnye|trehkomnatnye]+']);
+    Route::get('/planirovki/kvartiry-studii', array('as' => 'plans.studio', 'uses' => 'PlansController@studio'));
+    Route::get('/planirovki/smart-kvartiry', array('as' => 'plans.smart', 'uses' => 'PlansController@smart'));
+    Route::get('/planirovki/elitnye-kvartiry', array('as' => 'plans.elit', 'uses' => 'PlansController@elit'));
+    Route::get('/planirovki/v-sdannom-dome', array('as' => 'plans.house-finished', 'uses' => 'PlansController@houseFinished'));
+    Route::get('/planirovki/v-stroyashchemsya-dome', array('as' => 'plans.house-building', 'uses' => 'PlansController@houseBuilding'));
+    Route::get('/rassrochka/rassrochka-{years}-let', array('as' => 'plans.installment', 'uses' => 'PlansController@installment'))->where(['years' => '[0-9]+']);
+    Route::get('/rassrochka/kredit', array('as' => 'plans.credit', 'uses' => 'PlansController@credit'));
+    Route::get('/planirovki/kvartiru-za-{price}-usd', array('as' => 'plans.byprice', 'uses' => 'PlansController@byPrice'))->where(['price' => '[0-9]+']);
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));
     Route::get('/planirovki/{type}/{id}-{plan}', array('as' => 'plans.plan', 'uses' => 'PlansController@plan'))->where(['type' => '[a-z0-9\-\.]+', 'id' => '[0-9]+', 'plan' => '[a-zA-Z0-9\-\.]+']);
 
