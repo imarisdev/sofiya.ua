@@ -36,13 +36,13 @@
             </div>
             
             <div class="cell3 cell-lg-6 cell-xs m_t-15">
-                <form class="js-feedback-form" onsubmit="yaCounter27077372.reachGoal('formF'); ga('send', 'event', 'formF', 'sendForm')">
+                <form class="js-feedback-form" data-formtype="formF">
                     <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
                     <input type="hidden" value="Форма в футере" name="place">
                     <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
                     <input class="field m_b-10" type="text" name="phone" placeholder="Ваш телефон">
                     <textarea class="field" type="text" name="content" placeholder="Ваш комментарий"></textarea>
-                    <input type="submit" class="pull-right yellow-btn">
+                    <input type="submit" class="pull-right yellow-btn" data-formtype="formF">
                 </form>
             </div>
         </div>

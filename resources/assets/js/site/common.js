@@ -52,7 +52,8 @@ $(document).ready(function () {
     });
 
 
-    $('.js-feedback-form').on('submit', function() {
+    $('.js-feedback-form').on('submit', function(event) {
+        var form = $(this).parents("form")
 
         var formData = new FormData();
 
@@ -60,6 +61,8 @@ $(document).ready(function () {
         $.each(formFields, function (key, input) {
             formData.append(input.name, input.value);
         });
+
+        var formtype = $(this).attr('data-formtype');
 
         $.ajax({
             url: '/feedback/send',
@@ -75,6 +78,9 @@ $(document).ready(function () {
             success: function (data) {
                 $('.js-feedback-form')[0].reset();
                 $.fancybox.close();
+                console.log(formtype);
+                ga('send', 'event', formtype, 'callback');
+                yaCounter27077372.reachGoal(formtype);
             },
             error: function(data) {
                 alert('Заполните обязательные поля!')
