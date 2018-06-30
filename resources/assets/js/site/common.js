@@ -48,7 +48,8 @@ $(document).ready(function () {
     });*/
 
     $('.js-phone-click').click(function () {
-        $('.js-phone-block').toggle('slow');
+        $('#sales-department').show();
+        //$('.js-phone-block').toggle('slow');
     });
 
 
@@ -90,6 +91,12 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.js-close-popup').on('click', function () {
+        var close_popup = $(this).data('close');
+
+        $('#' + close_popup).hide();
+    })
+
     setTimeout(function() {
         onYouTubeIframeAPIReady();
     }, 5000);
@@ -115,8 +122,9 @@ jQuery(function ($) {
     });
 
     jQuery('.js-phone-click').click(function () {
-        $('.js-phone-block').show();
-        $(this).addClass('active');
+        $('#sales-department').show();
+        // $('.js-phone-block').show();
+        // $(this).addClass('active');
     });
 
 

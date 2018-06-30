@@ -13,16 +13,18 @@
             </div>
 
             <div class="phone-click js-phone-click fl_r">
-                @if(isset($complex) && $complex->id == 3)
-                    <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_4'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_4'] or '' }}</a></span>
-                @else
-                    <span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></span>
-                    <i class="down"></i>
-                    <ul class="js-phone-block phone-block" style="display: none;">
-                        <li><a class="black" href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>
-                        <li><a class="black" href="tel:{{ $options['phone_3'] or '' }}"onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>
-                    </ul>
-                @endif
+                <span class="dark-blue bold">Контакты</span>
+                <i class="down"></i>
+                {{--@if(isset($complex) && $complex->id == 3)--}}
+                    {{--<span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_4'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_4'] or '' }}</a></span>--}}
+                {{--@else--}}
+                    {{--<span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></span>--}}
+                    {{--<i class="down"></i>--}}
+                    {{--<ul class="js-phone-block phone-block" style="display: none;">--}}
+                        {{--<li><a class="black" href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>--}}
+                        {{--<li><a class="black" href="tel:{{ $options['phone_3'] or '' }}"onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>--}}
+                    {{--</ul>--}}
+                {{--@endif--}}
             </div>
         </div>
 

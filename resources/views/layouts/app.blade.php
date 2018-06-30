@@ -40,6 +40,7 @@
             <footer>
                 @include('includes.footer')
             </footer>
+            @include('includes.sales-department')
             <script async src="//www.youtube.com/player_api"></script>
 	      <!--  <script async src='//callbackhub.com/l/call.js'></script> -->
             <script async src="{{ elixir('js/common.js') }}"></script>
