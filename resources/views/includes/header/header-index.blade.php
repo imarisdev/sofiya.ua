@@ -15,7 +15,7 @@
             </div>
 
             <div class="phone-click js-phone-click fl_r">
-                <span>Контакты</span>
+                <span class="dark-blue bold">Контакты</span>
                 <i class="down"></i>
                 {{--@if(isset($complex) && $complex->id == 3)--}}
                     {{--<span><i class="icon-phone"></i><a class="black" href="tel:{{ $options['phone_4'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_4'] or '' }}</a></span>--}}
