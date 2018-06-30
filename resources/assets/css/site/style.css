@@ -3329,7 +3329,10 @@ form.review {
     }
     .sales-department .departments .item {
         width: 50%;
-        height: 210px;
+        height: 195px;
+    }
+    .sales-department .departments .item .img {
+        height: 110px;
     }
     .sales-department .departments .item img {
         max-height: 100px;
