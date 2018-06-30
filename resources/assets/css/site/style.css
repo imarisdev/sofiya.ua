@@ -2574,7 +2574,7 @@ form.review {
  */
 .sales-department {
     position: absolute;
-    top: 25%;
+    top: 230px;
     left: 50%;
     background: #fff;
     width: 50%;
@@ -3313,12 +3313,13 @@ form.review {
         height: 400px;
     }
     .sales-department {
-        top: 2%;
+        top: 10px;
         width: 95%;
         left: 2.5%;
         height: auto;
         margin: 0;
         z-index: 99;
+        position: fixed;
     }
     .sales-department .departments {
         display: inline-block;
@@ -3361,6 +3362,14 @@ form.review {
     }
     .nav-top {
         height: 50px;
+        position: fixed;
+        z-index: 1;
+    }
+    .nav-bottom {
+        padding: 50px 0 0 0;
+    }
+    .menu-adapt {
+        position: fixed;
     }
     .main-logo-part{
         top: -10px;
