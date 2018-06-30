@@ -206,25 +206,75 @@ abstract class BaseRepository {
     }
 
     /**
-     * Создает условия для поиска
+     * @param null $request
+     * @param int $limit
+     * @param array $fields
+     * @param array $order
+     */
+    public function getList(
+        $request = null,
+        $limit = 0,
+        $fields = ['*'],
+        $order = ['id' => 'asc']
+    ) {
+        $list = $this->model
+            ->select($fields)
+            ->orderBy(key($order), current($order));
+
+        $list = $this->makeCondition($list, $request);
+
+        if ($limit) {
+            $list->take($limit);
+        }
+
+        return $list->get();
+    }
+
+    /**
+     * @param array $request
+     * @param int $limit
+     * @param array $fields
+     * @param array $order
+     * @return mixed
+     */
+    public function getPagedList(
+        $request = [],
+        $limit = 20,
+        $fields = ['*'],
+        $order = ['id' => 'asc']
+    ) {
+        $list = $this->model
+            ->select($fields)
+            ->orderBy(key($order), current($order));
+
+        $list = $this->makeCondition($list, $request);
+
+        return $list->paginate($limit);
+    }
+
+    /**
+     * Make query condition
      * @param $query
      * @param null $request
      * @return mixed
      */
-    public function makeCondition($query, $request = null) {
-
-        $columns = $this->model->getTableColumns();
-
+    public function makeCondition($query, $request = null)
+    {
         if ($request) {
+            $columns = $this->model->getTableColumns();
+
             foreach($request as $field => $value) {
-                if(empty($value)) {
+                if(!isset($value)) {
                     continue;
                 }
+
                 if(array_search($field, $columns) !== false) {
-                    if(is_array($value)) {
+                    if (is_array($value) && in_array(key($value), ['<', '>', '<=', '>=', '<>', '!='], true)) {
+                        $query->where($field, key($value), current($value));
+                    } else if (is_array($value)) {
                         $query->whereIn($field, $value);
                     } else {
-                        $query->where($field, '=', $value);
+                        $query->where($field, $value);
                     }
                 }
             }

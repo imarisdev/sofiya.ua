@@ -146,6 +146,16 @@ var Admin = {
                 forceEnterMode: true
             });
         }
+
+        if($('[name=content_top]').length > 0) {
+            CKEDITOR.replace('content_top', {
+                height: '300',
+                extraAllowedContent: 'div(*); span(*); blockquote(*); p(*); ul(*); ol(*)',
+                allowedContent: true,
+                enterMode: CKEDITOR.ENTER_P,
+                forceEnterMode: true
+            });
+        }
     },
     updateCKEditor: function() {
         for (i in CKEDITOR.instances) {
