@@ -778,6 +778,24 @@ a {
     padding: 0 10px;
 }
 
+.contacts-header {
+    float: left;
+    position: absolute;
+    top: 320px;
+    left: 50px;
+    z-index: 9;
+    cursor: pointer;
+}
+.contacts-header span {
+    padding: 12px 84px 10px;
+    background: url(/img/arrow-w.png) no-repeat 78% 55% #53d1ee;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease-out 0.05s;
+    border: none;
+    font-family: Roboto;
+}
 /**/
 .header-all {
     min-height: 530px;
@@ -3413,6 +3431,10 @@ form.review {
     }
     .logo-new img {
         top: -5px;
+    }
+
+    .contacts-header {
+        display: none;
     }
 
     .form-header {

@@ -21,6 +21,8 @@
     <label>Content</label>
     <textarea rows="5" type="text" class="form-control" name="seo[content]">{{ $item->content or '' }}</textarea>
 </div>
-<div class="form-group">
-    <a target="_blank" href="{{ route('admin.seo.edit', ['id' => $item->id]) }}" class="btn btn-primary">Редактировать</a>
-</div>
+@if(isset($item->id))
+    <div class="form-group">
+        <a target="_blank" href="{{ route('admin.seo.edit', ['id' => $item->id]) }}" class="btn btn-primary">Редактировать</a>
+    </div>
+@endif

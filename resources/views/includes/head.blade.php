@@ -42,3 +42,5 @@
   ga('send', 'pageview');
 
 </script>
+
+<script async src="{{ elixir('js/common.js') }}"></script>

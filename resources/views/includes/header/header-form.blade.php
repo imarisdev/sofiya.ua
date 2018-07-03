@@ -51,3 +51,7 @@
     </form>
 </div>
 @endif
+
+<div class="contacts-header js-phone-click">
+    <span>Отдел продаж</span>
+</div>
