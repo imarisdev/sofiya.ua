@@ -2644,6 +2644,7 @@ form.review {
     font-size: 16px;
     text-align: center;
     font-weight: 600;
+    padding: 5px 0;
 }
 .sales-department .departments .item a {
     color: #333;
