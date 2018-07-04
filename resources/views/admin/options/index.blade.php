@@ -36,6 +36,7 @@
                         <tr>
                             <td>ID</td>
                             <td>Название</td>
+                            <td>Ключ</td>
                             <td>Значение</td>
                             <td>&nbsp;</td>
                         </tr>
@@ -45,6 +46,7 @@
                             <tr class="admin-tools-wrap option-{{ $option->id }}">
                                 <td>{{ $option->id }}</td>
                                 <td width="30%"><a href="/admin/options/edit/{{ $option->id }}">{{ $option->title }}</a></td>
+                                <td width="30%">{{ $option->options_key }}</td>
                                 <td width="30%">{{ $option->options_value }}</td>
                                 <td>
                                     <div class="admin-tools">

@@ -18,7 +18,7 @@ class AddParamsToPlansTable extends Migration
             $table->smallInteger('is_elit')->default(0)->index();
             $table->smallInteger('is_credit')->default(0)->index();
             $table->integer('price_range')->default(0)->index();
-            $table->integer('installment_plan')->default(0)->index();
+            $table->string('installment_plan', 5)->default(0)->index();
         });
     }
 

@@ -207,7 +207,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/planirovki/elitnye-kvartiry', array('as' => 'plans.elit', 'uses' => 'PlansController@elit'));
     Route::get('/planirovki/v-sdannom-dome', array('as' => 'plans.house-finished', 'uses' => 'PlansController@houseFinished'));
     Route::get('/planirovki/v-stroyashchemsya-dome', array('as' => 'plans.house-building', 'uses' => 'PlansController@houseBuilding'));
-    Route::get('/rassrochka/rassrochka-{years}-let', array('as' => 'plans.installment', 'uses' => 'PlansController@installment'))->where(['years' => '[0-9]+']);
+    Route::get('/rassrochka/rassrochka-{years}-god', array('as' => 'plans.installment', 'uses' => 'PlansController@installment'))->where(['years' => '[0-9\.]+']);
     Route::get('/rassrochka/kredit', array('as' => 'plans.credit', 'uses' => 'PlansController@credit'));
     Route::get('/planirovki/kvartiru-za-{price}-usd', array('as' => 'plans.byprice', 'uses' => 'PlansController@byPrice'))->where(['price' => '[0-9]+']);
     Route::get('/planirovki/{type}', array('as' => 'plans.type', 'uses' => 'PlansController@typePlans'));

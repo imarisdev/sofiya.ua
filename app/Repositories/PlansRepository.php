@@ -39,10 +39,10 @@ class PlansRepository extends BaseRepository {
     ];
 
     private $installment_plans = [
-        0 => 'Нет',
-        5 => 'Рассрочка 5 лет',
-        10 => 'Рассрочка 10 лет',
-        20 => 'Рассрочка 20 лет'
+        '0' => 'Нет',
+        '1' => '1 год',
+        '1.5' => '1.5 года',
+        '2' => '2 года'
     ];
 
     private $plans_decoration = [
