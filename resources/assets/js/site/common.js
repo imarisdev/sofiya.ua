@@ -133,7 +133,7 @@ jQuery(function ($) {
         $('.js-form-content').toggle('slow');
     });
 
-    var streetsList = {1: [1, 3, 5, 6, 7, 8, 9, 10, 11, 16], 2: [12, 13, 14], 3: [15, 17], 4: []};
+    var streetsList = {1: [1, 3, 5, 6, 7, 8, 9, 10, 11, 16], 2: [12, 13, 14], 3: [15, 17], 4: [], 5: [5, 6]};
 
     $('.js-form-content [name=complex_list]').on('change', function() {
         $('.js-form-content [name=streets] option').hide();
