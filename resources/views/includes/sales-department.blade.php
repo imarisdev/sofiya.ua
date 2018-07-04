@@ -7,42 +7,45 @@
                 <img src="/img/sofiacity.png" alt="">
             </div>
             <p class="title">Sofiya city:</p>
-            <a href="tel:+38 (044) 362-2000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (044) 362-2000</a>
-            <a href="tel:+38 (067) 888-7090" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (067) 888-7090</a>
-            <a href="tel:+38 (095) 905-6000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (095) 905-6000</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_1_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_1_1'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_1_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_1_2'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_1_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_1_3'] or '' }}</a>
         </div>
         <div class="item">
             <div class="img">
                 <img src="/img/sofiaclub.png" alt="">
             </div>
             <p class="title">Sofiya club:</p>
-            <a href="tel:+38 (097) 994-2000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (097) 994-2000</a>
-            <a href="tel:+38 (095) 894-2000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (095) 894-2000</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_2_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_2_1'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_2_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_2_2'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_2_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_2_3'] or '' }}</a>
         </div>
         <div class="item">
             <div class="img">
                 <img src="/img/sofiares.png" alt="">
             </div>
             <p class="title">Sofiya Residence:</p>
-            <a href="tel:+38 (068) 900-3090" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (068) 900-3090</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_3_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_3_1'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_3_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_3_2'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_3_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_3_3'] or '' }}</a>
         </div>
         <div class="item">
             <div class="img">
                 <img src="/img/sofiasmart.png" alt="">
             </div>
             <p class="title">Sofiya Smart:</p>
-            <a href="tel:+38 (044) 362-2000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (044) 362-2000</a>
-            <a href="tel:+38 (067) 888-7090" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (067) 888-7090</a>
-            <a href="tel:+38 (095) 905-6000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (095) 905-6000</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_4_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_4_1'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_4_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_4_2'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_4_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_4_3'] or '' }}</a>
         </div>
         <div class="item">
             <div class="img">
                 <img src="/img/sofiyanova.png" alt="">
             </div>
             <p class="title">Sofiya Nova:</p>
-            <a href="tel:+38 (044) 580-2000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (044) 580-2000</a>
-            <a href="tel:+38 (097) 580-7090" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (097) 580-7090</a>
-            <a href="tel:+38 (050) 905-6000" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">+38 (050) 905-6000</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_5_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_5_1'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_5_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_5_2'] or '' }}</a>
+            <a rel="nofollow" href="tel:{{ $options['phone_sales_5_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_sales_5_3'] or '' }}</a>
         </div>
     </div>
 </div>

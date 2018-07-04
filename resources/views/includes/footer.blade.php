@@ -97,6 +97,14 @@
                 var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
             })(document, window, 'script');
         </script>
+    @elseif(isset($current_complex) && $current_complex->id == 5)
+        <script type="text/javascript">
+            (function(d, w, s) {
+                var widgetHash = 'vjevjshzor1ci8ucgefh', gcw = d.createElement(s); gcw.type = 'text/javascript'; gcw.async = true;
+                gcw.src = '//widgets.binotel.com/getcall/widgets/'+ widgetHash +'.js';
+                var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
+            })(document, window, 'script');
+        </script>
     @else
         <script type="text/javascript">
             (function(d, w, s) {

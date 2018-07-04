@@ -9,14 +9,14 @@ class PlansTypeRepository extends BaseRepository {
         2 => ['slug' => 'dvuhkomnatnye-kvartiry', 'title' => 'Двухкомнатные квартиры', 'short' => 'Двухкомнатные'],
         3 => ['slug' => 'trehkomnatnye-kvartiry', 'title' => 'Трехкомнатные квартиры', 'short' => 'Трехкомнатные'],
         7 => ['slug' => 'chetyrekhkomnatnyye-kvartiry', 'title' => 'Четырехкомнатные квартиры', 'short' => 'Четырехкомнатные'],
+        8 => ['slug' => 'kvartiry-s-remontom', 'title' => 'Квартиры с ремонтом', 'short' => 'С ремонтом'],
         4 => ['slug' => 'dvuhurovnevye-kvartiry', 'title' => 'Двухуровневые квартиры', 'short' => 'Двухуровневые'],
         5 => ['slug' => 'nezhilye-pomeshcheniya', 'title' => 'Нежилые помещения', 'short' => 'Нежилые'],
-        //6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ'],
-        7 => ['slug' => 'kvartiry-s-remontom', 'title' => 'Квартиры с ремонтом', 'short' => 'С ремонтом'],
-        8 => ['slug' => 'arenda', 'title' => 'Аренда квартир', 'short' => 'Аренда'],
-        9 => ['slug' => 'kvartiry-studii', 'title' => 'Квартиры студии', 'short' => 'Квартиры студии'],
-        10 => ['slug' => 'smart-kvartiry', 'title' => 'Смарт квартиры', 'short' => 'Смарт квартиры'],
-        11 => ['slug' => 'elitnye-kvartiry', 'title' => 'Элитные квартиры', 'short' => 'Элитные квартиры'],
+        9 => ['slug' => 'arenda', 'title' => 'Аренда квартир', 'short' => 'Аренда'],
+        10 => ['slug' => 'kvartiry-studii', 'title' => 'Квартиры студии', 'short' => 'Квартиры студии'],
+        11 => ['slug' => 'smart-kvartiry', 'title' => 'Смарт квартиры', 'short' => 'Смарт квартиры'],
+        12 => ['slug' => 'elitnye-kvartiry', 'title' => 'Элитные квартиры', 'short' => 'Элитные квартиры'],
+        6 => ['slug' => 'pod-klyuch', 'title' => 'Под ключ'],
     ];
 
 

@@ -2,7 +2,7 @@
 <div class="form-header">
     <div class="form-label js-form-label">ПОИСК КВАРТИР</div>
 
-    <form action="/search" method="GET" onclick="yaCounter27077372.reachGoal('searhFlat'); ga('send', 'event', 'SearchFlat', 'search')">
+    <form action="/search" method="GET" onsubmit="yaCounter27077372.reachGoal('searhFlat'); ga('send', 'event', 'SearchFlat', 'search')">
         <div class="js-form-content form-content cell">
             <p class="m_b-5">Выберите ЖК:</p>
             {!! Form::select('complex_list', ['' => 'Все'] + $search_from['complex_list'], Request::get('complex_list', null), ['class' => 'field m_b-10']) !!}

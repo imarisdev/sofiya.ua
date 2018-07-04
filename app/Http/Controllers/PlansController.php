@@ -240,7 +240,7 @@ class PlansController extends Controller {
         }
 
         $type = [
-            'title' => sprintf('Квартиры в рассрочку на %s лет', $years)
+            'title' => sprintf('Квартиры в рассрочку на %s', $installment_plan)
         ];
 
         $breadcrumbs = [
