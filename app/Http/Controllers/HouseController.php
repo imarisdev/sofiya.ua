@@ -101,6 +101,8 @@ class HouseController extends Controller {
 
         $photos = $this->medialib->getFiles(['object_id' => $house->id, 'object_type' => 'house']);
 
+        $this->complex->shareComplex($house->complex);
+
         return view('house.index',
             compact('house', 'plans', 'house_class', 'building_types', 'photos', 'house_decoration', 'installments', 'plans_list', 'bathroom_types', 'balcony_types', 'breadcrumbs', 'plans_types')
         );
