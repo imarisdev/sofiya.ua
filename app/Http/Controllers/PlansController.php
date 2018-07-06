@@ -427,6 +427,8 @@ class PlansController extends Controller {
         $balcony_types = $this->plans->getBalconyTypes();
         $bathroom_types = $this->plans->getBathroomTypes();
 
+        $this->complex->shareComplex($plan->house->complex);
+
         return view('plans.index', compact('plan', 'type', 'breadcrumbs', 'photos', 'balcony_types', 'bathroom_types'));
     }
 
