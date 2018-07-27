@@ -135,6 +135,9 @@ th {
 .text-center {
     text-align: center;
 }
+.text-pointer {
+    cursor: pointer;
+}
 .blue-title {
     color: #01415f;
     font-family: Roboto !important;
@@ -798,7 +801,7 @@ a {
 }
 /**/
 .header-all {
-    min-height: 530px;
+    min-height: 470px;
     margin-bottom: 30px;
     background-position: 0 50%;
 }
@@ -2109,7 +2112,7 @@ a.blue-title:hover,
 }
 .choose {
     position: absolute;
-    top: 69%;
+    top: 83%;
     width: 100%;
     text-align: center;
 }
@@ -2591,8 +2594,8 @@ form.review {
     sales-department
  */
 .sales-department {
-    position: absolute;
-    top: 230px;
+    position: fixed;
+    top: 150px;
     left: 50%;
     background: #fff;
     width: 50%;

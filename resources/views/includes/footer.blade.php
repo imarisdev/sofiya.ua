@@ -12,38 +12,42 @@
             </div>
 
             <div class="cell5 info-wrap cell-lg-6 cell-xs cell-xss-none">
-                <div class="cell6 address cell-md m_t-15 cell-xs-6 ">
-                    <div class="m_l-20 ">
-                        <p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="ЖК София" />НАШ АДРЕС:<br></p>
-                        {!! $options['address'] or '' !!}
-                    </div>
+                <div class="cell6 cell-md m_t-15 cell-xs-6 text-center">
+                    <a class="text-pointer text-blue js-phone-click"><span class="blue-btn">Отдел продаж</span></a>
                 </div>
+                {{--<div class="cell6 address cell-md m_t-15 cell-xs-6 ">--}}
+                    {{--<div class="m_l-20 ">--}}
+                        {{--<p class="m_b-10"><img class="m_r-10" src="/img/placeholder-for-map.png" alt="ЖК София" />НАШ АДРЕС:<br></p>--}}
+                        {{--{!! $options['address'] or '' !!}--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
                 <div class="cell6 phone cell-md m_t-15 cell-xs-6">
-                    <div class="phone-click cell">
-                        <span><i class="icon-phone"></i></span>
-                        <ul class="cell m_b-20">
-                            <li><a href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></li>
-                            <li><a href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>
-                            <li><a href="tel:{{ $options['phone_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>
-                        </ul>
-                    </div>
+                    {{--<div class="phone-click cell">--}}
+                        {{--<span><i class="icon-phone"></i></span>--}}
+                        {{--<ul class="cell m_b-20">--}}
+                            {{--<li><a href="tel:{{ $options['phone_1'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_1'] or '' }}</a></li>--}}
+                            {{--<li><a href="tel:{{ $options['phone_2'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_2'] or '' }}</a></li>--}}
+                            {{--<li><a href="tel:{{ $options['phone_3'] or '' }}" onclick="yaCounter27077372.reachGoal('clickPhone'); ga('send', 'event', 'clickPhone', 'click')">{{ $options['phone_3'] or '' }}</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
 
-                    <div class="cell mail m_t-20 m_r-20 cell-xs">
-                        <i class="icon-mail"></i><a href="mailto:{{ $options['footer_email'] or '' }}">{{ $options['footer_email'] or '' }}</a>
-                    </div>
+                    {{--<div class="cell mail m_t-20 m_r-20 cell-xs">--}}
+                        {{--<i class="icon-mail"></i><a href="mailto:{{ $options['footer_email'] or '' }}">{{ $options['footer_email'] or '' }}</a>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             
             <div class="cell3 cell-lg-6 cell-xs m_t-15">
-                <form class="js-feedback-form" data-formtype="formF">
-                    <p class="m_b-5 ">НАПИШИТЕ НАМ</p>
-                    <input type="hidden" value="Форма в футере" name="place">
-                    <input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">
-                    <input class="field m_b-10" type="text" name="phone" placeholder="Ваш телефон">
-                    <textarea class="field" type="text" name="content" placeholder="Ваш комментарий"></textarea>
-                    <input type="submit" class="pull-right yellow-btn" data-formtype="formF">
-                </form>
+
+                {{--<form class="js-feedback-form" data-formtype="formF">--}}
+                    {{--<p class="m_b-5 ">НАПИШИТЕ НАМ</p>--}}
+                    {{--<input type="hidden" value="Форма в футере" name="place">--}}
+                    {{--<input class="field m_b-10" type="text" name="name" placeholder="Ваше имя">--}}
+                    {{--<input class="field m_b-10" type="text" name="phone" placeholder="Ваш телефон">--}}
+                    {{--<textarea class="field" type="text" name="content" placeholder="Ваш комментарий"></textarea>--}}
+                    {{--<input type="submit" class="pull-right yellow-btn" data-formtype="formF">--}}
+                {{--</form>--}}
             </div>
         </div>
 

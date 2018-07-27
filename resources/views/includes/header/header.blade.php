@@ -72,9 +72,9 @@
                 </ul>
             </div>
 
-            <div class="call-block">
-                <a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>
-            </div>
+            {{--<div class="call-block">--}}
+                {{--<a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>--}}
+            {{--</div>--}}
         </div>
     </div>
 
@@ -88,8 +88,8 @@
         @include('includes.header.prices-header-block')
     </div>
 
-    <div class="form-watch">
-        @include('includes.header.form-watch')
-    </div>
+    {{--<div class="form-watch">--}}
+        {{--@include('includes.header.form-watch')--}}
+    {{--</div>--}}
 
 </header>
