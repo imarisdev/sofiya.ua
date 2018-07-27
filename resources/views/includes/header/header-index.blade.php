@@ -75,9 +75,9 @@
                 </ul>
             </div>
 
-            <div class="call-block">
-                <a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>
-            </div>
+            {{--<div class="call-block">--}}
+                {{--<a class="call-btn js-fancybox" href="#form-call-back">ЗАКАЗАТЬ ЗВОНОК</a>--}}
+            {{--</div>--}}
         </div>
     </div>
 

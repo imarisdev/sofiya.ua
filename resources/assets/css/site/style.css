@@ -2112,9 +2112,12 @@ a.blue-title:hover,
 }
 .choose {
     position: absolute;
-    top: 83%;
+    top: 70%;
     width: 100%;
     text-align: center;
+}
+.header-all .choose {
+    top: 83%;
 }
 .choose span {
     background: #fff;
